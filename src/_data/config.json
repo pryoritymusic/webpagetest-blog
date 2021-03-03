@@ -1,10 +1,10 @@
 {
-  "name": "Nic Chan",
+  "name": "The WPT Blog",
   "lang": "en",
-  "description": "Nic Chan is a front-end web developer who specializes in design systems, accessibility and Shopify",
-  "url": "https://nicchan.me",
-  "authorHandle": "NicMakesStuff",
-  "authorName": "Nic Chan",
+  "description": "",
+  "url": "",
+  "authorHandle": "",
+  "authorName": "",
   "paths": {
     "src": "src",
     "blogdir": "blog",

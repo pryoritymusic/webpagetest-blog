@@ -5,5 +5,10 @@
 @import "./base/variables";
 @import "./base/globals";
 @import "./base/containers";
+@import "./base/typography";
+@import "./base/buttons";
+
+@import './components/header';
+@import './components/header-signup';
 
 @import "./base/utility";

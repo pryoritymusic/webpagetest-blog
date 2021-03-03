@@ -1,3 +1,31 @@
 :root {
+  --color-navy: #0d1e38;
+  --color-navy-light: #183157;
+  --color-light-blue: #278BD5;
+  --color-yellow: #ffd82f;
+  --color-mid-gray: #757575;
+  --color-white: #fff;
 
+  --color-bg: var(--color-white);
+
+  // Text
+  --color-body-text: var(--color-navy);
+  --color-accent-text: var(--color-mid-gray);
+
+  // Forms
+  --color-input-focus: var(--color-light-blue);
+
+  // Buttons
+  --color-button-background: var(--color-navy);
+  --color-button-text: var(--color-white);
+  --color-button-hover-background: var(--color-navy-light);
+  --color-button-hover-text: var(--color-white);
+
+  --color-button-accent-background: var(--color-yellow);
+  --color-button-accent-text: var(--color-navy);
+  --color-button-accent-hover-background: var(--color-light-blue);
+  --color-button-accent-hover-text: var(--color-navy);
+
+  --font-accent: "Labgrotesquemono", monospace;
+  --font-base: "Open Sans", sans-serif;
 }

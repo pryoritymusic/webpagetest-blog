@@ -8,4 +8,24 @@ html,
 body {
   min-height: 100%;
   line-height: 1.5;
+  font-family: var(--font-base);
+  color: var(--color-body-text);
+  background-color: var(--color-bg);
+}
+
+p {
+  margin: 0;
+
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0;
+
+  &:focus {
+    @include input-focus;
+  }
 }

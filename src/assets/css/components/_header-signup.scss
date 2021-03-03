@@ -1,0 +1,30 @@
+.header-signup {
+  text-align: center;
+}
+
+.header-signup__text {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-accent-text);
+}
+
+.header-signup__input-group {
+  display: flex;
+}
+
+.header-signup__input {
+  width: rem-calc(250);
+  background-color: var(--color-body-text);
+  color: var(--color-bg);
+  border: none;
+  font-size: 0.875rem;
+
+  &::placeholder {
+    opacity: 1;
+    color: var(--color-bg);
+  }
+
+  &:focus {
+    z-index: 1;
+  }
+}

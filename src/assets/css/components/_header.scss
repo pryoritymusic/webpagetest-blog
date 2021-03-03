@@ -1,0 +1,29 @@
+.header {
+  padding: 1.25rem 0;
+  margin-bottom: 1.25rem;
+}
+
+.header__main {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: rem-calc(2) solid var(--color-body-text);
+  align-items: flex-end;
+}
+
+.header__brand {
+  font-size: rem-calc(28);
+  font-weight: 700;
+}
+
+.header__signup {
+  display: none;
+  margin-left: 2rem;
+}
+
+
+@media (min-width: 48em) {
+  .header__signup {
+    display: block;
+  }
+}

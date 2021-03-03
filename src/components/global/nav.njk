@@ -1,6 +1,18 @@
-<header>
+<header class="header container container--lg">
+  <div class="header__main">
+    {% set tag = 'a' %}
+    {% if page.url == '/' %}
+      {% set tag = 'h1' %}
+    {% endif %}
+    <{{ tag }} class="header__brand">
+      The WPT Blog
+    </{{ tag }}>
+    <div class="header__signup">
+      {% include "header-signup.njk" %}
+    </div>
+  </div>
   {% if navigation.items %}
-    <nav aria-label="Primary" class="nav container">
+    <nav aria-label="Primary" class="nav">
       <ul class="nav__list">
         {% for item in navigation.items %}
           <li class="nav__item">
