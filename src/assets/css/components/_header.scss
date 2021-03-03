@@ -1,6 +1,5 @@
 .header {
   padding: 1.25rem 0;
-  margin-bottom: 1.25rem;
 }
 
 .header__main {
@@ -12,15 +11,17 @@
 }
 
 .header__brand {
+  line-height: 1.5;
   font-size: rem-calc(28);
   font-weight: 700;
+  color: var(--color-body-text);
+  text-decoration: none;
 }
 
 .header__signup {
   display: none;
   margin-left: 2rem;
 }
-
 
 @media (min-width: 48em) {
   .header__signup {

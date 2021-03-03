@@ -1,23 +1,28 @@
 {
   "items": [
     {
-      "text": "Projects",
-      "url": "/projects/",
+      "text": "Product News",
+      "url": "/",
       "external": false
     },
     {
-      "text": "Blog",
-      "url": "/blog/",
+      "text": "How We Built It",
+      "url": "#",
       "external": false
     },
     {
-      "text": "About",
-      "url": "/about/",
+      "text": "Data",
+      "url": "#",
       "external": false
     },
     {
-      "text": "Contact",
-      "url": "/contact/",
+      "text": "Authors",
+      "url": "#",
+      "external": false
+    },
+    {
+      "text": "Staff Picks",
+      "url": "#",
       "external": false
     }
   ]

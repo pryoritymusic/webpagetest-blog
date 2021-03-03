@@ -1,7 +1,7 @@
 :root {
   --color-navy: #0d1e38;
   --color-navy-light: #183157;
-  --color-light-blue: #278BD5;
+  --color-light-blue: #278bd5;
   --color-yellow: #ffd82f;
   --color-mid-gray: #757575;
   --color-white: #fff;
@@ -25,6 +25,15 @@
   --color-button-accent-text: var(--color-navy);
   --color-button-accent-hover-background: var(--color-light-blue);
   --color-button-accent-hover-text: var(--color-navy);
+
+  // Navigation
+  --color-nav-link: var(--color-mid-gray);
+  --color-nav-link-active: var(--color-navy);
+  --color-nav-accent: var(--color-yellow);
+
+  // Scrollbar
+  --color-scrollbar-track: var(--color-navy);
+  --color-scrollbar-thumb: var(--color-light-blue);
 
   --font-accent: "Labgrotesquemono", monospace;
   --font-base: "Open Sans", sans-serif;
