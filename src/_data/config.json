@@ -1,0 +1,14 @@
+{
+  "name": "Nic Chan",
+  "lang": "en",
+  "description": "Nic Chan is a front-end web developer who specializes in design systems, accessibility and Shopify",
+  "url": "https://nicchan.me",
+  "authorHandle": "NicMakesStuff",
+  "authorName": "Nic Chan",
+  "paths": {
+    "src": "src",
+    "blogdir": "blog",
+    "includes": "components",
+    "output": "dist"
+  }
+}
