@@ -4,7 +4,7 @@
     {% if page.url == '/' %}
       {% set tag = 'h1' %}
     {% endif %}
-    <{{ tag }} class="header__brand">
+    <{{ tag }} class="header__brand" {% if tag == 'a' %}href="/"{% endif %}>
       The WPT Blog
     </{{ tag }}>
     <div class="header__signup">
@@ -14,21 +14,21 @@
   {% if navigation.items %}
     <nav aria-label="Primary" class="nav">
       <ul class="nav__list">
-        {% for item in navigation.items %}
+        {%- for item in navigation.items -%}
           <li class="nav__item">
-            {% set relExternal = '' %}
-            {% set isCurrent = '' %}
-            {% if item.external %}
+            {%- set relExternal = '' -%}
+            {%- set isCurrent = '' -%}
+            {%- if item.external -%}
               {% set relExternal = ' rel="external" target="_blank"' %}
-            {% endif %}
-            {% if page.url == item.url %}
+            {%- endif -%}
+            {%- if page.url == item.url %}
               {% set isCurrent = ' aria-current="page"' %}
-            {% endif %}
+            {%- endif -%}
             <a class="nav__link" href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
               {{ item.text }}
             </a>
           </li>
-        {% endfor %}
+        {%- endfor -%}
       </ul>
     </nav>
   {% endif %}
