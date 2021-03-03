@@ -2,3 +2,11 @@
 layout: 'base'
 title: null
 ---
+{% from "post-item.njk" import postItem %}
+<div class="page container container--lg">
+  <ol>
+    {%- for post in collections.posts -%}
+      {{ postItem(post) }}
+    {%- endfor -%}
+  </ol>
+</div>

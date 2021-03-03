@@ -3,11 +3,8 @@
 }
 
 .header__main {
-  display: flex;
-  justify-content: space-between;
   padding-bottom: 1.25rem;
   border-bottom: rem-calc(2) solid var(--color-body-text);
-  align-items: flex-end;
 }
 
 .header__brand {
@@ -16,15 +13,22 @@
   font-weight: 700;
   color: var(--color-body-text);
   text-decoration: none;
+  text-align: center;
 }
 
 .header__signup {
-  display: none;
-  margin-left: 2rem;
+  margin-top: 1.25rem;
 }
 
 @media (min-width: 48em) {
+  .header__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .header__signup {
-    display: block;
+    margin-top: 0;
+    margin-left: 2rem;
   }
 }

@@ -7,7 +7,7 @@
   "authorName": "",
   "paths": {
     "src": "src",
-    "blogdir": "blog",
+    "blogdir": "posts",
     "includes": "components",
     "output": "dist"
   }

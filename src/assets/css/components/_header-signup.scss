@@ -10,10 +10,13 @@
 
 .header-signup__input-group {
   display: flex;
+  justify-content: center;
 }
 
 .header-signup__input {
-  width: rem-calc(250);
+  min-width: 0;
+  flex: 1 1 rem-calc(250);
+  max-width: rem-calc(250);
   background-color: var(--color-body-text);
   color: var(--color-bg);
   border: none;

@@ -4,9 +4,12 @@
   --color-light-blue: #278bd5;
   --color-yellow: #ffd82f;
   --color-mid-gray: #757575;
+  --color-light-gray: #dddddd;
   --color-white: #fff;
 
+  // Globals
   --color-bg: var(--color-white);
+  --color-image-fallback: var(--color-light-gray);
 
   // Text
   --color-body-text: var(--color-navy);
@@ -32,8 +35,8 @@
   --color-nav-accent: var(--color-yellow);
 
   // Scrollbar
-  --color-scrollbar-track: var(--color-navy);
-  --color-scrollbar-thumb: var(--color-light-blue);
+  --color-scrollbar-track: var(--color-light-gray);
+  --color-scrollbar-thumb: var(--color-navy);
 
   --font-accent: "Labgrotesquemono", monospace;
   --font-base: "Open Sans", sans-serif;
