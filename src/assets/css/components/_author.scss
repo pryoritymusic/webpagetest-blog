@@ -1,0 +1,38 @@
+.author {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    .author__text {
+      background-color: var(--color-link-bg);
+    }
+  }
+
+  &:focus {
+    .author__text {
+      outline: 0.25rem solid transparent;
+      border: rem-calc(2) dotted currentColor;
+    }
+  }
+}
+
+.author__image {
+  width: rem-calc(40);
+  height: rem-calc(40);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.author__text {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0.0625rem 0;
+  font-weight: 700;
+  color: var(--color-body-text);
+  vertical-align: middle;
+  border: rem-calc(2) solid transparent;
+  border-bottom: rem-calc(2) dotted currentColor;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}

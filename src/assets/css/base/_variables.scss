@@ -1,7 +1,7 @@
 :root {
   --color-navy: #0d1e38;
   --color-navy-light: #183157;
-  --color-light-blue: #278bd5;
+  --color-light-blue: #2f80ed;
   --color-yellow: #ffd82f;
   --color-mid-gray: #757575;
   --color-light-gray: #dddddd;
@@ -10,6 +10,7 @@
   // Globals
   --color-bg: var(--color-white);
   --color-image-fallback: var(--color-light-gray);
+  --color-link-bg: var(--color-yellow);
 
   // Text
   --color-body-text: var(--color-navy);
@@ -37,6 +38,11 @@
   // Scrollbar
   --color-scrollbar-track: var(--color-light-gray);
   --color-scrollbar-thumb: var(--color-navy);
+
+  // Post
+  --color-post-border: var(--color-light-gray);
+  --color-post-date: var(--color-mid-gray);
+  --color-tag-bg: var(--color-yellow);
 
   --font-accent: "Labgrotesquemono", monospace;
   --font-base: "Open Sans", sans-serif;

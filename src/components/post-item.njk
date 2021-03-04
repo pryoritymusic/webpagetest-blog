@@ -1,25 +1,31 @@
-{% macro postItem(item, class) %}
-  <li class="post-item {{ class }}">
-    <div class="post-item__image">
-      <img width="210" height="180">
+{%- from "author.njk" import author -%}
+{%- macro postItem(item, class) -%}
+  <div class="post-item {{ class }}">
+    <div class="post-item__image-wrapper">
+      <img class="post-item__image" width="210" height="180" sizes="(min-width: 36em) 13.125rem, 90vw" alt="">
     </div>
-    <div class="post-item__text">
-      <time class="post-item__date" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthYear }}</time>
+    <div class="post-item__text-wrapper">
+      <time class="post-item__date" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
       <h2 class="post-item__title">
         <a href="{{ item.url }}" class="post-item__link">{{ item.data.title }}</a>
       </h2>
-      <!-- Author -->
-      <ul class="post-item__tags tags tags--small">
-        {% for tag in item.data.tags %}
-          {% if tag != 'featured' %}
-            <li class="tags__tag">
-              <a href="#">
-                {{ tag }}
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
+      {{ author('', 'post-item__author') }}
+      <ul class="post-item__tags tags">
+        {%- if item.data.category -%}
+          <li class="tags__tag">
+            <a class="tags__link tags__link--category" href="#">
+              {{ item.data.category }}
+            </a>
+          </li>
+        {%- endif -%}
+        {%- for tag in item.data.tags -%}
+          <li class="tags__tag">
+            <a class="tags__link" href="#">
+              {{ tag }}
+            </a>
+          </li>
+        {%- endfor -%}
       </ul>
     </div>
-  </li>
-{% endmacro %}
+  </div>
+{%- endmacro -%}

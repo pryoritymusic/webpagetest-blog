@@ -8,10 +8,15 @@
 @import "./base/typography";
 @import "./base/buttons";
 
-@import './components/header';
-@import './components/header-signup';
-@import './components/page';
-@import './components/error';
-@import './components/nav';
+@import "./components/header";
+@import "./components/header-signup";
+@import "./components/page";
+@import "./components/error";
+@import "./components/nav";
+@import "./components/post-list";
+@import "./components/post-item";
+@import "./components/rte";
+@import "./components/author";
+@import "./components/tags";
 
 @import "./base/utility";

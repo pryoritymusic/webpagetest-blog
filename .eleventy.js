@@ -25,11 +25,9 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.io/docs/filters/
    */
   dayjs.extend(customParseFormat);
-  eleventyConfig.addFilter("monthYear", function (date) {
-    return dayjs(date).format("MMMM YYYY");
-  });
+
   eleventyConfig.addFilter("monthDayYear", function (date) {
-    return dayjs(date).format("MMMM DD, YYYY");
+    return dayjs(date).format("MMM. DD, YYYY");
   });
   // robot friendly date format for crawlers
   eleventyConfig.addFilter("htmlDate", function (date) {

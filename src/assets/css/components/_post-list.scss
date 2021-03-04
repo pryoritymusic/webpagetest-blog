@@ -1,0 +1,11 @@
+.post-list {
+  --border-style: 0.0625rem solid var(--color-post-border);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: var(--border-style);
+}
+
+.post-list__item {
+  border-top: var(--border-style);
+}

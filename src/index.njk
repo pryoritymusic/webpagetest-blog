@@ -4,9 +4,11 @@ title: null
 ---
 {% from "post-item.njk" import postItem %}
 <div class="page container container--lg">
-  <ol>
+  <ol class="post-list">
     {%- for post in collections.posts -%}
-      {{ postItem(post) }}
+      <li class="post-list__item">
+        {{ postItem(post) }}
+      </li>
     {%- endfor -%}
   </ol>
 </div>

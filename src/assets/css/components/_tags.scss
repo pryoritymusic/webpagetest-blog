@@ -1,0 +1,30 @@
+.tags {
+  margin: 0 0 0 -0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tags__tag {
+  display: inline-block;
+  margin-left: 0.75rem;
+}
+
+.tags__link {
+  position: relative;
+  padding: 0.125rem 0.25rem;
+  color: var(--color-body-text);
+  font-size: 0.875rem;
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 0.0625rem solid var(--color-tag-bg);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-tag-bg);
+  }
+
+  &--category {
+    background-color: var(--color-tag-bg);
+  }
+}
