@@ -1,0 +1,18 @@
+{%- from "author.njk" import author -%}
+{%- macro featuredPost(item) -%}
+  <div class="featured-post">
+    <div class="featured-post__image-wrapper">
+      <img class="featured-post__image" width="495" height="400" sizes="(min-width: 62em) 30.938rem,(min-width: 36em) calc(45vw), 90vw" alt="">
+    </div>
+    <div class="featured-post__text-wrapper">
+      <div class="featured-post__date">
+        <time datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
+        <span>- {{ item.templateContent | readingTime }}</span>
+      </div>
+      <h2 class="featured-post__title">
+        <a href="{{ item.url }}" class="featured-post__link">{{ item.data.title }}</a>
+      </h2>
+      {{ author('', 'featured-post__author') }}
+    </div>
+  </div>
+{%- endmacro -%}

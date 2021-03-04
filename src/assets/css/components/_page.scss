@@ -1,4 +1,10 @@
 .page {
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 48em) {
+  .page {
+    padding: 3rem 0;
+  }
 }

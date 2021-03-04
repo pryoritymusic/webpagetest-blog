@@ -6,6 +6,7 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const fs = require("fs");
 const util = require("util");
+const readingTime = require("eleventy-plugin-reading-time");
 
 /**
  * Import site configuration
@@ -57,6 +58,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
+  eleventyConfig.addPlugin(readingTime);
 
   /**
    * Create custom data collections
