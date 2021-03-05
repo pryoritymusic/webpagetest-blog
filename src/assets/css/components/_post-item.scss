@@ -16,6 +16,7 @@
 }
 
 .post-item__title {
+  margin-bottom: 1.25rem;
   line-height: 1.3;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .post-item__author {
-  margin: 1.25rem 0;
+  margin-bottom: 1.25rem;
 }
 
 @media (min-width: 36em) {

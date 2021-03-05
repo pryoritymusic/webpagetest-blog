@@ -20,12 +20,12 @@ footer: |
 <div class="page container container--lg">
   <!-- Not actual logic just for scaffolding -->
   {%- for post in collections.posts | reverse | limit(1) -%}
-    {{ featuredPost(post) }}
+    {{ featuredPost(post, collections.authors) }}
   {%- endfor -%}
   <ol class="post-list">
     {%- for post in collections.posts -%}
       <li class="post-list__item">
-        {{ postItem(post) }}
+        {{ postItem(post, collections.authors) }}
       </li>
     {%- endfor -%}
   </ol>

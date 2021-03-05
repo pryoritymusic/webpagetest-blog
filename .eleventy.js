@@ -76,9 +76,30 @@ module.exports = function (eleventyConfig) {
     ].reverse();
   });
 
+  eleventyConfig.addCollection("authors", (collection) => {
+    return [
+      ...collection.getFilteredByGlob(`./${pathConfig.src}/authors/**/*`),
+    ].sort();
+  });
+
   eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
     arr.slice(0, limit)
   );
+
+  /**
+   * Global Shortcodes
+   */
+  eleventyConfig.addShortcode("authorLink", (authors = [], name, className) => {
+    let selectedAuthor = authors.find((author) => author.data.name === name);
+    if (selectedAuthor)
+      return `<a class="author ${className}" href="${selectedAuthor.url}">
+        <img class="author__image" width="40" height="40">
+        <div class="author__text">
+          ${selectedAuthor.data.name}
+        </div>
+      </a>`;
+    return "";
+  });
 
   /**
    * Cloudinary Shortcodes

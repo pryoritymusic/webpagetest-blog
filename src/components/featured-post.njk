@@ -1,5 +1,4 @@
-{%- from "author.njk" import author -%}
-{%- macro featuredPost(item) -%}
+{%- macro featuredPost(item, authors) -%}
   <div class="featured-post">
     <div class="featured-post__image-wrapper">
       <img class="featured-post__image" width="495" height="400" sizes="(min-width: 62em) 30.938rem,(min-width: 36em) calc(45vw), 90vw" alt="">
@@ -12,7 +11,7 @@
       <h2 class="featured-post__title">
         <a href="{{ item.url }}" class="featured-post__link">{{ item.data.title }}</a>
       </h2>
-      {{ author('', 'featured-post__author') }}
+      {% authorLink authors, item.data.author, 'featured-post__author' %}
     </div>
   </div>
 {%- endmacro -%}
