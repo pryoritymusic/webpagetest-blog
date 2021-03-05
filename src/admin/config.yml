@@ -76,20 +76,28 @@ collections:
         name: "category"
         widget: "relation"
         collection: "categories"
-        search_fields: ["category.title"]
-        value_field: "category.title"
+        search_fields: ["title"]
+        value_field: title
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        search_fields: ["name"]
+        value_field: name
   - name: "categories" # Used in routes, e.g., /admin/collections/blog
     label: "Categories" # Used in the UI
+    identifier_field: title
     folder: "src/categories" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
-  - name: "Authors" # Used in routes, e.g., /admin/collections/blog
+  - name: "authors" # Used in routes, e.g., /admin/collections/blog
     label: "Authors" # Used in the UI
     folder: "src/authors" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: name
     fields: # The fields for each document, usually in front matter
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Image", name: "image", widget: "image", required: false }
