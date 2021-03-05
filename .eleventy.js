@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "static" });
+  eleventyConfig.addPassthroughCopy("src/admin");
   /**
    * Add filters
    *
