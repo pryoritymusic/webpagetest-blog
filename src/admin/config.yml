@@ -72,6 +72,12 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", allow_add: true }
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "categories"
+        search_fields: ["category.title"]
+        value_field: "category.title"
   - name: "categories" # Used in routes, e.g., /admin/collections/blog
     label: "Categories" # Used in the UI
     folder: "src/categories" # The path to the folder where the documents are stored
@@ -79,3 +85,19 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
+  - name: "Authors" # Used in routes, e.g., /admin/collections/blog
+    label: "Authors" # Used in the UI
+    folder: "src/authors" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Bio", name: "bio", widget: "markdown", required: false }
+      - {
+          label: "Twitter Handle",
+          name: "twitter_handle",
+          widget: "string",
+          hint: "Without the @, eg. Catchpoint",
+          required: false,
+        }
