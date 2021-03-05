@@ -17,14 +17,14 @@
   font-family: var(--font-accent);
   text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 0.0625rem solid var(--color-tag-bg);
+  border-bottom: 0.0625rem solid var(--color-tag-background);
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: var(--color-tag-bg);
+    background-color: var(--color-tag-background);
   }
 
   &--category {
-    background-color: var(--color-tag-bg);
+    background-color: var(--color-tag-background);
   }
 }

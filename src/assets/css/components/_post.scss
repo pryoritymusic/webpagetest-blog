@@ -1,0 +1,32 @@
+.post__header {
+  margin-bottom: 1.25rem;
+
+  & > * + * {
+    margin-top: 1.25rem;
+  }
+}
+
+.post__description {
+  color: var(--color-accent-text);
+}
+
+.post__social {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 36em) {
+  .post__author-share {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .post__social {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 48em) {
+  .post__header {
+    margin-bottom: 2.5rem;
+  }
+}

@@ -19,8 +19,8 @@ h3,
 .h3 {
   margin: 0;
   font-family: var(--font-base);
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-weight: 400;
+  font-size: rem-calc(21);
 }
 
 h4,
@@ -29,6 +29,12 @@ h4,
   font-family: var(--font-base);
   font-weight: 700;
   font-size: 1.125rem;
+}
+
+.text--accent {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  color: var(--color-post-date);
 }
 
 @media (min-width: 48em) {

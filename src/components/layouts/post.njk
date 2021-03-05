@@ -1,0 +1,49 @@
+{%- extends 'layouts/base.njk' -%}
+{%- from "author.njk" import author -%}
+{%- from "social-share.njk" import socialShare -%}
+{%- set currentUrl = config.url + page.url -%}
+
+{%- block content -%}
+  <div class="page container container--sm">
+    <article class="post">
+      <header class="post__header">
+        <div class="post__meta">
+          {%- if category -%}
+            <a class="tags__link tags__link--category" href="#">
+              {{- category -}}
+            </a>
+          {%- endif -%}
+          {%- if date -%}
+            <time class="post__date text--accent" datetime="{{ date | htmlDate }}">{{ date | monthDayYear }}</time>
+          {%- endif -%}
+        </div>
+        <h1 class="post__title">{{ title }}</h1>
+        {%- if description -%}
+          <p class="h3 post__description">{{ description }}</p>
+        {%- endif -%}
+        <div class="post__author-share">
+          {{ author('', 'post__author') }}
+          {{ socialShare(currentUrl, title, 'post__social') }}
+        </div>
+      </header>
+      <div class="post__layout">
+        <div class="post__content rte">
+          {{ content | safe }}
+        </div>
+      </div>
+      <nav class="post__tags" aria-label="Tags">
+        {%- if tags.length -%}
+          <ul class="post__tags-list">
+          {%- for tag in tags -%}
+            {%- if tag != 'featured' -%}
+              <li class="post__tags-item">
+                <a class="post__tags-link" href="/blog/tagged/{{tag}}/">{{tag}}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </nav>
+    </article>
+  </div>
+{%- endblock -%}

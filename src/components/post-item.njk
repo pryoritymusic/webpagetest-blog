@@ -5,7 +5,7 @@
       <img class="post-item__image" width="210" height="180" sizes="(min-width: 36em) 13.125rem, 90vw" alt="">
     </div>
     <div class="post-item__text-wrapper">
-      <time class="post-item__date" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
+      <time class="post-item__date text--accent" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
       <h2 class="post-item__title">
         <a href="{{ item.url }}" class="post-item__link">{{ item.data.title }}</a>
       </h2>

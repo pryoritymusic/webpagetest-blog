@@ -1,7 +1,7 @@
 ---
 title: How to use WebPageTest to Optimize Every Second of your site
 date: "2021-02-28"
-description: "Placeholder."
+description: "Placeholder description here. This is used for social media tags and is displayed under the title."
 category: Product
 tags:
   - Release Notes
