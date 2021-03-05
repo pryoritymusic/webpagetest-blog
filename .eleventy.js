@@ -11,7 +11,7 @@ const readingTime = require("eleventy-plugin-reading-time");
 /**
  * Import site configuration
  */
-const siteConfig = require("./src/_data/config.json");
+const pathConfig = require("./src/_data/paths.json");
 
 module.exports = function (eleventyConfig) {
   /**
@@ -71,9 +71,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("posts", (collection) => {
     return [
       ...collection
-        .getFilteredByGlob(
-          `./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*`
-        )
+        .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
         .filter(livePosts),
     ].reverse();
   });
@@ -176,10 +174,10 @@ module.exports = function (eleventyConfig) {
    */
   return {
     dir: {
-      input: siteConfig.paths.src,
-      includes: siteConfig.paths.includes,
-      layouts: `${siteConfig.paths.includes}/layouts`,
-      output: siteConfig.paths.output,
+      input: pathConfig.src,
+      includes: pathConfig.includes,
+      layouts: `${pathConfig.includes}/layouts`,
+      output: pathConfig.output,
     },
     passthroughFileCopy: true,
     templateFormats: ["njk", "md"],

@@ -4,6 +4,52 @@ backend:
 media_folder: "static/images/uploads"
 public_folder: "static/images/uploads"
 collections:
+  - label: "Globals"
+    name: "globals"
+    files:
+      - label: "Config"
+        name: "config"
+        delete: false
+        file: "src/_data/config.json"
+        fields:
+          - { label: "Site Name", name: "name", widget: "string" }
+          - { label: "Site Url", name: "url", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Language Code",
+              name: "lang",
+              widget: "string",
+              default: "en",
+            }
+          - {
+              label: "Author Name",
+              name: "authorName",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Author Twitter Handle",
+              name: "authorHandle",
+              widget: "string",
+              required: false,
+            }
+      - label: "Navigation"
+        name: "nav"
+        delete: false
+        file: "src/_data/navigation.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Url", name: "url", widget: "string" }
+              - {
+                  label: "Is url to external site?",
+                  name: "external",
+                  widget: "boolean",
+                  required: false,
+                }
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
     folder: "src/posts" # The path to the folder where the documents are stored
@@ -26,3 +72,10 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", allow_add: true }
+  - name: "categories" # Used in routes, e.g., /admin/collections/blog
+    label: "Categories" # Used in the UI
+    folder: "src/categories" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }

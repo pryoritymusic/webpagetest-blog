@@ -1,8 +1,9 @@
 ---
 title: Styles
 date: 2021-03-05T02:29:49.306Z
+tags:
+  - Release Notes
 ---
-- - -
 
 # h1 Heading 8-)
 
@@ -18,33 +19,13 @@ date: 2021-03-05T02:29:49.306Z
 
 ## Horizontal Rules
 
-- - -
-
-- - -
-
-- - -
-
-## Typographic replacements
-
-Enable typographer option to see result.
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
+---
 
 ## Emphasis
 
 **This is bold text**
 
-**This is bold text**
-
-*This is italic text*
-
-*This is italic text*
+_This is italic text_
 
 ~~Strikethrough~~
 
@@ -60,15 +41,16 @@ test.. test... test..... test?..... test!....
 
 Unordered
 
-* Create a list by starting a line with `+`, `-`, or `*`
-* Sub-lists are made by indenting 2 spaces:
+- Create a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
 
-  * Marker character change forces new list start:
+  - Marker character change forces new list start:
 
-    * Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    * Nulla volutpat aliquam velit
-* Very easy!
+    - Ac tristique libero volutpat at
+    - Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
+
+- Very easy!
 
 Ordered
 
@@ -102,18 +84,6 @@ npm run start
 | engine | engine to be used for processing templates. Handlebars is the default.    |
 | ext    | extension to be used for dest files.                                      |
 
-Right aligned columns
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
 ## Links
 
 [link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to seeke links, Images also have a footnote style syntax

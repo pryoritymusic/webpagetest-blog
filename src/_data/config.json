@@ -4,11 +4,5 @@
   "description": "",
   "url": "https://blog.webpagetest.org",
   "authorHandle": "",
-  "authorName": "",
-  "paths": {
-    "src": "src",
-    "blogdir": "posts",
-    "includes": "components",
-    "output": "dist"
-  }
+  "authorName": ""
 }
