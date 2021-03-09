@@ -1,5 +1,6 @@
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
+const markdownIt = require("markdown-it");
 const contentParser = require("./utils/transforms/contentParser.js");
 const dayjs = require("dayjs");
 const customParseFormat = require("dayjs/plugin/customParseFormat");
@@ -35,10 +36,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("htmlDate", function (date) {
     return dayjs(date).format();
   });
+
   eleventyConfig.addFilter("console", function (value) {
     return util.inspect(value);
   });
 
+  const mdRender = new markdownIt({});
+  eleventyConfig.addFilter("markdown", function (value) {
+    return mdRender.render(value);
+  });
   /**
    * Add Transforms
    *
@@ -76,10 +82,32 @@ module.exports = function (eleventyConfig) {
     ].reverse();
   });
 
+  eleventyConfig.addCollection("categories", (collection) => {
+    return [
+      ...collection.getFilteredByGlob(`./${pathConfig.src}/categories/**/*.md`),
+    ].sort();
+  });
+
   eleventyConfig.addCollection("authors", (collection) => {
     return [
-      ...collection.getFilteredByGlob(`./${pathConfig.src}/authors/**/*`),
+      ...collection.getFilteredByGlob(`./${pathConfig.src}/authors/**/*.md`),
     ].sort();
+  });
+
+  eleventyConfig.addCollection("authorCollections", function (collection) {
+    let resultArrays = {};
+    collection
+      .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
+      .filter(livePosts)
+      .reverse()
+      .forEach(function (item) {
+        if (!resultArrays[item.data.author]) {
+          resultArrays[item.data.author] = [];
+        }
+        resultArrays[item.data.author].push(item);
+      });
+
+    return resultArrays;
   });
 
   eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>

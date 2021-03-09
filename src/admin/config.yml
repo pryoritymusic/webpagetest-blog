@@ -86,12 +86,12 @@ collections:
         value_field: name
   - name: "categories" # Used in routes, e.g., /admin/collections/blog
     label: "Categories" # Used in the UI
-    identifier_field: title
+    identifier_field: name
     folder: "src/categories" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string" }
+    fields: # The fields foreach document, usually in front matter
+      - { label: "Title", name: "name", widget: "string" }
   - name: "authors" # Used in routes, e.g., /admin/collections/blog
     label: "Authors" # Used in the UI
     folder: "src/authors" # The path to the folder where the documents are stored

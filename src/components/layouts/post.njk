@@ -8,7 +8,7 @@
       <header class="post__header">
         <div class="post__meta">
           {%- if category -%}
-            <a class="tags__link tags__link--category" href="#">
+            <a class="post__category tags__link tags__link--category" href="/categories/{{ category | slug }}">
               {{- category -}}
             </a>
           {%- endif -%}

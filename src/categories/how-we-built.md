@@ -1,3 +1,3 @@
 ---
-title: How We Built
+name: How We Built
 ---
