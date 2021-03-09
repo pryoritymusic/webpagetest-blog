@@ -1,6 +1,7 @@
 {%- extends 'layouts/base.njk' -%}
 {%- from "social-share.njk" import socialShare -%}
-{% from "author-link.njk" import authorLink %}
+{%- from "author-link.njk" import authorLink -%}
+{%- from "post-author-bio.njk" import postAuthorBio -%}
 {%- set currentUrl = config.url + page.url -%}
 
 {%- block content -%}
@@ -31,6 +32,7 @@
           {{ content | safe }}
         </div>
       </div>
+      {{ postAuthorBio(author) }}
       <nav class="post__tags" aria-label="Tags">
         {%- if tags.length -%}
           <ul class="post__tags-list">

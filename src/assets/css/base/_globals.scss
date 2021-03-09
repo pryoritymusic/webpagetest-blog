@@ -19,6 +19,10 @@ img {
   background-color: var(--color-image-fallback);
 }
 
+a {
+  color: currentColor;
+}
+
 p {
   margin: 0;
 
