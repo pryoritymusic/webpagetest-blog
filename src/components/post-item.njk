@@ -1,3 +1,5 @@
+{% from "author-link.njk" import authorLink %}
+
 {%- macro postItem(item, authors, class) -%}
   <div class="post-item {{ class }}">
     <div class="post-item__image-wrapper">
@@ -8,7 +10,7 @@
       <h2 class="post-item__title">
         <a href="{{ item.url }}" class="post-item__link">{{ item.data.title }}</a>
       </h2>
-      {% authorLink authors, item.data.author, 'post-item__author' %}
+      {{ authorLink(item.data.author, 'post-item__author') }}
       <ul class="post-item__tags tags">
         {%- if item.data.category -%}
           <li class="tags__tag">

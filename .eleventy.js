@@ -99,21 +99,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
 
   /**
-   * Global Shortcodes
-   */
-  eleventyConfig.addShortcode("authorLink", (authors = [], name, className) => {
-    let selectedAuthor = authors.find((author) => author.data.name === name);
-    if (selectedAuthor)
-      return `<a class="author ${className}" href="/authors/${selectedAuthor.data.page.fileSlug}">
-        <img class="author__image" width="40" height="40">
-        <div class="author__text">
-          ${selectedAuthor.data.name}
-        </div>
-      </a>`;
-    return "";
-  });
-
-  /**
    * Cloudinary Shortcodes
    */
   eleventyConfig.cloudinaryCloudName = "nicchan";

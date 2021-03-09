@@ -1,5 +1,6 @@
 {%- extends 'layouts/base.njk' -%}
 {%- from "social-share.njk" import socialShare -%}
+{% from "author-link.njk" import authorLink %}
 {%- set currentUrl = config.url + page.url -%}
 
 {%- block content -%}
@@ -21,7 +22,7 @@
           <p class="h3 post__description">{{ description }}</p>
         {%- endif -%}
         <div class="post__author-share">
-          {% authorLink collections.authors, author, 'post__author' %}
+          {{ authorLink(author, 'post__author') }}
           {{ socialShare(currentUrl, title, 'post__social') }}
         </div>
       </header>
