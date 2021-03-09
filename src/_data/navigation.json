@@ -1,18 +1,18 @@
 {
   "items": [
     {
-      "text": "Product News",
-      "url": "/",
+      "text": "Product",
+      "url": "/categories/product",
       "external": false
     },
     {
-      "text": "How We Built It",
-      "url": "#",
+      "text": "How We Built",
+      "url": "/categories/how-we-built",
       "external": false
     },
     {
       "text": "Data",
-      "url": "#",
+      "url": "/categories/data",
       "external": false
     },
     {
