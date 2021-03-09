@@ -17,7 +17,9 @@ footer: |
 ---
 {% from "featured-post.njk" import featuredPost %}
 {% from "post-item.njk" import postItem %}
+
 <div class="page container container--lg">
+
   <!-- Not actual logic just for scaffolding -->
   {%- for post in collections.posts | reverse | limit(1) -%}
     {{ featuredPost(post, collections.authors) }}

@@ -13,7 +13,7 @@ permalink: "/categories/{{ paged.category | slug }}/{% if paged.number > 1 %}{{ 
 <div class="tag-page page container container--lg">
   <ol class="post-list">
     {%- for post in paged.posts -%}
-      {% if paged.first == true %}
+      {% if paged.first == true and loop.index == 1 %}
         <li>
           {{ featuredPost(post, collections.authors) }}
         </li>
