@@ -72,22 +72,18 @@ module.exports = function (eleventyConfig) {
    * for blog and feed
    * Code from https://github.com/hankchizljaw/hylia
    */
+  eleventyConfig.addCollection("posts", require("./collections/posts"));
+  eleventyConfig.addCollection(
+    "categories",
+    require("./collections/categories")
+  );
+  eleventyConfig.addCollection(
+    "categoriesPaged",
+    require("./collections/categoriesPaged")
+  );
+
   const now = new Date();
   const livePosts = (post) => post.date <= now && !post.data.draft;
-  eleventyConfig.addCollection("posts", (collection) => {
-    return [
-      ...collection
-        .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
-        .filter(livePosts),
-    ].reverse();
-  });
-
-  eleventyConfig.addCollection("categories", (collection) => {
-    return [
-      ...collection.getFilteredByGlob(`./${pathConfig.src}/categories/**/*.md`),
-    ].sort();
-  });
-
   eleventyConfig.addCollection("categoriesCollections", (collection) => {
     let resultArrays = {};
     collection

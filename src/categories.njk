@@ -1,13 +1,16 @@
 ---
 layout: base
+pagination:
+  data: collections.categoriesPaged
+  size: 1
+  alias: paged
+permalink: "/categories/{{ paged.category | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
-
 {% from "post-item.njk" import postItem %}
 <div class="tag-page page container container--lg">
-  <h1 class="tag-page__title">{{ name }}</h1>
+  <h1 class="tag-page__title">{{ paged.category }}</h1>
   <ol class="post-list">
-    {% set list = collections.categoriesCollections[name] %}
-    {%- for post in list -%}
+    {%- for post in paged.posts -%}
       <li class="post-list__item">
         {{ postItem(post, collections.authors) }}
       </li>
