@@ -88,6 +88,22 @@ module.exports = function (eleventyConfig) {
     ].sort();
   });
 
+  eleventyConfig.addCollection("categoriesCollections", (collection) => {
+    let resultArrays = {};
+    collection
+      .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
+      .filter(livePosts)
+      .reverse()
+      .forEach(function (item) {
+        if (!resultArrays[item.data.category]) {
+          resultArrays[item.data.category] = [];
+        }
+        resultArrays[item.data.category].push(item);
+      });
+
+    return resultArrays;
+  });
+
   eleventyConfig.addCollection("authors", (collection) => {
     return [
       ...collection.getFilteredByGlob(`./${pathConfig.src}/authors/**/*.md`),
