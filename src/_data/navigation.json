@@ -2,17 +2,17 @@
   "items": [
     {
       "text": "Product",
-      "url": "/category/product",
+      "url": "/categories/product",
       "external": false
     },
     {
       "text": "How We Built",
-      "url": "/category/how-we-built",
+      "url": "/categories/how-we-built",
       "external": false
     },
     {
       "text": "Data",
-      "url": "/category/data",
+      "url": "/categories/data",
       "external": false
     },
     {
