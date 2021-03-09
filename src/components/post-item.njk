@@ -12,7 +12,7 @@
       <ul class="post-item__tags tags">
         {%- if item.data.category -%}
           <li class="tags__tag">
-            <a class="tags__link tags__link--category" href="#">
+            <a class="tags__link tags__link--category" href="/categories/{{ item.data.category | slug }}">
               {{ item.data.category }}
             </a>
           </li>

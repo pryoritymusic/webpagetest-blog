@@ -1,16 +1,15 @@
 ---
-renderData:
-  title: Tagged with “{{ tag }} ”
 layout: base
 pagination:
-  data: collections.tagsPaged
+  data: collections.authorsPaged
   size: 1
   alias: paged
-permalink: "/posts/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
+permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
 {% from "post-item.njk" import postItem %}
 <div class="tag-page page container container--lg">
-  <h1 class="tag-page__title">{{ paged.tag }}</h1>
+  <h1 class="tag-page__title">{{ paged.author.data.name }}</h1>
+  <div>{{ paged.author.data.bio | markdown | safe }}</div>
   <ol class="post-list">
     {%- for post in paged.posts -%}
       <li class="post-list__item">

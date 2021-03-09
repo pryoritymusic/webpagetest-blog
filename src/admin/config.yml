@@ -33,6 +33,11 @@ collections:
               widget: "string",
               required: false,
             }
+          - {
+              label: "Max posts per page",
+              name: "maxPostsPerPage",
+              widget: "number",
+            }
       - label: "Navigation"
         name: "nav"
         delete: false
