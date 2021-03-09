@@ -1,19 +1,27 @@
 ---
 layout: base
+renderData:
+  title: '{{ paged.category }}'
 pagination:
   data: collections.categoriesPaged
   size: 1
   alias: paged
 permalink: "/categories/{{ paged.category | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
+{% from "featured-post.njk" import featuredPost %}
 {% from "post-item.njk" import postItem %}
 <div class="tag-page page container container--lg">
-  <h1 class="tag-page__title">{{ paged.category }}</h1>
   <ol class="post-list">
     {%- for post in paged.posts -%}
-      <li class="post-list__item">
-        {{ postItem(post, collections.authors) }}
-      </li>
+      {% if paged.first == true %}
+        <li>
+          {{ featuredPost(post, collections.authors) }}
+        </li>
+      {% else %}
+        <li class="post-list__item">
+          {{ postItem(post, collections.authors) }}
+        </li>
+      {% endif %}
     {%- endfor -%}
   </ol>
   {% if (paged.first != true) or (paged.last != true) %}
