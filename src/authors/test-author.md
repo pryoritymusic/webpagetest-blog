@@ -1,3 +1,4 @@
 ---
 name: Test Author
+bio: ""
 ---
