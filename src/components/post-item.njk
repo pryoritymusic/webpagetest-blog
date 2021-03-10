@@ -17,25 +17,6 @@
       <h2 class="post-item__title">
         <a href="{{ item.url }}" class="post-item__link">{{ item.data.title }}</a>
       </h2>
-<<<<<<< HEAD
-      {% authorLink authors, item.data.author, 'post-item__author' %}
-      <ul class="post-item__tags tags">
-        {%- if item.data.category -%}
-          <li class="tags__tag">
-            <a class="tags__link tags__link--category" href="/categories/{{ item.data.category | slug }}">
-              {{ item.data.category }}
-            </a>
-          </li>
-        {%- endif -%}
-        {%- for tag in item.data.tags -%}
-          <li class="tags__tag">
-            <a class="tags__link" href="/posts/tag/{{ tag | slug }}">
-              {{ tag }}
-            </a>
-          </li>
-        {%- endfor -%}
-      </ul>
-=======
       {{ authorLink(item.data.author, 'post-item__author') }}
       {% if not highlight %}
         <ul class="post-item__tags tags">
@@ -55,7 +36,6 @@
           {%- endfor -%}
         </ul>
       {% endif %}
->>>>>>> 04f131cb3605b1c07993ce1083b1ea51a5250871
     </div>
   </div>
 {%- endmacro -%}
