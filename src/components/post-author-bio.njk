@@ -1,0 +1,13 @@
+{%- macro postAuthorBio(authorName) -%}
+  {% set author = authorName | slug | findBySlug %}
+  {% if author and author.data.bio %}
+    <div class="post-bio">
+      {{ author.data.bio | markdown | safe }}
+      {%- if author.data.twitter_handle -%}
+      <a class="post-bio__handle" href="https://twitter.com/{{ author.data.twitter_handle }}">
+        @{{ author.data.twitter_handle}}
+      </a>
+      {% endif %}
+    </div>
+  {% endif %}
+{%- endmacro -%}

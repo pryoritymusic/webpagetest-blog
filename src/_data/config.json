@@ -4,5 +4,6 @@
   "description": "",
   "url": "https://blog.webpagetest.org",
   "authorHandle": "",
-  "authorName": ""
+  "authorName": "",
+  "maxPostsPerPage": 2
 }

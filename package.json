@@ -7,6 +7,7 @@
     "build:html": "eleventy",
     "build:js": "rollup --config",
     "build:sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed",
+    "debug": "DEBUG=Eleventy* eleventy",
     "js": "rollup --config --watch",
     "watch": "cross-env ELEVENTY_ENV=development && run-p sass js serve",
     "sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed --watch",

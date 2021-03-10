@@ -1,0 +1,10 @@
+.post-bio {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: rem-calc(2) dotted currentColor;
+  font-size: 0.875rem;
+
+  & > * {
+    display: inline;
+  }
+}

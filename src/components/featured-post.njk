@@ -1,3 +1,5 @@
+{% from "author-link.njk" import authorLink %}
+
 {%- macro featuredPost(item, authors) -%}
   <div class="featured-post">
     <div class="featured-post__image-wrapper">
@@ -6,12 +8,12 @@
     <div class="featured-post__text-wrapper">
       <div class="featured-post__date text--accent">
         <time datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
-        <span>- {{ item.templateContent | readingTime }}</span>
+        <span>- {{ item.templateContent | readingTime }}. Read</span>
       </div>
       <h2 class="featured-post__title">
         <a href="{{ item.url }}" class="featured-post__link">{{ item.data.title }}</a>
       </h2>
-      {% authorLink authors, item.data.author, 'featured-post__author' %}
+      {{ authorLink(item.data.author, 'featured-post__author') }}
     </div>
   </div>
 {%- endmacro -%}

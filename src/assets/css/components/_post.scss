@@ -18,10 +18,16 @@
   margin-top: 1.25rem;
 }
 
+.post__tags-share {
+  margin-top: 1.5rem;
+}
+
 @media (min-width: 36em) {
-  .post__author-share {
+  .post__author-share,
+  .post__tags-share {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .post__social {
@@ -32,5 +38,13 @@
 @media (min-width: 48em) {
   .post__header {
     margin-bottom: 2.5rem;
+  }
+
+  .post__content {
+    font-size: 1.125rem;
+  }
+
+  .post__tags-share {
+    margin-top: 2.5rem;
   }
 }

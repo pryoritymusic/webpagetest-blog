@@ -8,6 +8,7 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const fs = require("fs");
 const util = require("util");
 const readingTime = require("eleventy-plugin-reading-time");
+const { findBySlug } = require('./utils/findBySlug');
 
 /**
  * Import site configuration
@@ -22,6 +23,31 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "static" });
   eleventyConfig.addPassthroughCopy("src/admin");
+
+  /**
+   * Create custom data collections
+   * for blog and feed
+   * Code from https://github.com/hankchizljaw/hylia
+   */
+  eleventyConfig.addCollection("posts", require("./collections/posts"));
+  eleventyConfig.addCollection(
+    "categories",
+    require("./collections/categories")
+  );
+  eleventyConfig.addCollection(
+    "categoriesPaged",
+    require("./collections/categoriesPaged")
+  );
+  eleventyConfig.addCollection("authors", require('./collections/authors'));
+  eleventyConfig.addCollection("authorsPaged", require('./collections/authorsPaged'));
+  eleventyConfig.addCollection("tagList", require('./collections/tagList'));
+  eleventyConfig.addCollection("tagsPaged", require('./collections/tagsPaged'));
+  eleventyConfig.addCollection("memoized", require('./collections/memoized'));
+
+  eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
+    arr.slice(0, limit)
+  );
+
   /**
    * Add filters
    *
@@ -40,6 +66,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("console", function (value) {
     return util.inspect(value);
   });
+
+  eleventyConfig.addFilter('findBySlug', function (slug) {
+    return findBySlug(slug);
+  })
+
 
   const mdRender = new markdownIt({});
   eleventyConfig.addFilter("markdown", function (value) {
@@ -66,84 +97,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(readingTime);
-
-  /**
-   * Create custom data collections
-   * for blog and feed
-   * Code from https://github.com/hankchizljaw/hylia
-   */
-  const now = new Date();
-  const livePosts = (post) => post.date <= now && !post.data.draft;
-  eleventyConfig.addCollection("posts", (collection) => {
-    return [
-      ...collection
-        .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
-        .filter(livePosts),
-    ].reverse();
-  });
-
-  eleventyConfig.addCollection("categories", (collection) => {
-    return [
-      ...collection.getFilteredByGlob(`./${pathConfig.src}/categories/**/*.md`),
-    ].sort();
-  });
-
-  eleventyConfig.addCollection("categoriesCollections", (collection) => {
-    let resultArrays = {};
-    collection
-      .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
-      .filter(livePosts)
-      .reverse()
-      .forEach(function (item) {
-        if (!resultArrays[item.data.category]) {
-          resultArrays[item.data.category] = [];
-        }
-        resultArrays[item.data.category].push(item);
-      });
-
-    return resultArrays;
-  });
-
-  eleventyConfig.addCollection("authors", (collection) => {
-    return [
-      ...collection.getFilteredByGlob(`./${pathConfig.src}/authors/**/*.md`),
-    ].sort();
-  });
-
-  eleventyConfig.addCollection("authorCollections", function (collection) {
-    let resultArrays = {};
-    collection
-      .getFilteredByGlob(`./${pathConfig.src}/${pathConfig.blogdir}/**/*`)
-      .filter(livePosts)
-      .reverse()
-      .forEach(function (item) {
-        if (!resultArrays[item.data.author]) {
-          resultArrays[item.data.author] = [];
-        }
-        resultArrays[item.data.author].push(item);
-      });
-
-    return resultArrays;
-  });
-
-  eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
-    arr.slice(0, limit)
-  );
-
-  /**
-   * Global Shortcodes
-   */
-  eleventyConfig.addShortcode("authorLink", (authors = [], name, className) => {
-    let selectedAuthor = authors.find((author) => author.data.name === name);
-    if (selectedAuthor)
-      return `<a class="author ${className}" href="${selectedAuthor.url}">
-        <img class="author__image" width="40" height="40">
-        <div class="author__text">
-          ${selectedAuthor.data.name}
-        </div>
-      </a>`;
-    return "";
-  });
 
   /**
    * Cloudinary Shortcodes

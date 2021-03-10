@@ -1,13 +1,23 @@
-{%- macro postItem(item, authors, class) -%}
+{% from "author-link.njk" import authorLink %}
+
+{%- macro postItem(item, authors, class, highlight) -%}
   <div class="post-item {{ class }}">
     <div class="post-item__image-wrapper">
       <img class="post-item__image" width="210" height="180" sizes="(min-width: 36em) 13.125rem, 90vw" alt="">
     </div>
     <div class="post-item__text-wrapper">
-      <time class="post-item__date text--accent" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
+      {% if highlight %}
+        <div class="post-item__highlight">{{ highlight }}</div>
+      {% else %}
+        <p class="post-item__date text--accent">
+          <time datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
+          <span>- {{ item.templateContent | readingTime }}. Read</span>
+        </p>
+      {% endif %}
       <h2 class="post-item__title">
         <a href="{{ item.url }}" class="post-item__link">{{ item.data.title }}</a>
       </h2>
+<<<<<<< HEAD
       {% authorLink authors, item.data.author, 'post-item__author' %}
       <ul class="post-item__tags tags">
         {%- if item.data.category -%}
@@ -25,6 +35,27 @@
           </li>
         {%- endfor -%}
       </ul>
+=======
+      {{ authorLink(item.data.author, 'post-item__author') }}
+      {% if not highlight %}
+        <ul class="post-item__tags tags">
+          {%- if item.data.category -%}
+            <li class="tags__tag">
+              <a class="tags__link tags__link--category" href="/categories/{{ item.data.category | slug }}">
+                {{ item.data.category }}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- for tag in item.data.tags -%}
+            <li class="tags__tag">
+              <a class="tags__link" href="/posts/tag/{{ tag | slug }}">
+                {{ tag }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {% endif %}
+>>>>>>> 04f131cb3605b1c07993ce1083b1ea51a5250871
     </div>
   </div>
 {%- endmacro -%}

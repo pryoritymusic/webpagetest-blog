@@ -1,5 +1,9 @@
 {%- extends 'layouts/base.njk' -%}
 {%- from "social-share.njk" import socialShare -%}
+{%- from "author-link.njk" import authorLink -%}
+{%- from "post-author-bio.njk" import postAuthorBio -%}
+{% from "post-item.njk" import postItem %}
+
 {%- set currentUrl = config.url + page.url -%}
 
 {%- block content -%}
@@ -21,7 +25,7 @@
           <p class="h3 post__description">{{ description }}</p>
         {%- endif -%}
         <div class="post__author-share">
-          {% authorLink collections.authors, author, 'post__author' %}
+          {{ authorLink(author, 'post__author') }}
           {{ socialShare(currentUrl, title, 'post__social') }}
         </div>
       </header>
@@ -30,19 +34,41 @@
           {{ content | safe }}
         </div>
       </div>
-      <nav class="post__tags" aria-label="Tags">
-        {%- if tags.length -%}
-          <ul class="post__tags-list">
-          {%- for tag in tags -%}
-            {%- if tag != 'featured' -%}
-              <li class="post__tags-item">
-                <a class="post__tags-link" href="/blog/tagged/{{tag}}/">{{tag}}</a>
-              </li>
-            {%- endif -%}
-          {%- endfor -%}
-          </ul>
-        {%- endif -%}
-      </nav>
+      {{ postAuthorBio(author) }}
+      <div class="post__tags-share">
+        <nav class="post__tags" aria-label="Tags">
+          {%- if tags.length -%}
+            <ul class="tags">
+            {%- for tag in tags -%}
+              {%- if tag != 'featured' -%}
+                <li class="tags__tag">
+                  <a class="tags__link" href="/posts/tag/{{ tag | slug }}/">{{tag}}</a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </nav>
+        {{ socialShare(currentUrl, title, 'post__social') }}
+      </div>
     </article>
+  </div>
+  <div class="page container contaier--lg">
+    <ul class="post-list">
+      {% set posts_retrieved = 0 %}
+      {%- for categoryObj in collections.categoriesPaged -%}
+        {% if categoryObj.category == category and posts_retrieved < 1 %}
+          {% for post in categoryObj.posts %}
+            {% if page.fileSlug != post.data.page.fileSlug and posts_retrieved < 1 %}
+              {% set latest %}Latest in {{ category }}{% endset %}
+              <li class="post-list__item">
+                {{ postItem(post, collections.authors, '', latest) }}
+              </li>
+              {% set posts_retrieved = posts_retrieved + 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {%- endfor -%}
+    </ul>
   </div>
 {%- endblock -%}

@@ -10,7 +10,7 @@ function setClass(element, list) {
 }
 
 module.exports = function (value, outputPath) {
-  if (outputPath.endsWith(".html")) {
+  if (outputPath && outputPath.endsWith(".html")) {
     /**
      * Create the document model
      */
