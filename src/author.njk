@@ -1,5 +1,7 @@
 ---
 layout: base
+renderData:
+  title: '{{ paged.author.data.name }}'
 pagination:
   data: collections.authorsPaged
   size: 1
@@ -7,9 +9,16 @@ pagination:
 permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
 {% from "post-item.njk" import postItem %}
-<div class="tag-page page container container--lg">
-  <h1 class="tag-page__title">{{ paged.author.data.name }}</h1>
-  <div>{{ paged.author.data.bio | markdown | safe }}</div>
+<div class="page container container--lg">
+  <div class="author-header">
+    <div class="author-header__image-wrapper">
+      <img class="author-header__image" width="210" height="210">
+    </div>
+    <div class="author-header__content">
+      <h1 class="author-header__title">{{ paged.author.data.name }}</h1>
+      <div class="author-header__bio">{{ paged.author.data.bio | markdown | safe }}</div>
+    </div>
+  </div>
   <ol class="post-list">
     {%- for post in paged.posts -%}
       <li class="post-list__item">
