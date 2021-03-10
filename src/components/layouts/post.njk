@@ -2,6 +2,8 @@
 {%- from "social-share.njk" import socialShare -%}
 {%- from "author-link.njk" import authorLink -%}
 {%- from "post-author-bio.njk" import postAuthorBio -%}
+{% from "post-item.njk" import postItem %}
+
 {%- set currentUrl = config.url + page.url -%}
 
 {%- block content -%}
@@ -50,5 +52,23 @@
         {{ socialShare(currentUrl, title, 'post__social') }}
       </div>
     </article>
+  </div>
+  <div class="page container contaier--lg">
+    <ul class="post-list">
+      {% set posts_retrieved = 0 %}
+      {%- for categoryObj in collections.categoriesPaged -%}
+        {% if categoryObj.category == category and posts_retrieved < 1 %}
+          {% for post in categoryObj.posts %}
+            {% if page.fileSlug != post.data.page.fileSlug and posts_retrieved < 1 %}
+              {% set latest %}Latest in {{ category }}{% endset %}
+              <li class="post-list__item">
+                {{ postItem(post, collections.authors, '', latest) }}
+              </li>
+              {% set posts_retrieved = posts_retrieved + 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {%- endfor -%}
+    </ul>
   </div>
 {%- endblock -%}

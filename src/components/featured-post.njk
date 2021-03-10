@@ -8,7 +8,7 @@
     <div class="featured-post__text-wrapper">
       <div class="featured-post__date text--accent">
         <time datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>
-        <span>- {{ item.templateContent | readingTime }}</span>
+        <span>- {{ item.templateContent | readingTime }}. Read</span>
       </div>
       <h2 class="featured-post__title">
         <a href="{{ item.url }}" class="featured-post__link">{{ item.data.title }}</a>
