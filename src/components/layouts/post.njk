@@ -42,7 +42,7 @@
             {%- for tag in tags -%}
               {%- if tag != 'featured' -%}
                 <li class="tags__tag">
-                  <a class="tags__link" href="/blog/tagged/{{tag}}/">{{tag}}</a>
+                  <a class="tags__link" href="/posts/tag/{{ tag | slug }}/">{{tag}}</a>
                 </li>
               {%- endif -%}
             {%- endfor -%}
