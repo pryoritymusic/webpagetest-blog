@@ -89,6 +89,22 @@ collections:
         collection: "authors"
         search_fields: ["name"]
         value_field: name
+      - label: "Related Post"
+        name: "related_post"
+        widget: "object"
+        summary: "{{fields.post}}"
+        fields:
+          - label: "Post"
+            name: "post"
+            widget: "relation"
+            collection: "posts"
+            search_fields: ["title"]
+            value_field: "{{ slug }}"
+          - {
+              label: "Accompanying Highlight Text",
+              name: "highlight",
+              widget: "string",
+            }
   - name: "categories" # Used in routes, e.g., /admin/collections/blog
     label: "Categories" # Used in the UI
     identifier_field: name
