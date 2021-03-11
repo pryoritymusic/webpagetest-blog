@@ -8,6 +8,8 @@ tags:
   - Mobile Nodes
 category: Product
 author: Tim Kadlec
+related_post:
+  post: styles
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur felis non justo porta tempus. Pellentesque eu ornare ipsum, vitae semper sem. Nullam hendrerit vestibulum nibh, nec pellentesque nisl bibendum vitae. Aliquam sed mi urna. Maecenas auctor maximus lacus, vitae aliquet diam imperdiet id. Mauris feugiat lectus nec lobortis ornare. Etiam lectus nibh, tempus vel hendrerit eu, lacinia eu purus. In eu lacus eleifend, ullamcorper sapien in, faucibus sapien. Nunc egestas ac metus non scelerisque.

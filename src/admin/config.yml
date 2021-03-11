@@ -59,7 +59,7 @@ collections:
     label: "Posts" # Used in the UI
     folder: "src/posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}"
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -99,7 +99,8 @@ collections:
             widget: "relation"
             collection: "posts"
             search_fields: ["title"]
-            value_field: "{{ slug }}"
+            value_field: "{{slug}}"
+            display_fields: ["title"]
           - {
               label: "Accompanying Highlight Text",
               name: "highlight",
