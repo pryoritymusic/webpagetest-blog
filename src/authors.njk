@@ -7,8 +7,10 @@ title: 'Authors'
   <ol class="author-list">
     {%- for author in collections.authors -%}
       <li class="author-list__item">
-        <img src="" width="210" height="210" />
-        <p class="author-list__name">{{ author.data.name }}</p>
+        <a class="author-list__link" href="/authors/{{ author.data.name | slug }}">
+          <img class="author-list__image" src="" width="210" height="210" alt="" />
+          <p class="author-list__name">{{ author.data.name }}</p>
+        </a>
       </li>
     {%- endfor -%}
   </ol>

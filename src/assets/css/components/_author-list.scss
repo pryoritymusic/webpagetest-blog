@@ -1,7 +1,27 @@
 .author-list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 2.5rem;
   margin: 0;
   margin-top: 2.5rem;
   padding: 0;
   list-style: none;
+}
+
+.author-list__item {
+  text-align: center;
+}
+
+.author-list__link {
+  text-decoration: none;
+}
+
+.author-list__image {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.author-list__name {
+  margin-top: 1rem;
+  font-family: var(--font-accent);
 }

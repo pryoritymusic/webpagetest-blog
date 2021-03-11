@@ -53,16 +53,23 @@
       </div>
     </article>
   </div>
-  <div class="page container contaier--lg">
+  <div class="page container container--lg">
     <ul class="post-list">
+      {%- if related_post -%}
+        {% set post = related_post.post | findBySlug %}
+        <li class="post-list__item">
+          {{ postItem(post, 'post-item--center', related_post.highlight) }}
+        </li>
+      {%- endif -%}
       {% set posts_retrieved = 0 %}
       {%- for categoryObj in collections.categoriesPaged -%}
         {% if categoryObj.category == category and posts_retrieved < 1 %}
           {% for post in categoryObj.posts %}
-            {% if page.fileSlug != post.data.page.fileSlug and posts_retrieved < 1 %}
+            {# Check that it's not the current post, the manual related post #}
+            {% if page.fileSlug != post.data.page.fileSlug and related_post.post != post.data.page.fileSlug and posts_retrieved < 1 %}
               {% set latest %}Latest in {{ category }}{% endset %}
               <li class="post-list__item">
-                {{ postItem(post, collections.authors, '', latest) }}
+                {{ postItem(post, 'post-item--center', latest) }}
               </li>
               {% set posts_retrieved = posts_retrieved + 1 %}
             {% endif %}

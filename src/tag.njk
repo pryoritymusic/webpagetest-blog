@@ -14,7 +14,7 @@ permalink: "/posts/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}{{ paged.
   <ol class="post-list">
     {%- for post in paged.posts -%}
       <li class="post-list__item">
-        {{ postItem(post, collections.authors) }}
+        {{ postItem(post) }}
       </li>
     {%- endfor -%}
   </ol>

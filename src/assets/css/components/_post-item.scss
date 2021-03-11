@@ -45,6 +45,10 @@
 @media (min-width: 36em) {
   .post-item {
     display: flex;
+
+    &--center {
+      align-items: center;
+    }
   }
 
   .post-item__image-wrapper {

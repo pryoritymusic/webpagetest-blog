@@ -22,7 +22,7 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
   <ol class="post-list">
     {%- for post in paged.posts -%}
       <li class="post-list__item">
-        {{ postItem(post, collections.authors) }}
+        {{ postItem(post) }}
       </li>
     {%- endfor -%}
   </ol>

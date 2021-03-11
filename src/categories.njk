@@ -15,11 +15,11 @@ permalink: "/categories/{{ paged.category | slug }}/{% if paged.number > 1 %}{{ 
     {%- for post in paged.posts -%}
       {% if paged.first == true and loop.index == 1 %}
         <li>
-          {{ featuredPost(post, collections.authors) }}
+          {{ featuredPost(post) }}
         </li>
       {% else %}
         <li class="post-list__item">
-          {{ postItem(post, collections.authors) }}
+          {{ postItem(post) }}
         </li>
       {% endif %}
     {%- endfor -%}
