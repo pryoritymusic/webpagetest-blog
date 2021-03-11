@@ -81,8 +81,8 @@ collections:
         name: "category"
         widget: "relation"
         collection: "categories"
-        search_fields: ["title"]
-        value_field: title
+        search_fields: ["name"]
+        value_field: name
       - label: "Author"
         name: "author"
         widget: "relation"
