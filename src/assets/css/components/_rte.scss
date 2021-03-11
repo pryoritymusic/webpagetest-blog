@@ -1,16 +1,16 @@
 .rte {
-  h2 {
-    &:not(:first-child) {
-      margin-top: 3rem;
-    }
-  }
-
+  h2,
   h3,
   h4,
   h5,
   h6 {
+    margin-bottom: 1rem;
     &:not(:first-child) {
       margin-top: 2rem;
     }
+  }
+
+  pre {
+    margin: 2rem auto;
   }
 }

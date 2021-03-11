@@ -7,7 +7,9 @@ author: Test Author
 category: Product
 ---
 
-# h1 Heading 8-)
+# h1 Heading
+
+For accessibility purposes, you should never use this within a post body!
 
 ## h2 Heading
 
@@ -33,11 +35,7 @@ _This is italic text_
 
 ## Blockquotes
 
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
+> A long block quote can be used for emphasis or for a pull quote.
 
 ## Lists
 
@@ -74,8 +72,14 @@ Inline `code`
 Indented code
 
 ```
-npm run start
-
+// in file 'Code/User/snippets/javascript.json'
+{
+  "For Loop": {
+    "prefix": ["for", "for-const"],
+    "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
+    "description": "A for loop."
+  }
+}
 ```
 
 ## Tables

@@ -15,11 +15,30 @@
   color: var(--color-accent-text);
 }
 
-.post__social {
-  margin-top: 1.25rem;
+.post__tags-share {
+  margin-top: 1.5rem;
 }
 
-.post__tags-share {
+.post__heading--anchor {
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.post__heading-anchor {
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.3s opacity ease;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.post__social {
   margin-top: 1.5rem;
 }
 
@@ -47,5 +66,13 @@
 
   .post__tags-share {
     margin-top: 2.5rem;
+  }
+
+  .post {
+    pre {
+      margin-left: -5rem;
+      margin-right: -5rem;
+      width: auto;
+    }
   }
 }
