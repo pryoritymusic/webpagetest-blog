@@ -92,7 +92,7 @@ collections:
       - label: "Related Post"
         name: "related_post"
         widget: "object"
-        summary: "{{fields.post}}"
+        summary: "{{fields.post.title}}"
         fields:
           - label: "Post"
             name: "post"
