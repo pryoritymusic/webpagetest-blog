@@ -1,4 +1,4 @@
 ---
 name: Test Author
-bio: ""
+bio: Test Author Update.
 ---
