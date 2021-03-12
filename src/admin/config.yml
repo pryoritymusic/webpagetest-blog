@@ -76,7 +76,11 @@ collections:
           required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list", allow_add: true }
+      - label: "Tags"
+        name: "tags"
+        widget: "list",
+        fields:
+          - { label: "Tag", name: "text", widget: "string" }
       - label: "Category"
         name: "category"
         widget: "relation"
@@ -93,6 +97,7 @@ collections:
         name: "related_post"
         widget: "object"
         summary: "{{fields.post.title}}"
+        required: false
         fields:
           - label: "Post"
             name: "post"
