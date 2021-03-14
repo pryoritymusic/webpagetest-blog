@@ -151,8 +151,9 @@ collections:
             name: "type"
             widget: "select"
             options: ["Video", "Article"]
-          - label: "Author"
-            name: "author"
+          - { label: "Publish Date", name: "date", widget: "date" }
+          - label: "Picked By"
+            name: "picked_by"
             widget: "relation"
             collection: "authors"
             search_fields: ["name"]
