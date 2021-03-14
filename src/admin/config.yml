@@ -167,4 +167,9 @@ collections:
         file: "src/staff-picks.yaml"
         fields:
           - { label: "Headline", name: "headline", widget: "string" }
-          - { label: "Layout", name: "layout", widget: "string" }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "staff-picks",
+            }
