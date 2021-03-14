@@ -4,6 +4,10 @@
   list-style: none;
 }
 
+.staff-picks__header {
+  padding: 1.5rem 0;
+}
+
 .staff-picks__item {
   & + & {
     margin-top: 2rem;
@@ -11,6 +15,10 @@
 }
 
 @media (min-width: 48em) {
+  .staff-picks__header {
+    padding: 3rem 0;
+  }
+
   .staff-picks__item {
     & + & {
       margin-top: 3rem;
