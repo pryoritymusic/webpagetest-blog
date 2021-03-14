@@ -7,10 +7,18 @@ pagination:
   size: 5
   alias: staffPicks
 ---
-
 {% from "staff-pick.njk" import 'staffPick' with context %}
+{% from "author-link.njk" import authorLink %}
+
 <div class="staff-picks__header container container--sm">
   <h1 class="staff-picks__title">{{ headline }}</h1>
+  <ul class="staff-picks__authors">
+    {%- for author in collections.authorsStaff %}
+      <li class="staff-picks__author">
+        {{ authorLink(author.data.name) }}
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 <ol class="staff-picks__list container container--md">
   {%- for pick in staffPicks -%}

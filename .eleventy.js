@@ -40,6 +40,10 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addCollection("authors", require("./collections/authors"));
   eleventyConfig.addCollection(
+    "authorsStaff",
+    require("./collections/authorsStaff")
+  );
+  eleventyConfig.addCollection(
     "authorsPaged",
     require("./collections/authorsPaged")
   );
