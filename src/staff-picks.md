@@ -1,4 +1,4 @@
 ---
-headline: "The latest in performance from the WPT Team"
-layout: "staff-picks"
+headline: The latest in performance from the WPT Team Test 2
+layout: staff-picks
 ---
