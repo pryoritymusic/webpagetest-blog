@@ -17,17 +17,23 @@
   min-width: 0;
   flex: 1 1 rem-calc(250);
   max-width: rem-calc(250);
-  background-color: var(--color-body-text);
-  color: var(--color-bg);
+  background-color: var(--color-header-input-bg);
+  color: var(--color-body-text);
   border: none;
   font-size: 0.875rem;
 
   &::placeholder {
-    opacity: 1;
-    color: var(--color-bg);
+    opacity: 0.7;
+    color: var(--color-body-text);
   }
 
   &:focus {
     z-index: 1;
+  }
+}
+
+@media (min-width: 48em) {
+  .header-signup__input {
+    min-width: rem-calc(200);
   }
 }

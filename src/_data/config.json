@@ -5,5 +5,8 @@
   "url": "https://blog.webpagetest.org",
   "authorHandle": "",
   "authorName": "",
-  "maxPostsPerPage": 2
+  "maxPostsPerPage": 2,
+  "copy": {
+    "headerSignup": "Performance news in your inbox."
+  }
 }

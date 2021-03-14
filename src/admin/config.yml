@@ -55,6 +55,12 @@ collections:
                   widget: "boolean",
                   required: false,
                 }
+      - label: "Copy"
+        name: "copy"
+        delete: false
+        file: "src/_data/copy.json"
+        fields:
+          - { label: "Header Signup", name: "headerSignup", widget: "string" }
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
     folder: "src/posts" # The path to the folder where the documents are stored
