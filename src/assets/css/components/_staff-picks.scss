@@ -1,0 +1,19 @@
+.staff-picks {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.staff-picks__item {
+  & + & {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .staff-picks__item {
+    & + & {
+      margin-top: 3rem;
+    }
+  }
+}

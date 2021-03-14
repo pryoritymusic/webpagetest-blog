@@ -17,6 +17,7 @@
   border-radius: 50%;
   background-color: var(--color-social-background);
   color: var(--color-social-text);
+  transition: all 0.3s ease;
 
   svg {
     display: block;
@@ -24,5 +25,9 @@
     max-width: 40%;
     max-height: 40%;
     fill: currentColor;
+  }
+
+  &:hover {
+    background-color: var(--color-link-hover);
   }
 }

@@ -1,0 +1,37 @@
+.pick-item {
+  & + & {
+    margin-top: 1.5rem;
+  }
+}
+
+.pick-item__link {
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: var(--color-link-hover);
+  }
+}
+
+.pick-item__title {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: rem-calc(18);
+}
+
+.pick-item__meta {
+  font-size: 0.75rem;
+}
+
+.pick-item__type {
+  display: inline-block;
+  padding: 0 0.25rem;
+  color: var(--color-body-text);
+  border: rem-calc(1) solid currentColor;
+}
+
+.pick-item__author-link {
+  text-decoration-style: dotted;
+}

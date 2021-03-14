@@ -1,0 +1,39 @@
+.staff-pick {
+  padding: 1.25rem 0;
+  border-top: rem-calc(2) solid currentColor;
+}
+
+.staff-pick__social {
+  margin-top: 0.5rem;
+}
+
+.staff-pick__link {
+  text-decoration: none;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.staff-pick__list {
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 36em) {
+
+  .staff-pick__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .staff-pick__social {
+    margin-top: 0;
+  }
+
+  .staff-pick__list {
+    margin-top: 3rem;
+  }
+}

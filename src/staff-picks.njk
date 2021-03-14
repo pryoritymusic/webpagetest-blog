@@ -1,0 +1,17 @@
+---
+title: Staff Picks
+layout: base
+pagination:
+  data: collections.staffPicks
+  size: 5
+  alias: staffPicks
+---
+
+{% from "staff-pick.njk" import 'staffPick' with context %}
+<ol class="staff-picks container container--md">
+  {%- for pick in staffPicks -%}
+    <li class="staff-picks__item">
+      {{ staffPick(pick, true)}}
+    </li>
+  {%- endfor -%}
+</ol>

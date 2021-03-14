@@ -24,15 +24,17 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
       {{ socialShare(currentUrl, title, 'author-header__social') }}
     </div>
   </div>
-  <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
-  <ol class="post-list">
-    {%- for post in paged.posts -%}
-      <li class="post-list__item">
-        {{ postItem(post) }}
-      </li>
-    {%- endfor -%}
-  </ol>
-  {% if (paged.first != true) or (paged.last != true) %}
-    {% include "pagination.njk" %}
+  {% if paged.posts %}
+    <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
+    <ol class="post-list">
+      {%- for post in paged.posts -%}
+        <li class="post-list__item">
+          {{ postItem(post) }}
+        </li>
+      {%- endfor -%}
+    </ol>
+    {% if (paged.first != true) or (paged.last != true) %}
+      {% include "pagination.njk" %}
+    {% endif %}
   {% endif %}
 </div>

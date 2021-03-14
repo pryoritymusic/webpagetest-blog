@@ -11,6 +11,9 @@
   --color-bg: var(--color-white);
   --color-image-fallback: var(--color-light-gray);
   --color-link-bg: var(--color-yellow);
+  --color-link-hover: var(
+    --color-light-blue
+  ); // Warning, only 3.87 contrast ratio, needs to be used for large/bold text or icons only
   --color-hr: var(--color-light-gray);
   --color-table-border: var(--color-light-gray);
 

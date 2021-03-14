@@ -141,8 +141,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}"
     fields: # The fields for each document, usually in front matter
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - label: "Pick"
-        name: "pick"
+      - label: "Picks"
+        name: "picks"
         widget: "list"
         fields:
           - { label: "Title", name: "title", widget: "string" }
@@ -158,3 +158,11 @@ collections:
             collection: "authors"
             search_fields: ["name"]
             value_field: name
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Staff Picks"
+        name: "staff-picks"
+        file: "src/staff-picks.njk"
+        fields:
+          - { label: Headline, name: headline, widget: string }

@@ -8,7 +8,7 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const fs = require("fs");
 const util = require("util");
 const readingTime = require("eleventy-plugin-reading-time");
-const { findBySlug } = require('./utils/findBySlug');
+const { findBySlug } = require("./utils/findBySlug");
 
 /**
  * Import site configuration
@@ -38,11 +38,18 @@ module.exports = function (eleventyConfig) {
     "categoriesPaged",
     require("./collections/categoriesPaged")
   );
-  eleventyConfig.addCollection("authors", require('./collections/authors'));
-  eleventyConfig.addCollection("authorsPaged", require('./collections/authorsPaged'));
-  eleventyConfig.addCollection("tagList", require('./collections/tagList'));
-  eleventyConfig.addCollection("tagsPaged", require('./collections/tagsPaged'));
-  eleventyConfig.addCollection("memoized", require('./collections/memoized'));
+  eleventyConfig.addCollection("authors", require("./collections/authors"));
+  eleventyConfig.addCollection(
+    "authorsPaged",
+    require("./collections/authorsPaged")
+  );
+  eleventyConfig.addCollection("tagList", require("./collections/tagList"));
+  eleventyConfig.addCollection("tagsPaged", require("./collections/tagsPaged"));
+  eleventyConfig.addCollection(
+    "staffPicks",
+    require("./collections/staffPicks")
+  );
+  eleventyConfig.addCollection("memoized", require("./collections/memoized"));
 
   eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
     arr.slice(0, limit)
@@ -58,6 +65,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("monthDayYear", function (date) {
     return dayjs(date).format("MMM. DD, YYYY");
   });
+
+  eleventyConfig.addFilter("fullMonthDayYear", function (date) {
+    return dayjs(date).format("MMMM D, YYYY");
+  });
   // robot friendly date format for crawlers
   eleventyConfig.addFilter("htmlDate", function (date) {
     return dayjs(date).format();
@@ -67,10 +78,9 @@ module.exports = function (eleventyConfig) {
     return util.inspect(value);
   });
 
-  eleventyConfig.addFilter('findBySlug', function (slug) {
+  eleventyConfig.addFilter("findBySlug", function (slug) {
     return findBySlug(slug);
-  })
-
+  });
 
   const mdRender = new markdownIt({});
   eleventyConfig.addFilter("markdown", function (value) {
