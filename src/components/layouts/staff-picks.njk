@@ -9,7 +9,10 @@ pagination:
 ---
 
 {% from "staff-pick.njk" import 'staffPick' with context %}
-<ol class="staff-picks container container--md">
+<div class="staff-picks__header container container--sm">
+  <h1>{{ headline }}</h1>
+</div>
+<ol class="staff-picks__list container container--md">
   {%- for pick in staffPicks -%}
     <li class="staff-picks__item">
       {{ staffPick(pick, true)}}

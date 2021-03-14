@@ -164,7 +164,7 @@ collections:
     files:
       - label: "Staff Picks"
         name: "staff-picks"
-        file: "src/staff-picks.yaml"
+        file: "src/staff-picks.md"
         fields:
           - { label: "Headline", name: "headline", widget: "string" }
           - {
