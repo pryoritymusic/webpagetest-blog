@@ -78,9 +78,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - label: "Tags"
         name: "tags"
-        widget: "list",
-        fields:
-          - { label: "Tag", name: "text", widget: "string" }
+        widget: "list"
       - label: "Category"
         name: "category"
         widget: "relation"
@@ -136,3 +134,26 @@ collections:
           hint: "Without the @, eg. Catchpoint",
           required: false,
         }
+  - name: "staff-picks" # Used in routes, e.g., /admin/collections/blog
+    label: "Staff Picks" # Used in the UI
+    folder: "src/staff-picks" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}"
+    fields: # The fields for each document, usually in front matter
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Pick"
+        name: "pick"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Url", name: "url", widget: "string" }
+          - label: "Type"
+            name: "type"
+            widget: "select"
+            options: ["Video", "Article"]
+          - label: "Author"
+            name: "author"
+            widget: "relation"
+            collection: "authors"
+            search_fields: ["name"]
+            value_field: name
