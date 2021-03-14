@@ -8,17 +8,23 @@ pagination:
   alias: paged
 permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
-{% from "post-item.njk" import postItem %}
+{%- from "post-item.njk" import postItem  %}
+{%- from "social-share.njk" import socialShare -%}
+
+{%- set currentUrl = config.url + page.url -%}
 <div class="page container container--lg">
   <div class="author-header">
     <div class="author-header__image-wrapper">
       <img class="author-header__image" width="210" height="210">
     </div>
     <div class="author-header__content">
+      <p class="author-header__accent text--accent">Author</p>
       <h1 class="author-header__title">{{ paged.author.data.name }}</h1>
       <div class="author-header__bio">{{ paged.author.data.bio | markdown | safe }}</div>
+      {{ socialShare(currentUrl, title, 'author-header__social') }}
     </div>
   </div>
+  <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
   <ol class="post-list">
     {%- for post in paged.posts -%}
       <li class="post-list__item">

@@ -1,5 +1,5 @@
 .post-list {
-  --border-style: 0.0625rem solid var(--color-post-border);
+  --border-style: .125rem solid var(--color-post-border);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -8,4 +8,15 @@
 
 .post-list__item {
   border-top: var(--border-style);
+}
+
+.post-list__title {
+  margin-top: 4rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 62em) {
+  .post-list__title {
+    margin-top: 6rem;
+  }
 }
