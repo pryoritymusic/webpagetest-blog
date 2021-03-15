@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
    * https://github.com/11ty/eleventy/issues/1299
    */
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
-  eleventyConfig.addPassthroughCopy({ static: "static" });
+  eleventyConfig.addPassthroughCopy({ static: "/" });
   eleventyConfig.addPassthroughCopy("src/admin");
 
   /**
