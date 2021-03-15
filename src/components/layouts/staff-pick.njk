@@ -1,0 +1,40 @@
+---
+layout: 'base'
+---
+{%- from "staff-pick.njk" import 'staffPick' with context -%}
+{%- from "social-share.njk" import socialShare -%}
+
+<div class="page container container--md">
+  <div>
+    <div class="staff-pick__header">
+      <h2 class="staff-pick__title">
+        {{ date | fullMonthDayYear }}
+      </h2>
+      {{ socialShare(pickUrl, picTitle, 'staff-pick__social') }}
+    </div>
+    <ul class="staff-pick__list">
+      {% for item in picks %}
+        <li class="pick-item">
+          <h3 class="pick-item__title">
+            <a class="pick-item__link" href="{{ item.url }}">{{ item.title }}</a>
+          </h3>
+          <p class="pick-item__meta text--accent">
+            <span class="pick-item__type">
+              {{ item.type }}
+            </span>
+            {{ item.date | monthDayYear }}
+            from
+            {%- set authorObj = item.picked_by | slug | findBySlug %}
+            {% if authorObj %}
+              <a class="pick-item__author-link" href="/authors/{{ authorObj.data.page.fileSlug }}">
+            {% endif %}
+            {{ item.picked_by }}
+            {% if authorObj %}
+              </a>
+            {% endif %}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
