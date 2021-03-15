@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "text": "RSS Feed",
+      "url": "/feed.xml",
+      "external": false
+    },
+    {
+      "text": "Contact Us",
+      "url": "#",
+      "external": false
+    },
+    {
+      "text": "Become an Author",
+      "url": "#",
+      "external": false
+    }
+  ]
+}

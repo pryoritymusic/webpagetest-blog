@@ -55,12 +55,30 @@ collections:
                   widget: "boolean",
                   required: false,
                 }
+      - label: "Footer Navigation"
+        name: "footer-nav"
+        delete: false
+        file: "src/_data/footerNavigation.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Url", name: "url", widget: "string" }
+              - {
+                  label: "Is url to external site?",
+                  name: "external",
+                  widget: "boolean",
+                  required: false,
+                }
       - label: "Copy"
         name: "copy"
         delete: false
         file: "src/_data/copy.json"
         fields:
           - { label: "Header Signup", name: "headerSignup", widget: "string" }
+          - { label: "Footer Signup", name: "footerSignup", widget: "string" }
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
     folder: "src/posts" # The path to the folder where the documents are stored

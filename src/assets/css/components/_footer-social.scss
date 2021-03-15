@@ -1,0 +1,19 @@
+.footer-social {
+  margin: 0 0 0 -1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-social__item {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.footer-social__link {
+  color: currentColor;
+
+  svg {
+    width: 1.25rem;
+    fill: currentColor;
+  }
+}

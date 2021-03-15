@@ -113,6 +113,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
 
   /**
+   * General Shortcode
+   */
+  const now = new Date();
+  eleventyConfig.addShortcode("copyrightYear", function () {
+    if (now.getFullYear() === 2021) {
+      return `${now.getFullYear()}`;
+    } else {
+      return `2021 - ${now.getFullYear()}`;
+    }
+  });
+
+  /**
    * Cloudinary Shortcodes
    */
   eleventyConfig.cloudinaryCloudName = "nicchan";

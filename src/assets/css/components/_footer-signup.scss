@@ -1,0 +1,25 @@
+.footer-signup {
+  margin-top: 2.5rem;
+}
+
+.footer-signup__text {
+  font-weight: 700;
+}
+
+.footer-signup__input-group {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.footer-signup__input {
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: rem-calc(400);
+}
+
+@media (min-width: 48em) {
+  .footer-signup {
+    margin-top: 0;
+    flex: 0 1 50%;
+  }
+}
