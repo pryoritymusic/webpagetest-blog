@@ -1,0 +1,14 @@
+{%- macro siteLogo(className, svgColor) -%}
+
+  <div class="site-logo {{ className }}">
+    <div class="site-logo__main">
+      WebPage Test Bl<svg class="site-logo__svg" style="color: {{ svgColor }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 80">
+        <path fill="currentColor" d="M35.1 34.4c-2.4 2.3-2.4 6.1 0 8.5 3 3.1 14.8 6.4 14.8 6.4s-3.3-11.8-6.3-14.9c-2.4-2.3-6.2-2.3-8.5 0z"/>
+        <path fill="currentColor" fill-rule="evenodd" d="M82 40c0 22.1-17.9 40-40 40S2 62.1 2 40 19.9 0 42 0s40 17.9 40 40zm-6.1 2c-.4 7.5-3.3 14.4-7.9 19.8L63.2 57c-1.2-1.2-3.1-1.2-4.2 0-1.2 1.2-1.2 3.1 0 4.2l4.8 4.8c-5.9 5-13.5 8-21.8 8s-15.9-3-21.8-7.9l4.8-4.8c1.2-1.2 1.2-3.1 0-4.2-1.2-1.2-3.1-1.2-4.2 0L16 61.9C11.4 56.4 8.5 49.5 8.1 42H15c1.7 0 3-1.3 3-3s-1.3-3-3-3H8.2c.8-6.7 3.6-12.9 7.7-17.8l4.8 4.8c1.2 1.2 3.1 1.2 4.2 0 1.2-1.2 1.2-3.1 0-4.2L20.1 14C25.4 9.6 31.9 6.8 39 6.1V13c0 1.7 1.3 3 3 3s3-1.3 3-3V6.1c7.1.6 13.6 3.5 18.8 7.8L59 18.7c-1.2 1.2-1.2 3.1 0 4.2 1.2 1.2 3.1 1.2 4.2 0l4.8-4.8c4.1 4.9 6.9 11.1 7.7 17.8H69c-1.7 0-3 1.3-3 3s1.3 3 3 3h6.9z" clip-rule="evenodd"/>
+      </svg>g
+    </div>
+    <div class="site-logo__byline">
+      by Catchpoint
+    </div>
+  </div>
+{% endmacro %}

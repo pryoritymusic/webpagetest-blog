@@ -1,3 +1,5 @@
+{% from "site-logo.njk" import siteLogo %}
+
 <header class="header">
   <div class="header__main container container--lg">
     {% set tag = 'a' %}
@@ -5,7 +7,7 @@
       {% set tag = 'h1' %}
     {% endif %}
     <{{ tag }} class="header__brand" {% if tag == 'a' %}href="/"{% endif %}>
-      The WPT Blog
+      {{ siteLogo('header__logo', 'var(--color-light-blue)') }}
     </{{ tag }}>
     <div class="header__signup">
       {% include "header-signup.njk" %}

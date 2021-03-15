@@ -1,8 +1,10 @@
+{% from "site-logo.njk" import siteLogo %}
+
 <footer class="footer" id="footer">
   <div class="container container--lg">
     <div class="footer__main">
       <nav class="footer__nav" aria-label="Footer">
-        <p>Logo</p>
+        <p>{{ siteLogo('footer__site-logo', 'var(--color-bg)') }}</p>
         <ul class="footer__links">
           {%- for item in footerNavigation.items -%}
             <li class="footer__nav-item">

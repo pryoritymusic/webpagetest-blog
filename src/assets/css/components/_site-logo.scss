@@ -1,0 +1,19 @@
+.site-logo {
+  display: inline-block;
+  text-align: left;
+  font-size: rem-calc(21);
+}
+
+.site-logo__main {
+  font-weight: 700;
+}
+
+.site-logo__svg {
+  display: inline-block;
+  width: 1.25em;
+  vertical-align: sub;
+}
+
+.site-logo__byline {
+  font-size: 0.75rem;
+}
