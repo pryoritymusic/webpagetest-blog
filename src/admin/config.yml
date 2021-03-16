@@ -3,6 +3,12 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "static/images/uploads"
 public_folder: "static/images/uploads"
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: psaulitis
+    api_key: 376718663815686
+    output_filename_only: true
 collections:
   - label: "Globals"
     name: "globals"

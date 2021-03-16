@@ -127,7 +127,7 @@ module.exports = function (eleventyConfig) {
   /**
    * Cloudinary Shortcodes
    */
-  eleventyConfig.cloudinaryCloudName = "nicchan";
+  eleventyConfig.cloudinaryCloudName = "psaulitis";
   eleventyConfig.addShortcode("cloudinaryImage", function (
     path,
     alt,
