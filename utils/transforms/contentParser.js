@@ -68,7 +68,7 @@ module.exports = function (value, outputPath) {
     const images = [...document.querySelectorAll(".rte img")];
     if (images.length) {
       images.forEach((image) => {
-        const src = image.getAttribute("src");
+        let src = image.getAttribute("src");
         const alt = image.getAttribute("alt");
         const path = getPathFromUrl(src);
         const multipliers = [0.25, 0.5, 0.75, 1, 1.1, 1.25, 1.5, 1.75, 2];
@@ -78,31 +78,36 @@ module.exports = function (value, outputPath) {
         let sizes = "(min-width: 36em) 31.25rem, 90vw";
         let className = "";
 
+        // The image is wide!
         if (rawTitle && rawTitle.includes("Wide:")) {
           width = 900;
           sizes = "(min-width: 36em) 31.25rem, 90vw";
           className = "post__image--wide";
         }
 
+        // Image is a cloudinary image, build this up, otherwise let this pass through untransformed
         let srcSetArray = [];
-        multipliers.forEach((multiplier) => {
-          let currentWidth = Math.round(multiplier * width);
-          srcSetArray.push(
-            `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${currentWidth}/${path} ${currentWidth}w`
-          );
-        });
+        if (path) {
+          multipliers.forEach((multiplier) => {
+            let currentWidth = Math.round(multiplier * width);
+            srcSetArray.push(
+              `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${currentWidth}/${path} ${currentWidth}w`
+            );
+          });
+          src = `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${width}/${path}`;
+        }
         let newImage = document.createElement("img");
         newImage.setAttribute("class", className);
-        newImage.setAttribute(
-          "src",
-          `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${width}/${path}`
-        );
-        newImage.setAttribute("srcset", srcSetArray.join(", "));
+        newImage.setAttribute("src", src);
+        if (srcSetArray.length > 0) {
+          newImage.setAttribute("srcset", srcSetArray.join(", "));
+        }
         newImage.setAttribute("alt", alt);
         newImage.setAttribute("loading", "lazy");
         newImage.setAttribute("sizes", sizes);
         let markup = newImage;
 
+        // Image has a caption, wrap in figure
         if (title) {
           let figure = document.createElement("figure");
           let figcaption = document.createElement("figcaption");
