@@ -10,7 +10,6 @@ media_library:
     api_key: 376718663815686
     default_transformations:
       - fetch_format: auto
-        width: 1200
         quality: auto
 collections:
   - label: "Globals"
@@ -101,7 +100,6 @@ collections:
           name: "featured_image",
           widget: "image",
           required: false,
-          media_library: { name: cloudinary, output_filename_only: true },
         }
       - {
           label: "Featured Image Caption",
@@ -177,9 +175,6 @@ collections:
         name: "image"
         widget: "image"
         required: false
-        media_library:
-          name: cloudinary
-          output_filename_only: true
       - { label: "Bio", name: "bio", widget: "markdown", required: false }
       - {
           label: "Twitter Handle",
