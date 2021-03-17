@@ -30,14 +30,7 @@
             </span>
             {{ item.date | monthDayYear }}
             from
-            {%- set authorObj = item.picked_by | slug | findBySlug %}
-            {% if authorObj %}
-              <a class="pick-item__author-link" href="/authors/{{ authorObj.data.page.fileSlug }}">
-            {% endif %}
-            {{ item.picked_by }}
-            {% if authorObj %}
-              </a>
-            {% endif %}
+            <span>{{ item.author }}</span>
           </p>
         </li>
       {% endfor %}
