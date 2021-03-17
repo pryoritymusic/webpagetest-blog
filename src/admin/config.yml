@@ -8,7 +8,10 @@ media_library:
   config:
     cloud_name: psaulitis
     api_key: 376718663815686
-    output_filename_only: true
+    default_transformations:
+      - fetch_format: auto
+        width: 1200
+        quality: auto
 collections:
   - label: "Globals"
     name: "globals"
@@ -98,6 +101,7 @@ collections:
           name: "featured_image",
           widget: "image",
           required: false,
+          media_library: { name: cloudinary, output_filename_only: true },
         }
       - {
           label: "Featured Image Caption",
@@ -169,7 +173,13 @@ collections:
           widget: "boolean",
           hint: "Checking the box will include the author as a Staff Picks editor",
         }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+        media_library:
+          name: cloudinary
+          output_filename_only: true
       - { label: "Bio", name: "bio", widget: "markdown", required: false }
       - {
           label: "Twitter Handle",
