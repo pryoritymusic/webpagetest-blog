@@ -105,7 +105,15 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        media_library:
+          config:
+            default_transformations:
+              - fetch_format: auto
+                width: 1200
+                quality: auto
       - label: "Tags"
         name: "tags"
         widget: "list"
@@ -189,12 +197,9 @@ collections:
             widget: "select"
             options: ["Video", "Article"]
           - { label: "Publish Date", name: "date", widget: "date" }
-          - label: "Picked By"
-            name: "picked_by"
-            widget: "relation"
-            collection: "authors"
-            search_fields: ["name"]
-            value_field: name
+          - label: "Author"
+            name: "author"
+            widget: "string"
   - label: "Pages"
     name: "pages"
     files:
