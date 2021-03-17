@@ -70,6 +70,14 @@
     // hack: magic number dependent on container width
     margin-left: rem-calc(-50);
   }
+
+  .post__image--wide {
+    position: relative;
+    left: 50%;
+    max-width: rem-calc(900);
+    width: 95vw;
+    transform: translateX(-50%);
+  }
 }
 
 @media (min-width: 48em) {

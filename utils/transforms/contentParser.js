@@ -1,7 +1,8 @@
 const jsdom = require("@tbranyen/jsdom");
 const { JSDOM } = jsdom;
 const slugify = require("slugify");
-const eleventyConfig = require("../../src/_data/config.json");
+const getPathFromUrl = require("../getPathFromUrl.js");
+const config = require("../../src/_data/config.json");
 
 function setClass(element, list) {
   if (list) {
@@ -44,6 +45,7 @@ module.exports = function (value, outputPath) {
         heading.prepend(anchor);
       });
     }
+
     /**
      * Get all the iframes inside the article
      * and wrap them inside a class
@@ -55,6 +57,63 @@ module.exports = function (value, outputPath) {
         embed.setAttribute("loading", "lazy");
         wrapper.appendChild(embed.cloneNode(true));
         embed.replaceWith(wrapper);
+      });
+    }
+
+    /**
+     * Get all the images inside the article,
+     * apply cloudinary transforms for perf,
+     * optionally display as figure if caption provided via title attribute.
+     */
+    const images = [...document.querySelectorAll(".rte img")];
+    if (images.length) {
+      images.forEach((image) => {
+        const src = image.getAttribute("src");
+        const alt = image.getAttribute("alt");
+        const path = getPathFromUrl(src);
+        const multipliers = [0.25, 0.5, 0.75, 1, 1.1, 1.25, 1.5, 1.75, 2];
+        let rawTitle = image.getAttribute("title");
+        let title = rawTitle ? rawTitle.replace("Wide:", "").trim() : null;
+        let width = 500;
+        let sizes = "(min-width: 36em) 31.25rem, 90vw";
+        let className = "";
+
+        if (rawTitle && rawTitle.includes("Wide:")) {
+          width = 900;
+          sizes = "(min-width: 36em) 31.25rem, 90vw";
+          className = "post__image--wide";
+        }
+
+        let srcSetArray = [];
+        multipliers.forEach((multiplier) => {
+          let currentWidth = Math.round(multiplier * width);
+          srcSetArray.push(
+            `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${currentWidth}/${path} ${currentWidth}w`
+          );
+        });
+        let newImage = document.createElement("img");
+        newImage.setAttribute("class", className);
+        newImage.setAttribute(
+          "src",
+          `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${width}/${path}`
+        );
+        newImage.setAttribute("srcset", srcSetArray.join(", "));
+        newImage.setAttribute("alt", alt);
+        newImage.setAttribute("loading", "lazy");
+        newImage.setAttribute("sizes", sizes);
+        let markup = newImage;
+
+        if (title) {
+          let figure = document.createElement("figure");
+          let figcaption = document.createElement("figcaption");
+          figure.setAttribute("class", className);
+          figcaption.innerHTML = title;
+          figure.appendChild(newImage);
+          figure.appendChild(figcaption);
+          markup = figure;
+        }
+
+        image.parentNode.replaceWith(markup);
       });
     }
 

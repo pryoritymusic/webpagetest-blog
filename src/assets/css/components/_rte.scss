@@ -1,4 +1,5 @@
 .rte {
+  --image-margin: 2.5rem;
   h2,
   h3,
   h4,
@@ -12,5 +13,33 @@
 
   pre {
     margin: 2rem auto;
+  }
+
+  figure {
+    margin-top: var(--image-margin);
+    margin-bottom: var(--image-margin);
+    margin-left: 0;
+    margin-right: 0;
+
+    img {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    display: block;
+    margin-top: var(--image-margin);
+    margin-bottom: var(--image-margin);
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-accent-text);
+  }
+
+  @media (min-width: 62em) {
+    --image-margin: 4rem;
   }
 }
