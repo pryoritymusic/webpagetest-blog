@@ -2,9 +2,11 @@
 
 {%- macro postItem(item, class, highlight) -%}
   <div class="post-item {{ class }}">
-    <div class="post-item__image-wrapper">
-      <img class="post-item__image" width="210" height="180" sizes="(min-width: 36em) 13.125rem, 90vw" alt="">
-    </div>
+    {% if item.data.featured_image != blank %}
+      <div class="post-item__image-wrapper">
+        {% cloudinaryImage item.data.featured_image, item.data.featured_image_caption,  240, 192, "(min-width: 36em) 15rem, 90vw", "lazy", "post-item__image" %}
+      </div>
+    {% endif %}
     <div class="post-item__text-wrapper">
       {% if highlight %}
         <div class="post-item__highlight">{{ highlight }}</div>

@@ -2,9 +2,11 @@
 
 {%- macro featuredPost(item) -%}
   <div class="featured-post">
-    <div class="featured-post__image-wrapper">
-      <img class="featured-post__image" width="495" height="400" sizes="(min-width: 62em) 30.938rem,(min-width: 36em) calc(45vw), 90vw" alt="">
-    </div>
+    {% if item.data.featured_image != blank %}
+      <div class="featured-post__image-wrapper">
+        {% cloudinaryImage item.data.featured_image, item.data.featured_image_caption,  495, 396, "(min-width: 62em) 30.938rem,(min-width: 36em) 45vw, 90vw", "eager", "featured-post__image" %}
+      </div>
+    {% endif %}
     <div class="featured-post__text-wrapper">
       <div class="featured-post__date text--accent">
         <time datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthDayYear }}</time>

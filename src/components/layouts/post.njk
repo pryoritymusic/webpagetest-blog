@@ -29,6 +29,12 @@
           {{ socialShare(currentUrl, title, 'post__social') }}
         </div>
       </header>
+      {% if featured_image != blank %}
+        <figure class="post__figure">
+          {% cloudinaryImage featured_image, featured_image_caption, 600, 480, "(min-width: 36em) 15rem, 90vw", "eager", "post__figure-image" %}
+          <figcaption class="post__figcaption" aria-hidden="true">{{ featured_image_caption }}</figcaption>
+        </figure>
+      {% endif %}
       <div class="post__layout">
         <div class="post__content rte">
           {{ content | safe }}

@@ -1,5 +1,6 @@
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
+const getPathFromUrl = require("./utils/getPathFromUrl.js");
 const markdownIt = require("markdown-it");
 const contentParser = require("./utils/transforms/contentParser.js");
 const dayjs = require("dayjs");
@@ -13,6 +14,7 @@ const { findBySlug } = require("./utils/findBySlug");
 /**
  * Import site configuration
  */
+const config = require("./src/_data/config.json");
 const pathConfig = require("./src/_data/paths.json");
 
 module.exports = function (eleventyConfig) {
@@ -127,18 +129,17 @@ module.exports = function (eleventyConfig) {
   /**
    * Cloudinary Shortcodes
    */
-  eleventyConfig.cloudinaryCloudName = "psaulitis";
   eleventyConfig.addShortcode("cloudinaryImage", function (
-    path,
+    url,
     alt,
     width,
     height,
     sizes,
     loading,
     className,
-    transforms,
     attributes
   ) {
+    const path = getPathFromUrl(url);
     const multipliers = [
       0.25,
       0.35,
@@ -156,16 +157,15 @@ module.exports = function (eleventyConfig) {
     let srcSetArray = [];
     multipliers.forEach((multiplier) => {
       let currentWidth = Math.round(multiplier * width);
+      let currentHeight = Math.round(multiplier * height);
       srcSetArray.push(
-        `https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,w_${currentWidth}/${path} ${currentWidth}w`
+        `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,c_fill,w_${currentWidth},h_${currentHeight}/${path} ${currentWidth}w`
       );
     });
     return `<img ${className ? 'class="' + className + '"' : ""}
         src="https://res.cloudinary.com/${
-          eleventyConfig.cloudinaryCloudName
-        }/image/upload/f_auto,q_auto,c_limit${
-      transforms ? "," + transforms : ""
-    }/${path}"
+          config.cloudinaryName
+        }/image/upload/f_auto,q_auto,c_fill,w_${width},h_${height}/${path}"
         srcset="${srcSetArray.join(", ")}"
         alt="${alt}"
         ${loading ? "loading='" + loading + "'" : ""}

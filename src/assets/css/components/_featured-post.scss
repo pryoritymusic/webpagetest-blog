@@ -42,10 +42,7 @@
     max-width: rem-calc(495);
     flex: 0 0 50%;
     margin-bottom: 0;
-  }
-
-  .featured-post__text-wrapper {
-    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
   .featured-post__title {
@@ -56,10 +53,7 @@
 @media (min-width: 62em) {
   .featured-post__image-wrapper {
     flex-basis: 60%;
-  }
-
-  .featured-post__text-wrapper {
-    margin-left: 4rem;
+    margin-right: 4rem;
   }
 
   .featured-post__title {

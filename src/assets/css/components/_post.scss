@@ -42,6 +42,15 @@
   margin-top: 1.5rem;
 }
 
+.post__figure {
+  margin: 3rem auto;
+}
+
+.post__figcaption {
+  font-size: 0.875rem;
+  color: var(--color-accent-text);
+}
+
 @media (min-width: 36em) {
   .post__author-share,
   .post__tags-share {
@@ -52,6 +61,14 @@
 
   .post__social {
     margin-top: 0;
+  }
+}
+
+@media (min-width: 40em) {
+  .post__figure {
+    width: rem-calc(600);
+    // hack: magic number dependent on container width
+    margin-left: rem-calc(-50);
   }
 }
 
