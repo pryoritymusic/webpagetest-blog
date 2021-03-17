@@ -14,9 +14,11 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
 {%- set currentUrl = config.url + page.url -%}
 <div class="page container container--lg">
   <div class="author-header">
-    <div class="author-header__image-wrapper">
-      <img class="author-header__image" width="210" height="210">
-    </div>
+    {% if paged.author.data.image %}
+      <div class="author-header__image-wrapper">
+        {% cloudinaryImage paged.author.data.image, "", 210,  210, "(min-width:48em) 13.125rem, 10rem", "lazy", "author-header__image" %}
+      </div>
+    {% endif %}
     <div class="author-header__content">
       <p class="author-header__accent text--accent">Author</p>
       <h1 class="author-header__title">{{ paged.author.data.name }}</h1>

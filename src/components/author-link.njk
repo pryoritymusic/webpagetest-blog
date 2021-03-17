@@ -2,7 +2,9 @@
   {% set author = authorName | slug | findBySlug %}
   {% if author %}
     <a class="author {{ className }}" href="/authors/{{ author.data.page.fileSlug }}">
-      <img class="author__image" width="40" height="40">
+      {% if author.data.image %}
+        {% cloudinaryImage author.data.image, "", 80, 80, "5rem", "lazy", "author__image" %}
+      {% endif %}
       <div class="author__text">
         {{ author.data.name }}
       </div>

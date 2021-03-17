@@ -8,7 +8,13 @@ title: 'Authors'
     {%- for author in collections.authors -%}
       <li class="author-list__item">
         <a class="author-list__link" href="/authors/{{ author.data.name | slug }}">
-          <img class="author-list__image" src="" width="210" height="210" alt="" />
+          {%- if author.data.image -%}
+            {%- set loading = 'eager' -%}
+            {%- if loop.index > 5 -%}
+              {%- set loading = 'lazy' -%}
+            {%- endif -%}
+            {% cloudinaryImage author.data.image, "", 210,  210, "13.125rem", loading, "author-list__image" %}
+          {%- endif -%}
           <p class="author-list__name">{{ author.data.name }}</p>
         </a>
       </li>

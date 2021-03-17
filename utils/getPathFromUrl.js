@@ -1,5 +1,8 @@
 module.exports = function (url) {
-  const expression = /(\/v(\d+)\/)(.+)/;
-  const urlArray = url.match(expression);
-  return urlArray.pop();
+  if (url) {
+    const expression = /(\/v(\d+)\/)(.+)/;
+    const urlArray = url.match(expression);
+    return urlArray.pop();
+  }
+  return "";
 };
