@@ -8,9 +8,6 @@ media_library:
   config:
     cloud_name: psaulitis
     api_key: 376718663815686
-    default_transformations:
-      - fetch_format: auto
-        quality: auto
 collections:
   - label: "Globals"
     name: "globals"
