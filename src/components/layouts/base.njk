@@ -2,14 +2,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ config.url }}/feed.xml"/>
-    {% include "global/meta.njk" %}
-    <link rel="icon" href="/favicon.ico">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    {% block head %}{{ head | safe }}{% endblock %}
+    {%- set pageTitle = config.name -%}
+    {%- if renderData.title -%}
+      {%- set pageTitle = renderData.title + ' - ' + config.name -%}
+    {%- elif title -%}
+      {%- set pageTitle = title + ' - ' + config.name -%}
+    {%- endif -%}
+
+    <title>{{ pageTitle }}</title>
+    <meta property="og:title" content="{{ pageTitle }}" />
+
+    <link rel="preconnect" href="https://res.cloudinary.com" />
     <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>
+    {% block head %}{{ head | safe }}{% endblock %}
+
+    {% include "global/meta.njk" %}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ config.url }}/feed.xml"/>
+    <meta name="theme-color" content="#ffd82f">
   </head>
   <body data-js-enabled="false">
     {% if hideNav != true %}
