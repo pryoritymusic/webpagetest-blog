@@ -1,17 +1,13 @@
 ---
 title: Automatic WebPageTest Results for Every Docs Deploy
 date: 2021-03-24T14:39:43.262Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1616597869/auto-wpt-deploy-example.png
 category: How We Built
 author: Tim Kadlec
 related_post:
   post: how-to-use
   highlight: Placeholder
 ---
-# How we built it: Auto WebPageTest Results for Every Deploy
-
-Status: In Progress
-Type: Blog Post
-
 You may have noticed that the WebPageTest documentation got a facelift. The docs used to be served directly from [their GitHub repo](https://github.com/WPO-Foundation/webpagetest) without any design on top of it. For the new version, we're still using GitHub to house the source (and make it easy for folks to contribute to the documentation if they want), but we're now using the wonderful [Eleventy](https://www.11ty.dev/) to generate a static site, and [Netlify](https://www.netlify.com/) to handle the deployment and hosting.
 
 Naturally when you're building out the documentation for a tool like WebPageTest, you want to make sure things are fast. The choice of tech stack give us a very good start there. The static site just makes sense for something like documentation and also means the server doesn't have any complex queries or processes to run before responding to requests. Eleventy defaults to shipping no client-side JavaScript whatsoever, giving us a great performance baseline on the browser as well.
@@ -53,14 +49,13 @@ exports.handler = function (event, context) {
     }
   });
 };
-
 ```
 
 After including the WebPageTest module (line #1), we pull in our environment variables. `COMMIT_REF` and `URL` are environment variables that Netilfy provides by default, telling us the commit that triggered the deploy as well as the URL of the site. 
 
 To run a test using the WebPageTest API, we need to pass along an API key. We created an environmental variable in Netlify named `WPT_API_KEY` and dropped our key in there.
 
-![How%20we%20built%20it%20Auto%20WebPageTest%20Results%20for%20Every%2051c42f6914ef4dbebdd974595e15db1c/env-variable.png](How%20we%20built%20it%20Auto%20WebPageTest%20Results%20for%20Every%2051c42f6914ef4dbebdd974595e15db1c/env-variable.png)
+![A screenshot from Netlify's dashboard, showing their Environment Variables section with an environment variable of WPT_API_KEY set, and the key itself blurred out.](https://res.cloudinary.com/psaulitis/image/upload/v1616597007/auto-wpt-deploy-env-variable.png)
 
 Now we're able to access it alongside the core environmental variables Netlify provides.
 
@@ -83,7 +78,6 @@ wpt.runTest(URL, opts, (err, result) => {
     //we'll talk about what comes next in a minute
   }
 });
-
 ```
 
 So instead of pinging the API endpoint, we first check to make sure we have a result object (line #3) and then grab the test URL (line #5). This has the benefit of adding virtually no time to our Netlify deploy process—since we don't have to wait for the test to run, we can grab our URL and move on almost instantly.
@@ -135,7 +129,6 @@ wpt.runTest(URL, opts, (err, result) => {
     return console.log("Test Failed to Submit");
   }
 });
-
 ```
 
 Here we're wrapping up our payload (line #7-10) that specifies the form name and provides our URL value, submitting that to our form (line #12-21) and using `console.log` to log the results so that it's easier for us to debug our Netlify build logs if something goes wrong.
