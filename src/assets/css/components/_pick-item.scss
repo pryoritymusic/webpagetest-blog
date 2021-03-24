@@ -27,6 +27,7 @@
 
 .pick-item__type {
   display: inline-block;
+  margin-right: 0.25rem;
   padding: 0 0.25rem;
   color: var(--color-body-text);
   border: rem-calc(1) solid currentColor;
