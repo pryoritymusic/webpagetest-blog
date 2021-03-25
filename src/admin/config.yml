@@ -43,6 +43,13 @@ collections:
               name: "maxPostsPerPage",
               widget: "number",
             }
+          - {
+              label: "Cloudinary Name",
+              name: "cloudinaryName",
+              widget: "string",
+            }
+          - { label: "Facebook Link", name: "facebook", widget: "string" }
+          - { label: "Twitter Link", name: "twitter", widget: "string" }
       - label: "Navigation"
         name: "nav"
         delete: false
