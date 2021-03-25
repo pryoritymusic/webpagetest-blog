@@ -1,0 +1,37 @@
+---
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: "/categories/{{ category.data.name | slug }}/feed.xml"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ category.data.name }} - {{ config.name }}</title>
+  <link href="{{ config.url }}{{ permalink }}" rel="self"/>
+  <link href="{{ config.url }}/"/>
+  {% for post in collections.categoriesPosts[category.data.name] | limit(1)  %}
+    <updated>{{ post.date | rssDate  }}</updated>
+  {% endfor %}
+  <id>{{ config.url }}</id>
+  <author>
+    <name>{{ config.authorName }}</name>
+  </author>
+  {% for post in collections.categoriesPosts[category.data.name]  %}
+    {% set absolutePostUrl %}{{ config.url }}{{ post.url | url }}{% endset %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <author>
+        <name>{{ post.data.author }}</name>
+      </author>
+      <link href="{{ absolutePostUrl }}"/>
+      <updated>{{ post.date | rssDate }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content type="html">
+        <![CDATA[
+      {{ post.templateContent | safe }}
+    ]]>
+      </content>
+    </entry>
+  {% endfor %}
+</feed>

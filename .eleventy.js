@@ -40,6 +40,10 @@ module.exports = function (eleventyConfig) {
     "categoriesPaged",
     require("./collections/categoriesPaged")
   );
+  eleventyConfig.addCollection(
+    "categoriesPosts",
+    require("./collections/categoriesPosts")
+  );
   eleventyConfig.addCollection("authors", require("./collections/authors"));
   eleventyConfig.addCollection(
     "authorsStaff",

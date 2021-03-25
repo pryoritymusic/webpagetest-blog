@@ -1,5 +1,4 @@
 ---
-layout: base
 renderData:
   title: '{{ paged.category }}'
 pagination:
@@ -8,6 +7,15 @@ pagination:
   alias: paged
 permalink: "/categories/{{ paged.category | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
+{% extends 'layouts/base.njk' %}
+
+{%- block head -%}
+<link rel="alternate" type="application/atom+xml"
+  title="{{ paged.category }} - The WPT Blog"
+  href="{{ config.url }}/categories/{{ paged.category | slug }}/feed.xml" />
+{% endblock -%}
+
+{%- block content -%}
 {% from "featured-post.njk" import featuredPost %}
 {% from "post-item.njk" import postItem %}
 <div class="tag-page page container container--lg">
@@ -28,3 +36,4 @@ permalink: "/categories/{{ paged.category | slug }}/{% if paged.number > 1 %}{{ 
     {% include "pagination.njk" %}
   {% endif %}
 </div>
+{%- endblock -%}

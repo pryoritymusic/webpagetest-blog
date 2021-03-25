@@ -1,7 +1,9 @@
 ---
 layout: 'base'
 title: null
-head: '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>'
+head: '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script><link rel="alternate" type="application/atom+xml"
+  title="The WPT Blog"
+  href="feed.xml" />'
 footer: |
   <script>
     if (window.netlifyIdentity) {
@@ -19,16 +21,17 @@ footer: |
 {% from "post-item.njk" import postItem %}
 
 <div class="page container container--lg">
-
-  <!-- Not actual logic just for scaffolding -->
-  {%- for post in collections.posts | reverse | limit(1) -%}
-    {{ featuredPost(post) }}
-  {%- endfor -%}
   <ol class="post-list">
-    {%- for post in collections.posts -%}
-      <li class="post-list__item">
-        {{ postItem(post) }}
-      </li>
+    {%- for post in collections.posts | limit(config.maxPostsPerPage) -%}
+      {% if loop.index == 1 %}
+        <li>
+          {{ featuredPost(post) }}
+        </li>
+      {% else %}
+        <li class="post-list__item">
+          {{ postItem(post) }}
+        </li>
+      {% endif %}
     {%- endfor -%}
   </ol>
 </div>
