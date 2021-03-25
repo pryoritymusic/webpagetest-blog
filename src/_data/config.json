@@ -1,10 +1,12 @@
 {
+  "facebook": "#",
   "name": "The WPT Blog",
   "lang": "en",
-  "description": "",
   "url": "https://blog.webpagetest.org",
+  "twitter": "#",
   "authorHandle": "",
   "authorName": "",
-  "maxPostsPerPage": 2,
-  "cloudinaryName": "psaulitis"
+  "cloudinaryName": "psaulitis",
+  "description": " ",
+  "maxPostsPerPage": 2
 }
