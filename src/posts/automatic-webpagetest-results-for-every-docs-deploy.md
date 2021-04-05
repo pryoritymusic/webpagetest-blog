@@ -1,7 +1,7 @@
 ---
 title: Automatic WebPageTest Results for Every Docs Deploy
 date: 2021-03-24T14:39:43.262Z
-featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1616597869/auto-wpt-deploy-example.png
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617653420/AutomatingWebPerf_Blog_Cover_t4qe41.png
 category: How We Built
 author: Tim Kadlec
 related_post:
