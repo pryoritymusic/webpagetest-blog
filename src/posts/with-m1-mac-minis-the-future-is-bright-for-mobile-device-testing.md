@@ -24,7 +24,7 @@ For example, Chrome has taken a very granular approach to apply loading and netw
 
 Chrome has a two-phase loading process that limits the number of body resources requested at a time until it has finished parsing the head of the document, while Safari and Firefox will send all requests as soon as they’re discovered. Notice how in the image below, Chrome’s waterfall (left) has a stair-step appearance with the resources in the head of the document are requested first, while Safari’s waterfall (below) shows each resource being requested around the same time, regardless of it lives in the head of the document or the body.
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1617656580/M1_Waterfall_xomw6m.png)
+![](https://res.cloudinary.com/psaulitis/image/upload/c_fill,g_auto,h_250,w_970/b_rgb:000000,e_gradient_fade,y_-0.50/c_scale,co_rgb:ffffff,fl_relative,l_text:montserrat_25_style_light_align_center:Shop%20Now,w_0.5,y_0.18/f_auto,q_auto/v1617656580/M1_Waterfall_xomw6m.png)
 
 These behaviors, as well as many other differences, mean that whenever we test performance on an emulated browser using a different browser engine, we’re not getting an accurate reflection of how other browsers perform. When we do all of our performance testing on one given browser engine, we risk creating a web performance monoculture.
 
