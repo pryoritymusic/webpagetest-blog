@@ -1,6 +1,6 @@
 ---
 title: With M1 Mac Minis, The Future is Bright for Mobile Device Testing
-date: 2021-04-05T20:59:17.447Z
+date: 2021-01-28T21:59:17.447Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1617657017/M1_Mac_Mini_Cover_wkcaof.png
 tags:
   - M1 Mac Mini
