@@ -69,17 +69,18 @@ module.exports = function (value, outputPath) {
     if (images.length) {
       images.forEach((image) => {
         let src = image.getAttribute("src");
+        const isGif = src.includes(".gif");
         const alt = image.getAttribute("alt");
         const path = getPathFromUrl(src);
-        const multipliers = [0.25, 0.5, 0.75, 1, 1.1, 1.25, 1.5, 1.75, 2];
+        let multipliers = [0.25, 0.5, 0.75, 1, 1.1, 1.25, 1.5, 1.75, 2];
         let rawTitle = image.getAttribute("title");
         let title = rawTitle ? rawTitle.replace("Wide:", "").trim() : null;
         let width = 640;
-        let sizes = "(min-width: 44em) 40re,, 90vw";
+        let sizes = "(min-width: 44em) 40rem, 90vw";
         let className = "";
 
         // The image is wide!
-        if (rawTitle && rawTitle.includes("Wide:")) {
+        if (!isGif && rawTitle && rawTitle.includes("Wide:")) {
           width = 900;
           sizes = "(min-width: 60em) 56.25rem, (min-width: 40em) 95vw, 90vw";
           className = "post__image--wide";
@@ -96,6 +97,18 @@ module.exports = function (value, outputPath) {
           });
           src = `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${width}/${path}`;
         }
+
+        // It's a gif, let's show a smaller image!
+        const gifSizes = [320, 380, 480, 640];
+        if (isGif) {
+          srcSetArray = [];
+          gifSizes.forEach((size) => {
+            srcSetArray.push(
+              `https://res.cloudinary.com/${config.cloudinaryName}/image/upload/f_auto,q_auto,w_${size}/${path} ${size}w`
+            );
+          });
+        }
+
         let newImage = document.createElement("img");
         newImage.setAttribute("class", className);
         newImage.setAttribute("src", src);
