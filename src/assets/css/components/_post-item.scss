@@ -1,4 +1,5 @@
 .post-item {
+  position: relative;
   padding: 1.25rem 0;
 }
 
@@ -40,6 +41,16 @@
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
