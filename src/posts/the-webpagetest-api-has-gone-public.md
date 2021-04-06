@@ -18,7 +18,7 @@ We’re excited to announce the general availability of the enhanced, profession
 
 Previously, the WPT API was unsupported and keys were only available to a small number of users who had to test queues.
 
-Now, our entire community of developers and performance investigators can automate testing from WPT’s global infrastructure (expanding through Catchpoint’s synthetic network) and integrate front-end performance metrics into their development workflow and optimization initiatives.
+Now, our entire community of developers and performance investigators can automate testing from WPT’s global infrastructure (expanding through Catchpoint’s extensive network) and integrate front-end performance metrics into their development workflow and optimization initiatives.
 
 ## **Scaling Performance Audits**
 
