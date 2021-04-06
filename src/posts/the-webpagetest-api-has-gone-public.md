@@ -14,7 +14,7 @@ related_post:
 ---
 WebPageTest Community,
 
-We’re excited to announce the general availability of the enhanced, professionally supported [WebPageTest (WPT) API](https://product.webpagetest.org/api), complete with new developer-focused integrations.
+We’re excited to announce the general availability of the enhanced, professionally supported [WebPageTest (WPT) API](https://product.webpagetest.org/api?utm_source=blog&utm_medium=post&utm_campaign=api&utm_content=launch), complete with new developer-focused integrations.
 
 Previously, the WPT API was unsupported and keys were only available to a small number of users who had to test queues.
 
