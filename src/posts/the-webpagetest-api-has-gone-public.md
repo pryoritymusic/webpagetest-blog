@@ -41,7 +41,7 @@ Pulling WPT tests into pull requests lets developers integrate performance budge
 
 We’ve built the following officially supported CI/CD integrations to bring performance into the development conversation and enable developers to continuously deliver faster web pages.
 
-### **WebPageTest GitHub Action**
+### **[WebPageTest GitHub Action](https://github.com/marketplace/actions/webpagetest-github-action)**
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1617683975/integrations-github-action_exx7mc.png)
 
