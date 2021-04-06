@@ -1,7 +1,8 @@
-{# <div class="header-signup">
+<div class="header-signup">
   <p class="header-signup__text">
     {{ copy.headerSignup }}
   </p>
+  {#
   <form class="header-signup__form">
     <label class="screenreader" for="header-email">Email</label>
     <div class="header-signup__input-group">
@@ -9,4 +10,6 @@
       <button class="button button--accent">Subscribe</button>
     </div>
   </form>
-</div> #}
+  #}
+  {% include "hubspot-signup.njk" %}
+</div>

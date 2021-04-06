@@ -1,4 +1,5 @@
 {%- extends 'layouts/base.njk' -%}
+{%- from "site-logo.njk" import siteLogo -%}
 {%- from "social-share.njk" import socialShare -%}
 {%- from "author-link.njk" import authorLink -%}
 {%- from "post-author-bio.njk" import postAuthorBio -%}
@@ -35,7 +36,7 @@
           <figcaption class="post__figcaption" aria-hidden="true">{{ featured_image_caption }}</figcaption>
         </figure>
       {% endif %}
-      <div class="post__layout">
+      <div class="post__layout" data-post-layout>
         <div class="post__content rte">
           {{ content | safe }}
         </div>
@@ -85,5 +86,18 @@
         {% endif %}
       {%- endfor -%}
     </ul>
+  </div>
+  <div class="post-header" data-post-header aria-hidden="true">
+    <div class="post-header__container container container--lg">
+      <a class="post-header__brand" {% if tag == 'a' %}href="/"{% endif %}>
+        {{ siteLogo('post-header__logo', 'var(--color-light-blue)') }}
+      </a>
+      <div class="post-header__title" aria-hidden="true">
+        {{ title }}
+      </div>
+      <div class="post-header__social">
+        {{ socialShare(currentUrl, title, '') }}
+      </div>
+    </div>
   </div>
 {%- endblock -%}

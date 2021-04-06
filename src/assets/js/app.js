@@ -1,9 +1,9 @@
-import { accordions } from "./global/accordions";
+import { postHeader } from "./post/post-header";
 
 document.addEventListener(
   "DOMContentLoaded",
   function () {
-    accordions();
+    postHeader();
   },
   false
 );
