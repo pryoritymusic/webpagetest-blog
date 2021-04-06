@@ -3,7 +3,7 @@ export function postHeader() {
     const postHeader = document.querySelector("[data-post-header]");
     if (
       postHeader &&
-      window.matchMedia("(min-height: 42em)").matches &&
+      window.matchMedia("(min-height: 35em)").matches &&
       "IntersectionObserver" in window &&
       window.requestAnimationFrame
     ) {
