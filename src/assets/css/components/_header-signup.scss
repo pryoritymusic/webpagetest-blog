@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.header-signup__form {
+  position: relative;
+}
+
+.header-signup__hide {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+    // Hack: To stop fighting with autofill plugins
+    z-index: -100;
+  }
+}
+
 .header-signup__text {
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
@@ -29,6 +46,26 @@
 
   &:focus {
     z-index: 1;
+  }
+}
+
+.header-signup__message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.875rem;
+  max-width: rem-calc(300);
+  text-align: center;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: 0.25rem solid transparent;
   }
 }
 

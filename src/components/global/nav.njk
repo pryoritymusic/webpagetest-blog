@@ -9,9 +9,9 @@
     <{{ tag }} class="header__brand" {% if tag == 'a' %}href="/"{% endif %}>
       {{ siteLogo('header__logo', 'var(--color-light-blue)') }}
     </{{ tag }}>
-    {# <div class="header__signup">
+    <div class="header__signup">
       {% include "header-signup.njk" %}
-    </div> #}
+    </div>
   </div>
   {% if navigation.items %}
     <nav aria-label="Primary" class="nav">

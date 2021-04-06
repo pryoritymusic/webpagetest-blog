@@ -18,6 +18,18 @@
   max-width: rem-calc(400);
 }
 
+.footer-signup__message {
+  margin-top: 0.5rem;
+
+  &:focus {
+    outline: 0.25rem solid transparent;
+  }
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}
+
 @media (min-width: 48em) {
   .footer-signup {
     margin-top: 0;

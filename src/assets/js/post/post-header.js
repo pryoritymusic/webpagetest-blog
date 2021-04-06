@@ -1,11 +1,12 @@
 export function postHeader() {
   function init() {
+    const postHeader = document.querySelector("[data-post-header]");
     if (
+      postHeader &&
       window.matchMedia("(min-height: 42em)").matches &&
       "IntersectionObserver" in window &&
       window.requestAnimationFrame
     ) {
-      const postHeader = document.querySelector("[data-post-header]");
       const observer = new IntersectionObserver(
         function (entries) {
           if (entries[0].intersectionRatio === 0) {

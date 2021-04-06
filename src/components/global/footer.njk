@@ -27,14 +27,14 @@
         <p class="footer-signup__text h3">
           {{ copy.footerSignup }}
         </p>
-        {# <form class="footer-signup__form">
+        <form class="footer-signup__form" data-signup data-netlify="true" name="signup">
           <label class="screenreader" for="footer-email">Email</label>
           <div class="footer-signup__input-group">
-            <input id="footer-email" name="email" type="email" class="footer-signup__input" autocomplete="email" placeholder="Email Address">
+            <input id="footer-email" name="email" type="email" class="footer-signup__input" autocomplete="email" placeholder="Email Address" required>
             <button class="button button--accent">Subscribe</button>
           </div>
-        </form> #}
-        {% include 'hubspot-signup.njk' %}
+          <p class="footer-signup__message" data-signup-message tabindex="-1" aria-hidden="true">{{ copy.signupSuccess }}</p>
+        </form>
       </div>
     </div>
     <div class="footer__aside">

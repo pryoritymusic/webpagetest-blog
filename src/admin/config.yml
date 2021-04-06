@@ -95,6 +95,7 @@ collections:
         fields:
           - { label: "Header Signup", name: "headerSignup", widget: "string" }
           - { label: "Footer Signup", name: "footerSignup", widget: "string" }
+          - { label: "Signup Success Message", name: "signupSuccess", widget: "string" }
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
     folder: "src/posts" # The path to the folder where the documents are stored
