@@ -74,14 +74,14 @@ module.exports = function (value, outputPath) {
         const multipliers = [0.25, 0.5, 0.75, 1, 1.1, 1.25, 1.5, 1.75, 2];
         let rawTitle = image.getAttribute("title");
         let title = rawTitle ? rawTitle.replace("Wide:", "").trim() : null;
-        let width = 500;
-        let sizes = "(min-width: 36em) 31.25rem, 90vw";
+        let width = 640;
+        let sizes = "(min-width: 44em) 40re,, 90vw";
         let className = "";
 
         // The image is wide!
         if (rawTitle && rawTitle.includes("Wide:")) {
           width = 900;
-          sizes = "(min-width: 36em) 31.25rem, 90vw";
+          sizes = "(min-width: 60em) 56.25rem, (min-width: 40em) 95vw, 90vw";
           className = "post__image--wide";
         }
 

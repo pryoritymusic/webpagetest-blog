@@ -7,7 +7,7 @@
 {%- set currentUrl = config.url + page.url -%}
 
 {%- block content -%}
-  <div class="page container container--sm">
+  <div class="page container container--md">
     <article class="post">
       <header class="post__header">
         <div class="post__meta">
@@ -31,7 +31,7 @@
       </header>
       {% if featured_image != blank %}
         <figure class="post__figure">
-          {% cloudinaryImage featured_image, featured_image_caption, 600, 480, "(min-width: 40em) 37.5rem, 90vw", "eager", "post__figure-image" %}
+          {% cloudinaryImage featured_image, featured_image_caption, 640, 512, "(min-width: 44em) 40rem, 90vw", "eager", "post__figure-image" %}
           <figcaption class="post__figcaption" aria-hidden="true">{{ featured_image_caption }}</figcaption>
         </figure>
       {% endif %}
@@ -63,9 +63,11 @@
     <ul class="post-list">
       {%- if related_post -%}
         {% set post = related_post.post | findBySlug %}
-        <li class="post-list__item">
-          {{ postItem(post, 'post-item--center', related_post.highlight) }}
-        </li>
+        {% if post %}
+          <li class="post-list__item">
+            {{ postItem(post, 'post-item--center', related_post.highlight) }}
+          </li>
+        {% endif %}
       {%- endif -%}
       {% set postsRetrieved = 0 %}
       {%- for categoryObj in collections.categoriesPaged -%}

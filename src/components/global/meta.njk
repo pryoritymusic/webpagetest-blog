@@ -9,9 +9,7 @@
   {%- set pageTitle = title + ' - ' + config.name -%}
 {%- endif -%}
 
-{%- if brief -%}
-  {%-set pageDesc = blurb -%}
-{%- elif description -%}
+{%- if description -%}
   {%- set pageDesc = description -%}
 {%- endif -%}
 

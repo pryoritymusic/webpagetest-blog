@@ -1,5 +1,5 @@
 .rte {
-  --image-margin: 2.5rem;
+  --margin: 2.5rem;
   h2,
   h3,
   h4,
@@ -7,17 +7,17 @@
   h6 {
     margin-bottom: 1rem;
     &:not(:first-child) {
-      margin-top: 2rem;
+      margin-top: var(--margin);
     }
   }
 
   pre {
-    margin: 2rem auto;
+    margin: var(--margin) auto;
   }
 
   figure {
-    margin-top: var(--image-margin);
-    margin-bottom: var(--image-margin);
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
     margin-left: 0;
     margin-right: 0;
 
@@ -29,8 +29,8 @@
 
   img {
     display: block;
-    margin-top: var(--image-margin);
-    margin-bottom: var(--image-margin);
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
   }
 
   figcaption {
@@ -40,6 +40,6 @@
   }
 
   @media (min-width: 62em) {
-    --image-margin: 4rem;
+    --margin: 4rem;
   }
 }

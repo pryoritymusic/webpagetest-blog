@@ -44,7 +44,7 @@ const findBySlug = (slug) => {
 
   const found = memo[slug];
   if (!found) {
-    throw new Error(`Could not find post with slug: ${slug}`);
+    return null;
   }
 
   return found;

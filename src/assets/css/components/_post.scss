@@ -65,12 +65,6 @@
 }
 
 @media (min-width: 40em) {
-  .post__figure {
-    width: rem-calc(600);
-    // hack: magic number dependent on container width
-    margin-left: rem-calc(-50);
-  }
-
   .post__image--wide {
     position: relative;
     left: 50%;
@@ -95,8 +89,8 @@
 
   .post {
     pre {
-      margin-left: -5.5rem;
-      margin-right: -5.5rem;
+      margin-left: -2.5rem;
+      margin-right: -2.5rem;
       width: auto;
     }
   }

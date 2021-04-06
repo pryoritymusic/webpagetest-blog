@@ -10,9 +10,11 @@ permalink: "/categories/{{ category.data.name | slug }}/feed.xml"
   <title>{{ category.data.name }} - {{ config.name }}</title>
   <link href="{{ config.url }}{{ permalink }}" rel="self"/>
   <link href="{{ config.url }}/"/>
-  {% for post in collections.categoriesPosts[category.data.name] | limit(1)  %}
-    <updated>{{ post.date | rssDate  }}</updated>
-  {% endfor %}
+  {% if collections.categoriesPosts[category.data.name] %}
+    {% for post in collections.categoriesPosts[category.data.name] | limit(1)  %}
+      <updated>{{ post.date | rssDate  }}</updated>
+    {% endfor %}
+  {% endif %}
   <id>{{ config.url }}</id>
   <author>
     <name>{{ config.authorName }}</name>
