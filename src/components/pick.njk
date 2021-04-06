@@ -1,0 +1,16 @@
+
+{%- macro pickItem(item) -%}
+<li class="pick-item">
+  <h3 class="pick-item__title">
+    <a class="pick-item__link" href="{{ item.url }}">{{ item.title }}</a>
+  </h3>
+  <p class="pick-item__meta text--accent">
+    <span class="pick-item__type">
+      {{ item.type }}
+    </span>
+    {{ item.date | monthDayYear }}
+    from
+    <span>{{ item.author }}</span>
+  </p>
+</li>
+{%- endmacro -%}

@@ -1,38 +1,24 @@
-
-
+{%- from "pick.njk" import pickItem -%}
 {%- from "social-share.njk" import socialShare -%}
 
 {%- macro staffPick(pick, inList) -%}
   {%- set pickUrl = config.url + pick.url -%}
-  {%- set pickTitle = pick.data.date | fullMonthDayYear  %}
   <div class="staff-pick">
     <div class="staff-pick__header">
-      <h2 class="staff-pick__title" id="{{ pickTitle | slug }}">
+      <h2 class="staff-pick__title" id="{{ pick.data.title | slug }}">
         {%- if inList -%}
           <a class="staff-pick__link" href="{{ pick.url }}">
         {% endif %}
-          {{ pickTitle }}
+          {{ pick.data.title }}
         {%- if inList -%}
           </a>
         {% endif %}
       </h2>
-      {{ socialShare(pickUrl, picTitle, 'staff-pick__social') }}
+      {{ socialShare(pickUrl, pick.data.title, 'staff-pick__social') }}
     </div>
     <ul class="staff-pick__list">
       {% for item in pick.data.picks %}
-        <li class="pick-item">
-          <h3 class="pick-item__title">
-            <a class="pick-item__link" href="{{ item.url }}">{{ item.title }}</a>
-          </h3>
-          <p class="pick-item__meta text--accent">
-            <span class="pick-item__type">
-              {{ item.type }}
-            </span>
-            {{ item.date | monthDayYear }}
-            from
-            <span>{{ item.author }}</span>
-          </p>
-        </li>
+        {{ pickItem(item) }}
       {% endfor %}
     </ul>
   </div>
