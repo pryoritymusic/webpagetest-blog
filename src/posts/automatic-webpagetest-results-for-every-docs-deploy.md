@@ -1,6 +1,9 @@
 ---
 title: Automatic WebPageTest Results for Every Docs Deploy
 date: 2021-04-06T10:39:00.000Z
+desscription: Our documentation got a facelift and what better way to hold
+  ourselves accountable than to show WebPageTest results in our footer for each
+  and every deploy? Learn how we did it.
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617653420/AutomatingWebPerf_Blog_Cover_t4qe41.png
 tags:
   - API Integration
