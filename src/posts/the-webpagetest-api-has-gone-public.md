@@ -1,6 +1,9 @@
 ---
 title: The WebPageTest API Has Gone Public
 date: 2021-04-06T11:52:16.818Z
+desscription: We’re excited to announce the general availability of the
+  enhanced, professionally supported WebPageTest API, complete with new
+  developer-focused integrations.
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617681595/Blog_Cover_x8fqjx.png
 tags:
   - API
