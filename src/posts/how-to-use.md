@@ -1,6 +1,7 @@
 ---
 title: Contribute to the WPT Blog
 date: 2021-04-05T09:00:00.000Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1617712915/Author_Program-01_letin1.png
 tags:
   - author program
   - contribute
