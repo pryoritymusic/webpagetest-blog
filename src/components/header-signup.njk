@@ -10,6 +10,6 @@
         <button class="button button--accent">Subscribe</button>
       </div>
     </div>
-    <p class="header-signup__message" data-signup-message tabindex="-1" aria-hidden="true">{{ copy.signupSuccess }}</p>
+    <p aria-live="polite" class="header-signup__message" data-signup-message data-hidden tabindex="-1" data-success="{{ copy.signupSuccess }}"></p>
   </form>
 </div>

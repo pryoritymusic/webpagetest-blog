@@ -25,7 +25,7 @@
     outline: 0.25rem solid transparent;
   }
 
-  &[aria-hidden="true"] {
+  &[data-hidden] {
     display: none;
   }
 }

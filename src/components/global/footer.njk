@@ -33,7 +33,7 @@
             <input id="footer-email" name="email" type="email" class="footer-signup__input" autocomplete="email" placeholder="Email Address" required>
             <button class="button button--accent">Subscribe</button>
           </div>
-          <p class="footer-signup__message" data-signup-message tabindex="-1" aria-hidden="true">{{ copy.signupSuccess }}</p>
+          <p data-hidden class="footer-signup__message" data-signup-message tabindex="-1" data-success="{{ copy.signupSuccess }}"></p>
         </form>
       </div>
     </div>

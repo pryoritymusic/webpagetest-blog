@@ -19,10 +19,11 @@ export function signup() {
         const hide = form.querySelector("[data-form-hide]");
         const message = form.querySelector("[data-signup-message]");
         if (hide) hide.setAttribute("aria-hidden", true);
-        message.removeAttribute("aria-hidden");
+        message.innerText = message.getAttribute("data-success");
+        message.removeAttribute("data-hidden");
         setTimeout(() => {
           message.focus();
-        }, 100);
+        }, 0);
       })
       .catch((error) => console.log(error));
   }
