@@ -186,5 +186,3 @@ Almost there! In fact, we could leave it as is right now and things would be ok.
 ```
 
 And there we have it. With that in place, each deploy of our documentation results in a new test being run, and each time someone goes to [docs.webpagetest.org/latest-webpagetest-run](http://docs.webpagetest.org/latest-webpagetest-run) they get routed to the results of that test so that can dig in.
-
-GitHub, Eleventy, Netlify, API Integration
