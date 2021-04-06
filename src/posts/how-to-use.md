@@ -1,6 +1,6 @@
 ---
 title: Contribute to the WPT Blog
-date: 2021-04-06T12:29:24.681Z
+date: 2021-04-06T09:00:00.000Z
 tags:
   - author program
   - contribute
