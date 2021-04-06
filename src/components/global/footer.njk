@@ -37,13 +37,15 @@
         <!--[if lte IE 8]>
         <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
         <![endif]-->
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js" defer></script>
         <script>
-        hbspt.forms.create({
-        region: "na1",
-        portalId: "5595333",
-        formId: "5546d703-450a-492a-bc68-44238d68accc"
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+          hbspt.forms.create({
+          region: "na1",
+          portalId: "5595333",
+          formId: "5546d703-450a-492a-bc68-44238d68accc"
+          });
+        })
         </script>
       </div>
     </div>

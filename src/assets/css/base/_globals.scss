@@ -6,11 +6,21 @@
 
 html,
 body {
+  height: 100%;
   min-height: 100%;
   line-height: 1.5;
   font-family: var(--font-base);
   color: var(--color-body-text);
   background-color: var(--color-bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 img {
