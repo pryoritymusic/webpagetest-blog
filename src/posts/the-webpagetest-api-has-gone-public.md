@@ -16,7 +16,7 @@ WebPageTest Community,
 
 We’re excited to announce the general availability of the enhanced, professionally supported [WebPageTest (WPT) API](https://product.webpagetest.org/api?utm_source=blog&utm_medium=post&utm_campaign=api&utm_content=launch), complete with new developer-focused integrations.
 
-Previously, the WPT API was unsupported and keys were only available to a small number of users who had to test queues.
+Previously, the WPT API was unsupported and keys were only available to a small number of users with test queues.
 
 Now, our entire community of developers and performance investigators can automate testing from WPT’s global infrastructure (expanding through Catchpoint’s extensive network) and integrate front-end performance metrics into their development workflow and optimization initiatives.
 
