@@ -9,6 +9,15 @@
       "text": "Contact Us",
       "url": "https://www.product.webpagetest.org/contact",
       "external": false
+    },
+    {
+      "text": "Contribute an Article",
+      "url": "https://blog.webpagetest.org/posts/how-to-use/"
+    },
+    {
+      "text": "We have a T-Shirt store!",
+      "url": "shop.webpagetest.org",
+      "external": true
     }
   ]
 }

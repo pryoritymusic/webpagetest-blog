@@ -1,26 +1,24 @@
 ---
 title: The WebPageTest API Has Gone Public
-date: 2021-04-06T04:42:58.674Z
+date: 2021-04-06T11:52:16.818Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617681595/Blog_Cover_x8fqjx.png
 tags:
   - API
   - GitHub Actions
   - NodeJS
 category: Product News
-author: Peter Saulitis
+author: Patrick Meenan
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
   highlight: Integration
 ---
 WebPageTest Community,
 
-We’re excited to announce the general availability of the enhanced, professionally supported [WebPageTest (WPT) API](https://product.webpagetest.org/api), complete with new developer-focused integrations.
+We’re excited to announce the general availability of the enhanced, professionally supported [WebPageTest (WPT) API](https://product.webpagetest.org/api?utm_source=blog&utm_medium=post&utm_campaign=api&utm_content=launch), complete with new developer-focused integrations.
 
 Previously, the WPT API was unsupported and keys were only available to a small number of users who had to test queues.
 
-Now, our entire community of developers and performance investigators can automate testing from WPT’s global infrastructure (expanding through Catchpoint’s synthetic network) and integrate front-end performance metrics into their development workflow and optimization initiatives.
-
-
+Now, our entire community of developers and performance investigators can automate testing from WPT’s global infrastructure (expanding through Catchpoint’s extensive network) and integrate front-end performance metrics into their development workflow and optimization initiatives.
 
 ## **Scaling Performance Audits**
 
@@ -28,21 +26,17 @@ WebPageTest’s optimization grades, in-depth metrics, and visual comparisons ha
 
 Automating WPT tests enables performance engineers to scale and enhance performance audits and investigations by testing multiple URLs, performing regression analysis, and creating visualizations.
 
-There are several [community-built integrations](https://deploy-preview-23--webpagetest-documentation.netlify.app/api/integrations/#community-built-integrations) that you can access today with an API key: 
+There are several [community-built integrations](docs.webpagetest.org/api/integrations/#community-built-integrations.) that you can access today with an API key: 
 
-* [WebPageTest Bulk Tester](https://github.com/andydavies/WPT-Bulk-Tester) (build by Andy Davies) uses Google Sheets to test multiple URLs using WebPageTest using configurable test settings.
+* [WebPageTest Bulk Tester](https://github.com/andydavies/WPT-Bulk-Tester) (built by Andy Davies) uses Google Sheets to test multiple URLs using WebPageTest using configurable test settings.
 * [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) (built by the Google Chrome Team) provides a flexible and scalable framework for running web performance audits.
 * [Request Map](https://requestmap.webperf.tools/) (built by Simon Hearne) lets you build a node map of all the requests on a page to identify what third-parties are on your site, where your transmitted bytes are coming from and how slow your domains are.
-
-
 
 ## **Integrating with CI/CD tools**
 
 Pulling WPT tests into pull requests lets developers integrate performance budgets into their release processes.
 
 We’ve built the following officially supported CI/CD integrations to bring performance into the development conversation and enable developers to continuously deliver faster web pages.
-
-
 
 ### **WebPageTest GitHub Action**
 
@@ -57,7 +51,7 @@ Features:
 * Complete control over WebPageTest test settings (authentication, custom metrics, scripting, etc)
 * Automatically create comments on new pull requests with key metrics, waterfall and more.
 
-### **WebPageTest GitHub Action**
+### **WebPageTest API Wrapper for NodeJS**
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1617684072/integration-api-wrapper_gsgnvb.png)
 
@@ -71,4 +65,4 @@ Features:
 
 We can’t wait to see the new integrations our community cooks up!
 
- Get started with the [WebPageTest API](https://product.webpagetest.org/api) and explore our API Documentation.
+ Get started with the [WebPageTest API](https://product.webpagetest.org/api) and explore our [API Documentation](docs.webpagetest.org/api).

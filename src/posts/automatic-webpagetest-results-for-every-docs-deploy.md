@@ -1,11 +1,18 @@
 ---
 title: Automatic WebPageTest Results for Every Docs Deploy
-date: 2021-03-24T14:39:43.262Z
+date: 2021-04-06T10:39:00.000Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617653420/AutomatingWebPerf_Blog_Cover_t4qe41.png
+tags:
+  - API Integration
+  - GitHub
+  - Eleventy
+  - Netlify
 category: How We Built It
 author: Tim Kadlec
+related_post:
+  post: the-webpagetest-api-has-gone-public
+  highlight: Product News
 ---
-
 You may have noticed that the WebPageTest documentation got a facelift. The docs used to be served directly from [their GitHub repo](https://github.com/WPO-Foundation/webpagetest) without any design on top of it. For the new version, we're still using GitHub to house the source (and make it easy for folks to contribute to the documentation if they want), but we're now using the wonderful [Eleventy](https://www.11ty.dev/) to generate a static site, and [Netlify](https://www.netlify.com/) to handle the deployment and hosting.
 
 Naturally when you're building out the documentation for a tool like WebPageTest, you want to make sure things are fast. The choice of tech stack give us a very good start there. The static site just makes sense for something like documentation and also means the server doesn't have any complex queries or processes to run before responding to requests. Eleventy defaults to shipping no client-side JavaScript whatsoever, giving us a great performance baseline on the browser as well.
@@ -57,7 +64,7 @@ To run a test using the WebPageTest API, we need to pass along an API key. We cr
 
 Now we're able to access it alongside the core environmental variables Netlify provides.
 
-Every function has to export a handler method (line #4) so we wrap up our WebPageTest-related code inside the handler. There's not a _ton_ going on after that. We setup our WebPageTest API instance (line #5), define a few options (lines #7-12) and then submit our test (line #14). (We'll get into what happens next in a minute.)
+Every function has to export a handler method (line #4) so we wrap up our WebPageTest-related code inside the handler. There's not a *ton* going on after that. We setup our WebPageTest API instance (line #5), define a few options (lines #7-12) and then submit our test (line #14). (We'll get into what happens next in a minute.)
 
 Now, whenever we deploy, Netlify will trigger our function, which will automatically trigger a WebPageTest run in the background.
 
@@ -80,7 +87,7 @@ So instead of pinging the API endpoint, we first check to make sure we have a re
 
 Now we need somewhere to store the test URL so that we can reference it later on. There isn't (yet) a standard storage system for Netlify functions, but we can rig this together using [Netlify forms](https://docs.netlify.com/forms/setup/).
 
-To use a form, we need to set it a form up _somewhere_ in our site, and then apply the `netlify` attribute. The nice part of this is we don't actually need a publicly linked page or anything like that—as Netlify builds the site if it sees the form during that build process, it'll set up the Netlify form regardless of whether we link to it in anyway. So while using a form for this feels a _little_ hacky, we can keep it entirely out of the way of the rest of our site.
+To use a form, we need to set it a form up *somewhere* in our site, and then apply the `netlify` attribute. The nice part of this is we don't actually need a publicly linked page or anything like that—as Netlify builds the site if it sees the form during that build process, it'll set up the Netlify form regardless of whether we link to it in anyway. So while using a form for this feels a *little* hacky, we can keep it entirely out of the way of the rest of our site.
 
 Here's what our markup looks like for that:
 
@@ -179,3 +186,5 @@ Almost there! In fact, we could leave it as is right now and things would be ok.
 ```
 
 And there we have it. With that in place, each deploy of our documentation results in a new test being run, and each time someone goes to [docs.webpagetest.org/latest-test](http://docs.webpagetest.org/latest-test) they get routed to the results of that test so that can dig in.
+
+GitHub, Eleventy, Netlify, API Integration
