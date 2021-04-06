@@ -1,3 +1,3 @@
 ---
-name: Data
+name: Perf Data
 ---
