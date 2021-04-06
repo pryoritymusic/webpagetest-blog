@@ -1,18 +1,23 @@
 {
   "items": [
     {
-      "text": "Product",
-      "url": "/categories/product/",
+      "text": "Home",
+      "url": "/",
       "external": false
     },
     {
-      "text": "How We Built",
-      "url": "/categories/how-we-built/",
+      "text": "Product News",
+      "url": "/categories/product-news/",
       "external": false
     },
     {
-      "text": "Data",
-      "url": "/categories/data/",
+      "text": "How We Built It",
+      "url": "/categories/how-we-built-it/",
+      "external": false
+    },
+    {
+      "text": "Perf Data",
+      "url": "/categories/perf-data/",
       "external": false
     },
     {
