@@ -7,7 +7,7 @@ tags:
   - GitHub Actions
   - NodeJS
 category: Product News
-author: Tim Kadlec
+author: Peter Saulitis
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
   highlight: Integration
