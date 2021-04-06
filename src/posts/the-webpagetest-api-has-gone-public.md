@@ -13,7 +13,7 @@ category: Product News
 author: Patrick Meenan
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
-  highlight: Product News
+  highlight: How We Built It
 ---
 WebPageTest Community,
 
