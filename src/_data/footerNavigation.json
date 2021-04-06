@@ -16,7 +16,8 @@
     },
     {
       "text": "We have a T-Shirt store!",
-      "url": "shop.webpagetest.org"
+      "url": "shop.webpagetest.org",
+      "external": true
     }
   ]
 }
