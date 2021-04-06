@@ -26,9 +26,9 @@ WebPageTest’s optimization grades, in-depth metrics, and visual comparisons ha
 
 Automating WPT tests enables performance engineers to scale and enhance performance audits and investigations by testing multiple URLs, performing regression analysis, and creating visualizations.
 
-There are several [community-built integrations](https://deploy-preview-23--webpagetest-documentation.netlify.app/api/integrations/#community-built-integrations) that you can access today with an API key: 
+There are several [community-built integrations](docs.webpagetest.org/api/integrations/#community-built-integrations.) that you can access today with an API key: 
 
-* [WebPageTest Bulk Tester](https://github.com/andydavies/WPT-Bulk-Tester) (build by Andy Davies) uses Google Sheets to test multiple URLs using WebPageTest using configurable test settings.
+* [WebPageTest Bulk Tester](https://github.com/andydavies/WPT-Bulk-Tester) (built by Andy Davies) uses Google Sheets to test multiple URLs using WebPageTest using configurable test settings.
 * [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) (built by the Google Chrome Team) provides a flexible and scalable framework for running web performance audits.
 * [Request Map](https://requestmap.webperf.tools/) (built by Simon Hearne) lets you build a node map of all the requests on a page to identify what third-parties are on your site, where your transmitted bytes are coming from and how slow your domains are.
 
@@ -65,4 +65,4 @@ Features:
 
 We can’t wait to see the new integrations our community cooks up!
 
- Get started with the [WebPageTest API](https://product.webpagetest.org/api) and explore our API Documentation.
+ Get started with the [WebPageTest API](https://product.webpagetest.org/api) and explore our [API Documentation](docs.webpagetest.org/api).
