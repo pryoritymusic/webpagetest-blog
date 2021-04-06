@@ -1,3 +1,3 @@
 ---
-name: Product
+name: Product News
 ---
