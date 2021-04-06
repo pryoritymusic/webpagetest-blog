@@ -44,8 +44,8 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
         </li>
       {%- endfor -%}
     </ol>
-    {% if (paged.first != true) or (paged.last != true) %}
+    {# {% if (paged.first != true) or (paged.last != true) %}
       {% include "pagination.njk" %}
-    {% endif %}
+    {% endif %} #}
   {% endif %}
 </div>
