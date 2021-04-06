@@ -50,6 +50,10 @@ module.exports = function (eleventyConfig) {
     require("./collections/authorsStaff")
   );
   eleventyConfig.addCollection(
+    "authorsPosts",
+    require("./collections/authorsPosts")
+  );
+  eleventyConfig.addCollection(
     "authorsPaged",
     require("./collections/authorsPaged")
   );
@@ -94,7 +98,10 @@ module.exports = function (eleventyConfig) {
 
   const mdRender = new markdownIt({});
   eleventyConfig.addFilter("markdown", function (value) {
-    return mdRender.render(value);
+    if (value) {
+      return mdRender.render(value);
+    }
+    return "";
   });
   /**
    * Add Transforms

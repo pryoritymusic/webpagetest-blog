@@ -3,11 +3,20 @@ layout: base
 renderData:
   title: '{{ paged.author.data.name }}'
 pagination:
-  data: collections.authorsPaged
+  data: collections.authorsPosts
   size: 1
   alias: paged
-permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
+permalink: "/authors/{{ paged.author.data.name | slug }}/"
 ---
+{# Eleventy doesn't currently support outputting blank pages if there is no data,
+which is bad because it means it won't make author pages if the author hasn't published a post.
+So right now we are not paging on the posts, but we are paging on the author,
+to be fixed hopefully when this PR gets merged:
+https://github.com/11ty/eleventy/pull/1698
+
+pagination:
+  data: collections.authorsPaged
+permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}" #}
 {%- from "post-item.njk" import postItem  %}
 {%- from "social-share.njk" import socialShare -%}
 
@@ -26,7 +35,7 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
       {{ socialShare(currentUrl, title, 'author-header__social') }}
     </div>
   </div>
-  {% if paged.posts %}
+  {% if paged.posts.length > 0 %}
     <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
     <ol class="post-list">
       {%- for post in paged.posts -%}
