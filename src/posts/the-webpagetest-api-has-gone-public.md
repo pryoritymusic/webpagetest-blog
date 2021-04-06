@@ -7,7 +7,7 @@ tags:
   - GitHub Actions
   - NodeJS
 category: Product News
-author: Peter Saulitis
+author: Patrick Meenan
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
   highlight: Integration
@@ -19,8 +19,6 @@ We’re excited to announce the general availability of the enhanced, profession
 Previously, the WPT API was unsupported and keys were only available to a small number of users who had to test queues.
 
 Now, our entire community of developers and performance investigators can automate testing from WPT’s global infrastructure (expanding through Catchpoint’s synthetic network) and integrate front-end performance metrics into their development workflow and optimization initiatives.
-
-
 
 ## **Scaling Performance Audits**
 
@@ -34,15 +32,11 @@ There are several [community-built integrations](https://deploy-preview-23--webp
 * [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) (built by the Google Chrome Team) provides a flexible and scalable framework for running web performance audits.
 * [Request Map](https://requestmap.webperf.tools/) (built by Simon Hearne) lets you build a node map of all the requests on a page to identify what third-parties are on your site, where your transmitted bytes are coming from and how slow your domains are.
 
-
-
 ## **Integrating with CI/CD tools**
 
 Pulling WPT tests into pull requests lets developers integrate performance budgets into their release processes.
 
 We’ve built the following officially supported CI/CD integrations to bring performance into the development conversation and enable developers to continuously deliver faster web pages.
-
-
 
 ### **WebPageTest GitHub Action**
 
@@ -57,7 +51,7 @@ Features:
 * Complete control over WebPageTest test settings (authentication, custom metrics, scripting, etc)
 * Automatically create comments on new pull requests with key metrics, waterfall and more.
 
-### **WebPageTest GitHub Action**
+### **WebPageTest API Wrapper for NodeJS**
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1617684072/integration-api-wrapper_gsgnvb.png)
 
