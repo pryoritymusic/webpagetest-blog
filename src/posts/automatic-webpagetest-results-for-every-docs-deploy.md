@@ -2,11 +2,8 @@
 title: Automatic WebPageTest Results for Every Docs Deploy
 date: 2021-03-24T14:39:43.262Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617653420/AutomatingWebPerf_Blog_Cover_t4qe41.png
-category: How We Built
+category: How We Built It
 author: Tim Kadlec
-related_post:
-  post: how-to-use
-  highlight: Placeholder
 ---
 
 You may have noticed that the WebPageTest documentation got a facelift. The docs used to be served directly from [their GitHub repo](https://github.com/WPO-Foundation/webpagetest) without any design on top of it. For the new version, we're still using GitHub to house the source (and make it easy for folks to contribute to the documentation if they want), but we're now using the wonderful [Eleventy](https://www.11ty.dev/) to generate a static site, and [Netlify](https://www.netlify.com/) to handle the deployment and hosting.

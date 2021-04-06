@@ -6,7 +6,7 @@ tags:
   - M1 Mac Mini
   - Mobile Testing
   - Safari
-category: Product
+category: Product News
 author: Tim Kadlec
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
