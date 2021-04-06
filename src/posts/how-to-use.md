@@ -25,6 +25,8 @@ Here at WebPageTest, we’re all about performance and are looking for content t
 
 We’re looking for deep-dive, well-researched articles on subjects related to optimizing web performance.
 
+
+
 **Topics include:** 
 
 * Browser Loading Updates
@@ -34,21 +36,23 @@ We’re looking for deep-dive, well-researched articles on subjects related to o
 * Monitoring or Web Page Testing Approaches
 * Insightful Analysis of Live Web Pages
 
+
+
 We prefer positive analysis of high-performing pages and/or possible improvements for lower-performing sites. This is a public forum, we’re not in the game of “shaming” anyone. You won’t find anyone more critical of their performance, than the development and operations teams themselves.
 
 Here is an amazing example from Jake Archibald on his deep-dive series on ‘[Who has the fastest F1 website in 2021’](https://jakearchibald.com/2021/f1-perf-part-3/).
 
-### **Tutorials**
+## **Tutorials**
 
 We’re looking for excellent “how-to”/step-by-step guides involving WebPageTest data, tests, or API integrations.
+
+
 
 **Topics include:**
 
 * Building an integration using the WebPageTest API
 * How you used WebPageTest to optimize your site
 * How to use WebPageTest in unique and impactful ways
-
-
 
 ## **Official Author Program Coming Soon**
 
