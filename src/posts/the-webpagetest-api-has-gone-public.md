@@ -1,6 +1,6 @@
 ---
 title: The WebPageTest API Has Gone Public
-date: 2021-04-06T04:42:58.674Z
+date: 2021-04-06T11:52:16.818Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617681595/Blog_Cover_x8fqjx.png
 tags:
   - API
