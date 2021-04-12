@@ -8,8 +8,8 @@ The Chrome team experimented with ways to make a more level playing field, and [
 
 Each window is a period of time that has a maximum duration of 5 seconds. The first window starts at the moment the first layout shift occurs and lasts until the first of two criteria are met. Either:
 
-- There is a 1 second or greater gap where there are no layout shifts.
-- The window size meets that 5 second maximum threshold.
+* There is a 1 second or greater gap where there are no layout shifts.
+* The window size meets that 5 second maximum threshold.
 
 After either criteria gets met, the window is closed and the next shift window starts when the next layout shift occurs. The new CLS metric will look at all those shift windows and report the score of the maximum window.
 
@@ -21,7 +21,7 @@ I'm the kind of person that has to play with something like this to fully unders
 
 WebPageTest reports the (now)old version of Cumulative Layout Shift. In their post, the Chrome team helpfully shared a few [JavaScript snippets]([https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s)) for each of the various ways they experimented with measuring CLS. Here's the snippet for the new implementation:
 
-```jsx
+```js
 {
   let max = 0, curr = 0, firstTs = Number.NEGATIVE_INFINITY, prevTs = Number.NEGATIVE_INFINITY;
 
@@ -43,7 +43,7 @@ WebPageTest reports the (now)old version of Cumulative Layout Shift. In their po
 
 WebPageTest lets you collect custom metrics by running snippets of JavaScript after the work associated with testing the page is done, so with a little massage work (removing the `console.log` and wrapping this in a promise, we can use this to collect the new CLS score:
 
-```jsx
+```js
 [newCLS]
 return new Promise((resolve) => { 
 	let max = 0, curr = 0, firstTs = Number.NEGATIVE_INFINITY, prevTs = Number.NEGATIVE_INFINITY;
@@ -68,11 +68,11 @@ That snippet will now tell WebPageTest to run that code, returning the maximum w
 
 I chose the API in this case for a couple reasons.
 
-- I can very quickly kick of a bunch of tests
-- The API makes it easier to change the metric that is used to determine the median run (it is possible on [webpagetest.org](http://webpagetest.org) using the ?medianMetric parameter too). Since I really only care about the layout shifts at the moment, it made perfect sense to use the CLS metric as the median value.
-- I can extract the CLS and newCLS values out into a little list, making it very easy to scan for results of anything of interest.
+* I can very quickly kick of a bunch of tests
+* The API makes it easier to change the metric that is used to determine the median run (it is possible on [webpagetest.org](http://webpagetest.org) using the ?medianMetric parameter too). Since I really only care about the layout shifts at the moment, it made perfect sense to use the CLS metric as the median value.
+* I can extract the CLS and newCLS values out into a little list, making it very easy to scan for results of anything of interest.
 
-```jsx
+```js
 // kick off tests then...
 if (result.data) {
     //we're in business
@@ -103,13 +103,19 @@ The original CLS value is .595. The new CLS score is...also .595.
 
 If we look at the waterfall, we can see why.
 
-![CLS%20Change%206df70422134d49aeb03dd5ded4c0a5e1/Screen_Shot_2021-04-09_at_4.19.14_PM.png](CLS%20Change%206df70422134d49aeb03dd5ded4c0a5e1/Screen_Shot_2021-04-09_at_4.19.14_PM.png)
+![A screenshot from a WebPageTest waterfall, showing a series of orange checkered lines all right next to each other.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618240962/gardeners-shifts.png)
 
 The checkered orange vertical lines tell us when a layout shift occurred. In this case, all of the shifts occur in one little clump. We capture detailed layout shift information in the JSON results for every test, so we can get the exact time stamps and scores for each shift reported by Chrome (excluding layout shifts that are basically rounding errors):
 
-[Gardeners Category Page Shifts](https://www.notion.so/51cd859d05bc4e3791511d1ca9c857d9)
+| Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
+| -------------- | ------------ | ----------- | ------------ | ----------- |
+| 4233           | 1            | .547        | .547         | .547        |
+| 4342           | 1            | .022        | .569         | .569        |
+| 4660           | 1            | .007        | .576         | .576        |
+| 4747           | 1            | .001        | .577         | .577        |
+| 4918           | 1            | .017        | .594         | .594        |
 
-In this case, there are rou shifts, all of them occurring within a time span of 686ms. That means they all fit within a single shift window (since there's no 1 second gap between any of them and the total window from start to finish is well under 5 seconds) so all shifts still get reported.
+In this case, there are five shifts, all of them occurring within a time span of 686ms. That means they all fit within a single shift window (since there's no 1 second gap between any of them and the total window from start to finish is well under 5 seconds) so all shifts still get reported.
 
 (As an aside, note how there's one large shift that accounts for the bulk of the score—it's a pattern we see a lot and one of the reasons why we expect this change in metrics may be only impacting a subset of origins.)
 
@@ -119,9 +125,17 @@ Another [test that *does* show a little change between the old and new CLS metri
 
 Once again, the waterfall helps us see why the score changes. I've highlighted each individual shift window to make it easier to see the impact the new way of measuring has.
 
-![CLS%20Change%206df70422134d49aeb03dd5ded4c0a5e1/cnn-windows.png](CLS%20Change%206df70422134d49aeb03dd5ded4c0a5e1/cnn-windows.png)
+![Annotated screenshot of a WebPageTest waterfall, showing 4 pink boxes that show the 4 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618241293/cnn-windows.png)
 
-[CNN Article Page Layout Shifts](https://www.notion.so/dd7a29c38f244eed9123ff99136d51eb)
+| Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
+|---------------:|-------------:|------------:|-------------:|------------:|
+|           3853 |            1 |        .005 |         .005 |        .005 |
+|           4070 |            1 |        .064 |         .069 |        .069 |
+|           4209 |            1 |        .207 |         .276 |        .276 |
+|           4481 |            1 |        .020 |         .296 |        .296 |
+|           6837 |            2 |        .024 |         .024 |        .320 |
+|          10434 |            3 |        .120 |         .120 |        .440 |
+|          11564 |            4 |        .010 |         .010 |        .450 |
 
 For CNN, we see a clump of layout shifts early on with four of them occurring between 3.85s-4.48s in the page load process. After that, theres a 2.4s gap between shifts so the first shift window closes and we start counting our next window. In this case, there's only one shift in the second window—we get a big 3.2s gap after which triggers the end of our second shift window.
 
