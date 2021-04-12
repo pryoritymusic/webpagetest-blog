@@ -14,7 +14,7 @@ Each window is a period of time that has a maximum duration of 5 seconds. The fi
 
 After either criteria gets met, the window is closed and the next shift window starts when the next layout shift occurs. The new CLS metric will look at all those shift windows and report the score of the maximum window.
 
-The goal here is to help put pages with long-sessions (single-page applications where the browser has no concept of next navigation, pages with infinite scrolling, etc) on even footing in the Chrome User Experience Report (CrUX) dataset.
+The goal here is to help put pages with long-sessions (single-page applications where the browser has no concept of next navigation, pages with infinite scrolling, etc) on even footing in the [Chrome User Experience Report (CrUX) dataset](https://developers.google.com/web/tools/chrome-user-experience-report).
 
 I'm the kind of person that has to play with something like this to fully understand it, so I decided to fire up a few tests in WebPageTest to dig in and see the impact of the change.
 
