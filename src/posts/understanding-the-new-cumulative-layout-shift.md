@@ -1,5 +1,5 @@
 ---
-title: Understanding the new Cumulative Layout Shift
+title: Diving Into the new Cumulative Layout Shift
 date: 2021-04-12T15:17:00.409Z
 category: Perf Data
 author: Tim Kadlec
