@@ -66,29 +66,6 @@ return new Promise((resolve) => {
 
 That snippet will now tell WebPageTest to run that code, returning the maximum window score as a custom metric called `newCLS`. You can submit this via the API using the `custom` parameter, or you can drop it into placed in the "Custom" tab on [WebPageTest.org](http://webpagetest.org) if you want to run the tests manually.
 
-I chose the API in this case for a couple reasons.
-
-* I can very quickly kick of a bunch of tests
-* The API makes it easier to change the metric that is used to determine the median run (it is possible on [webpagetest.org](http://webpagetest.org) using the ?medianMetric parameter too). Since I really only care about the layout shifts at the moment, it made perfect sense to use the CLS metric as the median value.
-* I can extract the CLS and newCLS values out into a little list, making it very easy to scan for results of anything of interest.
-
-```js
-// kick off tests then...
-if (result.data) {
-    //we're in business
-    let median = result.data.median.firstView;
-    finalResults.push(
-        {
-            "id": result.data.id,
-            "url": result.data.url,
-            "cls": median['chromeUserTiming.CumulativeLayoutShift'],
-            "newCLS": median.newCLS,
-        }
-    )
-    return;
-}
-```
-
 ## What's the impact?
 
 In their blog post, Annie and Hongbo mentioned that in their analysis, 55% of origins didn't see a change in CLS at the 75% percentile. The remaining 45% that did see a change all got better (which makes complete sense, since CLS is no longer reporting all shifts...more on that in a minute).
