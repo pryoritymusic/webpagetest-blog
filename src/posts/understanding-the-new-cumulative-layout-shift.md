@@ -81,7 +81,7 @@ The original CLS value is .595. The new CLS score is...also .595.
 
 If we look at the waterfall, we can see why.
 
-![A screenshot from a WebPageTest waterfall, showing a series of orange checkered lines all right next to each other.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618240962/gardeners-shifts.png)
+![A screenshot from a WebPageTest waterfall, showing a series of orange checkered lines all right next to each other.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618240962/gardeners-shifts.png "Wide:")
 
 The checkered orange vertical lines tell us when a layout shift occurred. In this case, all of the shifts occur in one little clump. We capture detailed layout shift information in the JSON results for every test, so we can get the exact time stamps and scores for each shift reported by Chrome (excluding layout shifts that are basically rounding errors):
 
