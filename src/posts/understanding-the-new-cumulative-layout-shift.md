@@ -125,17 +125,17 @@ Another [test that *does* show a little change between the old and new CLS metri
 
 Once again, the waterfall helps us see why the score changes. I've highlighted each individual shift window to make it easier to see the impact the new way of measuring has.
 
-![Annotated screenshot of a WebPageTest waterfall, showing 4 pink boxes that show the 4 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618241293/cnn-windows.png)
+![Annotated screenshot of a WebPageTest waterfall, showing 4 blue boxes that show the 4 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245229/cnn-windows-wpt-blue.png)
 
 | Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
-|---------------:|-------------:|------------:|-------------:|------------:|
-|           3853 |            1 |        .005 |         .005 |        .005 |
-|           4070 |            1 |        .064 |         .069 |        .069 |
-|           4209 |            1 |        .207 |         .276 |        .276 |
-|           4481 |            1 |        .020 |         .296 |        .296 |
-|           6837 |            2 |        .024 |         .024 |        .320 |
-|          10434 |            3 |        .120 |         .120 |        .440 |
-|          11564 |            4 |        .010 |         .010 |        .450 |
+| -------------- | ------------ | ----------- | ------------ | ----------- |
+| 3853           | 1            | .005        | .005         | .005        |
+| 4070           | 1            | .064        | .069         | .069        |
+| 4209           | 1            | .207        | .276         | .276        |
+| 4481           | 1            | .020        | .296         | .296        |
+| 6837           | 2            | .024        | .024         | .320        |
+| 10434          | 3            | .120        | .120         | .440        |
+| 11564          | 4            | .010        | .010         | .450        |
 
 For CNN, we see a clump of layout shifts early on with four of them occurring between 3.85s-4.48s in the page load process. After that, theres a 2.4s gap between shifts so the first shift window closes and we start counting our next window. In this case, there's only one shift in the second window—we get a big 3.2s gap after which triggers the end of our second shift window.
 
@@ -153,7 +153,7 @@ So far we've seen two examples of measuring CLS through the loading of a page, o
 
 If you load a category page on Target, the initial view is pretty darn polished—[running these same tests on Target revealed a CLS score of only 0.011](https://www.webpagetest.org/result/210412_BiDcPC_14615cf589963fd90529d8e2eec31c8a/2/details/#waterfall_view_step1). However, looking at the CrUX data that WebPageTest now embeds in each test run provides some useful context. In this case we can see that the desktop CLS score reported at the 75th percentile by CrUX for that same page is 0.72—a significant difference from our own test.
 
-![CLS%20Change%206df70422134d49aeb03dd5ded4c0a5e1/Screen_Shot_2021-04-12_at_9.13.10_AM.png](CLS%20Change%206df70422134d49aeb03dd5ded4c0a5e1/Screen_Shot_2021-04-12_at_9.13.10_AM.png)
+![An image of two bar charts, next to each other, representing the CrUX data for this test. The left shows the First Contentful Paint values (with a p75 of 1383), the right shows the Cumulative Layout Shift (with a p75 of .72)](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618246246/target-crux.png)
 
 There are likely a few different reasons for this, but one could certainly be the scrolling behavior. When you scroll through a category page on Target, it's not *exactly* infinite scroll, but the behavior is very similar: more sections and types of products appear as you scroll down the page. CrUX keeps counting CLS until a user either navigates away from the page or closes the tab/window, so any shifts that are triggered during this scroll will accumulate, pushing the CLS score higher.
 
@@ -176,7 +176,22 @@ That snippet will scroll through the page, triggering some of that lazy-loaded c
 
 [Running that test](https://webpagetest.org/result/210412_AiDcE9_b3057a7c4263ceb49f6951778301bccc/1/details/#waterfall_view_step1) reports an old CLS score of 1.453 and a new CLS score of 0.415—a much better stress test than our initial load. While the new score still ends up in the "poor" category (as defined by Google), this is easily the biggest difference we've seen yet between the two versions of the metric—a 71% reduction from the old to the new.
 
-[Target Category Page Shifts](https://www.notion.so/e6ea6f9de4dc42fea5a83d2157725277)
+![Annotated screenshot of a WebPageTest waterfall, showing 7 blue boxes that show the 7 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245725/target-windows-wpt-blue.png)
+
+| Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
+| -------------- | ------------ | ----------- | ------------ | ----------- |
+| 6925           | 1            | .010        | .010         | .010        |
+| 11569          | 2            | .005        | .005         | .015        |
+| 12648          | 3            | .098        | .098         | .113        |
+| 13972          | 4            | .057        | .057         | .170        |
+| 14393          | 4            | .020        | .077         | .190        |
+| 14945          | 4            | .258        | .335         | .448        |
+| 15608          | 4            | .020        | .355         | .468        |
+| 16412          | 4            | .059        | .414         | .527        |
+| 17709          | 5            | .258        | .258         | .785        |
+| 18807          | 6            | .258        | .258         | 1.043       |
+| 18935          | 6            | .146        | .404         | 1.189       |
+| 21039          | 7            | .261        | .261         | 1.450       |
 
 This test shows pretty clearly the significant impact the new metric can have on pages with infinite scrolling (or similar bursts of shifting that isn't triggered by an active user action). Looking at the shift data, we see 7 different windows. Our initial window (during page load) is once again very small. But as we scroll through, we start to see some larger windows including our maximum window, window #4.
 
