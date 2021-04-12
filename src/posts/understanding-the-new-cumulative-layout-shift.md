@@ -103,7 +103,7 @@ Another [test that *does* show a little change between the old and new CLS metri
 
 Once again, the waterfall helps us see why the score changes. I've highlighted each individual shift window to make it easier to see the impact the new way of measuring has.
 
-![Annotated screenshot of a WebPageTest waterfall, showing 4 blue boxes that show the 4 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245229/cnn-windows-wpt-blue.png)
+![Annotated screenshot of a WebPageTest waterfall, showing 4 blue boxes that show the 4 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245229/cnn-windows-wpt-blue.png "Wide:")
 
 | Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
 | -------------- | ------------ | ----------- | ------------ | ----------- |
@@ -154,7 +154,7 @@ That snippet will scroll through the page, triggering some of that lazy-loaded c
 
 [Running that test](https://webpagetest.org/result/210412_AiDcE9_b3057a7c4263ceb49f6951778301bccc/1/details/#waterfall_view_step1) reports an old CLS score of 1.453 and a new CLS score of 0.415—a much better stress test than our initial load. While the new score still ends up in the "poor" category (as defined by Google), this is easily the biggest difference we've seen yet between the two versions of the metric—a 71% reduction from the old to the new.
 
-![Annotated screenshot of a WebPageTest waterfall, showing 7 blue boxes that show the 7 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245725/target-windows-wpt-blue.png)
+![Annotated screenshot of a WebPageTest waterfall, showing 7 blue boxes that show the 7 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245725/target-windows-wpt-blue.png "Wide:")
 
 | Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
 | -------------- | ------------ | ----------- | ------------ | ----------- |
