@@ -1,6 +1,7 @@
 ---
 title: Diving Into the new Cumulative Layout Shift
 date: 2021-04-12T15:17:00.409Z
+featured_image_caption: ""
 category: Perf Data
 author: Tim Kadlec
 ---
@@ -80,12 +81,12 @@ The original CLS value is .595. The new CLS score is...also .595.
 
 If we look at the waterfall, we can see why.
 
-![A screenshot from a WebPageTest waterfall, showing a series of orange checkered lines all right next to each other.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618240962/gardeners-shifts.png)
+![A screenshot from a WebPageTest waterfall, showing a series of orange checkered lines all right next to each other.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618240962/gardeners-shifts.png "post__image--wide")
 
 The checkered orange vertical lines tell us when a layout shift occurred. In this case, all of the shifts occur in one little clump. We capture detailed layout shift information in the JSON results for every test, so we can get the exact time stamps and scores for each shift reported by Chrome (excluding layout shifts that are basically rounding errors):
 
 | Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
-| -------------: | -----------: | ----------: | -----------: | ----------: |
+| -------------- | ------------ | ----------- | ------------ | ----------- |
 | 4233           | 1            | .547        | .547         | .547        |
 | 4342           | 1            | .022        | .569         | .569        |
 | 4660           | 1            | .007        | .576         | .576        |
@@ -105,7 +106,7 @@ Once again, the waterfall helps us see why the score changes. I've highlighted e
 ![Annotated screenshot of a WebPageTest waterfall, showing 4 blue boxes that show the 4 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245229/cnn-windows-wpt-blue.png)
 
 | Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
-| -------------: | -----------: | ----------: | -----------: | ----------: |
+| -------------- | ------------ | ----------- | ------------ | ----------- |
 | 3853           | 1            | .005        | .005         | .005        |
 | 4070           | 1            | .064        | .069         | .069        |
 | 4209           | 1            | .207        | .276         | .276        |
@@ -156,7 +157,7 @@ That snippet will scroll through the page, triggering some of that lazy-loaded c
 ![Annotated screenshot of a WebPageTest waterfall, showing 7 blue boxes that show the 7 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245725/target-windows-wpt-blue.png)
 
 | Timestamp (ms) | Shift Window | Shift Score | Window Score | Total Score |
-| -------------: | -----------: | ----------: | -----------: | ----------: |
+| -------------- | ------------ | ----------- | ------------ | ----------- |
 | 6925           | 1            | .010        | .010         | .010        |
 | 11569          | 2            | .005        | .005         | .015        |
 | 12648          | 3            | .098        | .098         | .113        |
