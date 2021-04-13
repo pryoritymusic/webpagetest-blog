@@ -29,6 +29,11 @@
       margin-bottom: 0;
     }
   }
+  
+  table {
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+  }
 
   img {
     display: block;
