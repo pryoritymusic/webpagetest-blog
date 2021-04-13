@@ -30,7 +30,7 @@ I'm the kind of person that has to play with something like this to fully unders
 
 ## Setting up the tests
 
-WebPageTest reports the (now) old version of Cumulative Layout Shift. In their post, the Chrome team helpfully shared a few [JavaScript snippets]([https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s)) for each of the various ways they experimented with measuring CLS. Here's the snippet for the new implementation:
+WebPageTest reports the (now) old version of Cumulative Layout Shift. In their post, the Chrome team helpfully shared a few [JavaScript snippets](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s) for each of the various ways they experimented with measuring CLS. Here's the snippet for the new implementation:
 
 ```js
 {
@@ -147,7 +147,7 @@ If you load a category page on Target, the initial view is pretty darn polishedâ
 
 There are likely a few different reasons for this, but one could certainly be the scrolling behavior. When you scroll through a category page on Target, it's not *exactly* infinite scroll, but the behavior is very similar: more sections and types of products appear as you scroll down the page. CrUX keeps counting CLS until a user either navigates away from the page or closes the tab/window, so any shifts that are triggered during this scroll will accumulate, pushing the CLS score higher.
 
-We can test the scrolling behavior by injecting some JavaScript into our tests (using the "Inject Script" functionality) to run after the page has finished loading. In a recent conversation in the Web Performance Slack Group, [Andy Davies](https://andydavies.me/) posted a snippet that should work well here:
+We can test the scrolling behavior by injecting some JavaScript into our tests (using the "Advanced -> Inject Script" functionality) to run after the page has finished loading. In a recent conversation in the Web Performance Slack Group, [Andy Davies](https://andydavies.me/) posted a snippet that should work well here:
 
 ```js
 window.addEventListener("load", async function () {
