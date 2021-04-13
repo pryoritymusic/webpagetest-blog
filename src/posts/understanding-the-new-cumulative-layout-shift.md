@@ -5,7 +5,7 @@ featured_image_caption: ""
 category: Perf Data
 author: Tim Kadlec
 ---
-The Chrome team experimented with ways to make a more level playing field, and [just announced]([https://web.dev/evolving-cls/](https://web.dev/evolving-cls/)) that based on their analysis, they will no longer report Cumulative Layout Shift (CLS) as the score of all layout shifts during a session, but instead break that session up into "windows" of shifts and then report the maximum score of each of those windows.
+The Chrome team experimented with ways to make a more level playing field, and [just announced](https://web.dev/evolving-cls/) that based on their analysis, they will no longer report Cumulative Layout Shift (CLS) as the score of all layout shifts during a session, but instead break that session up into "windows" of shifts and then report the maximum score of each of those windows.
 
 Each window is a period of time that has a maximum duration of 5 seconds. The first window starts at the moment the first layout shift occurs and lasts until the first of two criteria are met. Either:
 
