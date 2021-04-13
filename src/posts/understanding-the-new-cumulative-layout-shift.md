@@ -13,7 +13,7 @@ related_post:
   post: the-webpagetest-api-has-gone-public
   highlight: Product News
 ---
-The Chrome team experimented with ways to make a more level playing field, and [just announced](https://web.dev/evolving-cls/) that based on their analysis, they're going to be changing the way the Cumulative Layout Shift (CLS) metric will be reported. 
+The Chrome team experimented with ways to make a more level playing field, and [just announced](https://web.dev/evolving-cls/) that based on their analysis, they're going to be changing the way the Cumulative Layout Shift (CLS) metric will be reported. Given the importance of Google's Core Web Vitals initiative for search, a change in one of the three vitals is pretty significant news.
 
 Up to this point, CLS has been the sum of all individual layout shifts (that weren't preceded by user interaction) during the time the metric was being recorded (page load, entire page session, etc). Going forward, however, they will instead break that session up into "windows" of shifts and then report the maximum score of each of those windows as the CLS score.
 
