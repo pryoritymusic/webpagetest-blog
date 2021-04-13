@@ -1,6 +1,7 @@
 ---
 title: Diving Into the new Cumulative Layout Shift
 date: 2021-04-12T15:17:00.409Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1618332203/New_CLS_Cover_Image-01_i2hhff.png
 featured_image_caption: ""
 category: Perf Data
 author: Tim Kadlec
