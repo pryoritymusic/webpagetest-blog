@@ -42,7 +42,7 @@ WebPageTest reports the (now)old version of Cumulative Layout Shift. In their po
 }
 ```
 
-WebPageTest lets you collect custom metrics by running snippets of JavaScript after the work associated with testing the page is done, so with a little massage work (removing the `console.log` and wrapping this in a promise, we can use this to collect the new CLS score:
+WebPageTest lets you collect custom metrics by running snippets of JavaScript after the work associated with testing the page is done, so with a little massage work (removing the `console.log` and wrapping this in a promise) we can use this to collect the new CLS score:
 
 ```js
 [newCLS]
