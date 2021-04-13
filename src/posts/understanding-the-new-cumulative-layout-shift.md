@@ -5,7 +5,9 @@ featured_image_caption: ""
 category: Perf Data
 author: Tim Kadlec
 ---
-The Chrome team experimented with ways to make a more level playing field, and [just announced](https://web.dev/evolving-cls/) that based on their analysis, they will no longer report Cumulative Layout Shift (CLS) as the score of all layout shifts during a session, but instead break that session up into "windows" of shifts and then report the maximum score of each of those windows.
+The Chrome team experimented with ways to make a more level playing field, and [just announced](https://web.dev/evolving-cls/) that based on their analysis, they're going to be changing the way the Cumulative Layout Shift (CLS) metric will be reported. 
+
+Up to this point, CLS has been the sum of all individual layout shifts (that weren't preceded by user interaction) during the time the metric was being recorded (page load, entire page session, etc). Going forward, however, they will instead break that session up into "windows" of shifts and then report the maximum score of each of those windows as the CLS score.
 
 Each window is a period of time that has a maximum duration of 5 seconds. The first window starts at the moment the first layout shift occurs and lasts until the first of two criteria are met. Either:
 
@@ -14,7 +16,7 @@ Each window is a period of time that has a maximum duration of 5 seconds. The fi
 
 After either criteria gets met, the window is closed and the next shift window starts when the next layout shift occurs. The new CLS metric will look at all those shift windows and report the score of the maximum window.
 
-The goal here is to help put pages with long-sessions (single-page applications where the browser has no concept of next navigation, pages with infinite scrolling, etc) on even footing in the [Chrome User Experience Report (CrUX) dataset](https://developers.google.com/web/tools/chrome-user-experience-report).
+The goal here is to help put pages with long-sessions (single-page applications where the browser has no concept of next navigation, pages with infinite scrolling, etc) on even footing in the [Chrome User Experience Report (CrUX) dataset](https://developers.google.com/web/tools/chrome-user-experience-report). CrUX data is collected until the page's visibility state changes (the tab/window is closed, a navigation occurs, etc). In pages with short sessions, that period of time could be relatively short, meaning less time for shifts to occur. In those long-lived sessions, however, the time window can be very large, and all those shifts start to pile up, pushing the metric higher and higher. By taking a windowed approach, they level the playing field a bit from a comparison standpoint.
 
 I'm the kind of person that has to play with something like this to fully understand it, so I decided to fire up a few tests in WebPageTest to dig in and see the impact of the change.
 
@@ -67,7 +69,7 @@ return new Promise((resolve) => {
 
 That snippet will now tell WebPageTest to run that code, returning the maximum window score as a custom metric called `newCLS`. You can submit this via the API using the `custom` parameter, or you can drop it into placed in the "Custom" tab on [WebPageTest.org](http://webpagetest.org) if you want to run the tests manually.
 
-## What's the impact?
+## Exploring a Few Examples
 
 In their blog post, Annie and Hongbo mentioned that in their analysis, 55% of origins didn't see a change in CLS at the 75% percentile. The remaining 45% that did see a change all got better (which makes complete sense, since CLS is no longer reporting all shifts...more on that in a minute).
 
@@ -135,7 +137,7 @@ There are likely a few different reasons for this, but one could certainly be th
 
 We can test the scrolling behavior by injecting some JavaScript into our tests (using the "Inject Script" functionality) to run after the page has finished loading. In a recent conversation in the Web Performance Slack Group, [Andy Davies](https://andydavies.me/) posted a snippet that should work well here:
 
-```jsx
+```js
 window.addEventListener("load", async function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
