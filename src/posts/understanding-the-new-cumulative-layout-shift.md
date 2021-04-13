@@ -214,3 +214,5 @@ I think there's an argument to rename the new version of the metric as well. As 
 The change the Chrome team was a necessary step in helping to provide a more consistent baseline for comparing sites across the CrUX data set. But as organizations move forward, it's important not to completely dismiss the older style of reporting—even if scores improve, that doesn't mean the experience has. 
 
 We'll be reporting the new version of the CLS metric in our test runs, but we'll also be providing the total shift score, as well as providing all the detailed Layout Shift timing and node information so organizations can keep tabs on each shift and shift window.
+
+It's very early days with this metric change (they just announced it last week, after all) so I would encourage you to do [some testing on your own site](https://www.webpagetest.org/) to see what the impact is and, if you come across any issues or interesting observations, write up your own findings. The more data and information we gather around changes like this, the better! 
