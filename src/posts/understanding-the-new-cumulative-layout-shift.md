@@ -23,7 +23,7 @@ I'm the kind of person that has to play with something like this to fully unders
 
 ## Setting up the tests
 
-WebPageTest reports the (now)old version of Cumulative Layout Shift. In their post, the Chrome team helpfully shared a few [JavaScript snippets]([https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s)) for each of the various ways they experimented with measuring CLS. Here's the snippet for the new implementation:
+WebPageTest reports the (now) old version of Cumulative Layout Shift. In their post, the Chrome team helpfully shared a few [JavaScript snippets]([https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver#max-session-gap1s-limit5s)) for each of the various ways they experimented with measuring CLS. Here's the snippet for the new implementation:
 
 ```js
 {
@@ -96,6 +96,8 @@ The checkered orange vertical lines tell us when a layout shift occurred. In thi
 | 4747           | 1            | .001        | .577         | .577        |
 | 4918           | 1            | .017        | .594         | .594        |
 
+
+
 In this case, there are five shifts, all of them occurring within a time span of 686ms. That means they all fit within a single shift window (since there's no 1 second gap between any of them and the total window from start to finish is well under 5 seconds) so all shifts still get reported.
 
 (As an aside, note how there's one large shift that accounts for the bulk of the score—it's a pattern we see a lot and one of the reasons why we expect this change in metrics may be only impacting a subset of origins.)
@@ -117,6 +119,8 @@ Once again, the waterfall helps us see why the score changes. I've highlighted e
 | 6837           | 2            | .024        | .024         | .320        |
 | 10434          | 3            | .120        | .120         | .440        |
 | 11564          | 4            | .010        | .010         | .450        |
+
+
 
 For CNN, we see a clump of layout shifts early on with four of them occurring between 3.85s-4.48s in the page load process. After that, theres a 2.4s gap between shifts so the first shift window closes and we start counting our next window. In this case, there's only one shift in the second window—we get a big 3.2s gap after which triggers the end of our second shift window.
 
@@ -171,6 +175,8 @@ That snippet will scroll through the page, triggering some of that lazy-loaded c
 | 18807          | 6            | .258        | .258         | 1.043       |
 | 18935          | 6            | .146        | .404         | 1.189       |
 | 21039          | 7            | .261        | .261         | 1.450       |
+
+
 
 This test shows pretty clearly the significant impact the new metric can have on pages with infinite scrolling (or similar bursts of shifting that isn't triggered by an active user action). Looking at the shift data, we see 7 different windows. Our initial window (during page load) is once again very small. But as we scroll through, we start to see some larger windows including our maximum window, window #4. While the new score still ends up in the "poor" category (as defined by Google), this is easily the biggest difference we've seen yet between the two versions of the metric—a 71% reduction from the old to the new.
 
