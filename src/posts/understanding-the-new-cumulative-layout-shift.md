@@ -3,8 +3,15 @@ title: Diving Into the new Cumulative Layout Shift
 date: 2021-04-12T15:17:00.409Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1618332203/New_CLS_Cover_Image-01_i2hhff.png
 featured_image_caption: ""
+tags:
+  - CLS
+  - CrUX
+  - Core Web Vitals
 category: Perf Data
 author: Tim Kadlec
+related_post:
+  post: the-webpagetest-api-has-gone-public
+  highlight: Product News
 ---
 The Chrome team experimented with ways to make a more level playing field, and [just announced](https://web.dev/evolving-cls/) that based on their analysis, they're going to be changing the way the Cumulative Layout Shift (CLS) metric will be reported. 
 
