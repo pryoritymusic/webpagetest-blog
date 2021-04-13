@@ -5,7 +5,7 @@ featured_image_caption: ""
 category: Perf Data
 author: Tim Kadlec
 ---
-The Chrome team experimented with ways to make a more level playing field, and [just announced]([https://web.dev/evolving-cls/](https://web.dev/evolving-cls/)) that based on their analysis, they will no longer report CLS as the score of all layout shifts during a session, but instead break that session up into "windows" of shifts and then report the maximum score of each of those windows.
+The Chrome team experimented with ways to make a more level playing field, and [just announced]([https://web.dev/evolving-cls/](https://web.dev/evolving-cls/)) that based on their analysis, they will no longer report Cumulative Layout Shift (CLS) as the score of all layout shifts during a session, but instead break that session up into "windows" of shifts and then report the maximum score of each of those windows.
 
 Each window is a period of time that has a maximum duration of 5 seconds. The first window starts at the moment the first layout shift occurs and lasts until the first of two criteria are met. Either:
 
@@ -119,11 +119,9 @@ For CNN, we see a clump of layout shifts early on with four of them occurring be
 
 We get our third shift window when a layout shift occurs around 10.4s into the page load process followed by a 1.1s gap which once again triggers the closing of a shift window.
 
-We get our third shift window when a layout shift occurs around 10.4s into the page load process followed by a 1.1s gap which once again triggers the closing of a shift window.
-
 Finally, we get our last shift window when the final shift occurs 11.6s into the page load process.
 
-This example shows the effect of the new windowing approach. The total amount of all shifts (the original CSL calculation) is .449, but the new score only reports the maximum window .296 resulting in a 34% reduction.
+This example shows the effect of the new windowing approach. The total amount of all shifts (the original CLS calculation) is .449, but the new score only reports the maximum window .296 resulting in a 34% reduction.
 
 ## Scrolling through a Target Category Page
 
@@ -152,7 +150,7 @@ window.addEventListener("load", async function () {
 
 That snippet will scroll through the page, triggering some of that lazy-loaded content so we can see the effects on the layout shift.
 
-[Running that test](https://webpagetest.org/result/210412_AiDcE9_b3057a7c4263ceb49f6951778301bccc/1/details/#waterfall_view_step1) reports an old CLS score of 1.453 and a new CLS score of 0.415—a much better stress test than our initial load. While the new score still ends up in the "poor" category (as defined by Google), this is easily the biggest difference we've seen yet between the two versions of the metric—a 71% reduction from the old to the new.
+[Running that test](https://webpagetest.org/result/210412_AiDcE9_b3057a7c4263ceb49f6951778301bccc/1/details/#waterfall_view_step1) reports an old CLS score of 1.453 and a new CLS score of 0.415—a much better stress test than our initial load. 
 
 ![Annotated screenshot of a WebPageTest waterfall, showing 7 blue boxes that show the 7 distinct layout shift windows.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1618245725/target-windows-wpt-blue.png "Wide:")
 
@@ -171,7 +169,7 @@ That snippet will scroll through the page, triggering some of that lazy-loaded c
 | 18935          | 6            | .146        | .404         | 1.189       |
 | 21039          | 7            | .261        | .261         | 1.450       |
 
-This test shows pretty clearly the significant impact the new metric can have on pages with infinite scrolling (or similar bursts of shifting that isn't triggered by an active user action). Looking at the shift data, we see 7 different windows. Our initial window (during page load) is once again very small. But as we scroll through, we start to see some larger windows including our maximum window, window #4.
+This test shows pretty clearly the significant impact the new metric can have on pages with infinite scrolling (or similar bursts of shifting that isn't triggered by an active user action). Looking at the shift data, we see 7 different windows. Our initial window (during page load) is once again very small. But as we scroll through, we start to see some larger windows including our maximum window, window #4. While the new score still ends up in the "poor" category (as defined by Google), this is easily the biggest difference we've seen yet between the two versions of the metric—a 71% reduction from the old to the new.
 
 ## Say goodbye to the old CLS?
 
@@ -185,7 +183,7 @@ The change makes less sense for the organizations themselves, however. If you wa
 
 In addition to tracking both the new and old CLS scores, some teams might find value in keeping an eye on their second highest window. The Target example is a good one. The maximum window is .415, but the next highest window isn't far behind at .405.
 
-If Target made a concerted push to improve the shifts in their current max window, they might expect to see their new CLS score show noticeable improvements. However, if the improvements to those shifts didn't also improve the shifts in their second highest window, then they would only see a negligible impact—the second highest window is .405.
+If Target made a concerted push to improve the shifts in their current max window, they might expect to see their new CLS score show noticeable improvements. However, if the improvements to those shifts didn't also improve the shifts in their second highest window, then they would only see a negligible impact as the second highest window would take the place of the first.
 
 ## So...not so cumulative after all?
 
