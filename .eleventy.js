@@ -96,6 +96,10 @@ module.exports = function (eleventyConfig) {
     return findBySlug(slug);
   });
 
+  eleventyConfig.addFilter("filename", function (path) {
+    return path.split("/").pop();
+  });
+
   const mdRender = new markdownIt({});
   eleventyConfig.addFilter("markdown", function (value) {
     if (value) {
