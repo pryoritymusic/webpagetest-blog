@@ -75,7 +75,7 @@ return new Promise((resolve) => {
 });
 ```
 
-That snippet will now tell WebPageTest to run that code, returning the maximum window score as a custom metric called `newCLS`. You can submit this via the API using the `custom` parameter, or you can drop it into placed in the "Custom" tab on [WebPageTest.org](http://webpagetest.org) if you want to run the tests manually.
+That snippet will now tell WebPageTest to run that code, returning the maximum window score as a custom metric called `newCLS`. You can submit this via the API using the `custom` parameter, or you can drop it into place in the "Custom" tab on [WebPageTest.org](http://webpagetest.org) if you want to run the tests manually.
 
 ## Exploring a Few Examples
 
