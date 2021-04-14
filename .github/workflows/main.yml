@@ -22,4 +22,5 @@ jobs:
             ${{ steps.netlify.outputs.url }}
             ${{ steps.netlify.outputs.url }}/posts/understanding-the-new-cumulative-layout-shift/
           label: 'GitHub Action Test'
+          wptOptions: 'wpt-options.json'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

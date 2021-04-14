@@ -4,6 +4,7 @@
 
 .nav__list {
   display: flex;
+  align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 0;
@@ -35,7 +36,8 @@
 .nav__item {
   flex: 0 0 auto;
 
-  & + & {
+  & + &,
+  &--emphasis {
     margin-left: 1.25rem;
   }
 }
@@ -70,16 +72,44 @@
   }
 }
 
-@media (min-width: 56.25em) {
+.nav__home {
+  display: inline-block;
+  padding: 0.5rem 0;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-text);
+
+  svg {
+    vertical-align: middle;
+    width: rem-calc(25);
+  }
+}
+
+.nav__home-text {
+  font-weight: 700;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+@media (min-width: 62em) {
   .nav {
     width: 90%;
     max-width: 56.25rem;
     margin: 0 auto;
   }
 
+  .nav__list::after {
+    flex-basis: 0;
+  }
+
   .nav__item {
     & + & {
       margin-left: 2rem;
+    }
+
+    &--emphasis {
+      margin-left: auto;
     }
   }
 
