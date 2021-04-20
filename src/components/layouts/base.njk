@@ -13,7 +13,12 @@
     <meta property="og:title" content="{{ pageTitle }}" />
 
     <link rel="preconnect" href="https://res.cloudinary.com" />
-    <link rel="stylesheet" href="/assets/css/app.css" />
+    {% set siteCSS %}
+        {% include '../../../assets/css/app.css' %}
+    {% endset %}
+    <style type="text/css">
+    {{ siteCSS | safe}}
+    </style>
     {% include "global/google-fonts.njk" %}
     <script src="/assets/js/app.js" defer></script>
     {% block head %}{{ head | safe }}{% endblock %}
