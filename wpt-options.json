@@ -1,4 +1,5 @@
 {
     "location": "Dulles:Chrome",
-    "emulateMobile": true
+    "emulateMobile": true,
+    "video": true
 }
