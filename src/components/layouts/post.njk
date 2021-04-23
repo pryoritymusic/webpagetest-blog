@@ -31,8 +31,8 @@
         </div>
       </header>
       {% if featured_image != blank %}
-        <figure class="post__figure" elementtiming="post-hero">
-          {% cloudinaryImage featured_image, featured_image_caption, 640, 512, "(min-width: 44em) 40rem, 90vw", "eager", "post__figure-image" %}
+        <figure class="post__figure">
+          {% cloudinaryImage featured_image, featured_image_caption, 640, 512, "(min-width: 44em) 40rem, 90vw", "eager", "post__figure-image", "elementtiming='post-hero'" %}
           <figcaption class="post__figcaption" aria-hidden="true">{{ featured_image_caption }}</figcaption>
         </figure>
       {% endif %}
