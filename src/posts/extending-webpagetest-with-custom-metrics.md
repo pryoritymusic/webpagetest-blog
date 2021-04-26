@@ -2,8 +2,15 @@
 title: Extending WebPageTest with Custom Metrics
 date: 2021-04-26T15:20:09.301Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1619465337/BlogBannerCustom-01_copy-min_n2i4yd.png
+tags:
+  - custom metrics
+  - accessibility
+  - api
+  - lazy loading
 category: Product News
 author: Tim Kadlec
+related_post:
+  post: the-webpagetest-api-has-gone-public
 ---
 There are a lot of things I really like about WebPageTest, and [custom metrics](https://docs.webpagetest.org/custom-metrics/) have to be right up there near the top of the list.
 
@@ -32,7 +39,7 @@ return new Promise((resolve) => {
 });
 ```
 
-After the test runs, the testing agent runs that bit of JavaScrip and grabs the returned value, storing it as a `newCLS` metric. The metric is then exposed in the JSON data, as well as in the [Custom Metrics section](https://www.webpagetest.org/custom_metrics.php?test=210409_BiDc3Y_2093c2f01093bc6f7749b883019966d3&run=2&cached=0) of the test results page in the UI.
+After the test runs, the testing agent runs that bit of JavaScript and grabs the returned value, storing it as a `newCLS` metric. The metric is then exposed in the JSON data, as well as in the [Custom Metrics section](https://www.webpagetest.org/custom_metrics.php?test=210409_BiDc3Y_2093c2f01093bc6f7749b883019966d3&run=2&cached=0) of the test results page in the UI.
 
 Custom metrics are a great way to play around with experimental API's like this, and that's a pretty common reason I reach for them. But they're also really useful for expanding on what WebPageTest reports by default.
 
