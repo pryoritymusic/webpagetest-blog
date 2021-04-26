@@ -1,6 +1,7 @@
 ---
 title: Extending WebPageTest with Custom Metrics
 date: 2021-04-26T15:20:09.301Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1619465337/BlogBannerCustom-01_copy-min_n2i4yd.png
 category: Product News
 author: Tim Kadlec
 ---
