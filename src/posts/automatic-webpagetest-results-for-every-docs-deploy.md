@@ -6,7 +6,7 @@ desscription: Our documentation got a facelift and what better way to hold
   and every deploy? Learn how we did it.
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1617653420/AutomatingWebPerf_Blog_Cover_t4qe41.png
 tags:
-  - API Integration
+  - "API Integration"
   - GitHub
   - Eleventy
   - Netlify
