@@ -80,7 +80,7 @@ Ok, so far so good. But when handling the WebKit implementation, Noam and the fo
 
 So, we're not necessarily measuring the moment at which that contentful paint actually occurs. Instead, the specification now defines it as measuring the point at which the frame is submitted for display (or, as close to that point as possible).
 
-It's a small distinction but an important one: as specified, this means First Contentful Paint is going to fire before that content every reaches the screen. That explains why we see First Contentful Paint frequently firing before we see content. Just how \_much\_ earlier First Contentful Paint will fire depends on the browser engine and their implementation.
+It's a small distinction but an important one: as specified, this means First Contentful Paint is going to fire before that content every reaches the screen. That explains why we see First Contentful Paint frequently firing before we see content. Just how *much* earlier First Contentful Paint will fire depends on the browser engine and their implementation.
 
 This distinction and the difference in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison.
 
