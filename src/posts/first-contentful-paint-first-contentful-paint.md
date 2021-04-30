@@ -74,19 +74,21 @@ The [specification notes that](https://w3c.github.io/paint-timing/#paint):
 
 > ...the user agent has performed a "paint" (or "render") when it has converted the render tree to pixels on the screen.
 
-Ok, so far so good, but there is some additional context in the spec now that makes it clear that "pixels on screen" isn't exactly super precise, or even potentially feasible to measure, for all browsers:
+Ok, so far so good. But when handling the WebKit implementation, Noam and the folks that were involved from Safari felt that "pixels on the screen" wasn't possible to make cross-browser interoperable. There is some additional context in the spec now that makes it clear that "pixels on screen" isn't exactly super precise, or even potentially feasible to measure, for all browsers, and gives guidance on how browsers should implement (emphasis mine):
 
-> NOTE: The rendering pipeline is very complex, and the timestamp should be the latest timestamp the user agent is able to note in this pipeline (best effort). Typically the time at which the frame is submitted to the OS for display is recommended for this API.
+> NOTE: The rendering pipeline is very complex, and the timestamp should be the latest timestamp the user agent is able to note in this pipeline (best effort). Typically the *time at which the frame is submitted to the OS for display is recommended for this API*.
 
-So, we're not *necessarily* measuring the moment at which that contentful paint occurs. Instead, if a contentful paint is about to occur then First Contentful Paint will note the latest possible timestamp from the rendering pipeline.
+So, we're not necessarily measuring the moment at which that contentful paint actually occurs. Instead, the specification now defines it as measuring the point at which the frame is submitted for display (or, as close to that point as possible).
 
-It's a small distinction but an important one: as specified, this means First Contentful Paint is going to fire before that content every reaches the screen. That explains why we see First Contentful Paint frequently firing before we see content. 
+It's a small distinction but an important one: as specified, this means First Contentful Paint is going to fire before that content every reaches the screen. That explains why we see First Contentful Paint frequently firing before we see content. Just how \_much\_ earlier First Contentful Paint will fire depends on the browser engine and their implementation.
 
-More importantly, this distinction and the differenc in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison. As Noam mentioned to me, lot of rendering in Safari is done at the operating system level and the browser doesn't know when that rendering exactly occurs. This means Safari has a limit to how precise it can be with the timestamp.
+This distinction and the difference in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison.
 
-Chrome on the other hand tries hard to provide a timestamp of when the paint actually does occur. As a result, the gap between when First Contentful Paint is fired and that content is visually displayed is significantly smaller in Chrome (and Firefox) than in Safari.
+As Noam mentioned to me, lot of rendering in Safari is done at the operating system level and the browser doesn't know when that rendering exactly occurs. This means Safari has a limit to how precise it can be with the timestamp.
 
-This appears to largely be a side-effect of the difference between interoperability in practice and in reality. The specification tries to provide a consistent playing field, but the reality is that different browser architectures have different restrictions on when they can fire the necessary timestamps to report First Contentful (or if not restrictions, then perhaps how important it is for them to try to work around those restrictions to get more accurate timings). It's just one of those "specs in the real world" moments.
+Chrome, on the other hand tries hard, tries hard to provide a timestamp of when the paint actually does occur. As a result, the gap between when First Contentful Paint is fired and that content is visually displayed is significantly smaller in Chrome (and Firefox) than in Safari.
+
+This appears to largely be a side-effect of the difference between interoperability in practice and in reality. The specification tries to provide a consistent playing field, but the reality is that different browser architectures have different restrictions on when they can fire the necessary timestamps to report First Contentful (or if not restrictions, then perhaps how important it is for them to try to work around those restrictions to get more accurate timings). It's one of those "specs in the real world" moments.
 
 ## So....what does this mean for me?
 
