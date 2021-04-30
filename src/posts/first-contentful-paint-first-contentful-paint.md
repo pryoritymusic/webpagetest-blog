@@ -4,8 +4,6 @@ date: 2021-04-30T19:31:25.663Z
 category: Perf Data
 author: Tim Kadlec
 ---
-# First Contentful Paint !== First Contentful Paint
-
 With Safari 14.1 officially out, thanks to the [work of the Wikimedia team](https://techblog.wikimedia.org/2020/06/24/how-we-contributed-paint-timing-api-to-webkit/) and [Noam Rosenthal](https://twitter.com/nomsternom) in particular, First Contentful Paint just became one of the first "modern" performance metrics to be available in all major browsers: Chrome, Edge, Firefox and Safari all support it.
 
 This is pretty massive news for performance on the web.
