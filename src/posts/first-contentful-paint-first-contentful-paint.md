@@ -66,7 +66,7 @@ Keep in mind, the video for each test was recorded at 60fps. This means that eac
 
 There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap. Chrome fires First Contentful Paint *very* close to when the paint actually happens—they're under that 17ms threshold which makes their metric as accurate as we could possibly ask for. 
 
-Firefox has bit larger gap, and Safari has (comparitively) a very large gap.
+Firefox has bit larger gap, and Safari has (comparatively) a very large gap.
 
 I chatted with Noam (who added First Contentful Paint to Webkit) about it, and the fact that First Contentful Paint fires before Start Render actually makes perfect sense if you look at the changes made to the specification in order for Safari to implement it.
 
