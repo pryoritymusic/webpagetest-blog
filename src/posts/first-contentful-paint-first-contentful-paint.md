@@ -54,15 +54,15 @@ Ok. So next up, let's see what happens in Chrome and Firefox and how any gaps be
 
 Keep in mind, the video for each test was recorded at 60fps. This means that each frame itself is *just* under 17ms. So any difference between First Contentful Paint and Start Render that falls under that 17ms threshold is beyond the limit of measurement, as well as beyond the limit of us being able to see any visual difference.
 
-| Page                  | Difference between FCP and Start Render, Safari | Difference between FCP and Start Render, Firefox  | Difference between FCP and Start Render, Chrome (G4) |
-| --------------------- | ----------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------- |
-| Wal-Mart              | \-169ms                                         | \-50ms                                            | \-5ms                                                |
-| CNN                   | \-137ms                                         | \-50ms                                            | \-15ms                                               |
-| Amazon                | \-314ms                                         | \-66ms                                            | +5ms                                                 |
-| Smashing Magazine     | \-67ms                                          | \-66ms                                            | +5ms                                                 |
-| WebPageTest           | \-243ms                                         | \-101ms                                           | \-5ms                                                |
-| The Guardian          | \-197ms                                         | \-67ms                                            | \-30ms                                               |
-| **Median Difference** | **\-188ms**                                     | **\-67ms**                                        | **\-8ms**                                            |
+| Page                  | Difference between FCP and Start Render, Safari | Difference between FCP and Start Render, Firefox | Difference between FCP and Start Render, Chrome (G4) |
+| --------------------- | ----------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------- |
+| Wal-Mart              | \-169ms                                         | \-50ms                                           | \-5ms                                                |
+| CNN                   | \-137ms                                         | \-50ms                                           | \-15ms                                               |
+| Amazon                | \-314ms                                         | \-66ms                                           | +5ms                                                 |
+| Smashing Magazine     | \-67ms                                          | \-66ms                                           | +5ms                                                 |
+| WebPageTest           | \-243ms                                         | \-101ms                                          | \-5ms                                                |
+| The Guardian          | \-197ms                                         | \-67ms                                           | \-30ms                                               |
+| **Median Difference** | **\-188ms**                                     | **\-67ms**                                       | **\-8ms**                                            |
 
 There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap. Chrome fires First Contentful Paint *very* close to when the paint actually happens—they're under that 17ms threshold which makes their metric as accurate as we could possibly ask for. 
 
@@ -80,13 +80,13 @@ Ok, so far so good. But when handling the WebKit implementation, Noam and the fo
 
 So, we're not necessarily measuring the moment at which that contentful paint actually occurs. Instead, the specification now defines it as measuring the point at which the frame is submitted for display (or, as close to that point as possible).
 
-It's a small distinction but an important one: as specified, this means First Contentful Paint is going to fire before that content every reaches the screen. That explains why we see First Contentful Paint frequently firing before we see content. Just how *much* earlier First Contentful Paint will fire depends on the browser engine and their implementation.
+It's a small distinction but an important one: as specified, this means First Contentful Paint is going to fire before that content ever reaches the screen. That explains why we see First Contentful Paint frequently firing before we see content. Just how *much* earlier First Contentful Paint will fire depends on the browser engine and their implementation.
 
 This distinction and the difference in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison.
 
 As Noam mentioned to me, lot of rendering in Safari is done at the operating system level and the browser doesn't know when that rendering exactly occurs. This means Safari has a limit to how precise it can be with the timestamp.
 
-Chrome, on the other hand tries hard, tries hard to provide a timestamp of when the paint actually does occur. As a result, the gap between when First Contentful Paint is fired and that content is visually displayed is significantly smaller in Chrome (and Firefox) than in Safari.
+Chrome, on the other hand tries hard to provide a timestamp of when the paint actually does occur. As a result, the gap between when First Contentful Paint is fired and that content is visually displayed is significantly smaller in Chrome (and Firefox) than in Safari.
 
 This appears to largely be a side-effect of the difference between interoperability in practice and in reality. The specification tries to provide a consistent playing field, but the reality is that different browser architectures have different restrictions on when they can fire the necessary timestamps to report First Contentful (or if not restrictions, then perhaps how important it is for them to try to work around those restrictions to get more accurate timings). It's one of those "specs in the real world" moments.
 
