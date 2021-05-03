@@ -92,10 +92,8 @@ This appears to largely be a side-effect of the difference between interoperabil
 
 ## So....what does this mean for me?
 
-While the gap is much bigger in Safari than the other browsers, how much this matters to you depends on what you're hoping to do with First Contentful Paint. 
+With the gap between First Contentful Paint firing and when the actual pixels arrive on the screen being so much larger in Safari, First Contentful Paint *should not* be used to compare performance across different browsers—there simply isn't enough consistency to enable a solid comparison. Differences of up to several hundred milliseconds seem likely, and only if the difference between browsers grows above that threshold should like likely spend much time on it.
+
+Even then, this is a *great* example of why you need to pair your real-user data with solid synthetic data. If you *are* seeing what looks like a substantial difference, you'll want to use your synthetic data to validate the issue. Using something like the filmstrip view to compare the point at which First Contentful Paint fires to the point those pixels appear on the screen can help you to identify if it's something that warrants additional development effort on your part or not.
 
 If you want to look at First Contentful Paint in the context of a single browser, you're more or less ok. For example, if you want to improve First Contentful Paint in Safari, then by all means, watch how the metric changes when you make changes. Just keep in mind that, particularly in the case of Safari, it's quite likely there's a gap between what the metric is reporting and when your visitors are actually seeing that content. (The gap does seem particularly large, so I'm hoping that eventually the gap could be tightened up a bit with some more exploration.)
-
-When you want to compare First Contentful Paint across browsers, that's where you have to tread with a bit more caution. Seeing First Contentful Paint differ from one browser to the next is to be expected, as we've seen. So if you're seeing subtle differences (and you will) between browsers, that doesn't necessarily mean you have an issue. If you end up seeing big gaps between one browser and another, that's when you'll want to dig in.
-
-This is also a *great* example of why you need to pair real-user data with synthetic data. In this case, the synthetic data can help you to validate what you're seeing in real-user data. If you spot a gap in a browser, being able to validate it visually in synthetic data (using something like the filmstrip view, for example) can help you to identify if it's something that warrants additional development effort on your part or not.
