@@ -81,9 +81,9 @@ Another way of looking at it is to look at a scatter plot of the First Contentfu
 
 ## Mind the Gap
 
-I chatted with Noam (who added First Contentful Paint to Webkit) about it, and the fact that First Contentful Paint fires before Start Render actually makes perfect sense if you look at the changes made to the specification in order for Safari to implement it.
+I chatted with Noam (who added First Contentful Paint to Webkit) about it, and the fact that First Contentful Paint fires before Start Render actually makes perfect sense if you look at the [changes made to the HTML specification](https://html.spec.whatwg.org/multipage/webappapis.html#update-the-rendering) in order for Safari to implement it.
 
-The [specification notes that](https://w3c.github.io/paint-timing/#paint):
+The Paint Timing [specification also notes that](https://w3c.github.io/paint-timing/#paint):
 
 > ...the user agent has performed a "paint" (or "render") when it has converted the render tree to pixels on the screen.
 
@@ -111,4 +111,4 @@ With the gap between First Contentful Paint firing and when the actual pixels ar
 
 Even then, this is a *great* example of why you need to pair your real-user data with solid synthetic data. If you *are* seeing what looks like a substantial difference, you'll want to use your synthetic data to validate the issue. Using something like the filmstrip view to compare the point at which First Contentful Paint fires to the point those pixels appear on the screen can help you to identify if it's something that warrants additional development effort on your part or not.
 
-If you want to look at First Contentful Paint in the context of a single browser, you're more or less ok. For example, if you want to improve First Contentful Paint in Safari, then by all means, watch how the metric changes when you make changes. Just keep in mind that, particularly in the case of Safari, it's quite likely there's a gap between what the metric is reporting and when your visitors are actually seeing that content. (The gap does seem particularly large, so I'm hoping that eventually the gap could be tightened up a bit with some more exploration.)
+If you want to look at First Contentful Paint in the context of a single browser, you're more or less ok. For example, if you want to improve First Contentful Paint in Safari, then by all means, watch how the metric changes when you make changes. Just keep in mind that, particularly in the case of Safari, it's quite likely there's a gap between what the metric is reporting and when your visitors are actually seeing that content. (The gap does seem particularly large, so I'm hoping that eventually the gap could be tightened up a bit with some more exploration. It's absolutely possible there's more going on here than *just* a heftier rendering process.)
