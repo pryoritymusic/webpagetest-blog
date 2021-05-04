@@ -1,6 +1,6 @@
 ---
 title: First Contentful Paint !== First Contentful Paint
-date: 2021-04-30T19:31:25.663Z
+date: 2021-05-04T19:31:25.663Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1620132876/FCP-Image-01-min_h5i9ub.png
 tags:
   - First Contentful Paint
@@ -54,6 +54,8 @@ I decided to test a few other sites, and sure enough, the pattern was pretty con
 | [Smashing Magazine](https://www.webpagetest.org/result/210430_BiDcZF_d391facd284947625cb5715e9ea7f5bf/2/details/#waterfall_view_step1) | 1.466s                 | 1.533s       | \-67ms     |
 | [WebPageTest](https://www.webpagetest.org/result/210430_BiDcW0_98a3a0b519d03b0931fdcc62affa1792/2/details/#waterfall_view_step1)       | 1.124s                 | 1.367s       | \-243ms    |
 | [The Guardian](https://www.webpagetest.org/result/210430_AiDcF1_69656a8d52a2259c57b1e155127a2218/1/details/#waterfall_view_step1)      | 1.036s                 | 1.233s       | \-197ms    |
+
+
 
 In each of the tests, First Contentful Paint fired before anything was actually painted to the screen, and frequently by a pretty significant margin.
 
