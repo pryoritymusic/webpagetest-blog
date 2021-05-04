@@ -1,6 +1,13 @@
 ---
 title: First Contentful Paint !== First Contentful Paint
 date: 2021-04-30T19:31:25.663Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1620132876/FCP-Image-01-min_h5i9ub.png
+tags:
+  - First Contentful Paint
+  - Core Web Vitals
+  - Safari
+  - Chrome
+  - Firefox
 category: Perf Data
 author: Tim Kadlec
 ---
