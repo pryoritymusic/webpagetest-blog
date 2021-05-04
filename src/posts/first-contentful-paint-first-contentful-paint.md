@@ -1,5 +1,5 @@
 ---
-title: First Contentful Paint !== First Contentful Paint
+title: Why First Contentful Paint Doesn't Work As a Cross-Browser Metric
 date: 2021-05-04T19:31:25.663Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1620138866/FCP-Blog-min_ypvz1v.png
 tags:
@@ -44,38 +44,40 @@ Here's what [the filmstrip](https://www.webpagetest.org/video/compare.php?tests=
 
 There was nothing there. In fact, Start Render didn't occur until 1.5s—about 130ms later.
 
-I decided to test a few other sites, and sure enough, the pattern was pretty consistent.
+I decided to test a few other sites, and sure enough, the pattern was pretty consistent. Each URL was run 9 times, capturing video at 60fps so we could be pretty precise with our Start Render time. A negative number means First Contentful Paint fired before anything appeared on the screen.
 
-| Page                                                                                                                                   | First Contentful Paint | Start Render | Difference |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------ | ---------- |
-| [Wal-Mart](https://www.webpagetest.org/result/210430_BiDcJY_1fe05e9ed2d2f003c2efe1718ccaac64/1/details/#waterfall_view_step1)          | 3.565s                 | 3.734s       | \-169ms    |
-| [CNN](https://www.webpagetest.org/result/210430_AiDcBF_3aece99400f3f9d395998fa1e690155f/3/details/#waterfall_view_step1)               | 12.630s                | 12.767s      | \-137ms    |
-| [Amazon](https://www.webpagetest.org/result/210430_AiDc33_15f0f2f6a7b21658729c19205e362fdd/3/details/#waterfall_view_step1)            | 3.619s                 | 3.933s       | \-314ms    |
-| [Smashing Magazine](https://www.webpagetest.org/result/210430_BiDcZF_d391facd284947625cb5715e9ea7f5bf/2/details/#waterfall_view_step1) | 1.466s                 | 1.533s       | \-67ms     |
-| [WebPageTest](https://www.webpagetest.org/result/210430_BiDcW0_98a3a0b519d03b0931fdcc62affa1792/2/details/#waterfall_view_step1)       | 1.124s                 | 1.367s       | \-243ms    |
-| [The Guardian](https://www.webpagetest.org/result/210430_AiDcF1_69656a8d52a2259c57b1e155127a2218/1/details/#waterfall_view_step1)      | 1.036s                 | 1.233s       | \-197ms    |
-
-
+| Page                                                                                                    | Median Difference Between FCP and Start Render |
+| ------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| [Wal-Mart](https://www.webpagetest.org/result/210504_BiDcX9_2db6e9154b3af93adeaa457afa6fa5d5/)          | \-170ms                                        |
+| [CNN](https://www.webpagetest.org/result/210504_BiDc4M_fd3d4e0130edc958ff7ad57220e17ead/)               | \-128ms                                        |
+| [Amazon](https://www.webpagetest.org/result/210504_AiDcW2_0fc161642616a749a78f13cc06f17172/)            | \-229ms                                        |
+| [Smashing Magazine](https://www.webpagetest.org/result/210504_BiDcXM_014cb06cb887abc0563aa6ee9346ad86/) | \-238ms                                        |
+| [WebPageTest](https://www.webpagetest.org/result/210504_BiDc95_f2a9cd12d9b2d9b77cd5e90bebecd203/)       | \-195ms                                        |
+| [The Guardian](https://www.webpagetest.org/result/210504_AiDcYW_c4d9d352a978493e193fa0a33d284ae3/)      | \-123ms                                        |
 
 In each of the tests, First Contentful Paint fired before anything was actually painted to the screen, and frequently by a pretty significant margin.
 
 Ok. So next up, let's see what happens in Chrome and Firefox and how any gaps between First Contentful Paint and Start Render compare to what we see in Safari.
 
-Keep in mind, the video for each test was recorded at 60fps. This means that each frame itself is *just* under 17ms. So any difference between First Contentful Paint and Start Render that falls under that 17ms threshold is beyond the limit of measurement, as well as beyond the limit of us being able to see any visual difference.
+Keep in mind the video for each test was recorded at 60fps. This means that each frame itself is *just* under 17ms. So any difference between First Contentful Paint and Start Render that falls under that 17ms threshold is beyond the limit of measurement, as well as beyond the limit of us being able to see any visual difference.
 
 | Page                  | Difference between FCP and Start Render, Safari | Difference between FCP and Start Render, Firefox | Difference between FCP and Start Render, Chrome (G4) |
 | --------------------- | ----------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------- |
-| Wal-Mart              | \-169ms                                         | \-50ms                                           | \-5ms                                                |
-| CNN                   | \-137ms                                         | \-50ms                                           | \-15ms                                               |
-| Amazon                | \-314ms                                         | \-66ms                                           | +5ms                                                 |
-| Smashing Magazine     | \-67ms                                          | \-66ms                                           | +5ms                                                 |
-| WebPageTest           | \-243ms                                         | \-101ms                                          | \-5ms                                                |
-| The Guardian          | \-197ms                                         | \-67ms                                           | \-30ms                                               |
-| **Median Difference** | **\-188ms**                                     | **\-67ms**                                       | **\-8ms**                                            |
+| Wal-Mart              | \-170ms                                         | \-35ms                                           | +1ms                                                 |
+| CNN                   | \-128ms                                         | \-34ms                                           | +1ms                                                 |
+| Amazon                | \-229ms                                         | \-23ms                                           | \-12ms                                               |
+| Smashing Magazine     | \-238ms                                         | \-51ms                                           | \-12ms                                               |
+| WebPageTest           | \-195ms                                         | \-16ms                                           | \-13ms                                               |
+| The Guardian          | \-123ms                                         | \-19ms                                           | +5ms                                                 |
+| **Median Difference** | **\-181ms**                                     | **\-30ms**                                       | **\-5ms**                                            |
 
 There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap. Chrome fires First Contentful Paint *very* close to when the paint actually happens—they're under that 17ms threshold which makes their metric as accurate as we could possibly ask for. 
 
 Firefox has bit larger gap, and Safari has (comparatively) a very large gap.
+
+Another way of looking at it is to look at a scatter plot of the First Contentful Paint gap across the 6 different URL's. From the chart below, we can get a good sense of how significant the difference is between the Safari results and the Firefox and Chrome results. We can also see that the gap in Safari varies from test to test (though the metric is pretty consistently within at least a 300ms window).
+
+![A scatterplot chart of the FCP gaps for all tests. Chrome and Firefox tests are all clumped pretty close together, within ~150ms range. Safari tests are scattered below, with most lying between 100 and 300ms.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1620143642/FCP-scatterplot.png)
 
 I chatted with Noam (who added First Contentful Paint to Webkit) about it, and the fact that First Contentful Paint fires before Start Render actually makes perfect sense if you look at the changes made to the specification in order for Safari to implement it.
 
