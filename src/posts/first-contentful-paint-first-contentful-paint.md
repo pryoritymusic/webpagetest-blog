@@ -40,7 +40,7 @@ WebPageTest's video capture records the screen of the browser as a test is run, 
 
 Here's what [the filmstrip](https://www.webpagetest.org/video/compare.php?tests=210429_BiDcEP_fbb4dc3d38fed8cf13691aa4927e0f8b-r%3A1-c%3A0&sticky=1&thumbSize=600&ival=16.67&end=visual) showed when First Contentful Paint fired on my page:
 
-![A screenshot of the WebPageTest filmstrip view, showing that at the time First Contentful Paint fired, the screen was empty..nothing was actually visibly painted yet.](https://res.cloudinary.com/psaulitis/image/upload/v1619811188/fcp-tkcom-filmstrip.png.png)
+![A screenshot of the WebPageTest filmstrip view, showing that at the time First Contentful Paint fired, the screen was empty..nothing was actually visibly painted yet.](https://res.cloudinary.com/psaulitis/image/upload/v1619811188/fcp-tkcom-filmstrip.png.png "Wide:")
 
 There was nothing there. In fact, Start Render didn't occur until 1.5s—about 130ms later.
 
@@ -77,7 +77,7 @@ Firefox has bit larger gap, and Safari has (comparatively) a very large gap.
 
 Another way of looking at it is to look at a scatter plot of the First Contentful Paint gap across the 6 different URL's. From the chart below, we can get a good sense of how significant the difference is between the Safari results and the Firefox and Chrome results. We can also see that the gap in Safari varies from test to test (though the metric is pretty consistently within at least a 300ms window).
 
-![A scatterplot chart of the FCP gaps for all tests. Chrome and Firefox tests are all clumped pretty close together, within ~150ms range. Safari tests are scattered below, with most lying between 100 and 300ms.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1620143642/FCP-scatterplot.png)
+![A scatterplot chart of the FCP gaps for all tests. Chrome and Firefox tests are all clumped pretty close together, within ~150ms range. Safari tests are scattered below, with most lying between 100 and 300ms.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1620143642/FCP-scatterplot.png "Wide:")
 
 I chatted with Noam (who added First Contentful Paint to Webkit) about it, and the fact that First Contentful Paint fires before Start Render actually makes perfect sense if you look at the changes made to the specification in order for Safari to implement it.
 
