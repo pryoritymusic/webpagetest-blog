@@ -1,6 +1,6 @@
 ---
 title: Why First Contentful Paint Doesn't Work As a Cross-Browser Metric
-date: 2021-05-04T19:31:25.663Z
+date: 2021-05-04T16:12:41.043Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1620138866/FCP-Blog-min_ypvz1v.png
 tags:
   - First Contentful Paint
