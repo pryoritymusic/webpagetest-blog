@@ -97,11 +97,15 @@ It's a small distinction but an important one: as specified, this means First Co
 
 That explains why we see First Contentful Paint frequently firing before we see content, but why is the gap so much more pronounced in Safari? It turns out just how *much* earlier First Contentful Paint will fire depends on the browser engine and their implementation.
 
-As Noam mentioned to me, lot of rendering in Safari is done at the operating system level and the browser doesn't know when that rendering exactly occurs. This means Safari has a limit to how precise it can be with the timestamp.
+As Noam mentioned to me, lot of rendering in Safari is done at the operating system level and the browser doesn't know when that rendering exactly occurs. This means Safari has a limit to how precise it can be with the timestamp in an interoperable way.
 
-Chrome, on the other hand tries hard to provide a timestamp of when the paint actually does occur. As a result, the gap between when First Contentful Paint is fired and that content is visually displayed is significantly smaller in Chrome (and Firefox) than in Safari.
+Chrome, on the other hand, tries hard to provide a timestamp of when the paint actually does occur. They were the first to land support for the First Contentful Paint and handled their implementation before the WebKit team pushed for a change to the specification. As a result, the gap between when First Contentful Paint is fired and that content is visually displayed is significantly smaller in Chrome than in Safari.
 
 This appears to largely be a side-effect of the difference between interoperability in practice and in reality. The specification tries to provide a consistent playing field, but the reality is that different browser architectures have different restrictions on when they can fire the necessary timestamps to report First Contentful (or if not restrictions, then perhaps how important it is for them to try to work around those restrictions to get more accurate timings). It's one of those "specs in the real world" moments.
+
+<ins>
+Noam provided some more context on Twitter that's relevant here and worth emphasizing here. WebKit's decision was [based on interoperability](https://twitter.com/nomsternom/status/1389817161250713600). A [prior patch to implement First Contentful Paint actually used a different timestamp](https://twitter.com/nomsternom/status/1389817161250713600), closer to the actual painting event, but they opted to go a different route.
+</ins>
 
 This distinction and the difference in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison.
 
