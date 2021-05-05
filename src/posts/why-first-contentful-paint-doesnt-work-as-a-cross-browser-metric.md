@@ -104,7 +104,7 @@ Chrome, on the other hand, tries hard to provide a timestamp of when the paint a
 This appears to largely be a side-effect of the difference between interoperability in practice and in reality. The specification tries to provide a consistent playing field, but the reality is that different browser architectures have different restrictions on when they can fire the necessary timestamps to report First Contentful (or if not restrictions, then perhaps how important it is for them to try to work around those restrictions to get more accurate timings). It's one of those "specs in the real world" moments.
 
 <ins>
-Noam provided some more context on Twitter that's relevant here and worth emphasizing here. WebKit's decision was [based on interoperability](https://twitter.com/nomsternom/status/1389817161250713600). A [prior patch to implement First Contentful Paint actually used a different timestamp](https://twitter.com/nomsternom/status/1389817161250713600), closer to the actual painting event, but they opted to go a different route.
+Noam provided some more context on Twitter that's relevant here and worth emphasizing here. WebKit's decision was <a href="https://twitter.com/nomsternom/status/1389817161250713600">based on interoperability</a>. A <a href="https://twitter.com/nomsternom/status/1389817161250713600">prior patch to implement First Contentful Paint actually used a different timestamp</a>, closer to the actual painting event, but they opted to go a different route.
 </ins>
 
 This distinction and the difference in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison.
