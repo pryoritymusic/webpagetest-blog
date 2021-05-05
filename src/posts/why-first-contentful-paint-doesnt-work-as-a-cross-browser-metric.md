@@ -61,7 +61,7 @@ Ok. So next up, let's see what happens in Chrome and Firefox and how any gaps be
 
 Keep in mind the video for each test was recorded at 60fps. This means that each frame itself is *just* under 17ms. So any difference between First Contentful Paint and Start Render that falls under that 17ms threshold is beyond the limit of measurement, as well as beyond the limit of us being able to see any visual difference.
 
-| Page                  | Difference between FCP and Start Render, Safari | Difference between FCP and Start Render, Firefox | Difference between FCP and Start Render, Chrome (G4) |
+| URL Tested                  | Difference between FCP and Start Render, Safari | Difference between FCP and Start Render, Firefox | Difference between FCP and Start Render, Chrome (G4) |
 | --------------------- | ----------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------- |
 | Wal-Mart              | \-170ms                                         | \-35ms                                           | +1ms                                                 |
 | CNN                   | \-128ms                                         | \-34ms                                           | +1ms                                                 |
