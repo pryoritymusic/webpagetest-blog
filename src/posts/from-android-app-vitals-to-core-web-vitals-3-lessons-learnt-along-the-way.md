@@ -25,7 +25,7 @@ Shortly after, developers noticed that making the relevant improvements started
 
 The Starbucks Android app developer team was able to [isolate a common ANR](https://youtu.be/dx6LBaFqEHU?t=265) (application not responding) to a 3rd party library. Which led to Starbucks app’s ANR rate being reduced by 70% and crash rate by 85% within a week. This is directly tied to their revenue given their focus on mobile ordering. If you like purchasing the Starbucks Nitro cold brew or your favorite coffee on your mobile device like I do, then you know how frustrating it is if the app fails on you during checkout and you end up holding up a line.  
 
-Fast forward to May 2021. I'm now at Catchpoint driving our [WebPageTest](http://webpagetest.org/) business with Patrick Meenan, Tim Kadlec along with many more team members, and coincidentally find myself having similar discussions with the same companies. Only this time, they are with front-end web development teams, performance engineering, business, and marketing leaders all concerned about a set of web performance metrics for on-page experience called Core Web Vitals.  
+Fast forward to May 2021. I'm now at Catchpoint driving our [WebPageTest](http://webpagetest.org/) business with Patrick Meenan, Tim Kadlec and many more team members, and coincidentally find myself having similar discussions with the same companies. Only this time, they are with front-end web development teams, performance engineering, business, and marketing leaders all concerned about a set of web performance metrics for on-page experience called Core Web Vitals.  
 
 ![Core Web Vitals Breakdown](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622117884/CWV_dizvd6.jpg)
 
