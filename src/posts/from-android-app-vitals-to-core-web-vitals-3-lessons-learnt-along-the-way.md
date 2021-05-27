@@ -4,8 +4,9 @@ date: 2021-05-27T12:13:53.234Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622122621/CWV_TITLE_uq8kbz.png
 tags:
   - core web vitals
-  - tag 2
-  - tag 3
+  - first contentful paint
+  - cumulative layout shift
+  - first input delay
 category: Perf Data
 author: Jeena James
 related_post:
