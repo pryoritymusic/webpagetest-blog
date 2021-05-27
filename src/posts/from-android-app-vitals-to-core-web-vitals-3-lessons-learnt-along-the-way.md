@@ -49,6 +49,8 @@ Web developer teams are seeing significant improvements already, and here are so
 
 I want to share with you the 3 lessons I took away from my experience working with Android app developers when we launched Android vitals in Google Play and how they apply today to teams who are working on improving their Core Web Vitals:  
 
+
+
 # Lesson 1: User experience really matters, but pay attention to the right metrics 
 
 If you’ve been paying attention to all the studies and literature coming out around web vitals, you’ll see there's a lot of noise out there on which tools and metrics matter.  
