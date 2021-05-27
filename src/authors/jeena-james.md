@@ -9,7 +9,6 @@ bio: Jeena leads the WebPageTest business unit at Catchpoint, and drives the
   product-led solutions and partnerships that enhanced developer experiences.
   Jeena actively mentors and coaches working professionals, leaders, and startup
   founders. She holds a Bachelor of Science degree in Economics, Mathematics and
-  Statistics. Jeena is also passionate about picking up new musical instruments
-  - the latest being the kalimba.
+  Statistics. Jeena is also passionate about picking up new musical instruments—the latest being the kalimba.
 twitter_handle: jeenaj
 ---
