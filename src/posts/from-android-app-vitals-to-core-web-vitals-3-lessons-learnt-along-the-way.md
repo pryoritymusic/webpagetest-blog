@@ -49,7 +49,7 @@ Web developer teams are seeing significant improvements already, and here are so
 
 I want to share with you the 3 lessons I took away from my experience working with Android app developers when we launched Android vitals in Google Play and how they apply today to teams who are working on improving their Core Web Vitals:  
 
-# Lesson 1: User experience really matters, but pay attention to the right metrics 
+## Lesson 1: User experience really matters, but pay attention to the right metrics 
 
 If you’ve been paying attention to all the studies and literature coming out around web vitals, you’ll see there's a lot of noise out there on which tools and metrics matter.  
 
@@ -59,7 +59,7 @@ And if you’re keen to grab in-depth performance data on real browsers aroun
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622118968/CWV_Gif_u9ddhb.gif)
 
-# Lesson 2: Start with one, but apply to others where possible 
+## Lesson 2: Start with one, but apply to others where possible 
 
 Don’t focus on these performance metrics only because Google says you have to improve your Core Web Vitals on Chrome. Do it because all your users are going to have a much better experience and come back to your website again. On Google Play, our Android developers took many of the issues on Android that impacted user experience, and applied it to their iOS apps as well. Had they not considered their broader audience, a whole subset of their users would have had a worse experience. Learnings from one platform can and should be applied to others. The same thing holds true for browsers. 
 
@@ -71,7 +71,7 @@ Be careful of cross-browser measurements though. Review if they are indeed ‘a
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622119084/CWV_Chart_dq1aph.png "There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap [[Blog post](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/)] ")
 
-# Lesson 3: Build a culture of performance monitoring - not a one-time effort for one team
+## Lesson 3: Build a culture of performance monitoring - not a one-time effort for one team
 
 Look carefully at what exactly the Core Web Vitals metrics offer or for that matter any of the performance metrics the Google Chrome team has been talking about. They all distill down to measuring core user experiences, gathering relevant insights and reporting issues that front end developers in any company large or small have been optimizing for, for years. Nothing really new. But this is a great step in the right direction where Google is providing a more unified approach to guide companies with signals for quality that can help them deliver stellar user experiences across the web. So it’s not just for the front end developers to care about these experiences, but also for the product, other engineering teams, marketing, business.  
 
