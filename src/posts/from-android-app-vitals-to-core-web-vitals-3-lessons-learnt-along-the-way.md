@@ -3,10 +3,10 @@ title: From Android App Vitals to Core Web Vitals - 3 lessons learnt along the w
 date: 2021-05-27T12:13:53.234Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622124745/Web_Vitals_Blog_Title_p7otsk.png
 tags:
-  - core web vitals
-  - first contentful paint
-  - cumulative layout shift
-  - first input delay
+  - Core Web Vitals
+  - First Contentful Paint
+  - CLS
+  - First Input Delay
 category: Perf Data
 author: Jeena James
 related_post:
