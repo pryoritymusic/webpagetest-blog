@@ -17,7 +17,7 @@ It’s May 2017. Google has just [announced Android vitals at I/O 2017](htt
 
 The news was received with somewhat mixed reactions among the Android app developer teams managed by my team. Most developers loved that Google Play was sharing performance data on their apps, to analyze bad app behaviors and improve performance. After all, no one wants to drain a user’s battery or crash on user’s devices. Also, no other app distribution platform was offering these kind of performance metrics. Some developers were skeptical - because the data was being collected only from a cohort of users who have opted in to automatically share usage and diagnostic data.
 
-But what made Android vitals gain importance with developer teams and the business teams was that Google announced that these metrics (and more that were going to be added later) would soon impact an app’s Google Play Store discoverability (a.k.a Google Play Store Search rankings)
+But what made Android vitals gain importance with developer teams and the business teams was that Google announced that these metrics (and more that were going to be added later) would soon impact an app’s Google Play Store discoverability (a.k.a Google Play Store Search rankings).
 
 #### That got everyone to sit up and pay attention to their user experience on Android.
 
