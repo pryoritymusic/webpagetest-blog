@@ -11,6 +11,7 @@ category: Perf Data
 author: Jeena James
 related_post:
   post: understanding-the-new-cumulative-layout-shift
+  highlight: More on Web Vitals
 ---
 It’s May 2017. Google has just [announced Android vitals at I/O 2017](https://android-developers.googleblog.com/2017/05/whats-new-in-google-play-at-io-2017.html), an initiative to provide relevant app performance metrics to Android developers with respect to stability, battery and rendering on Android devices. I am on the Google Play team managing product and partnerships strategy for companies and Android app developers to build and distribute their apps on the Google Play Store.  
 
