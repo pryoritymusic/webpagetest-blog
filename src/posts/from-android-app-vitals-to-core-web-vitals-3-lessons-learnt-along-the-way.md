@@ -29,7 +29,7 @@ Fast forward to May 2021. I'm now at Catchpoint driving our [WebPageTest
 
 ![Core Web Vitals Breakdown](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622117884/CWV_dizvd6.jpg)
 
-#### And just like with Android vitals, Google announced that these performance metrics will be included in the Google Search ranking signals, rolling out from mid-June 2021. 
+**And just like with Android vitals, Google announced that these performance metrics will be included in the Google Search ranking signals, rolling out from mid-June 2021.**
 
 At a whopping [64.47% of market share](https://gs.statcounter.com/browser-market-share) of all browsers, Chrome is the primary browser for global internet users and Google Search takes the lion share of total search traffic. It’s safe to say that this search ranking update will impact any and every website who cares about SEO. While we can have different schools of thoughts around what should be measured, and why should one company get to dictate how user experience should be measured, everyone agrees that the user experience on digital channels needs to be flawless. Especially in this digital age, where we all have multiple options to shop, eat, read, consume utilities etc. from different companies all vying for the same user attention.
 
