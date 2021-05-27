@@ -97,7 +97,7 @@ Our teams at Catchpoint have solid experience in helping companies and teams set
 
 A lot of progress has taken place over the years around pushing the bar on performance and it’s more holistic just making your sites and apps faster. With Android vitals, it was about not inadvertently taxing the users and their Android devices in such a way they end up leaving poor reviews and uninstalling the apps. With Core Web Vitals, it is to look at the optimal signals to improve on-page experience so that users find what they are looking for, consume the content, complete the purchase and continue to engage with the brand. It's great to see companies of all shapes and sizes talking about performance. Let’s continue to include performance measurement and monitoring into our conversations and decision making.  
 
-*Where can I learn more?*  
+## Where can I learn more?  
 
 Here are some resources to get you going!  
 
