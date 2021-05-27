@@ -1,11 +1,11 @@
 ---
-title: From Android App Vitals to Core Web Vitals - 3 lessons learnt along the way
+title: From Android App Vitals to Core Web Vitals - 3 lessons learned along the way
 date: 2021-05-27T12:13:53.234Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622124745/Web_Vitals_Blog_Title_p7otsk.png
 tags:
   - Core Web Vitals
   - First Contentful Paint
-  - CLS
+  - Cumulative Layout Shift
   - First Input Delay
 category: Perf Data
 author: Jeena James
@@ -23,7 +23,7 @@ But what made Android vitals gain importance with developer teams and the busine
 
 Shortly after, developers noticed that making the relevant improvements started bringing in almost immediate results. 
 
-> The Starbucks Android app developer team was able to [isolate a common ANR](https://youtu.be/dx6LBaFqEHU?t=265) (application not responding) to a 3rd party library. Which led to Starbucks app’s ANR rate being reduced by 70% and crash rate by 85% within a week. This is directly tied to their revenue given their focus on mobile ordering. If you like purchasing the Starbucks Nitro cold brew or your favorite coffee on your mobile device like I do, then you know how frustrating it is if the app fails on you during checkout and you end up holding up a line.  
+The Starbucks Android app developer team was able to [isolate a common ANR](https://youtu.be/dx6LBaFqEHU?t=265) (application not responding) to a 3rd party library. Which led to Starbucks app’s ANR rate being reduced by 70% and crash rate by 85% within a week. This is directly tied to their revenue given their focus on mobile ordering. If you like purchasing the Starbucks Nitro cold brew or your favorite coffee on your mobile device like I do, then you know how frustrating it is if the app fails on you during checkout and you end up holding up a line.  
 
 Fast forward to May 2021. I'm now at Catchpoint driving our [WebPageTest](http://webpagetest.org/) business with Patrick Meenan, Tim Kadlec along with many more team members, and coincidentally find myself having similar discussions with the same companies. Only this time, they are with front-end web development teams, performance engineering, business, and marketing leaders all concerned about a set of web performance metrics for on-page experience called Core Web Vitals.  
 
@@ -49,7 +49,7 @@ Web developer teams are seeing significant improvements already, and here are so
 
 I want to share with you the 3 lessons I took away from my experience working with Android app developers when we launched Android vitals in Google Play and how they apply today to teams who are working on improving their Core Web Vitals:  
 
-### Lesson 1: User experience really matters, but pay attention to the right metrics 
+# Lesson 1: User experience really matters, but pay attention to the right metrics 
 
 If you’ve been paying attention to all the studies and literature coming out around web vitals, you’ll see there's a lot of noise out there on which tools and metrics matter.  
 
@@ -59,19 +59,19 @@ And if you’re keen to grab in-depth performance data on real browsers aroun
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622118968/CWV_Gif_u9ddhb.gif)
 
-### Lesson 2: Start with one, but apply to others where possible 
+# Lesson 2: Start with one, but apply to others where possible 
 
 Don’t focus on these performance metrics only because Google says you have to improve your Core Web Vitals on Chrome. Do it because all your users are going to have a much better experience and come back to your website again. On Google Play, our Android developers took many of the issues on Android that impacted user experience, and applied it to their iOS apps as well. Had they not considered their broader audience, a whole subset of their users would have had a worse experience. Learnings from one platform can and should be applied to others. The same thing holds true for browsers. 
 
-> Using a new format like AVIF, for example, in browsers that support it (Chrome and Firefox in this case) could help reduce your overall page weight and potentially improve your Largest Contentful Paint (LCP). This is particularly beneficial for Media and Ecommerce sites where LCP is likely a hero image. However, Safari doesn't support AVIF yet so it wouldn't get any benefits out of the box. So, you'd want to make sure that whatever your strategy for images, you make sure you're also trying to find the best possible format to use for your Safari-based traffic so that users on Safari can also benefit.  
+Using a new format like AVIF, for example, in browsers that support it (Chrome and Firefox in this case) could help reduce your overall page weight and potentially improve your Largest Contentful Paint (LCP). This is particularly beneficial for Media and Ecommerce sites where LCP is likely a hero image. However, Safari doesn't support AVIF yet so it wouldn't get any benefits out of the box. So, you'd want to make sure that whatever your strategy for images, you make sure you're also trying to find the best possible format to use for your Safari-based traffic so that users on Safari can also benefit.  
 
 Be careful of cross-browser measurements though. Review if they are indeed ‘apples to apples’. Recently, the [First Contentful Paint](https://web.dev/fcp/) metric moved away from being solely a Chrome-only metric and became one of the first performance metrics to be available across Chrome, Edge, and Safari. 
 
-> [Tim Kadlec](https://twitter.com/tkadlec), Performance Engineering Fellow at Catchpoint and a well regarded advocate for web performance standards, did a [comprehensive analysis recently](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/) to dig into the FCP metric on Safari and outlined a few areas where it’s not really apples to ‘Apple’. Tim goes on to explain how this is a good example where developers can optimizeFCP   for a specific browser and see how the metric improves when they make changes, however, be careful of comparing the performance metrics between browsers. This exercise also stresses the fact that developers need to pair their real user data with solid synthetic data, and not just look at one or the other. 
+[Tim Kadlec](https://twitter.com/tkadlec), Performance Engineering Fellow at Catchpoint and a well regarded advocate for web performance standards, did a [comprehensive analysis recently](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/) to dig into the FCP metric on Safari and outlined a few areas where it’s not really apples to ‘Apple’. Tim goes on to explain how this is a good example where developers can optimizeFCP   for a specific browser and see how the metric improves when they make changes, however, be careful of comparing the performance metrics between browsers. This exercise also stresses the fact that developers need to pair their real user data with solid synthetic data, and not just look at one or the other. 
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622119084/CWV_Chart_dq1aph.png "There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap [[Blog post](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/)] ")
 
-### Lesson 3: Build a culture of performance monitoring - not a one-time effort for one team
+# Lesson 3: Build a culture of performance monitoring - not a one-time effort for one team
 
 Look carefully at what exactly the Core Web Vitals metrics offer or for that matter any of the performance metrics the Google Chrome team has been talking about. They all distill down to measuring core user experiences, gathering relevant insights and reporting issues that front end developers in any company large or small have been optimizing for, for years. Nothing really new. But this is a great step in the right direction where Google is providing a more unified approach to guide companies with signals for quality that can help them deliver stellar user experiences across the web. So it’s not just for the front end developers to care about these experiences, but also for the product, other engineering teams, marketing, business.  
 
