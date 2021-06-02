@@ -29,7 +29,7 @@ Fast forward to May 2021. I'm now at Catchpoint driving our [WebPageTest](http:/
 
 ![Core Web Vitals Breakdown](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622117884/CWV_dizvd6.jpg)
 
-#### And just like with Android vitals, Google announced that these performance metrics will be included in the Google Search ranking signals, rolling out from mid-June 2021. 
+**And just like with Android vitals, Google announced that these performance metrics will be included in the Google Search ranking signals, rolling out from mid-June 2021.**
 
 At a whopping [64.47% of market share](https://gs.statcounter.com/browser-market-share) of all browsers, Chrome is the primary browser for global internet users and Google Search takes the lion share of total search traffic. It’s safe to say that this search ranking update will impact any and every website who cares about SEO. While we can have different schools of thoughts around what should be measured, and why should one company get to dictate how user experience should be measured, everyone agrees that the user experience on digital channels needs to be flawless. Especially in this digital age, where we all have multiple options to shop, eat, read, consume utilities etc. from different companies all vying for the same user attention.
 
@@ -69,7 +69,7 @@ Be careful of cross-browser measurements though. Review if they are indeed ‘ap
 
 [Tim Kadlec](https://twitter.com/tkadlec), Performance Engineering Fellow at Catchpoint and a well regarded advocate for web performance standards, did a [comprehensive analysis recently](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/) to dig into the FCP metric on Safari and outlined a few areas where it’s not really apples to ‘Apple’. Tim goes on to explain how this is a good example where developers can optimize FCP   for a specific browser and see how the metric improves when they make changes, however, be careful of comparing the performance metrics between browsers. This exercise also stresses the fact that developers need to pair their real user data with solid synthetic data, and not just look at one or the other. 
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622119084/CWV_Chart_dq1aph.png "There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap [[Blog post](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/)] ")
+![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1622119084/CWV_Chart_dq1aph.png "There's a gap in all browsers, and for most of these sites, the First Contentful Paint fires before we see something on the screen. What differs is the size of that gap.")
 
 ## Lesson 3: Build a culture of performance monitoring - not a one-time effort for one team
 
