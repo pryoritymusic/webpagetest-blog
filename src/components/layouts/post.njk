@@ -21,7 +21,7 @@
             <time class="post__date text--accent" datetime="{{ date | htmlDate }}">{{ date | monthDayYear }}</time>
           {%- endif -%}
         </div>
-        <h1 class="post__title">{{ title }}</h1>
+        <h1 class="post__title" elementtiming="post-title">{{ title }}</h1>
         {%- if description -%}
           <p class="h3 post__description">{{ description }}</p>
         {%- endif -%}
@@ -32,7 +32,7 @@
       </header>
       {% if featured_image != blank %}
         <figure class="post__figure">
-          {% cloudinaryImage featured_image, featured_image_caption, 640, 512, "(min-width: 44em) 40rem, 90vw", "eager", "post__figure-image" %}
+          {% cloudinaryImage featured_image, featured_image_caption, 640, 512, "(min-width: 44em) 40rem, 90vw", "eager", "post__figure-image", "elementtiming='post-hero'" %}
           <figcaption class="post__figcaption" aria-hidden="true">{{ featured_image_caption }}</figcaption>
         </figure>
       {% endif %}
