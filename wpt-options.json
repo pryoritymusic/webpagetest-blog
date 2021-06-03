@@ -1,6 +1,6 @@
 {
     "location": "Dulles:Chrome",
     "emulateMobile": true,
-    "video": true
+    "video": true,
     "block": "netlify-cdp-loader.netlify.app"
 }
