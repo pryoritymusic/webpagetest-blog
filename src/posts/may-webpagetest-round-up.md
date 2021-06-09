@@ -59,7 +59,7 @@ Watch for more information about this page, as well as further improvements. We'
 
 ## Exposing the Accessibility Tree With Custom Metrics
 
-We can now capture the Chromium Accessibility Tree with a custom metric (`$WPT_ACCESSIBILITY_TREE`), making it possibly to analyze and opening the door for future accessibility checks. [Learn more in the documentation](https://docs.webpagetest.org/custom-metrics/#accessing-requests-data-(chrome-only)).
+We can now capture the Chromium Accessibility Tree with a custom metric (`$WPT_ACCESSIBILITY_TREE`), making it possibly to analyze and opening the door for us to provide some interesting accessibility checks in the future. [Learn more in the documentation](https://docs.webpagetest.org/custom-metrics/#accessing-requests-data-(chrome-only)) about how to collect the tree and definitely let us know if you've got anything you're excited to do with it.
 
 ## WebPageTest for Slack
 
