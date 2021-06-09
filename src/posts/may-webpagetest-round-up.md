@@ -43,7 +43,7 @@ Finally, we also provide a truncated version of the waterfall, cut off at the mo
 
 For any layout shifts, you're able to hover over a screenshot to see an animation of what shifted on the page.
 
-![An animated GIF showing how a page shifts when a thumbnail is hovered over.](https://res.cloudinary.com/psaulitis/video/upload/f_auto,q_auto/v1623258076/may-roundup-cls-animation.gif)
+![An animated GIF showing how a page shifts when a thumbnail is hovered over.](https://res.cloudinary.com/psaulitis/video/upload/v1623258076/may-roundup-cls-animation.gif)
 
 ### Total Blocking Time
 
