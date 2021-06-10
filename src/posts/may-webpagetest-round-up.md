@@ -14,7 +14,7 @@ The Plot Full Results page (one of [Matt Hobb's personal favorites](https://noos
 
 The Plot Full Results page is used to let you see the results of each individual run of a test (or several tests) so that you can more easily spot outliers and see the variability in your results.
 
-To help make sharing and comparing easier, you can now force each chart to start at zero for the y-axis, to make it easier to share and compare results. Before, the charts would auto-scale the y-axes which worked well if you were viewing one chart in isolation, but not if you wanted to compare and contrast charts from different tests.
+To help make sharing and comparing easier, you can now force each chart to start at zero for the y-axis to make it easier to share and compare results. Before, the charts would auto-scale the y-axis, which worked well if you were viewing one chart in isolation, but not if you wanted to compare and contrast charts from different tests.
 
 If you're graphing the results of multiple tests, we also now provide a summary table of the results for each of the tests you're plotting.
 
@@ -60,13 +60,13 @@ Watch for more information about this page, as well as further improvements. We'
 
 ## Exposing the Accessibility Tree With Custom Metrics
 
-We can now capture the Chromium Accessibility Tree with a custom metric (`$WPT_ACCESSIBILITY_TREE`), making it possibly to analyze and opening the door for us to provide some interesting accessibility checks in the future. [Learn more in the documentation](https://docs.webpagetest.org/custom-metrics/#accessing-requests-data-(chrome-only)) about how to collect the tree and definitely let us know if you've got anything you're excited to do with it.
+We can now capture the Chromium Accessibility Tree with a custom metric (`$WPT_ACCESSIBILITY_TREE`), making it possible to analyze and opening the door for us to provide some interesting accessibility checks in the future. [Learn more in the documentation](https://docs.webpagetest.org/custom-metrics/#accessing-requests-data-(chrome-only)) about how to collect the tree and definitely let us know if you've got anything you're excited to do with it.
 
 ## WebPageTest for Slack
 
 Thanks to the work of [Abdul Suhail](https://twitter.com/abdul_suhaill), we now have a Slack bot for WebPageTest!
 
-The bot uses the [WebPageTest API](https://product.webpagetest.org/api) to enable you to trigger WebPageTest tests from within Slack, and get the results automatically posted back to the appropriate Slack channel. As more companies use Slack as a hub for alerting and debugging, bringing WebPageTest results into that process makes it easier for teams to quickly diagnose problems.
+The bot uses the [WebPageTest API](https://product.webpagetest.org/api) to enable you to trigger WebPageTest tests from within Slack, and get the results automatically posted back to the appropriate Slack channel. As more companies use Slack as a hub for alerting and debugging, bringing WebPageTest results into that process makes it easier for teams to diagnose problems quickly.
 
 ![A screenshot from showing WebPageTest results being posted in Slack by the WebPageTest bot.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623258076/may-roundup-slack.png)
 
@@ -86,8 +86,8 @@ output: setCookie https://wpt.example foo=bar
 
 ## More Accurate CPU Emulation
 
-Pat recalibrated the CPU throttling for mobile emulation, to make the results more accurate and inline with how the actual mobile devices perform. For most devices, this required about twice as much throttling. Any mobile emulated tests should now be much more accurate.
+Pat recalibrated the CPU throttling for mobile emulation to make the results more accurate and in line with how the actual mobile devices perform. For most devices, this required about twice as much throttling. Any mobile emulated tests should now be much more accurate.
 
 ## Updated Wappalyzer Engine
 
-WebPageTest runs [Wappalyzer](https://www.wappalyzer.com/) on each test run to help identify what technologies are used on a given page. We updated to the latest version of the engine which provides support for a bunch of new technologies, as well as improved detection for others.
+WebPageTest runs [Wappalyzer](https://www.wappalyzer.com/) on each test run to help identify what technologies are used on a given page. We updated to the latest version of the engine, which provides support for a bunch of new technologies, as well as improved detection for others.
