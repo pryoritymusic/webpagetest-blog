@@ -172,11 +172,9 @@ It's worth stressing—attribution is based on frame (iframes, etc), *not* by UR
 
 If we breakdown byte usage by where it's attributed, we see that 83.9% of that memory is attributed to first-party frames, 8.2% is attributed to cross-origin frames, and 7.9% is shared or global for desktop.
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-attribution-desktop.svg "Wide:")
-
 Mobile is very similar with 84.6% of memory attributed to first-party frames, 7.5% attributed to cross-origin frames and 7.9% being shared or global memory.
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-attribution-mobile.svg "Wide:")
+![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623789699/js_mem_usage_attribution.png "Wide:")
 
 ## What does memory usage look like across frameworks?
 
