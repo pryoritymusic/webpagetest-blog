@@ -1,6 +1,7 @@
 ---
 title: Benchmarking JavaScript Memory Usage
 date: 2021-06-15T18:04:00.898Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1623793022/MemoryBlogImage_uflo0b.psd
 tags:
   - javascript
 category: Perf Data
