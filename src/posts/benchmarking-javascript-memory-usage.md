@@ -172,11 +172,11 @@ It's worth stressing—attribution is based on frame (iframes, etc), *not* by UR
 
 If we breakdown byte usage by where it's attributed, we see that 83.9% of that memory is attributed to first-party frames, 8.2% is attributed to cross-origin frames, and 7.9% is shared or global for desktop.
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-attribution-desktop.svg)
+![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-attribution-desktop.svg "Wide:")
 
 Mobile is very similar with 84.6% of memory attributed to first-party frames, 7.5% attributed to cross-origin frames and 7.9% being shared or global memory.
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-attribution-mobile.svg)
+![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-attribution-mobile.svg "Wide:")
 
 ## What does memory usage look like across frameworks?
 
@@ -194,7 +194,7 @@ So naturally, we'd expect memory usage to be higher when a framework that uses t
 | URLs with jQuery  | 2,549.5kb | 4,627.0kb  | 9,763.4kb  | 19,221.0kb | 28,476.2kb | 36,738.2kb |
 | URLs with Angular | 4,137.8kb | 5,946.5kb  | 12,700.5kb | 21,448.7kb | 31,917.4kb | 47,724.4kb |
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-by-framework.svg)
+![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623780420/js-mem-usage-by-framework.svg "Wide:")
 
 There's a risk of looking at that table and immediately deciding that using React, for example, is terrible for memory. We know that memory usage is *highly* correlated to the amount of JavaScript on a page, and we also know that [sites that use frameworks ship more JavaScript](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/#javascript-bytes).
 
