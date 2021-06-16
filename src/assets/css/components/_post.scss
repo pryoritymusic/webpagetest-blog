@@ -59,6 +59,13 @@
     text-decoration: none;
     padding: .4em .6em;
 }
+.post__content .footnotes-list {
+  font-size: .9em;
+
+  li{
+    margin-bottom: 1.5em;
+  }
+}
 @media (min-width: 36em) {
   .post__author-share,
   .post__tags-share {

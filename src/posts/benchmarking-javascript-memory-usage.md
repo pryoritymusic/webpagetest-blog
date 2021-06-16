@@ -30,7 +30,7 @@ Chrome introduced a new API for collecting memory related information using a Pe
 
 The `measureUserAgentSpecificMemory` API returns a breakdown of how many bytes the page consumes for memory *related to JavaScript and DOM elements only*. 
 
-According to [research from the v8 team](https://docs.google.com/presentation/d/14uV5jrJ0aPs0Hd0Ehu3JPV8IBGc3U8gU6daLAqj6NrM/edit#slide=id.g381566e71b_0_0), \~35% of memory allocation on the web is JavaScript related, and 10% is for representing DOM elements in memory. The remaining 55% is images, browser features, and all the other stuff that gets put in memory. So while this API is limited to JS and DOM related information at the moment, that does comprise a large portion (\~45%) of the actual memory usage of a page.
+According to [research from the v8 team](https://docs.google.com/presentation/d/14uV5jrJ0aPs0Hd0Ehu3JPV8IBGc3U8gU6daLAqj6NrM/edit#slide=id.g381566e71b_0_0), \~35% of memory allocation on the web is JavaScript related, and 10% is for representing DOM elements in memory. The remaining 55% is images,[^1] browser features, and all the other stuff that gets put in memory. So while this API is limited to JS and DOM related information at the moment, that does comprise a large portion (\~45%) of the actual memory usage of a page.
 
 An [article by Ulan, who spearheaded a lot of the work for the API](https://web.dev/monitor-total-page-memory-usage/) provides a sample return object.
 
@@ -112,7 +112,7 @@ return new Promise((resolve) => {
 
 That snippet will setup a promise to wait for `measureUserAgentSpecificMemory` to return a result (it currently has a 20 second timeout), then grab the full result, convert it to a string, and return it back so we can dig in.
 
-To try to come up with some benchmarks, we setup the test with that metric and the Chrome flags, and then ran it on the top 10,000 URL's (based on the Chrome User Experience Report's popularity rank) on Chrome for desktop and again on an emulated Moto G4. Some tests didn't complete due to sites being down, or blocking the test agents, so we ended up with 9,548 test results for mobile and 9,533 desktop results.
+To try to come up with some benchmarks, we setup the test[^2] with that metric and the Chrome flags, and then ran it on the top 10,000 URL's (based on the Chrome User Experience Report's popularity rank) on Chrome for desktop and again on an emulated Moto G4. Some tests didn't complete due to sites being down, or blocking the test agents, so we ended up with 9,548 test results for mobile and 9,533 desktop results.
 
 Let's dig in!
 
@@ -224,4 +224,6 @@ We still need more information to round-out the full picture. How much memory is
 
 But at least these results let us start to form some level of understanding about how much JS related memory gets used so that we can start to consider how our own sites stack up.
 
-*Thanks to [Ulan Degenbaev](https://twitter.com/ulandev?lang=en) and [Yoav Weiss](https://blog.yoav.ws/) for being incredibly patient with me while I was trying to set these tests up and understand the results.*
+[^1]: I'm guessing that images are a _large_  part of the remaining 55%. I've [written about images and memory in the past](https://timkadlec.com/2013/11/why-we-need-responsive-images-part-deux/#memory), but the basic gist is that to find the amount of memory each image requires, you take the height of the image multiplied by the width of the image multipled by 4 bytes. So, in other words, a 500px by 500px image takes up 1,000,000 bytes of memory (500x500x4).
+
+[^2]: Thanks to [Ulan Degenbaev](https://twitter.com/ulandev?lang=en) and [Yoav Weiss](https://blog.yoav.ws/) for being incredibly patient with me while I was trying to set these tests up and understand the results.
