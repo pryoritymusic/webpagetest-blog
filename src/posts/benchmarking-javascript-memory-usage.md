@@ -3,9 +3,14 @@ title: Benchmarking JavaScript Memory Usage
 date: 2021-06-15T18:04:00.898Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1623793022/MemoryBlogImage_uflo0b.psd
 tags:
-  - javascript
+  - JavaScript
+  - Chrome
+  - Metrics
+  - Memory
 category: Perf Data
 author: Tim Kadlec
+related_post:
+  post: why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric
 ---
 One of the things that is so challenging about the conversation around memory usage on the web right now is the sheer number of unknowns.
 
