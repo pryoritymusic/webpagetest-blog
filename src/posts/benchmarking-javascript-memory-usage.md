@@ -151,7 +151,7 @@ That itself feels like a helpful gauge, but I'm a big believer that the closer y
 
 ## Correlation between memory and other perf metrics
 
-As we noted early, measuring memory in the wild is pretty tough to pull off right now. There are a lot of security mechanisms that need to be in place to be able to accurately collect the data, which means not all sites would be able to get meaningful data today. That's a big challenge, as performance data *always* becomes more interesting if we can put it in the context of what the impact is on the business and overall user experience.
+As we noted early, measuring memory in the wild is pretty tough to pull off right now. There are a lot of [security mechanisms](https://web.dev/coop-coep/) that need to be in place to be able to accurately collect the data, which means not all sites would be able to get meaningful data today. That's a big challenge, as performance data *always* becomes more interesting if we can put it in the context of what the impact is on the business and overall user experience.
 
 In lieu of this, I was curious how memory usage correlated to other performance metrics to see if any of them could serve as a reasonable proxy. Probably unsurprisingly given that we're focused on JavaScript and DOM related memory only, the correlation between any paint related metrics or traditional load metrics. It does, however, correlate strongly with the amount of JavaScript you send and with the Total Blocking Time. (The closer the correlation efficient is to 1, the stronger the correlation.)
 
