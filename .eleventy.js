@@ -2,6 +2,7 @@ const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const getPathFromUrl = require("./utils/getPathFromUrl.js");
 const markdownIt = require("markdown-it");
+const markdownItFootnote = require('markdown-it-footnote')
 const contentParser = require("./utils/transforms/contentParser.js");
 const dayjs = require("dayjs");
 const customParseFormat = require("dayjs/plugin/customParseFormat");
@@ -228,6 +229,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.setUseGitIgnore(false);
 
+  eleventyConfig.setLibrary("md", markdownIt({}).use(markdownItFootnote));
   /**
    * Eleventy configuration object
    */
