@@ -180,7 +180,7 @@ If we breakdown byte usage by where it's attributed, we see that 83.9% of that m
 
 Mobile is very similar with 84.6% of memory attributed to first-party frames, 7.5% attributed to cross-origin frames and 7.9% being shared or global memory.
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623789699/js_mem_usage_attribution.png "Wide:")
+![A pair of pie charts showing the data summarized in the prior paragraph.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623789699/js_mem_usage_attribution.png "Wide:")
 
 ## What does memory usage look like across frameworks?
 
@@ -198,7 +198,7 @@ So naturally, we'd expect memory usage to be higher when a framework that uses t
 | URLs with jQuery  | 2,549.5kb | 4,627.0kb  | 9,763.4kb  | 19,221.0kb | 28,476.2kb | 36,738.2kb |
 | URLs with Angular | 4,137.8kb | 5,946.5kb  | 12,700.5kb | 21,448.7kb | 31,917.4kb | 47,724.4kb |
 
-![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623783902/js-mem-usage-framework.png "Wide:")
+![A chart showing the range for the framework related memory data that is summarized in the previous table.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623783902/js-mem-usage-framework.png "Wide:")
 
 There's a risk of looking at that table and immediately deciding that using React, for example, is terrible for memory while ignoring the other things we know. We know that memory usage is *highly* correlated to the amount of JavaScript on a page, and we also know that [sites that use frameworks ship more JavaScript](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/#javascript-bytes). So the dramatic increase in memory usage could be more due to the fact that React sites tend to ship a lot of code rather than any inefficiency in the framework.
 
@@ -224,6 +224,6 @@ We still need more information to round-out the full picture. How much memory is
 
 But at least these results let us start to form some level of understanding about how much JS related memory gets used so that we can start to consider how our own sites stack up.
 
-[^1]: I'm guessing that images are a _large_  part of the remaining 55%. I've [written about images and memory in the past](https://timkadlec.com/2013/11/why-we-need-responsive-images-part-deux/#memory), but the basic gist is that to find the amount of memory each image requires, you take the height of the image multiplied by the width of the image multipled by 4 bytes. So, in other words, a 500px by 500px image takes up 1,000,000 bytes of memory (500x500x4).
+[^1]: I'm guessing that images are a *large*  part of the remaining 55%. I've [written about images and memory in the past](https://timkadlec.com/2013/11/why-we-need-responsive-images-part-deux/#memory), but the basic gist is that to find the amount of memory each image requires, you take the height of the image multiplied by the width of the image multipled by 4 bytes. So, in other words, a 500px by 500px image takes up 1,000,000 bytes of memory (500x500x4).
 
 [^2]: Thanks to [Ulan Degenbaev](https://twitter.com/ulandev?lang=en) and [Yoav Weiss](https://blog.yoav.ws/) for being incredibly patient with me while I was trying to set these tests up and understand the results.
