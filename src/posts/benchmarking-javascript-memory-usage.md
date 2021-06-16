@@ -137,7 +137,7 @@ To put this in context, remember that Chrome research puts JavaScript and DOM re
 
 It's well worth noting, again, that without context around the business impact, it's a bit hard to definitively say how much is too much here.
 
-It's also unclear to me exactly how much memory is available for JS related work in the first place. The legacy API ([`performance.memory`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory)) provides a `jsHeapSizeLimit` value that is supposedly the maximum size of the JS heap available to the browsing context (not just a single page), but that those values are proprietary and poorly specified, so it doesn't look like we could rely on that to find our upper-bound.
+It's also unclear to me exactly how much memory is available for JS related work in the first place. The legacy API ([`performance.memory`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory)) provides a `jsHeapSizeLimit` value that is supposedly the maximum size of the JS heap available to the renderer (not just a single page), but that those values are proprietary and poorly specified, so it doesn't look like we could rely on that to find our upper-bound.
 
 Still, we can still use the results from our tests as rough benchmarks for now, similar to what has been done for other metrics where we don't have good field data to help us judge the impact. Adopting the good/needs improvement/bad levels that Google has popularized around core web vitals, we'd get something like the following:
 
@@ -220,7 +220,7 @@ There's another big caveat here—this data is memory usage based on the initial
 
 Memory is still a largely unexplored area of web performance, but that probably needs to change. As we ship ever-increasing amounts of JavaScript, memory usage creeps up as well.
 
-We still need more information to round-out the full picture. How much memory is actually available to the browsing context at any point in time? How does memory correlate to key business and user engagement metrics? What about memory usage that *isn't* related to JavaScript and DOM complexity?
+We still need more information to round-out the full picture. How much memory is actually available to the browser at any point in time? How does memory correlate to key business and user engagement metrics? What about memory usage that *isn't* related to JavaScript and DOM complexity?
 
 But at least these results let us start to form some level of understanding about how much JS related memory gets used so that we can start to consider how our own sites stack up.
 
