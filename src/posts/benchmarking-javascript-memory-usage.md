@@ -1,7 +1,7 @@
 ---
 title: Benchmarking JavaScript Memory Usage
 date: 2021-06-15T18:04:00.898Z
-featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1623848199/MemoryBlogImage_p4t8t8.png
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1623793022/MemoryBlogImage_uflo0b.psd
 tags:
   - javascript
 category: Perf Data
@@ -11,9 +11,9 @@ One of the things that is so challenging about the conversation around memory us
 
 We haven't historically had ways of accurately determining how much memory a page is using in the real world, which means we haven't been able to draw a connection between memory usage and business or user engagement metrics to be able to determine what "good" looks like. So at the moment, we have no idea how problematic memory is, other than anecdotal stories that crop up here and there.
 
-We also haven't seen much in the way of at-scale synthetic testing to at least give us a comparison point to see how our pages might stack up with the web as a whole. This means we have no goal posts, no way to tell if the amount of memory we use is even ok when compared to the broader web. To quote Michael Hablich of the v8 team: "There is no clear communication for web developers on what to shoot for."
+We also haven't seen much in the way of at-scale synthetic testing to at least give us a comparison point to see how our pages might stack up with the web as a whole. This means we have no goal posts, no way to tell if the amount of memory we use is even ok when compared to the broader web. To quote [Michael Hablich of the v8 team](https://www.youtube.com/watch?v=1Ndu7IphEgU): "There is no clear communication for web developers what to shoot for."
 
-Because we don't have data about the business impact, nor do we have data for benchmarking,there's minimal interest in memory from the broader web development community. And, because we don't have that broader interest, browsers have very little incentive to focus on leveling up memory tooling and metrics on the web the same way they have around other performance-related areas. (Though we are seeing a [few here and there](https://developer.chrome.com/blog/memory-inspector/).)
+Because we don't have data about the business impact, nor do we have data for benchmarking, we don't have minimal interest in memory from the broader web development community. And, because we don't have that broader interest, browsers have very little incentive to focus on leveling up memory tooling and metrics on the web the same way they have around other performance-related areas. (Though we are seeing a [few here and there](https://developer.chrome.com/blog/memory-inspector/).)
 
 And because we don't have better tooling or metrics...well, you can probably see the circular logic here. It's a [chicken or the egg problem](https://en.wikipedia.org/wiki/Chicken_or_the_egg).
 
@@ -21,7 +21,7 @@ The first issue, not knowing the business impact, is gonna require a lot of indi
 
 ## measureUserAgentSpecificMemory
 
-Chrome introduced a new API for collecting memory related information using a Performance Observer, [called `measureUserAgentSpecificMemory`](https://web.dev/monitor-total-page-memory-usage/). (At the moment, there's been no forward momentum from Safari on adopting this, and Mozilla was still [fine tuning some details in the proposed specification](https://github.com/mozilla/standards-positions/issues/281)).
+Chrome introduced a new API for collecting memory related information using a Performance Observer, [called `measureUserAgentSpecificMemory`](https://web.dev/monitor-total-page-memory-usage/). (At the moment, there's been no forward momentum from Safari on adoption this, and Mozilla was still [fine tuning some details in the proposed specification](https://github.com/mozilla/standards-positions/issues/281)).
 
 The `measureUserAgentSpecificMemory` API returns a breakdown of how many bytes the page consumes for memory *related to JavaScript and DOM elements only*. 
 
@@ -159,7 +159,7 @@ In lieu of this, I was curious how memory usage correlated to other performance 
 | JavaScript Bytes         | .758                                     | .769                                    |
 | DOM Elements             | .216                                     | .234                                    |
 
-It seems pretty obvious I guess, but if you're passing a lot of JavaScript, expect to be using a large amount of memory as a result. And, if you're total blocking time is high, it's reasonable to expect that you're likely consuming a high-amount of JavaScript related memory.
+It seems pretty obvious I guess, but if you're passing a lot of JavaScript, expect to be using a large up a lot of memory as a result. And, if you're total blocking time is high, it's reasonable to expect that you're likely consuming a high-amount of JavaScript related memory.
 
 ## Where does it all come from?
 
@@ -195,7 +195,7 @@ So naturally, we'd expect memory usage to be higher when a framework that uses t
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1623783902/js-mem-usage-framework.png "Wide:")
 
-There's a risk of looking at that table and immediately deciding that using React, for example, is terrible for memory. We know that memory usage is *highly* correlated to the amount of JavaScript on a page, and we also know that [sites that use frameworks ship more JavaScript](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/#javascript-bytes).
+There's a risk of looking at that table and immediately deciding that using React, for example, is terrible for memory while ignoring the other things we know. We know that memory usage is *highly* correlated to the amount of JavaScript on a page, and we also know that [sites that use frameworks ship more JavaScript](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/#javascript-bytes). So the dramatic increase in memory usage could be more due to the fact that React sites tend to ship a lot of code rather than any inefficiency in the framework.
 
 Accurately zeroing in on the actual memory efficiency of a framework is a bit tougher because there's a fair amount of noise involved. One gauge that could be interesting as a rough indication of memory efficiency is too look at the ratio of bytes in memory compared to JavaScript bytes shipped. DOM elements do factor in to memory use, but given the weak correlation between DOM elements and memory usage and the high correlation between JavaScript bytes and memory usage, I think this gives us a rough, but relatively useful, benchmark. A lower ratio indicates better overall efficiency (less memory bytes per JavaScript byte shipped).
 
@@ -209,7 +209,7 @@ Accurately zeroing in on the actual memory efficiency of a framework is a bit to
 
 I'll be the first to admit: these results surprised me. React appears to have a lower memory to JS bytes ratio than the other comparison points. Of course, React also tends to result in a lot more JavaScript being shipped than the others (other than Angular) which is part of the reason why we see such high memory usage, even in the best case scenario. As always, the big advice here is whether you're using a framework or not, keep the total amount of JavaScript as small as possible.
 
-There's another big caveat here—this data is memory usage based on the initial page load. While that's interesting in and of itself, it doesn't really tell us anything about potential memory leaks. Running a few one-off tests, memory leaks were all too easy to find (but that's a topic for another post).
+There's another big caveat here—this data is memory usage based on the initial page load. While that's interesting in and of itself, it doesn't really tell us anything about potential memory leaks. Running a few one-off tests, memory leaks were *very* common in single-page applications (throw a dart at a group of them and odds are you'll land on one with a leak)—but that's a topic for another post.
 
 ## Summing it up
 
