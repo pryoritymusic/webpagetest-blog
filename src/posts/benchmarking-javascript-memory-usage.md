@@ -223,3 +223,5 @@ Memory is still a largely unexplored area of web performance, but that probably 
 We still need more information to round-out the full picture. How much memory is actually available to the browsing context at any point in time? How does memory correlate to key business and user engagement metrics? What about memory usage that *isn't* related to JavaScript and DOM complexity?
 
 But at least these results let us start to form some level of understanding about how much JS related memory gets used so that we can start to consider how our own sites stack up.
+
+*Thanks to [Ulan Degenbaev](https://twitter.com/ulandev?lang=en) and [Yoav Weiss](https://blog.yoav.ws/) for being incredibly patient with me while I was trying to set these tests up and understand the results.*
