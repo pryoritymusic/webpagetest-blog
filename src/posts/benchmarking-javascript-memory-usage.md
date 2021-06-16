@@ -137,7 +137,7 @@ To put this in context, remember that Chrome research puts JavaScript and DOM re
 
 It's well worth noting, again, that without context around the business impact, it's a bit hard to definitively say how much is too much here.
 
-It's also unclear to me exactly how much memory is available for JS related work in the first place. The legacy API ([`performance.memory`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory)) provides a `jsHeapSizeLimit` value that is supposedly the maximum size of the JS heap available to the renderer (not just a single page), but that those values are proprietary and poorly specified, so it doesn't look like we could rely on that to find our upper-bound.
+It's also unclear to me exactly how much memory is available for JS related work in the first place. The legacy API ([`performance.memory`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory)) provides a `jsHeapSizeLimit` value that is supposedly the maximum size of the JS heap available to the renderer (not just a single page), but those values are proprietary and poorly specified, so it doesn't look like we could rely on that to find our upper-bound.
 
 Still, we can still use the results from our tests as rough benchmarks for now, similar to what has been done for other metrics where we don't have good field data to help us judge the impact. Adopting the good/needs improvement/bad levels that Google has popularized around core web vitals, we'd get something like the following:
 
