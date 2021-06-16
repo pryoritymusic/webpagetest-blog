@@ -112,13 +112,13 @@ return new Promise((resolve) => {
 
 That snippet will setup a promise to wait for `measureUserAgentSpecificMemory` to return a result (it currently has a 20 second timeout), then grab the full result, convert it to a string, and return it back so we can dig in.
 
-To try to come up with some benchmarks, we setup the test[^2] with that metric and the Chrome flags, and then ran it on the top 10,000 URL's (based on the Chrome User Experience Report's popularity rank) on Chrome for desktop and again on an emulated Moto G4. Some tests didn't complete due to sites being down, or blocking the test agents, so we ended up with 9,548 test results for mobile and 9,533 desktop results.
+To try to come up with some benchmarks, we setup the test[^2] with that metric and the Chrome flags, and then ran it on the top 10,000 URLs (based on the Chrome User Experience Report's popularity rank) on Chrome for desktop and again on an emulated Moto G4. Some tests didn't complete due to sites being down, or blocking the test agents, so we ended up with 9,548 test results for mobile and 9,533 desktop results.
 
 Let's dig in!
 
 ## How much JS & DOM Memory Does the Web Use?
 
-Let's start with by looking at memory usage of the top 10k URL's by percentile.
+Let's start with by looking at memory usage of the top 10k URLs by percentile.
 
 | Percentile | Memory Usage (kb), Desktop | Memory Usage (kb), Mobile |
 | ---------- | -------------------------- | ------------------------- |
@@ -131,7 +131,7 @@ Let's start with by looking at memory usage of the top 10k URL's by percentile.
 
 I don't know exactly what I expected to see, but I know they weren't numbers of this size.
 
-At the median, sites are using \~10MB for JavaScript and DOM related memory for desktop URL's, and \~9.6MB for mobile. By the 75th percentile, that jumps to ~19.4MB on desktop and 18.6MB on mobile. The long-tail data from there is...well, a bit frightening.
+At the median, sites are using \~10MB for JavaScript and DOM related memory for desktop URLs, and \~9.6MB for mobile. By the 75th percentile, that jumps to ~19.4MB on desktop and 18.6MB on mobile. The long-tail data from there is...well, a bit frightening.
 
 To put this in context, remember that Chrome research puts JavaScript and DOM related memory at \~45% of memory usage on the web. We can use that to come to a super rough estimate of \~22.2MB of total memory for a single page on desktop and \~21.4MB for mobile at the median, and an even rougher estimate of \~43.1MB of total memory for a single page on desktop and ~41.3MB for mobile at the 75th percentile. That's a lot of memory for a single page within a single window of a single application on a machine that has to juggle memory constraints of numerous simultaneously running applications and processes.
 
