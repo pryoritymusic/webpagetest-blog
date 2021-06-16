@@ -204,13 +204,13 @@ There's a risk of looking at that table and immediately deciding that using Reac
 
 Accurately zeroing in on the actual memory efficiency of a framework is a bit tougher because there's a fair amount of noise involved. One gauge that could be interesting as a rough indication of memory efficiency is too look at the ratio of bytes in memory compared to JavaScript bytes shipped. DOM elements do factor in to memory use, but given the weak correlation between DOM elements and memory usage and the high correlation between JavaScript bytes and memory usage, I think this gives us a rough, but relatively useful, benchmark. A lower ratio indicates better overall efficiency (less memory bytes per JavaScript byte shipped).
 
-| Framework               | Memory Ratio |
-| ----------------------- | ------------ |
-| All URLs                | 5.3          |
-| URLs with Vue           | 5.4          |
-| URLs with React (701)   | 4.7          |
-| URLs with jQuery (5026) | 5.5          |
-| URLs with Angular (141) | 4.9          |
+| Framework         | Memory Ratio |
+| ----------------- | ------------ |
+| All URLs          | 5.3          |
+| URLs with Vue     | 5.4          |
+| URLs with React   | 4.7          |
+| URLs with jQuery  | 5.5          |
+| URLs with Angular | 4.9          |
 
 I'll be the first to admit: these results surprised me. React appears to have a lower memory to JS bytes ratio than the other comparison points. Of course, React also tends to result in a lot more JavaScript being shipped than the others (other than Angular) which is part of the reason why we see such high memory usage, even in the best case scenario. As always, the big advice here is whether you're using a framework or not, keep the total amount of JavaScript as small as possible.
 
