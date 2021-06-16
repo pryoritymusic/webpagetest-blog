@@ -222,7 +222,7 @@ Memory is still a largely unexplored area of web performance, but that probably 
 
 We still need more information to round-out the full picture. How much memory is actually available to the browser at any point in time? How does memory correlate to key business and user engagement metrics? What about memory usage that *isn't* related to JavaScript and DOM complexity?
 
-But at least these results let us start to form some level of understanding about how much JS related memory gets used so that we can start to consider how our own sites stack up.
+While there may be challenges in getting this data for your site today using real-user monitoring, the same approach I took for the tests here—some Chrome flags paired with a custom metric—makes it possible for you to start pulling memory related data into your [test results today](https://www.webpagetest.org/) and I would _love_ to see folks doing just that so we can learn more about how we're doing today, what the implications are, and how we can start to improve.
 
 [^1]: I'm guessing that images are a *large*  part of the remaining 55%. I've [written about images and memory in the past](https://timkadlec.com/2013/11/why-we-need-responsive-images-part-deux/#memory), but the basic gist is that to find the amount of memory each image requires, you take the height of the image multiplied by the width of the image multipled by 4 bytes. So, in other words, a 500px by 500px image takes up 1,000,000 bytes of memory (500x500x4).
 
