@@ -40,13 +40,11 @@ We've added two new commands to help you simulate keyboard keypresses in Chrome:
 
 `type` lets you simulate keyboard keypresses for each character in a given string.
 
-```jsx
-type Hello World
-```
-
 `keypress`AndWait lets you simulate a keyboard keypress for a specific key
 
 ```jsx
+type Hello World
+
 keypress Backspace
 ```
 
