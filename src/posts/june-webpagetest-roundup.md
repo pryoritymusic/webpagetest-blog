@@ -1,6 +1,7 @@
 ---
 title: June WebPageTest Roundup
 date: 2021-07-08T13:04:21.185Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1625759781/Roundup-June_aedjfb.png
 category: Product News
 author: Tim Kadlec
 ---
@@ -14,7 +15,7 @@ The new test form makes it super quick to fire off a test, providing a simplifie
 
 ![A screenshot showing the simplified form for running a core web vitals test, with only a URL and device form factor required.](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1625749729/core-web-vitals-test_mvevpr.png)
 
-When the test completes, you'll land directly on the Core Web Vitals diagnostics page so you zero in on these key metrics right away.
+When the test completes, you'll land directly on the Core Web Vitals diagnostics page so you can zero in on these key metrics right away.
 
 ![A WebPageTest Test result, showing the Core Web Vitals Diagnostics page with core web vitals prominently displayed](https://res.cloudinary.com/psaulitis/image/upload/f_auto,q_auto/v1625749729/core-web-vitals-page_qnpipt.png)
 
