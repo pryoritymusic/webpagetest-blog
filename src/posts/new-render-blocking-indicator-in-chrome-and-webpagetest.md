@@ -1,6 +1,7 @@
 ---
 title: New Render Blocking Indicator in Chrome and WebPageTest
 date: 2021-07-20T15:30:17.798Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1626796940/Render_blocking_cover_zjv4pp.png
 tags:
   - JavaScript
   - CSS
