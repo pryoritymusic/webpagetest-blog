@@ -77,7 +77,7 @@ There's still one more bug that we identified that [won't be fixed until version
 
 With the indicator becoming a bit more stable, we've also made it a bit more prominent. Starting today, resources that have a "blocking" status will be called out with an icon, making it easy to identify any render blocking resources at a glance.
 
-![Render%20blocking%20scripts%20&%20styles%20878347065f1d425281aa221c03353bd3/Screen_Shot_2021-07-19_at_3.42.06_PM.png](Render%20blocking%20scripts%20&%20styles%20878347065f1d425281aa221c03353bd3/Screen_Shot_2021-07-19_at_3.42.06_PM.png)
+![A screenshot from a WebPageTest waterfall showing the first 5 requests for a page. Four of those requests have an orange icon with an X through it, signaling that they are render blocking.](https://res.cloudinary.com/psaulitis/image/upload/v1626795180/render-blocking-icon-waterfall_gejlat)
 
 We're currently not showing anything if a resource is flagged with either `potentially_blocking` or `in_body_parser_blocking`, but if that's something you would find helpful, [we're all ears.](https://github.com/WPO-Foundation/webpagetest/issues/new?assignees=&labels=Type%3A+Enhancement&template=feature-request.md) For example, one thing we're considering is flagging all `potentially_blocking` resources that arrive before start render occurs. They're not *quite* the same as `render_blocking` resources since they may not always block render on every test, but the fact that they flare up sometimes to slow things down could be helpful information.
 
