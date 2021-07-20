@@ -11,6 +11,7 @@ category: Product News
 author: Tim Kadlec
 related_post:
   post: june-webpagetest-roundup
+  highlight: Product News
 ---
 Thanks to a [new indicator provided by Chrome in their traces](https://chromium-review.googlesource.com/c/chromium/src/+/2626665) (starting in version 91 of the browser, with a notable bug fix shipping with version 92 today), we just started highlighting all render-blocking requests in our waterfalls, making it easier to quickly zero-in on blocking requests that may be causing significant bottlenecks in your page's performance.
 
@@ -48,19 +49,19 @@ This one is pretty straightforward—if the request blocks the page from being d
 
 This one is also pretty straightforward. If the request does not block the browser from displaying the page, then the blocking status is reported as "non_blocking". This label applies to things like stylesheets with a `disabled` attribute or stylesheets with media queries that don't match the current environment (such as `print`). It would also apply to scripts that have a `defer` or `module` attribute.
 
-### The **dynamically_injected_non_blocking status**
+### The dynamically_injected_non_blocking status
 
 This can more or less be considered the same as `non_blocking`, at least from a performance impact perspective. This status is applied to a resource that is dynamically injected in the page, and does not block the display of the page.
 
 This status currently doesn't get applied to dynamically injected scripts, but that's a relatively minor bug—"dynamically_injected_non_blocking" is just a more specific version of "non_blocking" so while it will be nice to see this cleaned up in the future, it's a mostly insignificant issue.
 
-### The **in_body_parser_blocking status**
+### The in_body_parser_blocking status
 
 The "in_body_parser_blocking" status set whenever the resource is requested from somewhere within the body in a way that blocks the parser from parsing the document below the element.
 
 So, for example, let's say you have a `script` element inside the body of the page instead of the head. That blocks the browser from parsing anything below that element until the resource has been requested and downloaded, so this status gets applied.
 
-### The **potentially_blocking status**
+### The potentially_blocking status
 
 This is a pretty interesting one. If Chrome can't say for certain that the request will or won't block the page from display, then the "potentially_blocking" status gets applied.
 
