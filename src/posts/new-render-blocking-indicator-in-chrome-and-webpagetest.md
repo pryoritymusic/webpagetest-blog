@@ -2,10 +2,10 @@
 title: New Render Blocking Indicator in Chrome and WebPageTest
 date: 2021-07-20T15:30:17.798Z
 tags:
-  - render-blocking
-  - critical-path
-  - css
-  - javascript
+  - JavaScript
+  - CSS
+  - Render-Blocking
+  - Critical-Path
 category: Product News
 author: Tim Kadlec
 related_post:
