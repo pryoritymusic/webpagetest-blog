@@ -11,7 +11,7 @@ author: Tim Kadlec
 related_post:
   post: june-webpagetest-roundup
 ---
-Thanks to a [new indicator provided by Chrome in their traces](https://chromium-review.googlesource.com/c/chromium/src/+/2626665) (starting in version 91 of the browser, with a notable bug fix shipping in version 92), we just started highlighting all render-blocking requests in our waterfalls, making it easier to quickly zero-in on blocking requests that may be causing significant bottlenecks in your page's performance.
+Thanks to a [new indicator provided by Chrome in their traces](https://chromium-review.googlesource.com/c/chromium/src/+/2626665) (starting in version 91 of the browser, with a notable bug fix shipping with version 92 today), we just started highlighting all render-blocking requests in our waterfalls, making it easier to quickly zero-in on blocking requests that may be causing significant bottlenecks in your page's performance.
 
 One of the most common performance bottlenecks that sites run into are delays caused by *render-blocking resources:* resources in the page that stop the page from being displayed until they have been downloaded, parsed and (in the case of JavaScript) executed.
 
