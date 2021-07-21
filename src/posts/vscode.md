@@ -3,8 +3,11 @@ title: Building Visual Studio Code Extension For WebPageTest
 date: 2021-07-21T19:11:20.237Z
 tags:
   - vs-code
+  - api-integration
 category: How We Built It
-author: Tim Kadlec
+author: Abdul Suhail
+related_post:
+  post: automatic-webpagetest-results-for-every-docs-deploy
 ---
 According to the Stack Overflow 2019 Developer Survey, Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it. \
 \
