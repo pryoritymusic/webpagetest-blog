@@ -9,7 +9,7 @@ author: Abdul Suhail
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
 ---
-According to the Stack Overflow 2019 Developer Survey, Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it.
+According to the [Stack Overflow 2019 Developer Survey](https://insights.stackoverflow.com/survey/2019#development-environments-and-tools), Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it.
 
 Our primary reason for building this extension was to help developers improve the performance of their website while they are coding, isn’t it easier to fix issues the earlier we discover them?
 
