@@ -9,39 +9,41 @@ author: Abdul Suhail
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
 ---
-According to the Stack Overflow 2019 Developer Survey, Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it. \
-\
-Our primary reason for building this extension was to help developers improve the performance of their website while they are coding, isn’t it easier to fix issues the earlier we discover them?\
-\
+According to the Stack Overflow 2019 Developer Survey, Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it.
+
+Our primary reason for building this extension was to help developers improve the performance of their website while they are coding, isn’t it easier to fix issues the earlier we discover them?
+
 Usually, developers writing code on VS Code need to get out of their code editor to check the performance of their developed frontend code, so we asked ourselves
 
-How about testing performance inside VS Code? Where they cook their code?\
-Hmm, seems a nice idea, but how? \
+How about testing performance inside VS Code? Where they cook their code?
+
+Hmm, seems a nice idea, but how?
+
 Well, hop on and let us see how we did it.
 
+## Step 1: Generating Basic Boilerplate for the extension
 
+VS Code eases the process of building an extension by providing boilerplate code, to generate one we need to have Node.js installed, then we can install [Yeoman](https://www.npmjs.com/package/yo) and ,[VS Code Extension Generator](https://www.npmjs.com/package/generator-code) by running:  
 
-## **Step 1: Generating Basic Boilerplate for the extension**
-
-VS Code eases the process of building an extension by providing boilerplate code, to generate one we need to have Node.js installed, then we can install [Yeoman](https://www.npmjs.com/package/yo) and ,[VS Code Extension Generator](https://www.npmjs.com/package/generator-code) by running:  \
-\
 `npm install -g yo generator-code`
 
 The VS Code Extension Generator scaffolds a TypeScript or JavaScript project ready for development. Now let us run the generator and fill out a few fields for the Project:   
 
 `yo code`
 
- \
-We are generating JavaScript Extension. Okay, great we now have an extension up let us all our WebPageTest functionalities: 
+![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-yo.png)
+
+We are generating JavaScript Extension. Okay, great we now have an extension up let us all our WebPageTest functionalities.
+
+![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-extensionjs.png)
 
 ## Step 2: Adding Settings
 
-Did you know, Visual Studio Code is built using web technologies (HTML, CSS, JavaScript) on top of Github's Electron?\
-\
+Did you know, Visual Studio Code is built using web technologies (HTML, CSS, JavaScript) on top of Github's Electron?
+
 This makes it easier to configure Visual Studio Code to your liking through its various settings. Nearly every part of VS Code's editor, user interface, and functional behavior has options you can modify. 
 
- \
-We are going to need a few properties to run our tests, so it makes sense to accept those as settings for easy configuration. Let us accept an API Key, location, URL, etc.. to trigger the tests. Below is an example object from settings.json
+ We are going to need a few properties to run our tests, so it makes sense to accept those as settings for easy configuration. Let us accept an API Key, location, URL, etc.. to trigger the tests. Below is an example object from settings.json
 
 ```json
 // Your WebPageTest API key. REQUIRED
@@ -65,14 +67,12 @@ We are going to need a few properties to run our tests, so it makes sense to acc
 
 You can add all the options that [WebPageTest Node API wrapper](https://github.com/marcelduran/webpagetest-api) supports. Above is just a basic one. 
 
-##  
-
 ## Step 3: Building Webview 
 
-The webview API allows extension to create fully customizable views within Visual Studio Code. Think of a webview as an iframe within VS Code that your extension controls. A webview can render almost any HTML content in this frame, and it communicates with extensions using message passing.  \
- \
-For us we want the webview to provide details of the test like metrics, screenshot, and waterfall.  \
-  \
+The webview API allows extension to create fully customizable views within Visual Studio Code. Think of a webview as an iframe within VS Code that your extension controls. A webview can render almost any HTML content in this frame, and it communicates with extensions using message passing.
+
+For us we want the webview to provide details of the test like metrics, screenshot, and waterfall.
+
 We have 5 types of responses displayed when a test is run:  
 
 * **Successful Test Submission** – When a test is successfully submitted 
@@ -81,7 +81,7 @@ We have 5 types of responses displayed when a test is run:  
 * **Chrome Based Test** – When test is chrome specific and contains chrome web vitals 
 * **Non-Chrome Based Test** – When test is non-chrome specific  
 
- **Let us see each one in detail:**
+Let us see each one in detail.
 
 ### 3.1 Successful Test Submission 
 
@@ -489,16 +489,22 @@ If you have not added the URL in the final call, contentForNoURL webview is dis
 
 Was a long ride, wasn't it? Let us run the extension now. 
 
-#### Below steps are used to run the extension in the debugger mode: 
+The steps below are used to run the extension in the debugger mode: 
 
 4.1 Press F5 to trigger the debugger. This opens one more VS Code window where our command has been registered.
 
 4.2 Open the Command Palette (⇧⌘P) and start typing WebPageTest.
 
+![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-run.png)
+
 4.3 Run the command, and if you had not entered the URL before in the settings.json you get an option to enter it (the final call which we were talking about earlier). Once the test is submitted following response is displayed:
+
+![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-running.png)
 
 Below is an example of how the results on the Webview looks: 
 
-Still here with me (reading)? We are also releasing this extension on the [VS Code extension marketplace](https://marketplace.visualstudio.com/items?itemName=WebPageTest.wpt-vscode-extension), so you can just plug and play.\
-\
-As always, we value your feedback and help in improving this experience for you and millions of developers around the world. You can always help us improve by raising PRs on the repository. [Github Repo URL](https://github.com/WebPageTest/wpt-vscode-extension)
+![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-final.png)
+
+Still here with me (reading)? We are also releasing this extension on the [VS Code extension marketplace](https://marketplace.visualstudio.com/items?itemName=WebPageTest.wpt-vscode-extension), so you can just plug and play.
+
+As always, we value your feedback and help in improving this experience for you and millions of developers around the world. You can always help us improve by raising [PRs on the repository](https://github.com/WebPageTest/wpt-vscode-extension).
