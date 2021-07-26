@@ -409,11 +409,11 @@ After registering the command and fetching the configurations added earlier (li
 
  All the necessary configuration is set if not added in the settings.json (line #29 – line #33) 
 
-```javascript
-const vscode = require('vscode');
-const WebPageTest = require("webpagetest");
-const wptHelpers = require('./wpt-helpers');
-const webViews = require('./utils/web-views');
+```
+const vscode = require('vscode'); //line #1
+const WebPageTest = require("webpagetest"); //line #2
+const wptHelpers = require('./wpt-helpers'); //line #3
+const webViews = require('./utils/web-views'); //line #4
 let options = {
 	"firstViewOnly": true,
 	"runs": 1,
@@ -427,22 +427,33 @@ let options = {
  */
 async function activate(context) {
 
-	let disposable = vscode.commands.registerCommand('webpagetest.wpt', async function () {
+	let disposable = vscode.commands.registerCommand('webpagetest.wpt', async function () {  //line #18
 
 		try {
 
-			const wpt_extension_config = JSON.parse(JSON.stringify(vscode.workspace.getConfiguration('wpt_extension')))
+			const wpt_extension_config = JSON.parse(JSON.stringify(vscode.workspace.getConfiguration('wpt_extension')))  //line #22
 			const WPT_API_KEY = wpt_extension_config.apiKey;
-			const wpt = new WebPageTest('www.webpagetest.org', WPT_API_KEY);
+			const wpt = new WebPageTest('www.webpagetest.org', WPT_API_KEY); //line #24
 			let url = wpt_extension_config['urlToTest'];
 			if (!url)
-				url = await vscode.window.showInputBox({"prompt": "Enter the URL you want to test."})
-	
-			wpt_extension_config['firstViewOnly'] = wpt_extension_config['firstViewOnly'] === false ? false : options['firstViewOnly'];
+				url = await vscode.window.showInputBox({"prompt": "Enter the URL you want to test."}) //line #27
+			
+			wpt_extension_config['firstViewOnly'] = wpt_extension_config['firstViewOnly'] === false ? false : options['firstViewOnly']; //line #29
 			wpt_extension_config['location'] = wpt_extension_config['location'] || options['location'];
 			wpt_extension_config['pollResults'] = wpt_extension_config['pollResults'] || options['pollResults'];
 			wpt_extension_config['timeout'] = wpt_extension_config['timeout'] || options['timeout'];
-			wpt_extension_config['runs'] = wpt_extension_config['runs'] || options['runs'];
+			wpt_extension_config['runs'] = wpt_extension_config['runs'] || options['runs'];  //line #33
+
+			var panel = vscode.window.createWebviewPanel(
+				'webpagetest',
+				'WebPageTest',
+				vscode.ViewColumn.One
+			);
+
+			if (!url) {
+				panel.webview.html = webViews.getContentForNoUrl();
+				return;
+			}
 ```
 
 In the below image vscode.window.createWebviewPanel function creates and shows a webview in the editor (line #1). 
