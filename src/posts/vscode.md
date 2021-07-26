@@ -409,7 +409,7 @@ After registering the command and fetching the configurations added earlier (li
 
  All the necessary configuration is set if not added in the settings.json (line #29 – line #33) 
 
-```
+```javascript
 const vscode = require('vscode'); //line #1
 const WebPageTest = require("webpagetest"); //line #2
 const wptHelpers = require('./wpt-helpers'); //line #3
