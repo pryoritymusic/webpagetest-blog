@@ -464,14 +464,14 @@ If you have not added the URL in the final call, contentForNoURL webview is dis
 2. **Non-Chrome Based** (line #27) 
 
 ```javascript
-			var panel = vscode.window.createWebviewPanel(
+			var panel = vscode.window.createWebviewPanel(  //line #1
 				'webpagetest',
 				'WebPageTest',
 				vscode.ViewColumn.One
 			);
 
 			if (!url) {
-				panel.webview.html = webViews.getContentForNoUrl();
+				panel.webview.html = webViews.getContentForNoUrl(); //line #8
 				return;
 			}
 			panel.webview.html = webViews.getContentForTestSubmission(url);
@@ -487,10 +487,10 @@ If you have not added the URL in the final call, contentForNoURL webview is dis
 						wptResponse.result.data.median.firstView.chromeUserTiming.CumulativeLayoutShift = chromeUserTiming[i].value.toFixed(3);
 				}
 
-				panel.webview.html = webViews.getContentForChromeBasedSubmission(wptResponse);
+				panel.webview.html = webViews.getContentForChromeBasedSubmission(wptResponse);  //line #24
 			}
 			else {
-				panel.webview.html = webViews.getContentForNonChromeBasedSubmission(wptResponse);
+				panel.webview.html = webViews.getContentForNonChromeBasedSubmission(wptResponse);  //line #27
 			}
 ```
 
