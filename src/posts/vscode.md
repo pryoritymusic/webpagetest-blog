@@ -33,7 +33,7 @@ The VS Code Extension Generator scaffolds a TypeScript or JavaScript project r
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-yo.png)
 
-Just to note we are generating JavaScript Extension. Okay, great we now have an extension up let us all our WebPageTest functionalities.
+Just to note we are generating JavaScript Extension. Okay, great we now have an extension up let us add all our WebPageTest functionalities.
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-extensionjs.png)
 
