@@ -83,7 +83,7 @@ We have 5 types of responses displayed when a test is run:  
 
 Let us see each one in detail.
 
-### 3.1 Successful Test Submission 
+### **3.1 Successful Test Submission** 
 
 Below is an example HTML which is displayed after successful test submission, where we display the URL being tested. 
 
@@ -109,7 +109,7 @@ exports.getContentForTestSubmission = (url) =>{
 }
 ```
 
-### 3.2 NO URL 
+### **3.2 NO URL** 
 
 Below is an example HTML which is displayed if no URL is provided for test submission, where we display the message providing information on how it can be added. 
 
@@ -137,7 +137,7 @@ exports.getContentForNoUrl = ()=>{
 }
 ```
 
-### 3.3 Error  
+### **3.3 Error**  
 
 Below is an example HTML which is displayed if there is an error caused while running the test, here we display the status message sent by WebPageTest. An example could be if the api_key provided is invalid. 
 
@@ -164,7 +164,7 @@ exports.getContentForError = (wptResponse)=>{
 }
 ```
 
-### 3.4 Chrome Based Test Result 
+### **3.4 Chrome Based Test Result** 
 
  Below is an example HTML which is displayed for chrome-based test. 
 
@@ -247,7 +247,7 @@ exports.getContentForChromeBasedSubmission = (wptResponse) =>{
 }
 ```
 
-### 3.5 Non-Chrome Based Test Result 
+### **3.5 Non-Chrome Based Test Result** 
 
 Below is an example HTML which is displayed for non-chrome based test. 
 
