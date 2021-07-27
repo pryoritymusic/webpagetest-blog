@@ -1,6 +1,6 @@
 ---
 title: Building The Visual Studio Code Extension For WebPageTest
-date: 2021-07-21T19:11:20.237Z
+date: 2021-07-27T19:11:20.237Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627396452/WPT_-_VS_Studio_z1szmt.png
 tags:
   - VS Code
@@ -10,41 +10,41 @@ author: Abdul Suhail
 related_post:
   post: automatic-webpagetest-results-for-every-docs-deploy
 ---
-According to the [Stack Overflow 2019 Developer Survey](https://insights.stackoverflow.com/survey/2019#development-environments-and-tools), Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it.
+According to the [Stack Overflow 2019 Developer Survey](https://insights.stackoverflow.com/survey/2019#development-environments-and-tools), Visual Studio Code was ranked the most popular developer environment tool, with 50.7% of 87,317 reporting that they use it.
 
-Our primary reason for building this extension was to help developers improve the performance of their website while they are coding, isn’t it easier to fix issues the earlier we discover them?
+Our primary reason for building this extension was to help developers improve the performance of their website while they are coding, isn’t it easier to fix issues the earlier we discover them?
 
-Usually, developers writing code on VS Code need to get out of their code editor to check the performance of their developed frontend code, so we asked ourselves
+Usually, developers writing code on VS Code need to get out of their code editor to check the performance of their developed frontend code, so we asked ourselves
 
-How about testing performance inside VS Code? Where they cook their code?
+How about testing performance inside VS Code? Where they cook their code?
 
 Hmm, seems a nice idea, but how?
 
-Well, hop on and let us see how we did it.
+Well, hop on and let us see how we did it.
 
-## Step 1: Generating Basic Boilerplate for the extension
+## Step 1: Generating Basic Boilerplate for the extension
 
-VS Code eases the process of building an extension by providing boilerplate code, to generate one we need to have Node.js installed, then we can install [Yeoman](https://www.npmjs.com/package/yo) and ,[VS Code Extension Generator](https://www.npmjs.com/package/generator-code) by running:  
+VS Code eases the process of building an extension by providing boilerplate code, to generate one we need to have Node.js installed, then we can install [Yeoman](https://www.npmjs.com/package/yo) and ,[VS Code Extension Generator](https://www.npmjs.com/package/generator-code) by running:  
 
 `npm install -g yo generator-code`
 
-The VS Code Extension Generator scaffolds a TypeScript or JavaScript project ready for development. Now let us run the generator and fill out a few fields for the Project:   
+The VS Code Extension Generator scaffolds a TypeScript or JavaScript project ready for development. Now let us run the generator and fill out a few fields for the Project:   
 
 `yo code`
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-yo.png)
 
-Just to note we are generating JavaScript Extension. Okay, great we now have an extension up let us add all our WebPageTest functionalities.
+Just to note we are generating JavaScript Extension. Okay, great we now have an extension up let us add all our WebPageTest functionalities.
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-extensionjs.png)
 
 ## Step 2: Adding Settings
 
-Did you know, Visual Studio Code is built using web technologies (HTML, CSS, JavaScript) on top of Github's Electron?
+Did you know, Visual Studio Code is built using web technologies (HTML, CSS, JavaScript) on top of Github's Electron?
 
-This makes it easier to configure Visual Studio Code to your liking through its various settings. Nearly every part of VS Code's editor, user interface, and functional behavior has options you can modify. 
+This makes it easier to configure Visual Studio Code to your liking through its various settings. Nearly every part of VS Code's editor, user interface, and functional behavior has options you can modify. 
 
- We are going to need a few properties to run our tests, so it makes sense to accept those as settings for easy configuration. Let us accept an API Key, location, URL, etc.. to trigger the tests. Below is an example object from settings.json
+ We are going to need a few properties to run our tests, so it makes sense to accept those as settings for easy configuration. Let us accept an API Key, location, URL, etc.. to trigger the tests. Below is an example object from settings.json
 
 ```json
 // Your WebPageTest API key. REQUIRED
@@ -66,27 +66,27 @@ This makes it easier to configure Visual Studio Code to your liking through its 
 "wpt_extension.timeout": 240,
 ```
 
-You can add all the options that [WebPageTest Node API wrapper](https://github.com/marcelduran/webpagetest-api) supports. Above is just a basic one. 
+You can add all the options that [WebPageTest Node API wrapper](https://github.com/marcelduran/webpagetest-api) supports. Above is just a basic one. 
 
-## Step 3: Building Webview 
+## Step 3: Building Webview 
 
-The webview API allows extension to create fully customizable views within Visual Studio Code. Think of a webview as an iframe within VS Code that your extension controls. A webview can render almost any HTML content in this frame, and it communicates with extensions using message passing.
+The webview API allows extension to create fully customizable views within Visual Studio Code. Think of a webview as an iframe within VS Code that your extension controls. A webview can render almost any HTML content in this frame, and it communicates with extensions using message passing.
 
-For us we want the webview to provide details of the test like metrics, screenshot, and waterfall.
+For us we want the webview to provide details of the test like metrics, screenshot, and waterfall.
 
-We have 5 types of responses displayed when a test is run:  
+We have 5 types of responses displayed when a test is run:  
 
-* **Successful Test Submission** – When a test is successfully submitted 
-* **No URL** – When there is no URL added 
-* **Error** – If there is any error caused while running the test 
-* **Chrome Based Test** – When test is chrome specific and contains chrome web vitals 
-* **Non-Chrome Based Test** – When test is non-chrome specific  
+* **Successful Test Submission** – When a test is successfully submitted 
+* **No URL** – When there is no URL added 
+* **Error** – If there is any error caused while running the test 
+* **Chrome Based Test** – When test is chrome specific and contains chrome web vitals 
+* **Non-Chrome Based Test** – When test is non-chrome specific  
 
-Let us see each one in detail.
+Let us see each one in detail.
 
-### 3.1 Successful Test Submission
+### 3.1 Successful Test Submission
 
-Below is an example HTML which is displayed after successful test submission, where we display the URL being tested. 
+Below is an example HTML which is displayed after successful test submission, where we display the URL being tested. 
 
 ```javascript
 exports.getContentForTestSubmission = (url) =>{
@@ -110,9 +110,9 @@ exports.getContentForTestSubmission = (url) =>{
 }
 ```
 
-### 3.2 NO URL
+### 3.2 NO URL
 
-Below is an example HTML which is displayed if no URL is provided for test submission, where we display the message providing information on how it can be added. 
+Below is an example HTML which is displayed if no URL is provided for test submission, where we display the message providing information on how it can be added. 
 
 ```javascript
 exports.getContentForNoUrl = ()=>{
@@ -138,9 +138,9 @@ exports.getContentForNoUrl = ()=>{
 }
 ```
 
-### 3.3 Error 
+### 3.3 Error 
 
-Below is an example HTML which is displayed if there is an error caused while running the test, here we display the status message sent by WebPageTest. An example could be if the `api_key` provided is invalid. 
+Below is an example HTML which is displayed if there is an error caused while running the test, here we display the status message sent by WebPageTest. An example could be if the `api_key` provided is invalid. 
 
 ```javascript
 exports.getContentForError = (wptResponse)=>{
@@ -165,9 +165,9 @@ exports.getContentForError = (wptResponse)=>{
 }
 ```
 
-### 3.4 Chrome Based Test Result
+### 3.4 Chrome Based Test Result
 
- Below is an example HTML which is displayed for chrome-based test. 
+ Below is an example HTML which is displayed for chrome-based test. 
 
 ```javascript
 exports.getContentForChromeBasedSubmission = (wptResponse) =>{
@@ -248,9 +248,9 @@ exports.getContentForChromeBasedSubmission = (wptResponse) =>{
 }
 ```
 
-### 3.5 Non-Chrome Based Test Result
+### 3.5 Non-Chrome Based Test Result
 
-Below is an example HTML which is displayed for non-chrome based test. 
+Below is an example HTML which is displayed for non-chrome based test. 
 
 ```javascript
 exports.getContentForNonChromeBasedSubmission = (wptResponse) =>{
@@ -367,9 +367,9 @@ exports.getContentForNonChromeBasedSubmission = (wptResponse) =>{
 </style>
 ```
 
-## Step 4: Wrapping The WebPageTest Method 
+## Step 4: Wrapping The WebPageTest Method 
 
-It is always recommended to keep the code modular for easy maintainability. Below we have wrapped the runTest method provided by the [WebPageTest Node API wrapper](https://github.com/marcelduran/webpagetest-api)  which is a callback based method and converted it to be as a promise-based method. 
+It is always recommended to keep the code modular for easy maintainability. Below we have wrapped the runTest method provided by the [WebPageTest Node API wrapper](https://github.com/marcelduran/webpagetest-api)  which is a callback based method and converted it to be as a promise-based method. 
 
 ```javascript
 exports.runTest = (wpt, url, options) => {
@@ -391,34 +391,34 @@ exports.runTest = (wpt, url, options) => {
 }
 ```
 
-## Step 5: Constructing The Extension 
+## Step 5: Constructing The Extension 
 
-Ufff, pretty long, but now we have all the pre-requisites to construct the extension. Let us finally build it.
+Ufff, pretty long, but now we have all the pre-requisites to construct the extension. Let us finally build it.
 
-####  Extension Anatomy 
+####  Extension Anatomy 
 
-The WebPageTest extension does 3 things: 
+The WebPageTest extension does 3 things: 
 
-* Registers the [onCommand](https://code.visualstudio.com/api/references/activation-events#onCommand) [Activation Event](https://code.visualstudio.com/api/references/activation-events): onCommand:extension.webpagetest.wpt so the extension becomes activated when user runs the WebPageTest command. 
-* Uses the [contributes.commands](https://code.visualstudio.com/api/references/contribution-points#contributes.commands) [Contribution Point](https://code.visualstudio.com/api/references/contribution-points) to make the command WebPageTest available in the Command Palette and bind it to a command ID extension.webpagetest. 
-* Uses the [commands.registerCommand](https://code.visualstudio.com/api/references/vscode-api#commands.registerCommand) [VS Code API](https://code.visualstudio.com/api/references/vscode-api) to bind a function to the registered command ID extension.webpagetest. 
+* Registers the [onCommand](https://code.visualstudio.com/api/references/activation-events#onCommand) [Activation Event](https://code.visualstudio.com/api/references/activation-events): onCommand:extension.webpagetest.wpt so the extension becomes activated when user runs the WebPageTest command. 
+* Uses the [contributes.commands](https://code.visualstudio.com/api/references/contribution-points#contributes.commands) [Contribution Point](https://code.visualstudio.com/api/references/contribution-points) to make the command WebPageTest available in the Command Palette and bind it to a command ID extension.webpagetest. 
+* Uses the [commands.registerCommand](https://code.visualstudio.com/api/references/vscode-api#commands.registerCommand) [VS Code API](https://code.visualstudio.com/api/references/vscode-api) to bind a function to the registered command ID extension.webpagetest. 
 
-Understanding these three concepts is crucial to writing extensions in VS Code: 
+Understanding these three concepts is crucial to writing extensions in VS Code: 
 
-* [Activation Events](https://code.visualstudio.com/api/references/activation-events): events upon which your extension becomes active. 
-* [Contribution Points](https://code.visualstudio.com/api/references/contribution-points): static declarations that you make in the package.json [Extension Manifest](https://code.visualstudio.com/api/get-started/extension-anatomy#extension-manifest) to extend VS Code. 
-* [VS Code API](https://code.visualstudio.com/api/references/vscode-api): a set of JavaScript APIs that you can invoke in your extension code. 
+* [Activation Events](https://code.visualstudio.com/api/references/activation-events): events upon which your extension becomes active. 
+* [Contribution Points](https://code.visualstudio.com/api/references/contribution-points): static declarations that you make in the package.json [Extension Manifest](https://code.visualstudio.com/api/get-started/extension-anatomy#extension-manifest) to extend VS Code. 
+* [VS Code API](https://code.visualstudio.com/api/references/vscode-api): a set of JavaScript APIs that you can invoke in your extension code. 
 
-In the below code we are including the WebPageTest, VS Code modules (line #1 and #2) and helper methods built earlier (line #3 and line #4) 
+In the below code we are including the WebPageTest, VS Code modules (line #1 and #2) and helper methods built earlier (line #3 and line #4) 
 
-1. **wpt-helpers** - WebPageTest wrapped and converted as a Promise 
-2. **web-views** - HTML content to be displayed as result. 
+1. **wpt-helpers** - WebPageTest wrapped and converted as a Promise 
+2. **web-views** - HTML content to be displayed as result. 
 
-After registering the command and fetching the configurations added earlier (line #18, #22), we setup an instance of WebPageTest by passing the `api_key` (line #24). 
+After registering the command and fetching the configurations added earlier (line #18, #22), we setup an instance of WebPageTest by passing the `api_key` (line #24). 
 
- If there is no URL passed in the configuration (`settings.json`), we are using the VS Code API (`vscode.window.showInputBox`) to fetch it (line #27). This is the final call to board your URL. 
+ If there is no URL passed in the configuration (`settings.json`), we are using the VS Code API (`vscode.window.showInputBox`) to fetch it (line #27). This is the final call to board your URL. 
 
- All the necessary configuration is set if not added in the settings.json (line #29 – line #33) 
+ All the necessary configuration is set if not added in the settings.json (line #29 – line #33) 
 
 ```javascript
 const vscode = require('vscode'); //line #1
@@ -467,12 +467,12 @@ async function activate(context) {
 			}
 ```
 
-In the below code, the `vscode.window.createWebviewPanel` function creates and shows a webview in the editor (line #1). 
+In the below code, the `vscode.window.createWebviewPanel` function creates and shows a webview in the editor (line #1). 
 
-If you have not added the URL in the final call, the `contentForNoURL` webview is displayed (line #8) and if added there are 2 different webviews generated for final result: 
+If you have not added the URL in the final call, the `contentForNoURL` webview is displayed (line #8) and if added there are 2 different webviews generated for final result: 
 
-1. **Chrome Based** (line #32)
-2. **Non-Chrome Based** (line #35) 
+1. **Chrome Based** (line #32)
+2. **Non-Chrome Based** (line #35) 
 
 ```javascript
 var panel = vscode.window.createWebviewPanel( //line #1
@@ -516,26 +516,26 @@ if (chromeUserTiming) {
 
 [Full Code for reference can be found here](https://github.com/WebPageTest/wpt-vscode-extension)
 
-## Step 4: Running The Extension
+## Step 4: Running The Extension
 
-Was a long ride, wasn't it? Let us run the extension now. 
+Was a long ride, wasn't it? Let us run the extension now. 
 
-The steps below are used to run the extension in the debugger mode: 
+The steps below are used to run the extension in the debugger mode: 
 
-4.1 Press F5 to trigger the debugger. This opens one more VS Code window where our command has been registered.
+4.1 Press F5 to trigger the debugger. This opens one more VS Code window where our command has been registered.
 
-4.2 Open the Command Palette (⇧⌘P) and start typing "WebPageTest".
+4.2 Open the Command Palette (⇧⌘P) and start typing "WebPageTest".
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-run.png)
 
-4.3 Run the command, and if you had not entered the URL before in the `settings.json` you get an option to enter it (the final call which we were talking about earlier). Once the test is submitted following response is displayed:
+4.3 Run the command, and if you had not entered the URL before in the `settings.json` you get an option to enter it (the final call which we were talking about earlier). Once the test is submitted following response is displayed:
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-running.png)
 
-Below is an example of how the results on the Webview looks: 
+Below is an example of how the results on the Webview looks: 
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-final.png)
 
-Still here with me (reading)? We are also releasing this extension on the [VS Code extension marketplace](https://marketplace.visualstudio.com/items?itemName=WebPageTest.wpt-vscode-extension), so you can just plug and play.
+Still here with me (reading)? We are also releasing this extension on the [VS Code extension marketplace](https://marketplace.visualstudio.com/items?itemName=WebPageTest.wpt-vscode-extension), so you can just plug and play.
 
-As always, we value your feedback and help in improving this experience for you and millions of developers around the world. You can always help us improve by raising [PRs on the repository](https://github.com/WebPageTest/wpt-vscode-extension).
+As always, we value your feedback and help in improving this experience for you and millions of developers around the world. You can always help us improve by raising [PRs on the repository](https://github.com/WebPageTest/wpt-vscode-extension).
