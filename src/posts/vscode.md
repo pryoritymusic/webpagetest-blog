@@ -1,7 +1,7 @@
 ---
 title: Building Visual Studio Code Extension For WebPageTest
 date: 2021-07-21T19:11:20.237Z
-featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627398919/VS_Code_Logo_-_WPT_akqoie.png
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627396452/WPT_-_VS_Studio_z1szmt.png
 tags:
   - VS Code
   - API Integration
@@ -84,7 +84,7 @@ We have 5 types of responses displayed when a test is run:  
 
 Let us see each one in detail.
 
-### **3.1 Successful Test Submission** 
+### 3.1 Successful Test Submission
 
 Below is an example HTML which is displayed after successful test submission, where we display the URL being tested. 
 
@@ -110,7 +110,7 @@ exports.getContentForTestSubmission = (url) =>{
 }
 ```
 
-### **3.2 NO URL** 
+### 3.2 NO URL
 
 Below is an example HTML which is displayed if no URL is provided for test submission, where we display the message providing information on how it can be added. 
 
@@ -138,9 +138,9 @@ exports.getContentForNoUrl = ()=>{
 }
 ```
 
-### **3.3 Error**  
+### 3.3 Error 
 
-Below is an example HTML which is displayed if there is an error caused while running the test, here we display the status message sent by WebPageTest. An example could be if the api_key provided is invalid. 
+Below is an example HTML which is displayed if there is an error caused while running the test, here we display the status message sent by WebPageTest. An example could be if the `api_key` provided is invalid. 
 
 ```javascript
 exports.getContentForError = (wptResponse)=>{
@@ -165,7 +165,7 @@ exports.getContentForError = (wptResponse)=>{
 }
 ```
 
-### **3.4 Chrome Based Test Result** 
+### 3.4 Chrome Based Test Result
 
  Below is an example HTML which is displayed for chrome-based test. 
 
@@ -248,7 +248,7 @@ exports.getContentForChromeBasedSubmission = (wptResponse) =>{
 }
 ```
 
-### **3.5 Non-Chrome Based Test Result** 
+### 3.5 Non-Chrome Based Test Result
 
 Below is an example HTML which is displayed for non-chrome based test. 
 
@@ -331,30 +331,40 @@ exports.getContentForNonChromeBasedSubmission = (wptResponse) =>{
 
 ```html
 <style>
-              h1 {text-align: center;}
-              h2 {text-align: center;}
-              .row {
-                  display: flex;
-                }
-                
-                .column {
-                  flex: 33.33%;
-                  padding: 5px;
-                }
-                table {
-                  font-family: arial, sans-serif;
-                  border-collapse: collapse;
-                  width: 100%;
-                }
-                td, th {
-                  border: 1px solid silver;
-                  padding: 8px;	
-                  text-align: center;
-                }
-                .bordernone{
-                    border: none;
-                }	
- </style>
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex: 33.33%;
+        padding: 5px;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid silver;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .bordernone {
+        border: none;
+    }
+</style>
 ```
 
 ## Step 4: Wrapping The WebPageTest Method 
@@ -383,7 +393,7 @@ exports.runTest = (wpt, url, options) => {
 
 ## Step 5: Constructing The Extension 
 
-Ufff, pretty long, but now we have all the pre-requisites to construct the extension. Let us finally build it  
+Ufff, pretty long, but now we have all the pre-requisites to construct the extension. Let us finally build it.
 
 ####  Extension Anatomy 
 
@@ -404,9 +414,9 @@ In the below code we are including the WebPageTest, VS Code modules (line #1 an
 1. **wpt-helpers** - WebPageTest wrapped and converted as a Promise 
 2. **web-views** - HTML content to be displayed as result. 
 
-After registering the command and fetching the configurations added earlier (line #18, #22), we setup an instance of WebPageTest by passing the api_key (line #24). 
+After registering the command and fetching the configurations added earlier (line #18, #22), we setup an instance of WebPageTest by passing the `api_key` (line #24). 
 
- If there is no URL passed in the configuration(settings.json), we are using the VS Code API (vscode.window.showInputBox) to fetch it (line #27). This is the final call to board your URL. 
+ If there is no URL passed in the configuration (`settings.json`), we are using the VS Code API (`vscode.window.showInputBox`) to fetch it (line #27). This is the final call to board your URL. 
 
  All the necessary configuration is set if not added in the settings.json (line #29 – line #33) 
 
@@ -457,42 +467,51 @@ async function activate(context) {
 			}
 ```
 
-In the below image vscode.window.createWebviewPanel function creates and shows a webview in the editor (line #1). 
+In the below code, the `vscode.window.createWebviewPanel` function creates and shows a webview in the editor (line #1). 
 
-If you have not added the URL in the final call, contentForNoURL webview is displayed (line #8) and if added there are 2 different webviews generated for final result: 
+If you have not added the URL in the final call, the `contentForNoURL` webview is displayed (line #8) and if added there are 2 different webviews generated for final result: 
 
-1. **Chrome Based** (line #24)
-2. **Non-Chrome Based** (line #27) 
+1. **Chrome Based** (line #32)
+2. **Non-Chrome Based** (line #35) 
 
 ```javascript
-			var panel = vscode.window.createWebviewPanel(  //line #1
-				'webpagetest',
-				'WebPageTest',
-				vscode.ViewColumn.One
-			);
+var panel = vscode.window.createWebviewPanel( //line #1
+  "webpagetest",
+  "WebPageTest",
+  vscode.ViewColumn.One
+);
 
-			if (!url) {
-				panel.webview.html = webViews.getContentForNoUrl(); //line #8
-				return;
-			}
-			panel.webview.html = webViews.getContentForTestSubmission(url);
-			const wptResponse = await wptHelpers.runTest(wpt, url.toString(), wpt_extension_config);
-			const chromeUserTiming = wptResponse.result.data.median.firstView.chromeUserTiming;
-			if (chromeUserTiming) {
-				for (let i = 0; i < chromeUserTiming.length; i++) {
-					if (chromeUserTiming[i].name == 'firstContentfulPaint')
-						wptResponse.result.data.median.firstView.firstContentfulPaint = chromeUserTiming[i].time;
-					if (chromeUserTiming[i].name == 'LargestContentfulPaint')
-						wptResponse.result.data.median.firstView.chromeUserTiming.LargestContentfulPaint = chromeUserTiming[i].time;
-					if (chromeUserTiming[i].name == 'CumulativeLayoutShift')
-						wptResponse.result.data.median.firstView.chromeUserTiming.CumulativeLayoutShift = chromeUserTiming[i].value.toFixed(3);
-				}
+if (!url) {
+  panel.webview.html = webViews.getContentForNoUrl(); //line #8
+  return;
+}
+panel.webview.html = webViews.getContentForTestSubmission(url);
+const wptResponse = await wptHelpers.runTest(
+  wpt,
+  url.toString(),
+  wpt_extension_config
+);
+const chromeUserTiming =
+  wptResponse.result.data.median.firstView.chromeUserTiming;
+if (chromeUserTiming) {
+  for (let i = 0; i < chromeUserTiming.length; i++) {
+    if (chromeUserTiming[i].name == "firstContentfulPaint")
+      wptResponse.result.data.median.firstView.firstContentfulPaint =
+        chromeUserTiming[i].time;
+    if (chromeUserTiming[i].name == "LargestContentfulPaint")
+      wptResponse.result.data.median.firstView.chromeUserTiming.LargestContentfulPaint =
+        chromeUserTiming[i].time;
+    if (chromeUserTiming[i].name == "CumulativeLayoutShift")
+      wptResponse.result.data.median.firstView.chromeUserTiming.CumulativeLayoutShift =
+        chromeUserTiming[i].value.toFixed(3);
+  }
 
-				panel.webview.html = webViews.getContentForChromeBasedSubmission(wptResponse);  //line #24
-			}
-			else {
-				panel.webview.html = webViews.getContentForNonChromeBasedSubmission(wptResponse);  //line #27
-			}
+  panel.webview.html = webViews.getContentForChromeBasedSubmission(wptResponse); //line #32
+} else {
+  panel.webview.html =
+    webViews.getContentForNonChromeBasedSubmission(wptResponse); //line #35
+}
+
 ```
 
 [Full Code for reference can be found here](https://github.com/WebPageTest/wpt-vscode-extension)
@@ -505,11 +524,11 @@ The steps below are used to run the extension in the debugger mode: 
 
 4.1 Press F5 to trigger the debugger. This opens one more VS Code window where our command has been registered.
 
-4.2 Open the Command Palette (⇧⌘P) and start typing WebPageTest.
+4.2 Open the Command Palette (⇧⌘P) and start typing "WebPageTest".
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-run.png)
 
-4.3 Run the command, and if you had not entered the URL before in the settings.json you get an option to enter it (the final call which we were talking about earlier). Once the test is submitted following response is displayed:
+4.3 Run the command, and if you had not entered the URL before in the `settings.json` you get an option to enter it (the final call which we were talking about earlier). Once the test is submitted following response is displayed:
 
 ![](https://res.cloudinary.com/psaulitis/image/upload/v1626961439/vscode-running.png)
 
