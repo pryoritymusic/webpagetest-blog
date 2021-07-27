@@ -1,6 +1,7 @@
 ---
 title: Building Visual Studio Code Extension For WebPageTest
 date: 2021-07-21T19:11:20.237Z
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627396031/VS_Code_-_WPT_xuk0u1.png
 tags:
   - VS Code
   - API Integration
