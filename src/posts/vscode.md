@@ -1,5 +1,5 @@
 ---
-title: Building Visual Studio Code Extension For WebPageTest
+title: Building The Visual Studio Code Extension For WebPageTest
 date: 2021-07-21T19:11:20.237Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627396452/WPT_-_VS_Studio_z1szmt.png
 tags:
