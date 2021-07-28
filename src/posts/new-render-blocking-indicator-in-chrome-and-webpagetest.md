@@ -6,7 +6,7 @@ tags:
   - JavaScript
   - CSS
   - Render-Blocking
-  - Critical-Path
+  - Critical Path
 category: Product News
 author: Tim Kadlec
 related_post:
