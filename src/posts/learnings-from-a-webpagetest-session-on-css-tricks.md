@@ -10,6 +10,8 @@ tags:
 category: Perf Data
 author: Tim Kadlec
 ---
+*This post was [originally published on CSS-Tricks.com](https://css-tricks.com/learnings-from-a-webpagetest-session-on-css-tricks/)*
+
 I got together with [Tim Kadlec](https://timkadlec.com/) from over at [WebPageTest](https://webpagetest.org/) the other day to use do a bit of performance testing on CSS-Tricks. Essentially use the tool, poke around, and identify performance pain points to work on. You can [watch the video right here](https://css-tricks.com/video-screencasts/207-performance-testing-css-tricks-with-webpagetest/) on the site, or [over on their Twitch channel](https://www.twitch.tv/videos/1092714799), which is worth a subscribe for more performance investigations like these.
 
 Web performance work is twofold:
