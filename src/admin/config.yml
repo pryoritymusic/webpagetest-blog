@@ -104,6 +104,8 @@ collections:
     preview_path: posts/{{slug}}/
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Guest Post?", name: "guest", widget: "boolean", default: false, required: false }
+      - { label: "Canonical Link", hint: "Only needed if we're cross-posting something.", name: "canonical", widget: "string", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Meta Description", name: "desscription", widget: "string", required: false }
       - {
