@@ -1,10 +1,10 @@
 {
-  "facebook": "#",
+  "facebook": "https://www.facebook.com/catchpoint/",
   "name": "WebPageTest Blog",
   "lang": "en",
   "url": "https://blog.webpagetest.org",
-  "twitter": "#",
-  "authorHandle": "",
+  "twitter": "https://twitter.com/search?q=webpagetest&src=typed_query",
+  "authorHandle": "realwebpagetest",
   "authorName": "",
   "cloudinaryName": "psaulitis",
   "description": " ",
