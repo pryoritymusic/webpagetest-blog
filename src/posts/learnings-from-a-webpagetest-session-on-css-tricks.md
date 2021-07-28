@@ -12,6 +12,8 @@ tags:
   - Core Web Vitals
 category: Optimizations
 author: Chris Coyier
+related_post:
+  post: understanding-the-new-cumulative-layout-shift
 ---
 *This post was [originally published on CSS-Tricks.com](https://css-tricks.com/learnings-from-a-webpagetest-session-on-css-tricks/)*
 
