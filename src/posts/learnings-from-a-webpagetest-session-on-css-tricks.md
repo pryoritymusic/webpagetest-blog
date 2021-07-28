@@ -3,7 +3,7 @@ title: Learnings From a WebPageTest Session on CSS-Tricks
 guest: true
 canonical: https://css-tricks.com/learnings-from-a-webpagetest-session-on-css-tricks/
 date: 2021-07-28T16:15:50.606Z
-featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627497302/tricks-hero-2_wob3jc.png
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627497805/css-tricks-hero_gogqri.png
 tags:
   - Render-Blocking
   - Fonts
