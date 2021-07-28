@@ -188,6 +188,7 @@ collections:
           label: "Is WPT Staff",
           name: "is_staff",
           widget: "boolean",
+          required: false,
           hint: "Checking the box will include the author as a Staff Picks editor",
         }
       - label: "Image"

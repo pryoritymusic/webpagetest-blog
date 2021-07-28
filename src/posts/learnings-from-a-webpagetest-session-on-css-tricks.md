@@ -5,9 +5,12 @@ canonical: https://css-tricks.com/learnings-from-a-webpagetest-session-on-css-tr
 date: 2021-07-28T16:15:50.606Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627497805/css-tricks-hero_gogqri.png
 tags:
-  - Render-Blocking
+  - Render Blocking
   - Fonts
-category: Perf Data
+  - LCP
+  - CLS
+  - Core Web Vitals
+category: Optimizations
 author: Chris Coyier
 ---
 *This post was [originally published on CSS-Tricks.com](https://css-tricks.com/learnings-from-a-webpagetest-session-on-css-tricks/)*
