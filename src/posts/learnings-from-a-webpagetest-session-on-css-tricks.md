@@ -6,7 +6,6 @@ date: 2021-07-28T16:15:50.606Z
 tags:
   - Render-Blocking
   - Fonts
-  - Core-Web-Vitals
 category: Perf Data
 author: Tim Kadlec
 ---
