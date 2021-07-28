@@ -7,7 +7,7 @@ tags:
   - Render-Blocking
   - Fonts
 category: Perf Data
-author: Tim Kadlec
+author: Chris Coyier
 ---
 *This post was [originally published on CSS-Tricks.com](https://css-tricks.com/learnings-from-a-webpagetest-session-on-css-tricks/)*
 
