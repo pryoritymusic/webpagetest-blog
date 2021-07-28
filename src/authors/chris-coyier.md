@@ -1,6 +1,6 @@
 ---
 name: Chris Coyier
-is_staff: true
+is_staff: false
 image: https://res.cloudinary.com/psaulitis/image/upload/v1627489343/chris-coyier.jpg
 bio: Chris is a web designer and developer. He writes about all things web at
   [CSS-Tricks](https://css-tricks.com), talks about all things web at
