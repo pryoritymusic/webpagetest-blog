@@ -183,13 +183,32 @@ module.exports = function (eleventyConfig) {
           config.cloudinaryName
         }/image/upload/f_auto,q_auto,c_fill,w_${width},h_${height}/${path}"
         srcset="${srcSetArray.join(", ")}"
-        alt="${alt}"
+        ${alt ? "alt='" + alt + "'" : ""}
         ${loading ? "loading='" + loading + "'" : ""}
         width="${width}"
         height="${height}"
-        sizes="${sizes}"
+        ${sizes ? "sizes='" + sizes + "'" : ""}
         ${attributes ? attributes : ""}>`;
   });
+
+    /**
+   * Cloudinary Shortcodes
+   */
+     eleventyConfig.addShortcode("cloudinaryThumb", function (
+      url,
+      alt,
+      width,
+      height
+    ) {
+      const path = getPathFromUrl(url);
+
+      return `<img src="https://res.cloudinary.com/${
+            config.cloudinaryName
+          }/image/upload/f_auto,q_auto,c_fill,w_${width},h_${height}/${path}"
+          ${alt ? "alt='" + alt + "'" : ""}
+          width="${width}"
+          height="${height}">`;
+    });
   /**
    * Override BrowserSync Server options
    *

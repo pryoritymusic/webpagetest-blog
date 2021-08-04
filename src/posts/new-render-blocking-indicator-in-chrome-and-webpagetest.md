@@ -2,6 +2,7 @@
 title: New Render Blocking Indicator in Chrome and WebPageTest
 date: 2021-07-20T15:30:17.798Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1626796940/Render_blocking_cover_zjv4pp.png
+description: Thanks to a new indicator provided by Chrome in their traces, we're now able to highlight whether a request is render blocking or not. Learn more about the new indicator and what it can tell us.
 tags:
   - JavaScript
   - CSS

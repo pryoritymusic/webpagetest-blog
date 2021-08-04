@@ -22,9 +22,6 @@
           {%- endif -%}
         </div>
         <h1 class="post__title" elementtiming="post-title">{{ title }}</h1>
-        {%- if description -%}
-          <p class="h3 post__description">{{ description }}</p>
-        {%- endif -%}
         <div class="post__author-share">
           {{ authorLink(author, 'post__author') }}
           {{ socialShare(currentUrl, title, 'post__social') }}

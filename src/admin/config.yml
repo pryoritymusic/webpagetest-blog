@@ -107,7 +107,7 @@ collections:
       - { label: "Guest Post?", name: "guest", widget: "boolean", default: false, required: false }
       - { label: "Canonical Link", hint: "Only needed if we're cross-posting something.", name: "canonical", widget: "string", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Meta Description", name: "desscription", widget: "string", required: false }
+      - { label: "Meta Description", name: "description", widget: "string", required: false }
       - {
           label: "Featured Image",
           name: "featured_image",

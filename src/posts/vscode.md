@@ -2,6 +2,7 @@
 title: Building The Visual Studio Code Extension For WebPageTest
 date: 2021-07-27T19:11:20.237Z
 featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1627396452/WPT_-_VS_Studio_z1szmt.png
+description: We built an official VS Code Extension for WebPageTest! Learn a bit more about how we built it, and why.
 tags:
   - VS Code
   - API Integration

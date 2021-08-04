@@ -1,0 +1,14 @@
+---
+permalink: '/posts.json'
+---
+"posts": [
+  {% for post in collections.posts.slice(0,3) %}
+    {% set absolutePostUrl %}{{ config.url }}{{ post.url | url }}{% endset %}
+    {
+      "title":"{{ post.data.title }}",
+      "url": "{{absolutePostUrl}}",
+      "description: "{{post.data.description}}",
+      "image: "{% cloudinaryThumb post.data.featured_image, post.data.featured_image_caption, 300, 200 %}
+    }
+  {% endfor %}
+]
