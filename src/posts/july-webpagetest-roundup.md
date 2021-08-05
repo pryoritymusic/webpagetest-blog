@@ -4,6 +4,7 @@ guest: false
 date: 2021-08-05T14:11:19.549Z
 description: Check out a summary of the features and changes to WebPageTest in
   the month of July.
+featured_image: https://res.cloudinary.com/psaulitis/image/upload/v1628174388/July_Roundup_b2j1il.png
 tags:
   - VS Code
   - Render-Blocking
