@@ -4,6 +4,7 @@ guest: false
 date: 2021-08-12T17:51:05.461Z
 description: We're super excited to announce that as of today, WebPageTest is
   officially supporting and maintaining the WebPageTest API Wrapper for NodeJS.
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1628791766/npm-wrapper-hero_kmt537.png
 tags:
   - API
   - NodeJS
