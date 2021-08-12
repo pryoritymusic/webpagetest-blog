@@ -1,5 +1,5 @@
 ---
-title: Announcing Official Support the WebPageTest API Wrapper for NodeJS
+title: Announcing Official Support for the WebPageTest API Wrapper for NodeJS
 guest: false
 date: 2021-08-12T17:51:05.461Z
 description: We're super excited to announce that as of today, WebPageTest is
