@@ -8,7 +8,7 @@ show_preview_links: true
 media_library:
   name: cloudinary
   config:
-    cloud_name: psaulitis
+    cloud_name: webpagetest
     api_key: 376718663815686
 collections:
   - label: "Globals"
