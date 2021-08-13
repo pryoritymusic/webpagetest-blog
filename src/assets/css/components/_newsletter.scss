@@ -1,13 +1,10 @@
-.staff-pick {
+.newsletter {
   padding: 1.25rem 0;
   border-top: rem-calc(2) solid currentColor;
 }
 
-.staff-pick__social {
-  margin-top: 0.5rem;
-}
 
-.staff-pick__link {
+.newsletter__link {
   text-decoration: none;
 
   &:hover, &:focus {
@@ -15,25 +12,31 @@
   }
 }
 
-.staff-pick__list {
+.newsletter__list {
+  --border-style: .125rem solid var(--color-post-border);
   margin: 2rem 0 0;
   padding: 0;
   list-style: none;
 }
+.newsletter__item{
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  border-top: var(--border-style);
 
+  &:first-of-type{
+    border-top: 0;
+    padding-bottom: 0;
+  }
+}
 @media (min-width: 36em) {
 
-  .staff-pick__header {
+  .newsletter__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .staff-pick__social {
-    margin-top: 0;
-  }
-
-  .staff-pick__list {
+  .newsletter__list {
     margin-top: 3rem;
   }
 }

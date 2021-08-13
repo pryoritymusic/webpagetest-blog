@@ -1,0 +1,32 @@
+---
+layout: base
+title: 'Newsletter'
+---
+<div class="page container container--lg">
+  <h1 class="tag-page__title">Newsletter Archives</h1>
+  <p>The WebPageTest Newsletter brings news about both the latest WebPageTest developments and what's going on in the world of performance, directly to your inbox each week.</p>
+  <div class="signup">
+    <form class="signup__form" data-signup data-netlify="true" name="signup">
+        <label class="screenreader" for="email">Email</label>
+        <div class="signup__input-group">
+        <input id="email" name="email" type="email" class="signup__input" autocomplete="email" placeholder="Email Address" required>
+        <button class="button button--accent">Subscribe</button>
+        </div>
+        <p data-hidden class="signup__message" data-signup-message tabindex="-1" data-success="{{ copy.signupSuccess }}"></p>
+    </form>
+</div>
+  <ol class="newsletter__list">
+    {%- for newsletter in collections.newsletter -%}
+      <li class="newsletter__item">
+        <h2 class="newsletter__title" id="{{newsletter.data.title | slug}}">
+            <a class="newsletter__link" href="{{newsletter.data.link}}">
+                {{newsletter.data.title}}
+            </a>
+        </h2>
+        {%- if newsletter.data.date -%}
+            <time class="newsletter__date text--accent" datetime="{{ newsletter.data.date | htmlDate }}">{{ newsletter.data.date | monthDayYear }}</time>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ol>
+</div>

@@ -61,8 +61,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("tagList", require("./collections/tagList"));
   eleventyConfig.addCollection("tagsPaged", require("./collections/tagsPaged"));
   eleventyConfig.addCollection(
-    "staffPicks",
-    require("./collections/staffPicks")
+    "newsletter",
+    require("./collections/newsletter")
   );
   eleventyConfig.addCollection("memoized", require("./collections/memoized"));
 
