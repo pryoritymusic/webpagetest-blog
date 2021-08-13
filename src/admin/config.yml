@@ -203,39 +203,12 @@ collections:
           hint: "Without the @, eg. Catchpoint",
           required: false,
         }
-  - name: "staff-picks" # Used in routes, e.g., /admin/collections/blog
-    label: "Staff Picks" # Used in the UI
-    folder: "src/staff-picks" # The path to the folder where the documents are stored
+  - name: "newsletter" # Used in routes, e.g., /admin/collections/blog
+    label: "Newsletter" # Used in the UI
+    folder: "src/newsletter" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}"
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - label: "Picks"
-        name: "picks"
-        widget: "list"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Url", name: "url", widget: "string" }
-          - label: "Type"
-            name: "type"
-            widget: "select"
-            options: ["Video", "Article", "Podcast", "Interview", "Research", "Post", "Tweet"]
-          - { label: "Publish Date", name: "date", widget: "date" }
-          - label: "Author"
-            name: "author"
-            widget: "string"
-  - label: "Pages"
-    name: "pages"
-    files:
-      - label: "Staff Picks"
-        name: "staff-picks"
-        file: "src/staff-picks.md"
-        fields:
-          - { label: "Headline", name: "headline", widget: "string" }
-          - {
-              label: "Layout",
-              name: "layout",
-              widget: "hidden",
-              default: "staff-picks",
-            }
+      - { label: "Newsletter Link", name: "link", widget: "string" }

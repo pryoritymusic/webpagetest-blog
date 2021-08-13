@@ -6,7 +6,7 @@ const livePosts = (post) => post.date <= now && !post.data.draft;
 module.exports = (collection) => {
   return [
     ...collection
-      .getFilteredByGlob(`./${pathConfig.src}/staff-picks/**/*.md`)
+      .getFilteredByGlob(`./${pathConfig.src}/newsletter/**/*.md`)
       .filter(livePosts),
   ].reverse();
 };
