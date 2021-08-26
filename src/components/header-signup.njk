@@ -2,7 +2,8 @@
   <p class="header-signup__text">
     {{ copy.headerSignup }}
   </p>
-  <form class="header-signup__form" data-signup data-netlify="true" name="signup">
+  <form class="header-signup__form" data-signup data-netlify="true" netlify-honeypot="header-shameful" name="signup">
+    <input type="text" name="header-shameful" />
     <div class="header-signup__hide" data-form-hide>
       <label class="screenreader" for="header-email">Email</label>
       <div class="header-signup__input-group">

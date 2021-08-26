@@ -27,7 +27,8 @@
         <p class="signup__text h3">
           {{ copy.footerSignup }}
         </p>
-        <form class="signup__form" data-signup data-netlify="true" name="signup">
+        <form class="signup__form" data-signup data-netlify="true" netlify-honeypot="footer-shameful" name="signup">
+          <input type="text" name="footer-shameful" />
           <label class="screenreader" for="email">Email</label>
           <div class="signup__input-group">
             <input id="email" name="email" type="email" class="signup__input" autocomplete="email" placeholder="Email Address" required>
