@@ -6,7 +6,8 @@ title: 'Newsletter'
   <h1 class="tag-page__title">Newsletter Archives</h1>
   <p>The WebPageTest Newsletter brings news about both the latest WebPageTest developments and what's going on in the world of performance, directly to your inbox each week.</p>
   <div class="signup">
-    <form class="signup__form" data-signup data-netlify="true" name="signup">
+    <form class="signup__form" netlify-honeypot="shameful" data-signup data-netlify="true" name="signup">
+        <input type="text" name="shameful" />
         <label class="screenreader" for="email">Email</label>
         <div class="signup__input-group">
         <input id="email" name="email" type="email" class="signup__input" autocomplete="email" placeholder="Email Address" required>
