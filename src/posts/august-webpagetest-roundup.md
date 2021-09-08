@@ -4,6 +4,7 @@ guest: false
 date: 2021-09-08T14:19:19.011Z
 description: Check out a summary of the features and changes to WebPageTest in
   the month of August.
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1631111634/august-roundup_plhjt4.png
 tags:
   - API
   - Render-Blocking
