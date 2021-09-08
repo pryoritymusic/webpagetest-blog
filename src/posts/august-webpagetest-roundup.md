@@ -21,7 +21,7 @@ Third-party performance problems are incredibly common, and one of those issues 
 
 The SPOF test lets folks see how a site performs when a third-party resource that blocks the initial rendering of the page suddenly hangs (the provider has issues, etc). And WebPageTest also makes it possible to block individual resources from loading, or to block all resources from a given domain, using either the Advanced Settings > Block tab on the test home page, or the `block` and `blockDomains` [scripting commands](https://docs.webpagetest.org/scripting/#request-manipulation).
 
-In the past, running either test required you to go back to the test form and manually enter the URL's and domains you wanted to test.
+In the past, running either test required you to go back to the test form and manually enter the URLs and domains you wanted to test.
 
 The new Experiments feature lets you run those tests directly from the waterfall instead, making it much easier to quickly run experiments and test your hypothesis.
 
@@ -35,11 +35,11 @@ The tab will provide three possible experiments right now:
 * Block Request URL
 * Block Request Domain
 
-You can add any number of URLs  and domains to block, enter a label to make it easier to find your results later on in your test history, and then run the test all without every leaving the waterfall.
+You can add any number of URLs  and domains to block, enter a label to make it easier to find your results later on in your test history, and then run the test all without ever leaving the waterfall.
 
-![The new experiments box, showing a list of the URL's that will be blocked, a list of the domains to block, a label field and a button to "run experiment"](https://res.cloudinary.com/webpagetest/image/upload/v1631110959/experiments-box_vtj55r.png)
+![The new experiments box, showing a list of the URLs that will be blocked, a list of the domains to block, a label field and a button to "run experiment"](https://res.cloudinary.com/webpagetest/image/upload/v1631110959/experiments-box_vtj55r.png)
 
-The ability to run your URL through different scenario's to see how performance is impacted is one of the more powerful and important WebPageTest features. Expect more experiments to be added in the future to make this even easier.
+The ability to run your URL through different scenarios to see how performance is impacted is one of the more powerful and important WebPageTest features. Expect more experiments to be added in the future to make this even easier.
 
 ## Cleaning up the command bar
 
