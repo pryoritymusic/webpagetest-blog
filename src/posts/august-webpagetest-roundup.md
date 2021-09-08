@@ -53,7 +53,7 @@ There are a number of different artifacts produced for each test you run on WebP
 
 Some of these artifacts were spread out, and it wasn't always clear what you could download or access directly, so we cleaned things up a bit to make it easier to get at the information you want.
 
-![The Export Files menu list, expanded, showing links to view JSON, View Test Log, View Lighthouse Log, Download JSON, Download HAR, Download Test Log and Download Lighthouse Log](https://res.cloudinary.com/webpagetest/image/upload/v1631110959/command-bar_ja9ng0.png)
+![The Export Files menu list, expanded, showing links to view JSON, View Test Log, View Lighthouse Log, Download JSON, Download HAR, Download Test Log and Download Lighthouse Log](https://res.cloudinary.com/webpagetest/image/upload/v1631111763/command-bar2_ynfp8i.png)
 
 ## API endpoint for checking available test runs
 
@@ -90,7 +90,6 @@ Thanks to Algolia's build plugin for Netlify, we added [search to our documentat
 Selfishly, this is also *super* helpful for us, as it helps us to see what folks are searching for to help us prioritize which documentation gaps to fill first. For example, we saw that "Lighthouse" was being searched pretty often, so we bumped that to the top of our list and published some information about [how WebPageTest runs Lighthouse](https://docs.webpagetest.org/running-lighthouse/).
 
 ![A screenshot of the new search on docs, with the query "lighth" entered and a number of options, including a "Running Lighthouse" result, displayed](https://res.cloudinary.com/webpagetest/image/upload/v1631111228/docs-search_e8qj1e.png)
-
 
 ## Static IP's are here
 
