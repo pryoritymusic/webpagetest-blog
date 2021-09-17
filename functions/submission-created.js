@@ -20,7 +20,8 @@ exports.handler = function(event, context) {
             }
         ],
         "context": {
-            "pageUri": body.data.referrer
+            "pageUri": body.data.referrer,
+            "ipAddress": body.data.ip,
         }
     };
     console.log("data....");
