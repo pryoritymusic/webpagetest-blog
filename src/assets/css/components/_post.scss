@@ -52,12 +52,23 @@
   color: var(--color-accent-text);
 }
 .post ins{
+  display: block;
+  background: #f9f3c0;
+  text-decoration: none;
+  padding: 1em;
+  border: 1px solid rgb(255,229,100);
+  border-width: 0 0 0 5px;
+  border-radius: 4px;
+}
+.post__note{
   margin: 1em 0;
-    display: block;
-    background: #f9f3c0;
-    font-style: italic;
-    text-decoration: none;
-    padding: .4em .6em;
+  display: block;
+  background: #f1f8ff;
+  text-decoration: none;
+  padding: 1em;
+  border: 1px solid #0366d6;
+  border-width: 0 0 0 5px;
+  border-radius: 4px;
 }
 .post__content .footnotes-list {
   font-size: .9em;

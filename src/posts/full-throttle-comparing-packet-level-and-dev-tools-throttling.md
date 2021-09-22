@@ -29,7 +29,9 @@ DevTools throttling applies at the request level and operates between the render
 
 On top of all of that, because it sits between the network layer and renderer, dev tools throttling means any network-level HTTP/2 prioritization won't be applied either.
 
+{% note %}
 There's also something called *simulated throttling* which is what Lighthouse uses. Simulated throttling doesn't actually apply throttling at all. Instead, Lighthouse runs a test without any throttling applied, then uses some adjustment factors to simulate how that page load would have looked over a slow connection. To learn more Lighthouse's simulated throttling approach, the Lighthouse team has written up [some interesting analysis where they compare and contrast the simulated throttling with dev tools throttling and WebPageTest's network throttling](https://docs.google.com/document/d/1BqtL-nG53rxWOI5RO0pItSRPowZVnYJ_gBEQCJ5EeUE/edit).
+{% endnote %}
 
 On the other hand, since packet-level throttling applies to the underlying network, the impact of packet-level throttling can be felt on each of those processes, while also maintaining any network-level HTTP/2 prioritization. The result is that packet-level throttling is a much more accurate representation of real network conditions.
 

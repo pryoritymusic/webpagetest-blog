@@ -89,7 +89,9 @@ The Paint Timing [specification also notes that](https://w3c.github.io/paint-tim
 
 Ok, so far so good. But when handling the WebKit implementation, Noam and the folks that were involved from Safari felt that "pixels on the screen" wasn't possible to make cross-browser interoperable. There is some additional context in the spec now that makes it clear that "pixels on screen" isn't exactly super precise, or even potentially feasible to measure, for all browsers, and gives guidance on how browsers should implement (emphasis mine):
 
-> NOTE: The rendering pipeline is very complex, and the timestamp should be the latest timestamp the user agent is able to note in this pipeline (best effort). Typically the *time at which the frame is submitted to the OS for display is recommended for this API*.
+{% note %}
+The rendering pipeline is very complex, and the timestamp should be the latest timestamp the user agent is able to note in this pipeline (best effort). Typically the *time at which the frame is submitted to the OS for display is recommended for this API*.
+{% endnote %}
 
 So, we're not necessarily measuring the moment at which that contentful paint actually occurs. Instead, the specification now defines it as measuring the point at which the frame is submitted for display (or, as close to that point as possible).
 
@@ -103,9 +105,7 @@ Chrome, on the other hand, tries hard to provide a timestamp of when the paint a
 
 This appears to largely be a side-effect of the difference between interoperability in practice and in reality. The specification tries to provide a consistent playing field, but the reality is that different browser architectures have different restrictions on when they can fire the necessary timestamps to report First Contentful (or if not restrictions, then perhaps how important it is for them to try to work around those restrictions to get more accurate timings). It's one of those "specs in the real world" moments.
 
-<ins>
-Noam provided some more context on Twitter that's relevant here and worth emphasizing here. WebKit's decision was <a href="https://twitter.com/nomsternom/status/1389817161250713600">based on interoperability</a>. A <a href="https://twitter.com/nomsternom/status/1389817555418816513">prior patch to implement First Contentful Paint actually used a different timestamp</a>, closer to the actual painting event, but they opted to go a different route.
-</ins>
+++Noam provided some more context on Twitter that's relevant here and worth emphasizing here. WebKit's decision was [based on interoperability](https://twitter.com/nomsternom/status/1389817161250713600). A [prior patch to implement First Contentful Paint actually used a different timestamp](https://twitter.com/nomsternom/status/1389817555418816513), closer to the actual painting event, but they opted to go a different route.++
 
 This distinction and the difference in how browser rendering engines work means First Contentful Paint is pretty unreliable for cross-browser comparison.
 
