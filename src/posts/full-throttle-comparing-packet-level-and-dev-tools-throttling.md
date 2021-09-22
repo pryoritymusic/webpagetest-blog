@@ -20,12 +20,12 @@ Recently, we added support for optionally running tests using Dev Tools throttli
 
 DevTools throttling applies at the request level and operates between the renderer and the networking stack of the browser. This means that there are some things that are out of reach for DevTools throttling. DevTools throttling won't have any effect on things like:
 
-- TCP slow-start
-- DNS resolutions
-- TCP connection times
-- Packet-loss simulation
-- TLS handshake
-- Redirects
+* TCP slow-start
+* DNS resolutions
+* TCP connection times
+* Packet-loss simulation
+* TLS handshake
+* Redirects
 
 On top of all of that, because it sits between the network layer and renderer, dev tools throttling means any network-level HTTP/2 prioritization won't be applied either.
 
@@ -45,23 +45,23 @@ But just how big is the impact, really?
 
 The following screenshot of a page loaded on an emulated Moto G4 over a 4G connection, shows three different third-party domains, all serving up render-blocking resources.
 
-![Screen Shot 2021-09-22 at 10.40.58 AM.png](WPT%20Network%20throttle%20vs%20DevTools%20cfdce7dcede849049dfbf29e5527bf7c/Screen_Shot_2021-09-22_at_10.40.58_AM.png)
+![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (and all taking less than 17ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-dt-throttle.png)
 
 In this case, we've applied DevTools throttling. Notice how the connection cost (TCP + TLS + SSL) for these resources doesn't seem particularly high:
 
-- cdn.shopify.com: 18ms
-- use.typekit.net: 37ms
-- hello.myfonts.net: 18ms
+* cdn.shopify.com: 18ms
+* use.typekit.net: 37ms
+* hello.myfonts.net: 18ms
 
 Here are the same requests with the same settings, only this time we've applied WebPageTest's default packet-level throttling.
 
-![Screen Shot 2021-09-22 at 10.39.53 AM.png](WPT%20Network%20throttle%20vs%20DevTools%20cfdce7dcede849049dfbf29e5527bf7c/Screen_Shot_2021-09-22_at_10.39.53_AM.png)
+![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (taking between 612 and 1434ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-wpt-throttle.png)
 
 The connection costs are much more expensive:
 
-- cdn.shopify.com: 550ms
-- use.typekit.net: 549ms
-- hello.myfonts.net: 545ms
+* cdn.shopify.com: 550ms
+* use.typekit.net: 549ms
+* hello.myfonts.net: 545ms
 
 If we were looking at the results with DevTools throttling applied, we might conclude the cost of the third-party domain is pretty light (what's 20-40ms, after all?) and, as a result, that any efforts to self-host those resources could be more work than it's worth.
 
@@ -95,13 +95,13 @@ With dev tools throttling, the impact looks minimal.
 
 In the following screenshot of a truncated waterfall, the first group of requests (#12-14) all result in 302 redirects which trigger the actual requests (requests #27-29).
 
-![WPT%20Network%20throttle%20vs%20DevTools%20cfdce7dcede849049dfbf29e5527bf7c/Screen_Shot_2021-08-10_at_4.54.33_PM.png](WPT%20Network%20throttle%20vs%20DevTools%20cfdce7dcede849049dfbf29e5527bf7c/Screen_Shot_2021-08-10_at_4.54.33_PM.png)
+![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are all very, very small and the requests complete by .6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-dt-throttle.png)
 
 While this isn't ideal, the time it takes for those redirects looks pretty minimal—they all take under 20ms. Dev tools throttling isn't applying any throttle to those redirects, since they occur at the network level, so things don't look so bad. Based on what we see here, we might decide that eliminating the redirect is, at best, a minor improvement.
 
 Here are the same requests on the same browser and network setting, but with packet-level throttling applied instead of dev tools throttling.
 
-![WPT%20Network%20throttle%20vs%20DevTools%20cfdce7dcede849049dfbf29e5527bf7c/Screen_Shot_2021-08-10_at_4.57.16_PM.png](WPT%20Network%20throttle%20vs%20DevTools%20cfdce7dcede849049dfbf29e5527bf7c/Screen_Shot_2021-08-10_at_4.57.16_PM.png)
+![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are much longer now and the requests complete by 2.6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-wpt-throttle.png)
 
 Now the redirects look *much* more expensive—instead of 17ms for the longest redirect, we're spending 1.4s! ch
 
