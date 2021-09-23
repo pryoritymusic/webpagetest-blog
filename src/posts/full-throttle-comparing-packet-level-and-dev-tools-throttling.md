@@ -36,6 +36,8 @@ There's also something called *simulated throttling* which is what Lighthouse us
 
 On the other hand, since packet-level throttling applies to the underlying network, the impact of packet-level throttling can be felt on each of those processes, while also maintaining any network-level HTTP/2 prioritization. The result is that packet-level throttling is a much more accurate representation of real network conditions.
 
+Applying packet-level network throttling requires being able to affect the entire operating systems's network connectivity, which is why it's not an option for dev tools, but is for something like WebPageTest where the testing agent runs on a dedicated machine.
+
 The impact might sound academic, but let's dive into some specific examples where the type of throttling may lead you to very different conclusions.
 
 ## Minimizing the Impact of Third-Party Domains
@@ -69,6 +71,10 @@ The connection costs are much more expensive:
 If we were looking at the results with DevTools throttling applied, we might conclude the cost of the third-party domain is pretty light (what's 20-40ms, after all?) and, as a result, that any efforts to self-host those resources could be more work than it's worth.
 
 With packet-level throttling, however, we see the reality: those connection costs are an order of magnitude more expensive, costing us around 550ms. Self-hosting here makes a lot more sense—an improvement of half a second or more in page load time is likely very worth the time and energy it would take to fix it.
+
+{% note %}
+Just to re-emphasize the point, notice how if we exclude the connection costs, the actual download times for these requests are pretty close. For example, without the connection costs, the CSS requested from Shopify takes 185ms to retrieve with packet-level throttling and 176ms to retrieve with dev tools throttling. That's because dev tools throttling is able to be applied at that stage of the request, so we're seeing that throttling in action.
+{% endnote %}
 
 ## Masking the cost of redirects
 
