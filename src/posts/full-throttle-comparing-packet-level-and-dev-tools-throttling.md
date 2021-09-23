@@ -1,5 +1,5 @@
 ---
-title: "Full Throttle: Comparing packet-level and dev tools throttling"
+title: "Full Throttle: Comparing packet-level and DevTools throttling"
 guest: false
 date: 2021-09-22T15:59:07.064Z
 featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1632408014/full-throttle-header_v7uyfb.png
@@ -15,7 +15,7 @@ Test results are only as good as the accuracy of the throttling being applied to
 
 WebPageTest uses something called *packet-level* network throttling. In other words, the additional latency is applied for each individual packet. In terms of approaches to throttling goes, packet level throttling is the gold standard in accuracy.
 
-Recently, we added support for optionally running tests using Dev Tools throttling instead. We don't recommend using it, except for scientific purposes, but it does make it easy to compare and contrast the two approaches and see how they impact your results.
+Recently, we [added support for optionally running tests using DevTools throttling instead](https://twitter.com/patmeenan/status/1410676572596678657). We don't recommend using it, except for scientific purposes, but it does make it easy to compare and contrast the two approaches and see how they impact your results.
 
 ## Differences in Throttling Approaches
 
@@ -28,15 +28,15 @@ DevTools throttling applies at the request level and operates between the render
 * TLS handshake
 * Redirects
 
-On top of all of that, because it sits between the network layer and renderer, dev tools throttling means any network-level HTTP/2 prioritization won't be applied either.
+On top of all of that, because it sits between the network layer and renderer, DevTools throttling means any network-level HTTP/2 prioritization won't be applied either.
 
 {% note %}
-There's also something called *simulated throttling* which is what Lighthouse uses. Simulated throttling doesn't actually apply throttling at all. Instead, Lighthouse runs a test without any throttling applied, then uses some adjustment factors to simulate how that page load would have looked over a slow connection. To learn more Lighthouse's simulated throttling approach, the Lighthouse team has written up [some interesting analysis where they compare and contrast the simulated throttling with dev tools throttling and WebPageTest's network throttling](https://docs.google.com/document/d/1BqtL-nG53rxWOI5RO0pItSRPowZVnYJ_gBEQCJ5EeUE/edit).
+There's also something called *simulated throttling* which is what Lighthouse uses. Simulated throttling doesn't actually apply throttling at all. Instead, Lighthouse runs a test without any throttling applied, then uses some adjustment factors to simulate how that page load would have looked over a slow connection. To learn more Lighthouse's simulated throttling approach, the Lighthouse team has written up [some interesting analysis where they compare and contrast the simulated throttling with DevTools throttling and WebPageTest's network throttling](https://docs.google.com/document/d/1BqtL-nG53rxWOI5RO0pItSRPowZVnYJ_gBEQCJ5EeUE/edit).
 {% endnote %}
 
 On the other hand, since packet-level throttling applies to the underlying network, the impact of packet-level throttling can be felt on each of those processes, while also maintaining any network-level HTTP/2 prioritization. The result is that packet-level throttling is a much more accurate representation of real network conditions.
 
-Applying packet-level network throttling requires being able to affect the entire operating systems's network connectivity, which is why it's not an option for dev tools, but is for something like WebPageTest where the testing agent runs on a dedicated machine.
+Applying packet-level network throttling requires being able to affect the entire operating systems's network connectivity, which is why it's not an option for DevTools, but is for something like WebPageTest where the testing agent runs on a dedicated machine.
 
 The impact might sound academic, but let's dive into some specific examples where the type of throttling may lead you to very different conclusions.
 
@@ -73,7 +73,7 @@ If we were looking at the results with DevTools throttling applied, we might con
 With packet-level throttling, however, we see the reality: those connection costs are an order of magnitude more expensive, costing us around 550ms. Self-hosting here makes a lot more sense—an improvement of half a second or more in page load time is likely very worth the time and energy it would take to fix it.
 
 {% note %}
-Just to re-emphasize the point, notice how if we exclude the connection costs, the actual download times for these requests are pretty close. For example, without the connection costs, the CSS requested from Shopify takes 185ms to retrieve with packet-level throttling and 176ms to retrieve with dev tools throttling. That's because dev tools throttling is able to be applied at that stage of the request, so we're seeing that throttling in action. [Matt Zeunert's article on throttling](https://www.debugbear.com/blog/network-throttling-methods#conclusion) does a good job of highlighting this as well.
+Just to re-emphasize the point, notice how if we exclude the connection costs, the actual download times for these requests are pretty close. For example, without the connection costs, the CSS requested from Shopify takes 185ms to retrieve with packet-level throttling and 176ms to retrieve with DevTools throttling. That's because DevTools throttling is able to be applied at that stage of the request, so we're seeing that throttling in action. [Matt Zeunert's article on throttling](https://www.debugbear.com/blog/network-throttling-methods#conclusion) does a good job of highlighting this as well.
 {% endnote %}
 
 ## Masking the cost of redirects
@@ -100,15 +100,15 @@ https://unpkg.com/react@15.7.0/dist/react.min.js
 
 That redirect is a handy way to pull in the latest version of a library automatically, but it's also expensive. It means the browser has to first issue the request, wait for the response, process the redirect and then issue a new request.
 
-With dev tools throttling, the impact looks minimal.
+With DevTools throttling, the impact looks minimal.
 
 In the following screenshot of a truncated waterfall, the first group of requests (#12-14) all result in 302 redirects which trigger the actual requests (requests #27-29).
 
 ![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (and all taking less than 17ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-dt-throttle.png "Wide:")
 
-While this isn't ideal, the time it takes for those redirects looks pretty minimal—they all take under 20ms. Dev tools throttling isn't applying any throttle to those redirects, since they occur at the network level, so things don't look so bad. Based on what we see here, we might decide that eliminating the redirect is, at best, a minor improvement.
+While this isn't ideal, the time it takes for those redirects looks pretty minimal—they all take under 20ms. DevTools throttling isn't applying any throttle to those redirects, since they occur at the network level, so things don't look so bad. Based on what we see here, we might decide that eliminating the redirect is, at best, a minor improvement.
 
-Here are the same requests on the same browser and network setting, but with packet-level throttling applied instead of dev tools throttling.
+Here are the same requests on the same browser and network setting, but with packet-level throttling applied instead of DevTools throttling.
 
 ![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (taking between 612 and 1434ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-wpt-throttle.png "Wide:")
 
@@ -118,6 +118,6 @@ The request order also changes. With the packet level throttling more accurately
 
 ## Summing it up
 
-Accurate network throttling is so important when doing synthetic performance analysis, and a ton of work goes into getting it right. Dev tools throttling tends to use more aggressive throttling factors to account for the fact that's it's a little over-optimistic, and Lighthouse's simulated throttling has also been carefully calibrated against network-level throttling to try to get results to be as accurate as possible.
+Accurate network throttling is so important when doing synthetic performance analysis, and a ton of work goes into getting it right. DevTools throttling tends to use more aggressive throttling factors to account for the fact that's it's a little over-optimistic, and Lighthouse's simulated throttling has also been carefully calibrated against network-level throttling to try to get results to be as accurate as possible.
 
-You don't need to be an expert in network throttling approaches to improve your sites performance, but some basic understanding of how they work, and where dev tools throttling in particular falls a bit short can help you to understand the differences in results across tools and, more importantly, help you to avoid drawing the wrong conclusions about potential optimizations.
+You don't need to be an expert in network throttling approaches to improve your sites performance, but some basic understanding of how they work, and where DevTools throttling in particular falls a bit short can help you to understand the differences in results across tools and, more importantly, help you to avoid drawing the wrong conclusions about potential optimizations.
