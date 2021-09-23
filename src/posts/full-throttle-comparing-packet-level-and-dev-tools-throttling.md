@@ -2,6 +2,10 @@
 title: "Full Throttle: Comparing packet-level and DevTools throttling"
 guest: false
 date: 2021-09-22T15:59:07.064Z
+description: When you're doing performance testing, one of the most important
+  variables to consider is the connection type. Learn about the differences
+  between packet-level and devtools throttling, and how they impact your test
+  results.
 featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1632408014/full-throttle-header_v7uyfb.png
 tags:
   - Render-Blocking
@@ -11,7 +15,7 @@ author: Tim Kadlec
 ---
 When you're doing performance testing, one of the most important variables to consider is the connection type. The web is built on a set of a very chatty protocols—there's a lot of back and forth between the browser and the server throughout the browsing experience. Each trip from the server to the browser, and vice versa, is subject to the limitations of the network in use: how much bandwidth is available, how high is the latency, how much packet loss is there, etc.
 
-Test results are only as good as the accuracy of the throttling being applied to the network—use throttling that is too optimistic or has fundamental limitations of accuracy, and you could find yourself drawing the wrong conclusions about potential bottlenecks and their impact.
+When doing synthetic testing, results are only as good as the accuracy of the throttling being applied to the network—use throttling that is too optimistic or has fundamental limitations of accuracy, and you could find yourself drawing the wrong conclusions about potential bottlenecks and their impact.
 
 WebPageTest uses something called *packet-level* network throttling. In other words, the additional latency is applied for each individual packet. In terms of approaches to throttling goes, packet-level throttling is the gold standard in accuracy.
 
