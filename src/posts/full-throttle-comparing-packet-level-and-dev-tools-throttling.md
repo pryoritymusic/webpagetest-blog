@@ -44,7 +44,7 @@ The impact might sound academic, but let's dive into some specific examples wher
 
 It's pretty common to find render blocking requests that are loaded from a third-party domain. We load JavaScript libraries, CSS files, client-side A/B testing solutions, tag management, ads, and more from third-party domains and many of those are loaded in a way that those resources sit in directly in the critical path—the page can't display until those resources have been requested and downloaded.
 
-One frequent bit of advice, particularly since HTTP/2 came along, has been to try to self-host those resources whenever you can. If you can't self-host them, then proxy them using a solution like Fastly's Compute@Edge, [Cloudflare Workers](https://workers.cloudflare.com/), or [Akamai EdgeWorkers](https://developer.akamai.com/akamai-edgeworkers-overview) so that the time to connect to those other domains is handled at the CDN level, where it can likely happen much faster.
+One frequent bit of advice, particularly since HTTP/2 came along, has been to try to self-host those resources whenever you can. If you can't self-host them, then proxy them using a solution like [Fastly's Compute@Edge](https://www.fastly.com/products/edge-compute/serverless), [Cloudflare Workers](https://workers.cloudflare.com/), or [Akamai EdgeWorkers](https://developer.akamai.com/akamai-edgeworkers-overview) so that the time to connect to those other domains is handled at the CDN level, where it can likely happen much faster.
 
 But just how big is the impact, really?
 
