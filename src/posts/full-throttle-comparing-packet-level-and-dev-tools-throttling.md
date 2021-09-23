@@ -2,6 +2,7 @@
 title: "Full Throttle: Comparing packet-level and dev tools throttling"
 guest: false
 date: 2021-09-22T15:59:07.064Z
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1632408014/full-throttle-header_v7uyfb.png
 tags:
   - Render-Blocking
   - Throttling
