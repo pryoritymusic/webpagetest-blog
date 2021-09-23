@@ -57,7 +57,7 @@ In this case, we've applied DevTools throttling. Notice how the connection cost 
 
 Here are the same requests with the same settings, only this time we've applied WebPageTest's default packet-level throttling.
 
-![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are much longer now and the requests complete by 2.6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-wpt-throttle.png "Wide:")!
+![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are much longer now and the requests complete by 2.6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-wpt-throttle.png "Wide:")
 
 The connection costs are much more expensive:
 
@@ -71,7 +71,7 @@ With packet-level throttling, however, we see the reality: those connection cost
 
 ## Masking the cost of redirects
 
-[Unpkg](https://unpkg.com/) is a popular CDN for node modules. If you want to pull in a library (like React for example), you pass the package name, version number and file like so:
+[Unpkg](https://unpkg.com/) is a popular CDN for node modules ([HTTP Archive data](https://httparchive.org/) currently discovers it on 129,324 sites). If you want to pull in a library (like React for example), you pass the package name, version number and file like so:
 
 ```jsx
 unpkg.com/react@16.7.0/umd/react.production.min.js
@@ -103,7 +103,7 @@ While this isn't ideal, the time it takes for those redirects looks pretty minim
 
 Here are the same requests on the same browser and network setting, but with packet-level throttling applied instead of dev tools throttling.
 
-[A screenshot from WebPageTest, showing three requests all returning a 302 redirect (taking between 612 and 1434ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-wpt-throttle.png "Wide:")
+![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (taking between 612 and 1434ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-wpt-throttle.png "Wide:")
 
 Now the redirects look *much* more expensive—instead of 17ms for the longest redirect, we're spending 1.4s! ch
 
