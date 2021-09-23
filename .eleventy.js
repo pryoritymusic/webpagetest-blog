@@ -101,7 +101,7 @@ module.exports = function (eleventyConfig) {
     return path.split("/").pop();
   });
 
-  const mdRender = new markdownIt({});
+  const mdRender = new markdownIt({html: true});
   eleventyConfig.addFilter("markdown", function (value) {
     if (value) {
       return mdRender.render(value);
@@ -248,7 +248,16 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.setUseGitIgnore(false);
 
-  eleventyConfig.setLibrary("md", markdownIt({}).use(markdownItFootnote));
+  eleventyConfig.setLibrary("md", markdownIt({html: true})
+    .use(markdownItFootnote)
+    .use(require('markdown-it-ins'))
+  );
+
+  eleventyConfig.addPairedShortcode("note", (content, title) => {
+    return (
+      '<div class="post__note">' + mdRender.render(content) + '</div>'
+    );
+  });
   /**
    * Eleventy configuration object
    */
