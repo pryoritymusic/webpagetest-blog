@@ -23,7 +23,7 @@ Recently, we [added support for optionally running tests using DevTools throttli
 
 ## Differences in Throttling Approaches
 
-DevTools throttling applies at the request level and operates between the renderer and the networking stack of the browser. This means that there are some things that are out of reach for DevTools throttling. DevTools throttling won't have any effect on things like:
+DevTools throttling applies at the request level and operates between the HTTP disk cache and the connection layer of the browser. This means that activity that occurs at that connection layer are out of reach for DevTools throttling. DevTools throttling won't have any effect on things like:
 
 * <abbr title="Transmission Control Protocol">TCP</abbr> slow-start
 * <abbr title="Domain Name System">DNS</abbr> resolutions
@@ -32,7 +32,7 @@ DevTools throttling applies at the request level and operates between the render
 * <abbr title="Transport Layer Security">TLS</abbr> handshake
 * Redirects
 
-On top of all of that, because it sits between the network layer and renderer, DevTools throttling means any network-level HTTP/2 prioritization won't be applied either.
+On top of all of that, because of where it sits, DevTools throttling means any network-level HTTP/2 prioritization won't be applied either.
 
 {% note %}
 There's also something called *simulated throttling*, which is what Lighthouse uses. Simulated throttling doesn't actually apply throttling at all during the actual page load. Instead, Lighthouse runs a test without any throttling applied, then uses some adjustment factors to simulate how that page load would have looked over a slow connection.
