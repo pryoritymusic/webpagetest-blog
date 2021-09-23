@@ -21,11 +21,11 @@ Recently, we [added support for optionally running tests using DevTools throttli
 
 DevTools throttling applies at the request level and operates between the renderer and the networking stack of the browser. This means that there are some things that are out of reach for DevTools throttling. DevTools throttling won't have any effect on things like:
 
-* TCP slow-start
-* DNS resolutions
-* TCP connection times
+* <abbr title="Transmission Control Protocol">TCP</abbr> slow-start
+* <abbr title="Domain Name System">DNS</abbr> resolutions
+* <abbr title="Transmission Control Protocol">TCP</abbr> connection times
 * Packet-loss simulation
-* TLS handshake
+* <abbr title="Transport Layer Security">TLS</abbr> handshake
 * Redirects
 
 On top of all of that, because it sits between the network layer and renderer, DevTools throttling means any network-level HTTP/2 prioritization won't be applied either.
@@ -54,7 +54,7 @@ The following screenshot of a page loaded on an emulated Moto G4 over a 4G conne
 
 ![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are all very, very small and the requests complete by .6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-dt-throttle.png "Wide:")
 
-In this case, we've applied DevTools throttling. Notice how the connection cost (TCP + TLS + SSL) for these resources doesn't seem particularly high:
+In this case, we've applied DevTools throttling. Notice how the connection cost (<abbr title="Transmission Control Protocol">TCP</abbr> + <abbr title="Domain Name System">DNS</abbr> + <abbr title="Transport Layer Security">TLS</abbr>) for these resources doesn't seem particularly high:
 
 * cdn.shopify.com: 18ms
 * use.typekit.net: 37ms
