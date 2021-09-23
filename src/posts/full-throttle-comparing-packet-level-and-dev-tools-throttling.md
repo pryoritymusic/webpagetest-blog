@@ -73,7 +73,7 @@ If we were looking at the results with DevTools throttling applied, we might con
 With packet-level throttling, however, we see the reality: those connection costs are an order of magnitude more expensive, costing us around 550ms. Self-hosting here makes a lot more sense—an improvement of half a second or more in page load time is likely very worth the time and energy it would take to fix it.
 
 {% note %}
-Just to re-emphasize the point, notice how if we exclude the connection costs, the actual download times for these requests are pretty close. For example, without the connection costs, the CSS requested from Shopify takes 185ms to retrieve with packet-level throttling and 176ms to retrieve with dev tools throttling. That's because dev tools throttling is able to be applied at that stage of the request, so we're seeing that throttling in action.
+Just to re-emphasize the point, notice how if we exclude the connection costs, the actual download times for these requests are pretty close. For example, without the connection costs, the CSS requested from Shopify takes 185ms to retrieve with packet-level throttling and 176ms to retrieve with dev tools throttling. That's because dev tools throttling is able to be applied at that stage of the request, so we're seeing that throttling in action. [Matt Zeunert's article on throttling](https://www.debugbear.com/blog/network-throttling-methods#conclusion) does a good job of highlighting this as well.
 {% endnote %}
 
 ## Masking the cost of redirects
