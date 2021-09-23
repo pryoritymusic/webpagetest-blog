@@ -47,7 +47,7 @@ But just how big is the impact, really?
 
 The following screenshot of a page loaded on an emulated Moto G4 over a 4G connection, shows three different third-party domains, all serving up render-blocking resources.
 
-![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (and all taking less than 17ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-dt-throttle.png "Wide:")
+![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are all very, very small and the requests complete by .6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-dt-throttle.png "Wide:")
 
 In this case, we've applied DevTools throttling. Notice how the connection cost (TCP + TLS + SSL) for these resources doesn't seem particularly high:
 
@@ -57,7 +57,7 @@ In this case, we've applied DevTools throttling. Notice how the connection cost 
 
 Here are the same requests with the same settings, only this time we've applied WebPageTest's default packet-level throttling.
 
-![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (taking between 612 and 1434ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-wpt-throttle.png "Wide:")
+![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are much longer now and the requests complete by 2.6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-wpt-throttle.png "Wide:")!
 
 The connection costs are much more expensive:
 
@@ -97,13 +97,13 @@ With dev tools throttling, the impact looks minimal.
 
 In the following screenshot of a truncated waterfall, the first group of requests (#12-14) all result in 302 redirects which trigger the actual requests (requests #27-29).
 
-![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are all very, very small and the requests complete by .6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-dt-throttle.png "Wide:")
+![A screenshot from WebPageTest, showing three requests all returning a 302 redirect (and all taking less than 17ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-dt-throttle.png "Wide:")
 
 While this isn't ideal, the time it takes for those redirects looks pretty minimal—they all take under 20ms. Dev tools throttling isn't applying any throttle to those redirects, since they occur at the network level, so things don't look so bad. Based on what we see here, we might decide that eliminating the redirect is, at best, a minor improvement.
 
 Here are the same requests on the same browser and network setting, but with packet-level throttling applied instead of dev tools throttling.
 
-![A screenshot from WebPageTest, showing three requests to third-party resources. The connection times are much longer now and the requests complete by 2.6 seconds.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/blocking-3rd-party-wpt-throttle.png "Wide:")
+[A screenshot from WebPageTest, showing three requests all returning a 302 redirect (taking between 612 and 1434ms), followed by three requests returning the actual resource.](https://res.cloudinary.com/webpagetest/image/upload/v1632326492/302-redirect-wpt-throttle.png "Wide:")
 
 Now the redirects look *much* more expensive—instead of 17ms for the longest redirect, we're spending 1.4s! ch
 
