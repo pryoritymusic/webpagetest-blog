@@ -16,6 +16,14 @@ author: Tim Kadlec
 ---
 *Things can move pretty quickly around here. In addition to the [change log](https://docs.webpagetest.org/change-log/), we're publishing monthly summaries of some of the highlights of features and changes made to WebPageTest in the last month.*
 
+## Overview
+
+* [The custom waterfall page got a significant redesign](#custom-waterfall-redesign-and-dynamic-adjustments)
+* [WebPageTest now uses Chrome's Dev Tools priorities](#chrome-dev-tools-priorities)
+* [The Element Timing API is now supported](#element-timing-api)
+* [The Locations API endpoint can be filtered by a single location](#filter-locations-endpoint-by-specific-location)
+* [We now warn you if we think your TTFB might be inaccurate](#first-byte-warning)
+
 ## Custom waterfall redesign and dynamic adjustments
 
 One of the (many) features that is a little tucked away in WebPageTest is the ability to customize the waterfall by choosing what metrics and information to hide or display, truncating the waterfall to a given duration and even zooming in on individual requests.
