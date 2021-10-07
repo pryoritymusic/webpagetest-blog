@@ -4,6 +4,7 @@ guest: false
 date: 2021-10-07T17:28:43.644Z
 description: Check out a summary of the features and changes to WebPageTest in
   the month of August.
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1633629566/september-roundup-hero_munoti.png
 tags:
   - API
   - Metrics
