@@ -29,7 +29,7 @@ This month, the page got a significant facelift, making it much easier to quickl
 
 Browsers apply different priorities to resources depending on what type they are, when they're requested and how. This helps them to properly prioritize resources to make sure the most important ones are dealt with first.
 
-Chrome's has 5 priority levels, but the names of those priorities varies depending on which part of the browser stack is involved. There are priority names in Blink, in the Net Stack, and then the priority names used in Dev Tools.
+[Chrome has 5 priority levels](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit), but the names of those priorities varies depending on which part of the browser stack is involved. There are priority names in Blink, in the Net Stack, and then the priority names used in Dev Tools.
 
 WebPageTest has historically reported the underlying names exposed via Blink and the Net Stack, but we will now use the Dev Tools priority names.[](https://www.notion.so/3cf5302db4e0461d9b7700093a2bcab8)
 
