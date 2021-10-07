@@ -17,7 +17,7 @@ It's a handy way to zero in on a subset of the waterfall when you're trying to d
 
 This month, the page got a significant facelift, making it much easier to quickly update the waterfall and improving the overall accessibility and usability of the page.
 
-![A screenshot of the Custom Waterfall page, showing a blue dialog box to the right of the screen where you can change the display of the performance waterfall, displayed to the left.](https://res.cloudinary.com/webpagetest/image/upload/v1633627819/roundup-custom-waterfall_k5s42r.png)
+![A screenshot of the Custom Waterfall page, showing a blue dialog box to the right of the screen where you can change the display of the performance waterfall, displayed to the left.](https://res.cloudinary.com/webpagetest/image/upload/v1633627819/roundup-custom-waterfall_k5s42r.png "Wide:")
 
 ## Chrome Dev Tools Priorities
 
@@ -50,7 +50,7 @@ Now, if you use Element Timing on your page, those metrics will be reported in t
 
 You can also optionally expose them on the waterfall from the Custom Waterfall page.
 
-![A screenshot of a performance waterfall, with dark purple lines indicating when the element timing marks were fired](https://res.cloudinary.com/webpagetest/image/upload/v1633627818/roundup-element-timing-waterfall_jlarsb.png)
+![A screenshot of a performance waterfall, with dark purple lines indicating when the element timing marks were fired](https://res.cloudinary.com/webpagetest/image/upload/v1633627818/roundup-element-timing-waterfall_jlarsb.png "Wide:")
 
 ## Filter locations endpoint by specific location
 
@@ -69,7 +69,7 @@ During one of our [WebPageTest Live Twitch streams](https://www.youtube.com/watc
 
 To make that process easier for everyone (including us!), we added a warning to test results with abnormally long Time to First Byte's suggesting to re-run the test with the original User Agent string preserved.
 
-![A screenshot of a warning noting that the test had an unusually-high first byte time, and offering a checkbox to re-run the test with the original user agent string preserved.](https://res.cloudinary.com/webpagetest/image/upload/v1633627818/roundup-first-byte-time_qp7kod.png)
+![A screenshot of a warning noting that the test had an unusually-high first byte time, and offering a checkbox to re-run the test with the original user agent string preserved.](https://res.cloudinary.com/webpagetest/image/upload/v1633627818/roundup-first-byte-time_qp7kod.png "Wide:")
 
 To minimize the risk of over aggressively warning, the warning is only displayed if the Time to First Byte for all runs of the test is over 3 seconds. 
 
