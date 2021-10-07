@@ -4,6 +4,12 @@ guest: false
 date: 2021-10-07T17:28:43.644Z
 description: Check out a summary of the features and changes to WebPageTest in
   the month of August.
+tags:
+  - API
+  - Metrics
+  - Chrome
+  - TTFB
+  - ElementTiming
 category: Product News
 author: Tim Kadlec
 ---
