@@ -27,7 +27,7 @@ We’re looking for deep-dive, well-researched articles on subjects related to o
 
 
 
-**Topics include:** 
+**Topics include:** 
 
 * Browser Loading Updates
 * Reading Performance Data
@@ -58,4 +58,4 @@ We’re looking for excellent “how-to”/step-by-step guides involving WebPage
 
 We are finalizing an official authorship program and will publish the details shortly.
 
-If you are interested in contributing – send an email to our Developer Marketing Lead, Peter Saulitis ([psaulitis@catchpoint.com](mailto:psaulitis@catchpoint.com)).
+If you are interested in contributing, fill [out this form](https://forms.office.com/pages/responsepage.aspx?id=fn2SDOc4P0qk8udG7IoIQmrovLlvchdOrCYuMFH_ciFUN0NTTFNFWjJRM01EWEVFMjNGUEw5T1pPVyQlQCN0PWcu) and our team will reach out with more information.
