@@ -21,9 +21,6 @@ This process was painful, inefficient, and almost an infinitely frustrating ongo
 After much process-refinement, experimenting and coffee-drinking, we settled on a process that works well. Most notably for us, it addresses the common issues faced by all developers who are taking a holistic approach to improve a “whole” website. 
 
 ## Our process
-
-### A website is more than its homepage
-
 Rather than focusing on just the homepage, we created a method that provides a bird’s eye view of complete sites. 
 
 *Cue plugging every URL we know about into Google PageSpeed Insights* (definitely not)
