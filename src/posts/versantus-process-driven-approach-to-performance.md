@@ -21,6 +21,7 @@ This process was painful, inefficient, and almost an infinitely frustrating ongo
 After much process-refinement, experimenting and coffee-drinking, we settled on a process that works well. Most notably for us, it addresses the common issues faced by all developers who are taking a holistic approach to improve a “whole” website. 
 
 ## Our process
+
 Rather than focusing on just the homepage, we created a method that provides a bird’s eye view of complete sites. 
 
 *Cue plugging every URL we know about into Google PageSpeed Insights* (definitely not)
@@ -29,7 +30,7 @@ So how do we gather individual Core Web Vitals/PageSpeed scores for all URLs on 
 
 We turn to our trusted crawling tool, Screaming Frog. It has a rather nifty API integration with Google’s PageSpeed Tool. In a matter of minutes we have a full exported list of site URLs and Core Web Vitals data on a page-by-page level. 
 
-![An image of a Google Sheets file, showing page-by-page level analysis of Core Web Vital data, with good scores highlighted in green and bad scores in red.](https://res.cloudinary.com/webpagetest/image/upload/v1638912065/versantus-spreadsheet_jpspsg.png)
+![An image of a Google Sheets file, showing page-by-page level analysis of Core Web Vital data, with good scores highlighted in green and bad scores in red.](https://res.cloudinary.com/webpagetest/image/upload/v1638912065/versantus-spreadsheet_jpspsg.png "wide:")
 
 Once we review this information and have an idea of the overall site performance, we then review performance scoring on a granular level, picking out pages which are lagging behind. To identify quick performance wins, we take a look at pages with shared common elements for a site-wide impact.
 
@@ -39,7 +40,7 @@ Now that we know which pages are our worst performers, we want to add some busin
 
 What we’re ideally looking for is pages important to the business (e.g landing pages, high SEO value pages, pages important to the conversion path) that are performing poorly against Core Web Vitals metrics. To get a full picture, we also consider important pages with a high bounce rate, assuming that poor bounce rate is caused by poor UX. 
 
-![A screenshot from Screamingfrog showing key search metrics for a number of pages on the Versantus site](https://res.cloudinary.com/webpagetest/image/upload/v1638912187/versantus-screaming_chvqrf.png)
+![A screenshot from Screamingfrog showing key search metrics for a number of pages on the Versantus site](https://res.cloudinary.com/webpagetest/image/upload/v1638912187/versantus-screaming_chvqrf.png "wide:")
 
 ### Tools, glorious tools
 
