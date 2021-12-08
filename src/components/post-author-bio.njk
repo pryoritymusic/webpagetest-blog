@@ -2,6 +2,9 @@
   {% set author = authorName | slug | findBySlug %}
   {% if author and author.data.bio %}
     <div class="post-bio">
+    {%- if author.data.guest -%}
+    <p class="post-bio__guest"><strong>Guest Post</strong></p>
+    {% endif %}
       {{ author.data.bio | markdown | safe }}
       {%- if author.data.twitter_handle -%}
       <a class="post-bio__handle" href="https://twitter.com/{{ author.data.twitter_handle }}">

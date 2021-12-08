@@ -7,4 +7,11 @@
   & > * {
     display: inline;
   }
+
+  .post-bio__guest{
+    font-weight: bold;
+    display: block;
+    text-transform: uppercase;
+    font-size: .9em;
+  }
 }
