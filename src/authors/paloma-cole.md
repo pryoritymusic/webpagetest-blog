@@ -6,4 +6,5 @@ bio: Paloma Cole is a Marketing Specialist at
   businesses solve commercial issues with intelligent digital solutions. After
   working as a Freelance Content Writer, Paloma joined Versantus to take on
   their digital strategy, focusing on content, social, and SEO.
+guest: true
 ---

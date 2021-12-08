@@ -8,4 +8,5 @@ bio: Chris is a web designer and developer. He writes about all things web at
   [ShopTalk](https://shoptalkshow.com), and co-founded
   [CodePen](https://codepen.io), a social development environment.
 twitter_handle: chriscoyier
+guest: true
 ---
