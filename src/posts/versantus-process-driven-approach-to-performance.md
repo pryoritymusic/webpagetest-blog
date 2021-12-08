@@ -2,6 +2,11 @@
 title: Versantus' Process-Driven Approach to Performance
 guest: true
 date: 2021-12-07T21:14:52.709Z
+tags:
+  - Google Analytics
+  - CrUX
+  - Core Web Vitals
+  - SEO
 category: Optimizations
 author: Tim Kadlec
 ---
