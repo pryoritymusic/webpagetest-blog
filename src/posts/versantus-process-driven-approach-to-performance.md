@@ -3,9 +3,13 @@ title: Versantus' Process-Driven Approach to Performance
 guest: true
 date: 2021-12-07T21:14:52.709Z
 featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1638980599/versantus-cta_gx7no8.png
-tags: []
+tags:
+  - SEO
+  - Google Analytics
+  - CrUX
+  - Core Web Vitals
 category: Optimizations
-author: Tim Kadlec
+author: Paloma Cole
 ---
 After Google’s [Core Web Vitals announcement](https://developers.google.com/search/blog/2020/11/timing-for-page-experience), performance became an important metric to our client’s—one that they knew they had to stay ahead of the curve on. As an agency, [Versantus](https://www.versantus.co.uk/) helps businesses solve technical problems with intelligent digital solutions, so we’ve always built websites that perform well. However, the Core Web Vitals updates have meant every detail, millisecond and image are now under the microscope. 
 
