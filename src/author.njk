@@ -29,7 +29,7 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
       </div>
     {% endif %}
     <div class="author-header__content">
-      {% if paged.author.data.guest == "true"}
+      {% if paged.author.data.guest %}
       <p class="author-header__accent text--accent">Guest Author</p>
       {% else %}
       <p class="author-header__accent text--accent">Guest Author</p>
