@@ -5,7 +5,7 @@ date: 2021-12-07T21:14:52.709Z
 category: Optimizations
 author: Tim Kadlec
 ---
-After Google’s Core Web Vitals announcement, performance became an important metric to our client’s—one that they knew they had to stay ahead of the curve on. As an agency, we help businesses solve technical problems with intelligent digital solutions, so we’ve always built websites that perform well. However, the Core Web Vitals updates have meant every detail, millisecond and image are now under the microscope. 
+After Google’s [Core Web Vitals announcement](https://developers.google.com/search/blog/2020/11/timing-for-page-experience), performance became an important metric to our client’s—one that they knew they had to stay ahead of the curve on. As an agency, [Versantus](https://www.versantus.co.uk/) helps businesses solve technical problems with intelligent digital solutions, so we’ve always built websites that perform well. However, the Core Web Vitals updates have meant every detail, millisecond and image are now under the microscope. 
 
 Some of our clients, who were working with marketing agencies, received site recommendations to implement for improved performance metrics. For many others, performance simply moved up the agenda because of Core Web Vitals’ impact on search engine rankings. To give our client’s the best chance of high performance scoring, we knew we had to take a process-driven approach.
 
@@ -28,7 +28,7 @@ Rather than focusing on just the homepage, we created a method that provides a b
 
 So how do we gather individual Core Web Vitals/PageSpeed scores for all URLs on a site? 
 
-We turn to our trusted crawling tool, Screaming Frog. It has a rather nifty API integration with Google’s PageSpeed Tool. In a matter of minutes we have a full exported list of site URLs and Core Web Vitals data on a page-by-page level. 
+We turn to our trusted crawling tool, [Screaming Frog](https://www.screamingfrog.co.uk/). It has a rather nifty API integration with Google’s PageSpeed Tool. In a matter of minutes we have a full exported list of site URLs and Core Web Vitals data on a page-by-page level. 
 
 ![An image of a Google Sheets file, showing page-by-page level analysis of Core Web Vital data, with good scores highlighted in green and bad scores in red.](https://res.cloudinary.com/webpagetest/image/upload/v1638912065/versantus-spreadsheet_jpspsg.png "wide:")
 
@@ -72,7 +72,7 @@ As an example, we fully expected lazy loading images to have a wholly positive e
 
 Despite our new-found process, we’re always on the lookout for ways to further streamline what we do. We’re currently extending our processes to integrate other WebPageTest features, such as: 
 
-* Slack integrations & automation - receiving alerts when a site’s WebPageTest score drops
+* [Slack integrations](https://github.com/WebPageTest/webpagetest-slack) & automation - receiving alerts when a site’s WebPageTest score drops
 * Automation API - automating multi-step tests with custom metrics for tailored measuring 
 * DevOps integrations - getting an instant WebPageTest score once a site is deployed to staging, so we can make improvements before it even hits live
 
