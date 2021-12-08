@@ -1,6 +1,6 @@
 ---
 name: Paloma Cole
-image: https://res.cloudinary.com/webpagetest/image/upload/v1638979786/paloma_qbpk43.jpg
+image: https://res.cloudinary.com/webpagetest/image/upload/f_auto,q_auto/v1638979786/paloma_qbpk43.jpg
 bio: Paloma Cole is a Marketing Specialist at
   [Versantus](https://versantus.co.uk/), an agency that specialises in helping
   businesses solve commercial issues with intelligent digital solutions. After
