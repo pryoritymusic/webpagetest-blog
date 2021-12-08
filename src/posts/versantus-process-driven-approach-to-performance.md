@@ -58,7 +58,7 @@ Despite the multiple tools we use to unravel where performance problems might be
 
 Armed with a list of pages that need analysing, we take them straight to our trusted tool: WebPageTest. The aim of using WebPageTest is to obtain as much detail as possible around why the pages are performing poorly. We’ve used plenty of tools in the past, but WebPageTest has been a standout option for our team: 
 
-“Plenty of tools tells you what’s wrong, but they lack the ability to forensically uncover where the problems are. For example, gaining insight through the waterfall graphs, so we can see exactly where LCP arrives; plus the content layout shift film strips, thumbnails and gifs are invaluable” - Matt Gilbert, Software Development Manager 
+> “Plenty of tools tells you what’s wrong, but they lack the ability to forensically uncover where the problems are. For example, gaining insight through the waterfall graphs, so we can see exactly where LCP arrives; plus the content layout shift film strips, thumbnails and gifs are invaluable” - Matt Gilbert, Software Development Manager 
 
 As WebPageTest’s own Core Web Vitals guide explains, the reason for the update is to answer three core questions that scrutinise the quality of user’s experiences on your site. However, sometimes we have to go deep under the hood of the well-oiled car to find where the problem is; WebPageTest allows us to pinpoint exactly what’s gone wrong and where. 
 
