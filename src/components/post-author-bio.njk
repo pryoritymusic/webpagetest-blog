@@ -3,7 +3,7 @@
   {% if author and author.data.bio %}
     <div class="post-bio">
     {%- if author.data.guest -%}
-    <p class="post-bio__guest"><strong>Guest Post</strong></p>
+    <p class="post-bio__guest"><strong>Guest Author</strong></p>
     {% endif %}
       {{ author.data.bio | markdown | safe }}
       {%- if author.data.twitter_handle -%}
