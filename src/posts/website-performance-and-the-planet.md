@@ -131,7 +131,7 @@ PS. If you're interested in this topic, there's [an open discussion](https://git
 - [CO2 emissions on the web](https://dannyvankooten.com/website-carbon-emissions/) - Danny van Kooten
 - [Developers can save the planet](https://marmelab.com/blog/2020/09/21/web-developer-climate-change.html) - François Zaninotto (Marmelab)
 
-### **Books**
+### Books
 
 - [Sustainable Web Design](https://abookapart.com/products/sustainable-web-design) - Tom Greenwood, A Book Apart
 - [World Wide Waste](https://gerrymcgovern.com/books/world-wide-waste) - Gerry McGovern
