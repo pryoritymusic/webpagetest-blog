@@ -1,17 +1,18 @@
 ---
 title: Website performance and the planet
 guest: true
-date: 2021-12-22T17:39:16.364Z
+date: 2022-01-12T14:58:01.800Z
 description: " Solid website performance can have a lot of a positive effects
   from increasing revenue, to reducing stress of users. But did you know that
   making your site faster can also be good for the planet?"
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1641999841/hero-climate_aysawg.png
 tags:
   - Sustainability
   - Energy
   - Caching
   - Hosting
 category: Optimizations
-author: Tim Kadlec
+author: Fershad Irani
 ---
 Solid website performance can have a lot of a positive effects. For businesses, it can have direct [impacts on revenue and engagement](https://wpostats.com/). For end users, it can make time on the web [less stressful](https://simonhearne.com/2021/web-stress/). But how about for planet? Yep, that's right making the website's we build and manage more performant can also be good for planet Earth. 
 
