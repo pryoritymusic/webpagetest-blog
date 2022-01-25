@@ -23,7 +23,7 @@ It also exposes a CLI that is how people primarily integrate WebPageTest with bu
 
 All this time, Marcel has been maintaining this on his own. Naturally, we started helping out, providing "unofficial official" support. Now, thanks to Marcel's help, the [source lives under the WebPageTest GitHub organization](https://github.com/WebPageTest/webpagetest-api/releases/tag/v0.5.0), making it much easier for our growing team here to actively stay on top of issues, provide new features, and put out new releases.
 
-Speaking of which, we put out a [new version of the wrapper](https://github.com/WebPageTest/webpagetest-api/releases/tag/v0.5.0) this morning. The new version addresses a few lingering bugs an also adds 12 parameters for the API that had been missing from the wrapper itself.
+Speaking of which, we put out a [new version of the wrapper](https://github.com/WebPageTest/webpagetest-api/releases/tag/v0.5.0) this morning. The new version addresses a few lingering bugs an also adds 12 parameters for the API that had been missing from the wrapper itself. 
 
 We'll be working through the issues to clean up other outstanding bugs, getting on a regular release cycle, and we've also got a few ideas for things we would like to add to the wrapper. If you have any issues our suggestions, please [file an issue so we can plan accordingly](https://github.com/WebPageTest/webpagetest-api/issues/new).
 
