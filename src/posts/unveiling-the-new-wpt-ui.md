@@ -1,5 +1,5 @@
 ---
-title: Unveiling the new WPT UI
+title: Unveiling the new WebPageTest UI
 guest: false
 date: 2022-01-27T17:06:13.654Z
 category: Product News
@@ -29,13 +29,9 @@ Also, if you have been used to going further into the test results and analyzing
 
 ![](https://res.cloudinary.com/webpagetest/image/upload/v1643305121/Screen_Shot_2022-01-27_at_9.38.33_AM_dcolwi.png)
 
-**The mobile version** of our website...
+This update also brings some significant clean-up and overall usability improvements for the mobile experience, making it easier to do your testing regardless of the device you're using.
 
-##  
-
-## So, what else is new?
-
-#### **Edge Support**
+## Edge Support
 
 Those of you with keen eyes may have noticed another change in the screenshots above—WebPageTest agents now let you test in Microsoft Edge!
 
@@ -43,12 +39,12 @@ The ability to test in multiple browsers is so important (it is called “web”
 
 That’s part of the reason why you’ll see a few of these different browsers in the new Simple Configuration presets on the homepage itself — it’s important to us that we encourage folks to test their site across different experiences, and we want to make it as easy to do as possible.
 
-#### **Another step forward**
+## Another step forward
 
 WebPageTest has always taken the approach of making progress by regular, iterative updates and that’s what we see this as. It’s another step forward in an ongoing journey of making accurate, meaningful data readily accessible and usable to users everywhere.
 
 There’s so much more coming! We’ve got some features and improvements coming in the next weeks and months that it is *killing* us not to talk about yet.
 
-**Feedback/Suggestions?**
+## Feedback/Suggestions?
 
 If you want to get more insight on this round of changes and the thinking that went behind it, tune into our WebPageTest Live stream today on [YouTube](https://www.youtube.com/channel/UC5CqJ9V7cQddZDf1DKXcy7Q) and [Twitch](https://www.twitch.tv/webpagetest) where Scott and I will do a live audit. Scott led the design and UI work and as we do our audit, he’ll help to point out some of the changes and the thinking that went into them.
