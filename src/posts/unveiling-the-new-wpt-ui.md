@@ -7,7 +7,7 @@ author: Tim Kadlec
 ---
 Today we’re super excited to pull back the curtains and unveil a new UI for WebPageTest—one we’ve been working on for a while now and that we think will make it a lot easier to use for WebPageTest power users as well as folks who are just getting started in their performance journey.
 
-![]()
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643304431/Screen_Shot_2022-01-27_at_9.26.48_AM_xoywvm.png)
 
 WebPageTest is definitely a power tool, and it was important to us that we didn’t lose the depth and accuracy of the data that we surface. So if you’ve been using WebPageTest for a while, don’t worry—[](<>)[everything is still there.](www.webpagetest.org)
 
