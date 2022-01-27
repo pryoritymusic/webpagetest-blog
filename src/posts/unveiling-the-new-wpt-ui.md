@@ -53,6 +53,4 @@ There’s so much more coming! We’ve got some features and improvements coming
 
 **Feedback/Suggestions?**
 
-
-
 If you want to get more insight on this round of changes and the thinking that went behind it, tune into our WebPageTest Live stream today on [YouTube](https://www.youtube.com/channel/UC5CqJ9V7cQddZDf1DKXcy7Q) and [Twitch](https://www.twitch.tv/webpagetest) where Scott and I will do a live audit. Scott led the design and UI work and as we do our audit, he’ll help to point out some of the changes and the thinking that went into them.
