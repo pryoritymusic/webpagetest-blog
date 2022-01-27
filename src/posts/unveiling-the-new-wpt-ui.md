@@ -3,12 +3,13 @@ title: Unveiling the new WebPageTest UI
 guest: false
 date: 2022-01-27T17:06:13.654Z
 featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1643306380/new-ui-hero_hyd6gq.png
+featured_image_caption: ""
 category: Product News
 author: Tim Kadlec
 ---
 Today we’re super excited to pull back the curtains and unveil a new UI for WebPageTest—one we’ve been working on for a while now and that we think will make it a lot easier to use for WebPageTest power users as well as folks who are just getting started in their performance journey.
 
-![](https://res.cloudinary.com/webpagetest/image/upload/v1643304431/Screen_Shot_2022-01-27_at_9.26.48_AM_xoywvm.png)
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643304431/Screen_Shot_2022-01-27_at_9.26.48_AM_xoywvm.png "Wide:")
 
 WebPageTest is definitely a power tool, and it was important to us that we didn’t lose the depth and accuracy of the data that we surface. So if you’ve been using WebPageTest for a while, don’t worry—[](<>)[](www.webpagetest.org)everything is still there. 
 
@@ -18,17 +19,17 @@ So a lot of what you’ll notice in the new UI is about better organization and 
 
 **The filmstrip**, one of the features folks seem to like the best, has been given some love. We’ve pulled the filmstrip page into the main navigation, rather than hiding it behind a link in the summary table as it was before. We’ve also pulled the filmstrip itself into the summary and detail pages, to give you that immediate visual feedback.
 
-![](https://res.cloudinary.com/webpagetest/image/upload/v1643304889/Screen_Shot_2022-01-27_at_9.34.32_AM_bdhzvy.png)
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643304889/Screen_Shot_2022-01-27_at_9.34.32_AM_bdhzvy.png "Wide:")
 
 **The homepage** has been updated to make it a bit more apparent to new users what WebPageTest does. We’ve also made it easier to fire off a quick test, by providing a few simple configuration presets. The test form itself also got a bit of an update to make it easier to switch to our custom test types: the Core Web Vitals test type that drops you directly on our vitals debugging page, the traceroute test, and a dedicated Lighthouse-only test.
 
-![](https://res.cloudinary.com/webpagetest/image/upload/v1643305021/Screen_Shot_2022-01-27_at_9.36.54_AM_wbwyav.png)
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643305021/Screen_Shot_2022-01-27_at_9.36.54_AM_wbwyav.png "Wide:")
 
 **The test results pages** have gotten a number of useful updates: a more prominent and easy to find screenshot of the page, more attention on the major performance metrics for any given test result, an easier to scan test header so that you can quickly spot the device, browser and location a test was run from and much more.
 
 Also, if you have been used to going further into the test results and analyzing the various components that used to be horizontally laid out, fear not. They are not missing, they have been neatly folded into a drop down
 
-![](https://res.cloudinary.com/webpagetest/image/upload/v1643305121/Screen_Shot_2022-01-27_at_9.38.33_AM_dcolwi.png)
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643305121/Screen_Shot_2022-01-27_at_9.38.33_AM_dcolwi.png "Wide:")
 
 This update also brings some significant clean-up and overall usability improvements for the mobile experience, making it easier to do your testing regardless of the device you're using.
 
