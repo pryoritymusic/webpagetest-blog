@@ -9,7 +9,7 @@ Today we’re super excited to pull back the curtains and unveil a new UI for We
 
 ![](https://res.cloudinary.com/webpagetest/image/upload/v1643304431/Screen_Shot_2022-01-27_at_9.26.48_AM_xoywvm.png)
 
-WebPageTest is definitely a power tool, and it was important to us that we didn’t lose the depth and accuracy of the data that we surface. So if you’ve been using WebPageTest for a while, don’t worry—[](<>)[everything is still there.](www.webpagetest.org)
+WebPageTest is definitely a power tool, and it was important to us that we didn’t lose the depth and accuracy of the data that we surface. So if you’ve been using WebPageTest for a while, don’t worry—[](<>)[](www.webpagetest.org)everything is still there. 
 
 But being a powerful tool doesn’t mean we want to exclude folks who may not be familiar with WebPageTest, or may be newer to performance. Quite the opposite, in fact. We want to make it easier for *everyone* to be able to see how their sites perform and figure out what they can do to make them more usable, quick and resilient. So whether you are a front-end developer, performance specialist, SEO expert, marketer, product manager, or just someone who deeply cares about how great web experiences are delivered to users, WebPageTest is now more adaptable to your needs!
 
@@ -17,7 +17,7 @@ So a lot of what you’ll notice in the new UI is about better organization and 
 
 **The filmstrip**, one of the features folks seem to like the best, has been given some love. We’ve pulled the filmstrip page into the main navigation, rather than hiding it behind a link in the summary table as it was before. We’ve also pulled the filmstrip itself into the summary and detail pages, to give you that immediate visual feedback.
 
-{ Screenshot of summary page with filmstrip, side by side with old?}
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643304889/Screen_Shot_2022-01-27_at_9.34.32_AM_bdhzvy.png)
 
 **The homepage** has been updated to make it a bit more apparent to new users what WebPageTest does. We’ve also made it easier to fire off a quick test, by providing a few simple configuration presets. The test form itself also got a bit of an update to make it easier to switch to our custom test types: the Core Web V~~v~~itals test type that drops you directly on our vitals debugging page, the traceroute test, and a dedicated Lighthouse-only test.
 
