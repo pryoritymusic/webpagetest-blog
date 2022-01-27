@@ -35,7 +35,7 @@ Also, if you have been used to going further into the test results and analyzing
 
 ## So, what else is new?
 
-## **Edge Support**
+#### **Edge Support**
 
 Those of you with keen eyes may have noticed another change in the screenshots above—WebPageTest agents now let you test in Microsoft Edge!
 
@@ -43,7 +43,7 @@ The ability to test in multiple browsers is so important (it is called “web”
 
 That’s part of the reason why you’ll see a few of these different browsers in the new Simple Configuration presets on the homepage itself — it’s important to us that we encourage folks to test their site across different experiences, and we want to make it as easy to do as possible.
 
-## **Another step forward**
+#### **Another step forward**
 
 WebPageTest has always taken the approach of making progress by regular, iterative updates and that’s what we see this as. It’s another step forward in an ongoing journey of making accurate, meaningful data readily accessible and usable to users everywhere.
 
