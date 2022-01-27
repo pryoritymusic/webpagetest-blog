@@ -2,6 +2,7 @@
 title: Unveiling the new WebPageTest UI
 guest: false
 date: 2022-01-27T17:06:13.654Z
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1643306380/new-ui-hero_hyd6gq.png
 category: Product News
 author: Tim Kadlec
 ---
