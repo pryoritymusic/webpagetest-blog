@@ -19,19 +19,17 @@ So a lot of what you’ll notice in the new UI is about better organization and 
 
 ![](https://res.cloudinary.com/webpagetest/image/upload/v1643304889/Screen_Shot_2022-01-27_at_9.34.32_AM_bdhzvy.png)
 
-**The homepage** has been updated to make it a bit more apparent to new users what WebPageTest does. We’ve also made it easier to fire off a quick test, by providing a few simple configuration presets. The test form itself also got a bit of an update to make it easier to switch to our custom test types: the Core Web V~~v~~itals test type that drops you directly on our vitals debugging page, the traceroute test, and a dedicated Lighthouse-only test.
+**The homepage** has been updated to make it a bit more apparent to new users what WebPageTest does. We’ve also made it easier to fire off a quick test, by providing a few simple configuration presets. The test form itself also got a bit of an update to make it easier to switch to our custom test types: the Core Web Vitals test type that drops you directly on our vitals debugging page, the traceroute test, and a dedicated Lighthouse-only test.
 
-{ [Screenshot of form ? }](<>)
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643305021/Screen_Shot_2022-01-27_at_9.36.54_AM_wbwyav.png)
 
 **The test results pages** have gotten a number of useful updates: a more prominent and easy to find screenshot of the page, more attention on the major performance metrics for any given test result, an easier to scan test header so that you can quickly spot the device, browser and location a test was run from and much more.
 
 Also, if you have been used to going further into the test results and analyzing the various components that used to be horizontally laid out, fear not. They are not missing, they have been neatly folded into a drop down
 
-{ Screenshot of results page header or metrics table ? }
+![](https://res.cloudinary.com/webpagetest/image/upload/v1643305121/Screen_Shot_2022-01-27_at_9.38.33_AM_dcolwi.png)
 
-{Screenshot of results page with the drop down under ‘Perf Summary’ selected to show all the options still are available}
-
-**The mobile version** of our website....
+**The mobile version** of our website...
 
 ##  
 
