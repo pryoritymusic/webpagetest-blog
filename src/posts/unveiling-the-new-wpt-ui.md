@@ -39,9 +39,9 @@ Also, if you have been used to going further into the test results and analyzing
 
 Those of you with keen eyes may have noticed another change in the screenshots above—WebPageTest agents now let you test in Microsoft Edge!
 
-[The ability to test in multiple browsers is so important (it is called “web” performance testing, after all)](<>) and with Edge, the WebPageTest now supports testing in Chrome, Brave, Safari, Edge and Firefox (not to mention the nightly and developer versions of many of these browsers).
+The ability to test in multiple browsers is so important (it is called “web” performance testing, after all) and with Edge, the WebPageTest now supports testing in Chrome, Brave, Safari, Edge and Firefox (not to mention the nightly and developer versions of many of these browsers).
 
-That’s part of the reason why you’ll see a few of these different browsers in the new Simple Configuration presets on the homepage itself —[it’s important to us that we encourage folks to test their site across different experiences, and we want to make it as easy to do as possible.](<>)
+That’s part of the reason why you’ll see a few of these different browsers in the new Simple Configuration presets on the homepage itself — it’s important to us that we encourage folks to test their site across different experiences, and we want to make it as easy to do as possible.
 
 ## **Another step forward**
 
