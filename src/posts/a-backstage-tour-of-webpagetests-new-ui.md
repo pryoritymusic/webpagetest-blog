@@ -105,7 +105,9 @@ Just like it says in the page, we encourage testing in many environments to broa
 
 ## Some Grades, downgraded
 
-One of the bigger *moves* we made in this redesign had to do with the letter grades that used to live on the summary page. These grades are still useful, but they've long been presented as a more comprehensive "score" than we felt was accurate, per a test's results. For example, since these grades dealt with mostly delivery optimizations, a site that took ages to be visually usable could sometimes still get all A's. Beyond that misleading presentation, these grades served as deep-links to sections of another results page that listed file optimizations, now called the Optimization page. We decided to move the grades to the top of that page where they can continue in that role, and let our results metrics take center stage on the results summary.
+One of the bigger *moves* we made in this redesign had to do with the letter grades that used to live on the summary page. These grades are still useful, but they've long been presented as a more comprehensive "score" than we felt was accurate, per a test's results. For example, since these grades dealt with mostly delivery optimizations, a site that took ages to be visually usable could sometimes still get all A's. 
+
+That problem aside, the grades have served as deep-links to sections of another results page that listed various delivery optimizations, which is now called the Optimization page. We decided to move the grades to the top of that page where they can continue in their navigation role, while letting our results metrics take center stage on the results summary page, sans grades. That said, as noted earlier, any grades related to external services can now be found in the results menu as well.
 
 ![screenshot of grades, now in the optimization page](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152875750-b4d1a834-da2c-4e63-b5a5-8f23d4ef659f_gaozt0.png "Wide:")
 
