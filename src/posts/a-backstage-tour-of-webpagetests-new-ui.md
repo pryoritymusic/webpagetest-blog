@@ -3,7 +3,7 @@ title: A Backstage Tour of WebPageTest's New UI
 guest: false
 date: 2022-02-08T17:53:29.061Z
 description: A tour of the goals and design decisions behind WebPageTest's new UI.
-featured_image: https://res.cloudinary.com/webpagetest/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1644332107/ui-tour/152810210-b699f5fd-00bf-4338-8852-b90aa0ba4d71_n2vq2v.png
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152857425-348129ff-7c9d-4808-8519-91829b524220_emy3r8.png
 category: How We Built It
 author: Scott Jehl
 related_post:
