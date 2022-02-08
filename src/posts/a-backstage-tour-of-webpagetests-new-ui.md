@@ -37,7 +37,7 @@ Further, while being able to do technical work *right* from the homepage like th
 
 ![screenshot of new wpt homepage](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152810210-b699f5fd-00bf-4338-8852-b90aa0ba4d71_n2vq2v.png "Wide:")
 
-Our refreshed homepage above is our first attempt to satisfy these goals. To start, we've introduced content to briefly explain what WebPageTest does, as well as a screenshot of our results page to set expectations around what will happen if you hit that start button. From a design perspective, we also brought in a new complementary color to draw interest and expand our existing palette just a bit.
+[Our refreshed homepage above](https://webpagetest.org/) is a first attempt to satisfy these goals. To start, we've introduced content to briefly explain what WebPageTest does, as well as a screenshot of our results page to set expectations around what will happen if you hit that start button. From a design perspective, we also brought in a new complementary color to draw interest and expand our existing palette just a bit.
 
 ![screenshot of top section of homepage. "Test optimize repeat!"](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152851943-09310b39-a9a7-49f0-a1ae-d957197996e8_zdzdkk.png "Wide:")
 
@@ -74,6 +74,8 @@ As you may recall, up until a week ago, the results page looked like this:
 That same test result in the site today now looks like this:
 
 ![screenshot of new results page](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152872818-5f5f69d7-2401-44a3-b3fc-0d66a5c14db1_fmav5s.png "Wide:")
+
+If you want to take it for a spin, you can view an example results page here: [WebPageTest Example Test Results](https://webpagetest.org/result/220202_BiDcVS_99c9609942cb11aae4cbe97ad765a974/)
 
 Again, all of the information you expect in a WebPageTest result is still here, but a lot of it does *look* different, and we've also moved some things around in an effort to better present our findings to professionals and newcomers alike. 
 
