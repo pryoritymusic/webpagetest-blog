@@ -36,10 +36,16 @@ Further, while being able to do technical work *right* from the homepage like th
 ## Home improvements
 
 ![screenshot of new wpt homepage](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152810210-b699f5fd-00bf-4338-8852-b90aa0ba4d71_n2vq2v.png "Wide:")
+
+
 Our refreshed homepage above is our first attempt to satisfy these goals. To start, we've introduced content to briefly explain what WebPageTest does, as well as a screenshot of our results page to set expectations around what will happen if you hit that start button. From a design perspective, we also brought in a new complementary color to draw interest and expand our existing pallete just a bit.
+
+
 ![screenshot of top section of homepage. "Test optimize repeat!"](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152851943-09310b39-a9a7-49f0-a1ae-d957197996e8_zdzdkk.png "Wide:")
 
 In addition, we wanted to make our test categories more inviting. This started with converting our tabbed navigation into a more "conversational" menu to introduce the kinds of tests we offer:
+
+
 
 **Before:**
 
@@ -50,11 +56,15 @@ In addition, we wanted to make our test categories more inviting. This started w
 ![screenshot of new homepage menu navigation](https://res.cloudinary.com/webpagetest/image/upload/v1644332105/ui-tour/152810461-058ce6d7-6be3-4e81-b8dd-d701189e06c0_bdomul.png)
 
 In a similar aim, we made our "Simple Testing" configuration the new default. This gives us a place to suggest presets for several common and interesting combinations: 
+
+
 ![screenshot of homepage radio preset options](https://res.cloudinary.com/webpagetest/image/upload/v1644332106/ui-tour/152810637-0fbb176a-7ee3-4a01-9484-1a0fd11a4b7a_qbmuux.png "Wide:")
 
 This also allows us to highlight one of WebPageTest's most unique advantages: its diverse testing environments! New users will quickly see that you can use WebPageTest to see how your page performs not *just* in Chrome in the USA, but perhaps also in India on a mobile device running Chrome browser with a 3G connection, or in Germany on Firefox, or in Edge from Toronto! Given our mission of broadening access through better performance, we're very proud to highlight and encourage these options prominently.
 
 These are just some initial defaults, but the advanced settings we've had all along are still right at your fingertips, just beneath the defaults in the advanced settings section. 
+
+
 ![homepage advanced settings screenshot](https://res.cloudinary.com/webpagetest/image/upload/v1644332106/ui-tour/152810749-579fc423-b3e5-462b-8e23-40d56ca3cafd_sqbj55.png)
 
 For example, using the example of locations above, the Advanced Configuration section allows you to select from over 30 locations worldwide, including mainland China, or the Brave browser.
