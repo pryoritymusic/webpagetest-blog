@@ -87,14 +87,18 @@ In that strip of meta data, you can find many details about the test, including 
 ![](https://res.cloudinary.com/webpagetest/image/upload/v1644340821/ui-tour/152595764-53ba6f05-e6bf-4ca6-bb1a-1891cf4b58f0_uflabi.png)
 
 We also added a screenshot from the test run you're viewing, which will of course show how the site looks at the viewport dimensions of the device you tested. For example, a mobile run will be portrait style:
+
 ![screenshot of the header with a nytimes mobile test](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152871104-bc6ed35c-0058-4555-b20b-b23b0368d2da_xen4my.png "Wide:")
 
 Lastly in the header, we've changed the result pages' navigation to use a menu instead of the long list of horizontal tabs. This was done mostly to play more nicely across different screen sizes, but it should be a little easier to parse as a list as well. New in this menu, you'll find links to external services that are tied to your test, such as Lighthouse, Image Analysis, Security Score, What Does My Site Cost, and RequestMap!
+
 ![screenshot of results page nav menu](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152857425-348129ff-7c9d-4808-8519-91829b524220_emy3r8.png)
 
 ## Pages, explained
 
 Atop the content of each results page, and on some more than others, you'll now see a little information about the contents you should expect to find on that page. For example, the Results Summary page sets up what you should (and should not) expect to see in its metrics tables, depending on your test environment. Some browsers won't expose Core Web Vital metrics like LCP, so when you test in those browsers, you won't see those metrics. 
+
+
 ![screenshot of summary paragraphs at the top of each result page](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152877045-bfa8d883-a3ab-40ec-9842-e034bb42b5d0_qrvzjp.png "Wide:")
 
 Just like it says in the page, we encourage testing in many environments to broaden your understanding of your site's actual resilience! 
@@ -103,13 +107,11 @@ Just like it says in the page, we encourage testing in many environments to broa
 
 One of the bigger *moves* we made in this redesign had to do with the letter grades that used to live on the summary page. These grades are still useful, but they've long been presented as a more comprehensive "score" than we felt was accurate, per a test's results. For example, since these grades dealt with mostly delivery optimizations, a site that took ages to be visually usable could sometimes still get all A's. Beyond that misleading presentation, these grades served as deep-links to sections of another results page that listed file optimizations, now called the Optimization page. We decided to move the grades to the top of that page where they can continue in that role, and let our results metrics take center stage on the results summary.
 
-
 ![screenshot of grades, now in the optimization page](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152875750-b4d1a834-da2c-4e63-b5a5-8f23d4ef659f_gaozt0.png "Wide:")
 
 ## A new metric system
 
 Our metrics tables do a *lot* of work, such as highlighting multiple steps, runs, and even repeat views, so we didn't change their underlying markup *very much*. That said, we did update their typography to better highlight the metrics we feel matter  most, and we deprecated some metrics that are less important than others (document-complete metrics for example), but you can still find them in subsequent pages. as for the colors, web vitals metric results that are rated poor, okay, or good are now shown in corresponding colored text.
-
 
 ![screenshot of metrics numbers](https://res.cloudinary.com/webpagetest/image/upload/v1644332106/ui-tour/152856797-6751d50d-787b-4b3b-af9c-be8841210bf4_eoa4n3.png "Wide:")
 
@@ -117,23 +119,19 @@ Our metrics tables do a *lot* of work, such as highlighting multiple steps, runs
 
 Some of the most interesting and useful features in WebPageTest have long been relatively hard to discover, unless you already know where to look. Filmstrips in particular are one of those features, so now each run (or step) in the summary has a filmstrip paired with it as well.
 
-
 ![screenshot of metrics with filmstrips beneath them](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152873185-9a214bc3-6bb5-409d-bc0a-f41f92d0a69d_tty2kq.png "Wide:")
 
 Those filmstrips are linked to the filmstrip comparison page, and in multi-run tests, you'll also find links to compare and plot your runs:
 
- 
 ![Buttons for comparing runs in filmstrip view](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152887243-d3226c74-b3c3-45b0-960c-38a100819d0c_payyer.png)
 
 ## Speaking of filmstrips...
 
 While we mention it, the filmstrip page itself became a first-class results template in this redesign. That means you can find a link to the filmstrips page in the results menu of any test, and it also includes the new common test header when you're viewing runs from the same test
 
-
 ![screenshot of a filmstrip comparison with runs of a wikipedia test](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152873971-e0b44edc-6986-4c40-87fa-cac5329a7a84_qbyvuc.png "Wide:")
 
 This also really helps navigate *away* from a filmstrip to other results pages in a test. However, if you are using the filmstrip comparison page to compare runs from *different* tests, the header will drop away, since the sites no longer share test conditions. In those cases, you can still access their tests via links in each filmstrip row:
-
 
 ![screenshot of a link in the filmstrips to return to a test run](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152887107-523a4db7-934e-4827-9a90-3e5a18a43222_mtvlve.png)
 
@@ -141,13 +139,11 @@ This also really helps navigate *away* from a filmstrip to other results pages i
 
 The details page has always been the place to see a particular run's results, but until this redesign, it didn't offer any way to switch to other runs' details. To address this, the details page now has a link list for all of your runs and repeat views, when applicable. Also, the details page metrics table has more, well, numbers than the summary page, so you can find additional metrics and custom metrics there!
 
-
 ![screenshot of the details page with many more metrics to display](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152874815-df1c3e6e-b848-41be-b231-4a8251b0baf5_r0j0p5.png "Wide:")
 
 ## Vitals, revitalized
 
 While much has changed, many of the results pages' content didn't change much at all. That said, most of them got at least a minor typography retouch. Take the Core Web Vitals page, for example.
-
 
 ![screenshot of large core web vitals numbers](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152875343-a8deb2fe-a09d-46bb-ab36-a1a8e11518b0_i2fu0j.png "Wide:")
 
@@ -156,7 +152,6 @@ While much has changed, many of the results pages' content didn't change much at
 One last note on the designs is that all of these views were retouched with an eye towards improving our usability across screen sizes, particularly smaller ones. Last fall, we released a mobile-friendly update that allowed our pages to be usable on small screens for the first time, and with this update we've continued to prioritize that.
 
 One helpful details you may see on smaller screens that I'm particularly fond of happens when very-wide features such as our filmstrips and metrics tables become wider than the available screen size, they will scroll internally. This scrolling isn't entirely new, but we did add some affordance to show when there's more to see, shown with these shadows below:
-
 
 ![screenshot of overflow areas with shadow affordance](https://res.cloudinary.com/webpagetest/image/upload/v1644332109/ui-tour/152879265-b861cbcd-7aa3-419d-a21f-9e84a85a0822_z7iazg.png)
 
