@@ -1,7 +1,7 @@
 ---
 name: Scott Jehl
 is_staff: true
-image: https://d33wubrfki0l68.cloudfront.net/616758cbccf4ea1fc73d97ac/3e3d9bab6847f273bde5/scott-jehl-profile%20copy.png
+image: https://user-images.githubusercontent.com/214783/153010518-05610b01-1d82-43f2-ab04-09e6388e0c90.png
 bio: Scott Jehl is a Senior Experience Engineer at Catchpoint who cares about
   creating fast, compelling digital experiences that can be delivered to the
   broadest possible audience. He is the creator of the Lightning-Fast Web
