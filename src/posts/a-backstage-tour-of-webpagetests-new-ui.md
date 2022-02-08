@@ -37,9 +37,11 @@ Our refreshed homepage above is our first attempt to satisfy these goals. To sta
 In addition, we wanted to make our test categories more inviting. This started with converting our tabbed navigation into a more "conversational" menu to introduce the kinds of tests we offer:
 
 **Before:**
+
 ![screenshot of prior homepage tabs](https://res.cloudinary.com/webpagetest/image/upload/v1644332106/ui-tour/152852601-4281c9a8-a239-4632-9759-1923b17c3084_kwtzms.png "Wide:")
 
 **After:**
+
 ![screenshot of new homepage menu navigation](https://res.cloudinary.com/webpagetest/image/upload/v1644332105/ui-tour/152810461-058ce6d7-6be3-4e81-b8dd-d701189e06c0_bdomul.png)
 
 In a similar aim, we made our "Simple Testing" configuration the new default. This gives us a place to suggest presets for several common and interesting combinations: 
