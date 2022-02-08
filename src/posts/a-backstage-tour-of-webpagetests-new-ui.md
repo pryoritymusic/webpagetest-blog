@@ -3,7 +3,7 @@ title: A Backstage Tour of WebPageTest's New UI
 guest: false
 date: 2022-02-08T17:53:29.061Z
 description: A tour of the goals and design decisions behind WebPageTest's new UI.
-featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152857425-348129ff-7c9d-4808-8519-91829b524220_emy3r8.png
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1644350104/ui-tour/Screen_Shot_2022-02-08_at_2.54.30_PM_slqt67.png
 category: How We Built It
 author: Scott Jehl
 related_post:
@@ -93,12 +93,11 @@ We also added a screenshot from the test run you're viewing, which will of cours
 
 Lastly in the header, we've changed the result pages' navigation to use a menu instead of the long list of horizontal tabs. This was done mostly to play more nicely across different screen sizes, but it should be a little easier to parse as a list as well. New in this menu, you'll find links to external services that are tied to your test, such as Lighthouse, Image Analysis, Security Score, What Does My Site Cost, and RequestMap!
 
-![screenshot of results page nav menu](https://res.cloudinary.com/webpagetest/image/upload/v1644332107/ui-tour/152857425-348129ff-7c9d-4808-8519-91829b524220_emy3r8.png)
+![screenshot of results page nav menu](https://res.cloudinary.com/webpagetest/image/upload/v1644350104/ui-tour/Screen_Shot_2022-02-08_at_2.54.30_PM_slqt67.png)
 
 ## Pages, explained
 
 Atop the content of each results page, and on some more than others, you'll now see a little information about the contents you should expect to find on that page. For example, the Results Summary page sets up what you should (and should not) expect to see in its metrics tables, depending on your test environment. Some browsers won't expose Core Web Vital metrics like LCP, so when you test in those browsers, you won't see those metrics. 
-
 
 ![screenshot of summary paragraphs at the top of each result page](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152877045-bfa8d883-a3ab-40ec-9842-e034bb42b5d0_qrvzjp.png "Wide:")
 
