@@ -121,7 +121,7 @@ Our metrics tables do a *lot* of work, such as highlighting multiple steps, runs
 
 ## Filmstrips front and center!
 
-Some of the most interesting and useful features in WebPageTest have long been relatively hard to discover, unless you already know where to look. Filmstrips in particular are one of those features, so now each run (or step) in the summary has a filmstrip paired with it as well.
+Some of the most interesting and useful features in WebPageTest have long been relatively hard to find, unless you already know where to look. Filmstrips in particular are one of those features, so now each run (or step) in the summary has a filmstrip paired with it as well.
 
 ![screenshot of metrics with filmstrips beneath them](https://res.cloudinary.com/webpagetest/image/upload/v1644332108/ui-tour/152873185-9a214bc3-6bb5-409d-bc0a-f41f92d0a69d_tty2kq.png "Wide:")
 
@@ -155,7 +155,7 @@ While much has changed, many of the results pages' content didn't change much at
 
 One last note on the designs is that all of these views were retouched with an eye towards improving our usability across screen sizes, particularly smaller ones. Last fall, we released a mobile-friendly update that allowed our pages to be usable on small screens for the first time, and with this update we've continued to prioritize that.
 
-One helpful details you may see on smaller screens that I'm particularly fond of happens when very-wide features such as our filmstrips and metrics tables become wider than the available screen size, they will scroll internally. This scrolling isn't entirely new, but we did add some affordance to show when there's more to see, shown with these shadows below:
+One helpful detail that I'm particularly fond of appears when very-wide features such as our filmstrips and metrics tables become wider than the available screen size and begin to scroll horizontally. This scrolling isn't entirely new, but we did add some affordance to show when there's more to see, shown with these shadows below:
 
 ![screenshot of overflow areas with shadow affordance](https://res.cloudinary.com/webpagetest/image/upload/v1644332109/ui-tour/152879265-b861cbcd-7aa3-419d-a21f-9e84a85a0822_z7iazg.png)
 
