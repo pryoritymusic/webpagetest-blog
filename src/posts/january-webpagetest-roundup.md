@@ -5,8 +5,7 @@ date: 2022-02-17T17:02:18.329Z
 featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1645118047/jan-roundup_yrww06.png
 tags:
   - API
-  - Core-Web-Vitals
-  - Largest-Contentful-Paint
+  - Core Web Vitals
   - JavaScript
 category: Product News
 author: Tim Kadlec
