@@ -19,7 +19,7 @@ author: Tim Kadlec
 * [Wappalyzer is Optional](#wappalyzer-is-optional)
 * [Largest Contentful Paint Filmstrip Comparison Endpoint](#largest-contentful-paint-comparison-endpoint)
 * [New waitFor Custom Script Command](#new-waitfor-custom-script-command)
-* [New MetaData Parameter](#new-metadata-parameter)
+* [New Metadata Parameter](#new-metadata-parameter)
 
 ## An updated UI
 
