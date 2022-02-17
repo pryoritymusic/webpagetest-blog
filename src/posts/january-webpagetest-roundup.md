@@ -12,6 +12,15 @@ author: Tim Kadlec
 ---
 *Things can move pretty quickly around here. In addition to the [change log](https://docs.webpagetest.org/change-log/), we're publishing monthly summaries of some of the highlights of features and changes made to WebPageTest in the last month.*
 
+## Overview
+
+* [An updated UI!](#an-updated-ui)
+* [Support for Microsoft Edge Testing](#microsoft-edge-testing)
+* [Wappalyzer is Optional](#wappalyzer-is-optional)
+* [Largest Contentful Paint Filmstrip Comparison Endpoint](#largest-contentful-paint-comparison-endpoint)
+* [New waitFor Custom Script Command](#new-waitfor-custom-script-command)
+* [New MetaData Parameter](#new-metadata-parameter)
+
 ## An updated UI
 
 This past month, WebPageTest got a redesigned and reorganized UI. WebPageTest has always been right at home with power users, but with more folks than ever paying attention to performance today, it’s critical that we make WebPageTest easier for everyone.
