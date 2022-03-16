@@ -19,7 +19,7 @@ Over the past four years, our monthly active users (MAU) have grown by around 10
 
 In order to keep a constant eye on the core web vitals & a few other important performance metrics, we built a web performance monitoring system using WebPageTest node API, Grafana & InfluxDB. With this quick and easy setup, we’re able to  run performance tests for around 45 pages on a daily basis and monitor their results via the Grafana dashboard.
 
-![WebPageTest, Grafana, and InfluxDB Flow Chart](https://res.cloudinary.com/webpagetest/image/upload/v1647462978/Picture1_fd6dhm.png)
+![WebPageTest, Grafana, and InfluxDB Flow Chart](https://res.cloudinary.com/webpagetest/image/upload/v1647462978/Picture1_fd6dhm.png "Wide:")
 
 For more details on how we did it, please check out [this article](https://blogs.halodoc.io/performance-monitoring-webapps/).
 
@@ -34,7 +34,7 @@ Depending on the requirements, one may opt for manual testing, or automate the p
 * **Grafana** for visualizing  the performance metrics data by creating dashboards
 * **Jenkins** for triggering the API at regular intervals
 
-![Grafana visualization of key performance metrics: FCP, FP, FIP](https://res.cloudinary.com/webpagetest/image/upload/v1647462977/Picture2_boxjd4.png)
+![Grafana visualization of key performance metrics: FCP, FP, FIP](https://res.cloudinary.com/webpagetest/image/upload/v1647462977/Picture2_boxjd4.png "Wide:")
 
 Some of the key benefits of automated testing:
 
