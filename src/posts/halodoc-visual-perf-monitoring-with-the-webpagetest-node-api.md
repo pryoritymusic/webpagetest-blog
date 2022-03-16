@@ -1,6 +1,6 @@
 ---
 title: "Halodoc: Visual Perf Monitoring with the WebPageTest Node API"
-guest: false
+guest: true
 date: 2022-03-16T20:27:51.197Z
 tags: []
 category: Optimizations
