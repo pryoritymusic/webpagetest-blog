@@ -2,8 +2,12 @@
 title: "Halodoc: Visual Perf Monitoring with the WebPageTest Node API"
 guest: false
 date: 2022-03-16T20:27:51.197Z
+tags: []
 category: Optimizations
 author: Bivesh Kumar
+related_post:
+  post: the-webpagetest-api-has-gone-public
+  highlight: "Want to integrate the API yourself? Check out our guide! "
 ---
 WebPageTest would not be unfamiliar to you if you have ever tried exploring web performance. It’s an incredible open-source tool to measure web page performance. Loaded with a huge list of configurable options and is available via multiple interfaces for its users including the [Website](https://www.webpagetest.org/), [Node API](https://github.com/WebPageTest/webpagetest-api), and [CLI](https://github.com/WebPageTest/webpagetest-api#command-line-1) experiences. 
 
@@ -39,15 +43,16 @@ Some of the key benefits of automated testing:
 * Easy to visualize key metrics on the dashboard
 * Easily scale to test and monitor any number of pages
 
-Why does it matter?
+***Why does it matter?***
 
-Good performance is an asset. Bad performance is a liability.
+> ## Good performance is an asset. Bad performance is a liability.
 
 We all know what it feels like to wait for a web page to load. The traffic for a website can come from all around the globe, from different types of devices and visitors with different network speeds. So, it becomes important for an organization to understand how its website is performing for these different scenarios. For a user, it may just be an annoyingly slow website, but for an organization it’s a loss of revenue.
 
-This is where WebPageTest can come in very handy. With the node API, we can automate the performance tests for different types of real devices with different network speeds and different locations. 
+This is where WebPageTest can come in very handy. With the node API, we can automate the performance tests for ***different types of real devices*** with ***different network speeds*** and ***different locations.*** 
 
-What’s next…
+***What’s next…?***
 
 Web performance is important not only from a user experience point of view, but it also plays a significant role in SEO and contributes to organic traffic. In the past few years with our continuous monitoring, we have been easily able to catch performance degradation at the earliest. 
-We are always looking out for something more which can help us in serving our customers in a better way. Currently, we are also looking into enabling alert notifications via Grafana and also parallelly exploring WebPageTest’s slack integration. Eagerly waiting to see what’s next in the WebPageTest pipeline as a tool.
+
+We are always looking out for something more which can help us in serving our customers in a better way. Currently, we are also looking into enabling alert notifications via Grafana and also parallelly exploring WebPageTest’s [slack integration](https://github.com/WebPageTest/webpagetest-slack). Eagerly waiting to see what’s next in the WebPageTest pipeline as a tool.
