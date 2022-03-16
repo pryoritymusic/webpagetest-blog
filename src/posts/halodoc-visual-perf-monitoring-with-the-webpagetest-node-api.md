@@ -45,7 +45,7 @@ Some of the key benefits of automated testing:
 
 ***Why does it matter?***
 
-> ## Good performance is an asset. Bad performance is a liability.
+### Good performance is an asset. Bad performance is a liability.
 
 We all know what it feels like to wait for a web page to load. The traffic for a website can come from all around the globe, from different types of devices and visitors with different network speeds. So, it becomes important for an organization to understand how its website is performing for these different scenarios. For a user, it may just be an annoyingly slow website, but for an organization it’s a loss of revenue.
 
