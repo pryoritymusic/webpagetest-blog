@@ -11,29 +11,33 @@ In this article, I will be mainly talking about how we at [Halodoc](https://www.
 
 Over the past four years, our monthly active users (MAU) have grown by around 100x. Performance quickly became very important for our user experience and competitiveness on the web. We could go ahead and fix all the immediately identifiable performance-related issues, but that wouldn’t be enough on its own. With the next deployment, performance may deteriorate & we wouldn’t know unless we manually run the performance analysis again. 
 
-## Automating & monitoring performance with Grafana and InfluxDB
+# Automating & monitoring performance with Grafana and InfluxDB
 
 In order to keep a constant eye on the core web vitals & a few other important performance metrics, we built a web performance monitoring system using WebPageTest node API, Grafana & InfluxDB. With this quick and easy setup, we’re able to  run performance tests for around 45 pages on a daily basis and monitor their results via the Grafana dashboard.
 
-![WebPageTest, Grafana, and InfluxDB Flow Chart](https://res.cloudinary.com/webpagetest/image/upload/v1647462978/Picture1_fd6dhm.png "Halodoc's InfluxDB, InfluxDB, and WebPageTest schema")
+![WebPageTest, Grafana, and InfluxDB Flow Chart](https://res.cloudinary.com/webpagetest/image/upload/v1647462978/Picture1_fd6dhm.png)
 
-For more details on how we did it, please check out this article.
+For more details on how we did it, please check out [this article](https://blogs.halodoc.io/performance-monitoring-webapps/).
 
 Things have only improved since our first iteration with the WebPageTest NodeJS API wrapper.  A few months back WebPageTest officially announced the availability of the enhanced, professionally supported WebPageTest API. So if you are thinking of using it, be assured, it’s well supported.
 
-Automated vs manual testing
+## Automated vs manual testing
 
 Depending on the requirements, one may opt for manual testing, or automate the process via API. We needed to perform location-based testing for multiple pages at regular intervals, which would not be an easy thing to do with manual testing, as it would involve lots of time and resources on a regular basis. So, we went ahead and automated the whole process using:
-•	WebPageTest node API for triggering tests and fetching JSON-formatted The APIs are pretty straightforward to consume. 
-•	InfluxDB for storing the test results
-•	Grafana for visualizing  the performance metrics data by creating dashboards
-•	Jenkins for triggering the API at regular intervals
+
+* **WebPageTest node API** for triggering tests and fetching JSON-formatted The APIs are pretty straightforward to consume. 
+* **InfluxDB** for storing the test results
+* **Grafana** for visualizing  the performance metrics data by creating dashboards
+* **Jenkins** for triggering the API at regular intervals
+
+![Grafana visualization of key performance metrics: FCP, FP, FIP](https://res.cloudinary.com/webpagetest/image/upload/v1647462977/Picture2_boxjd4.png)
 
 Some of the key benefits of automated testing:
-•	One time effort is needed to write the script & set up the system. Thereafter, no human intervention is needed to run the tests or to update the dashboard
-•	More tests can be done in a lesser amount of time
-•	Easy to visualize key metrics on the dashboard
-•	Easily scale to test and monitor any number of pages
+
+* One time effort is needed to write the script & set up the system. Thereafter, no human intervention is needed to run the tests or to update the dashboard
+* More tests can be done in a lesser amount of time
+* Easy to visualize key metrics on the dashboard
+* Easily scale to test and monitor any number of pages
 
 Why does it matter?
 
