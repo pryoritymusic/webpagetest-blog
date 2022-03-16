@@ -15,7 +15,7 @@ In this article, I will be mainly talking about how we at [Halodoc](https://www.
 
 Over the past four years, our monthly active users (MAU) have grown by around 100x. Performance quickly became very important for our user experience and competitiveness on the web. We could go ahead and fix all the immediately identifiable performance-related issues, but that wouldn’t be enough on its own. With the next deployment, performance may deteriorate & we wouldn’t know unless we manually run the performance analysis again. 
 
-# Automating & monitoring performance with Grafana and InfluxDB
+## Automating & monitoring performance with Grafana and InfluxDB
 
 In order to keep a constant eye on the core web vitals & a few other important performance metrics, we built a web performance monitoring system using WebPageTest node API, Grafana & InfluxDB. With this quick and easy setup, we’re able to  run performance tests for around 45 pages on a daily basis and monitor their results via the Grafana dashboard.
 
