@@ -3,7 +3,7 @@ title: "Halodoc: Visual Perf Monitoring with the WebPageTest Node API"
 guest: true
 date: 2022-03-16T20:27:51.197Z
 tags: []
-category: Optimizations
+category: Use Cases
 author: Bivesh Kumar
 related_post:
   post: the-webpagetest-api-has-gone-public
