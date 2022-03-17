@@ -15,9 +15,9 @@ Halodoc is a health-tech startup that simplifies healthcare access by connecting
 
 In this article, I will be mainly talking about how we at [Halodoc](https://www.halodoc.com/) have been using the WebPageTest API to build great user experiences that is powered by our culture of measuring and monitoring web performance. 
 
-Over the past four years, our monthly active users (MAU) have grown by around 100x. 
+> Over the past four years, our monthly active users (MAU) have grown by around 100x. Performance quickly became very important for our user experience and competitiveness on the web.
 
-> Performance quickly became very important for our user experience and competitiveness on the web. We could go ahead and fix all the immediately identifiable performance-related issues, but that wouldn’t be enough on its own. With the next deployment, performance may deteriorate & we wouldn’t know unless we manually run the performance analysis again. 
+We could go ahead and fix all the immediately identifiable performance-related issues, but that wouldn’t be enough on its own. With the next deployment, performance may deteriorate & we wouldn’t know unless we manually run the performance analysis again. 
 
 ## Automating & monitoring performance with Grafana and InfluxDB
 
