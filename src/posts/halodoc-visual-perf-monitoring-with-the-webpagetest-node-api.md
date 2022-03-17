@@ -9,25 +9,33 @@ related_post:
   post: the-webpagetest-api-has-gone-public
   highlight: "Want to integrate the API yourself? Check out our guide! "
 ---
-WebPageTest would not be unfamiliar to you if you have ever tried exploring web performance. It’s an incredible open-source tool to measure web page performance. Loaded with a huge list of configurable options and is available via multiple interfaces for its users including the [Website](https://www.webpagetest.org/), [Node API](https://github.com/WebPageTest/webpagetest-api), and [CLI](https://github.com/WebPageTest/webpagetest-api#command-line-1) experiences. 
+WebPageTest would not be unfamiliar to you if you have ever tried exploring web performance. It’s an incredible open-source tool to measure web page performance. It is loaded with a growing list of configurable options and is available via multiple interfaces for its users including manual testing via the [website](https://www.webpagetest.org/), [CLI](https://github.com/WebPageTest/webpagetest-api#command-line-1), and the [WebPageTest API](https://github.com/WebPageTest/webpagetest-api) with a NodeJS wrapper. 
 
-In this article, I will be mainly talking about how we at [Halodoc](https://www.halodoc.com/), have leveraged the node API to meet our requirements.
+Halodoc is a health-tech startup that simplifies healthcare access by connecting millions of patients with licensed doctors, insurance providers, labs, and pharmacies all on one platform. 
 
-Over the past four years, our monthly active users (MAU) have grown by around 100x. Performance quickly became very important for our user experience and competitiveness on the web. We could go ahead and fix all the immediately identifiable performance-related issues, but that wouldn’t be enough on its own. With the next deployment, performance may deteriorate & we wouldn’t know unless we manually run the performance analysis again. 
+In this article, I will be mainly talking about how we at [Halodoc](https://www.halodoc.com/) have been using the WebPageTest API to build great user experiences that is powered by our culture of measuring and monitoring web performance. 
+
+Over the past four years, our monthly active users (MAU) have grown by around 100x. 
+
+> Performance quickly became very important for our user experience and competitiveness on the web. We could go ahead and fix all the immediately identifiable performance-related issues, but that wouldn’t be enough on its own. With the next deployment, performance may deteriorate & we wouldn’t know unless we manually run the performance analysis again. 
 
 ## Automating & monitoring performance with Grafana and InfluxDB
 
-In order to keep a constant eye on the core web vitals & a few other important performance metrics, we built a web performance monitoring system using WebPageTest node API, Grafana & InfluxDB. With this quick and easy setup, we’re able to  run performance tests for around 45 pages on a daily basis and monitor their results via the Grafana dashboard.
+In order to keep a constant eye on the Core Web Vitals & a few other important performance metrics, we built a web performance monitoring system using the WebPageTest API wrapper for NodeJS, Grafana & InfluxDB. With a quick and easy setup, we’re able to  run performance tests for around 45 pages on a daily basis and monitor their results via the Grafana dashboard.
 
 ![WebPageTest, Grafana, and InfluxDB Flow Chart](https://res.cloudinary.com/webpagetest/image/upload/v1647462978/Picture1_fd6dhm.png "Wide:")
 
-For more details on how we did it, please check out [this article](https://blogs.halodoc.io/performance-monitoring-webapps/).
+Things have only improved since our first iteration with the WebPageTest API wrapper for NodeJS. For more details on how we did it, please check out [this article](https://blogs.halodoc.io/performance-monitoring-webapps/).
 
-Things have only improved since our first iteration with the WebPageTest NodeJS API wrapper.  A few months back WebPageTest officially announced the availability of the enhanced, professionally supported WebPageTest API. So if you are thinking of using it, be assured, it’s well supported.
+Last year, WebPageTest by Catchpoint [officially announced](https://blog.webpagetest.org/posts/the-webpagetest-api-has-gone-public/) the availability of the enhanced, professionally supported [WebPageTest API](https://docs.webpagetest.org/api/integrations/). They have dedicated staff and resources to ensure the platform is always up-to-date with the latest browser versions and metrics the WebPerf community needs. So if you are thinking of using it, be assured, it’s well supported.
 
 ## Automated vs manual testing
 
-Depending on the requirements, one may opt for manual testing, or automate the process via API. We needed to perform location-based testing for multiple pages at regular intervals, which would not be an easy thing to do with manual testing, as it would involve lots of time and resources on a regular basis. So, we went ahead and automated the whole process using:
+Depending on the requirements, one may opt for manual testing, or automate the process via API. 
+
+> We needed to perform location-based testing for multiple pages at regular intervals, which would not be an easy thing to do with manual testing, as it would involve lots of time and resources on a regular basis. 
+
+So, we went ahead and automated the whole process using:
 
 * **WebPageTest node API** for triggering tests and fetching JSON-formatted The APIs are pretty straightforward to consume. 
 * **InfluxDB** for storing the test results
@@ -35,6 +43,8 @@ Depending on the requirements, one may opt for manual testing, or automate the p
 * **Jenkins** for triggering the API at regular intervals
 
 ![Grafana visualization of key performance metrics: FCP, FP, FIP](https://res.cloudinary.com/webpagetest/image/upload/v1647462977/Picture2_boxjd4.png "Wide:")
+
+*Above: Grafana display of Halodoc's key metrics, fetched via WebPageTest API*
 
 Some of the key benefits of automated testing:
 
