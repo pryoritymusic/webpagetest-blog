@@ -42,7 +42,7 @@ So, we went ahead and automated the whole process using:
 * **Grafana** for visualizing  the performance metrics data by creating dashboards
 * **Jenkins** for triggering the API at regular intervals
 
-![Grafana visualization of key performance metrics: FCP, FP, FIP](https://res.cloudinary.com/webpagetest/image/upload/v1647462977/Picture2_boxjd4.png "Wide:")
+![Grafana display of Halodoc's key metrics, fetched via WebPageTest API](https://res.cloudinary.com/webpagetest/image/upload/v1647462977/Picture2_boxjd4.png "Wide:")
 
 *Above: Grafana display of Halodoc's key metrics, fetched via WebPageTest API*
 
@@ -55,14 +55,14 @@ Some of the key benefits of automated testing:
 
 ***Why does it matter?***
 
-### Good performance is an asset. Bad performance is a liability.
+> Good performance is an asset. Bad performance is a liability.
 
-We all know what it feels like to wait for a web page to load. The traffic for a website can come from all around the globe, from different types of devices and visitors with different network speeds. So, it becomes important for an organization to understand how its website is performing for these different scenarios. For a user, it may just be an annoyingly slow website, but for an organization it’s a loss of revenue.
+We all know what it feels like to wait for a web page to load. The traffic for a website can come from all around the globe, from different types of devices and visitors with different network speeds. So, it becomes important for an organization to understand how its website is performing for these different scenarios. For a user, it may just be an annoyingly slow website and they may go to a competitor who offers a similar product/service, but for an organization it’s a loss of revenue.
 
-This is where WebPageTest can come in very handy. With the node API, we can automate the performance tests for ***different types of real devices*** with ***different network speeds*** and ***different locations.*** 
+This is where WebPageTest can come in very handy. With the WebPageTest API, we can automate the performance tests for different types of ***real devices*** with ***different network speeds*** and ***different locations***.
 
 ***What’s next…?***
 
 Web performance is important not only from a user experience point of view, but it also plays a significant role in SEO and contributes to organic traffic. In the past few years with our continuous monitoring, we have been easily able to catch performance degradation at the earliest. 
 
-We are always looking out for something more which can help us in serving our customers in a better way. Currently, we are also looking into enabling alert notifications via Grafana and also parallelly exploring WebPageTest’s [slack integration](https://github.com/WebPageTest/webpagetest-slack). Eagerly waiting to see what’s next in the WebPageTest pipeline as a tool.
+We are always looking out for something more which can help us in serving our customers in a better way. Currently, we are also looking into enabling alert notifications via Grafana and also parallelly exploring WebPageTest’s [Slack integration](https://github.com/WebPageTest/webpagetest-slack). Eagerly waiting to see what’s next in the WebPageTest pipeline as a tool.
