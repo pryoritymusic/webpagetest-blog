@@ -3,6 +3,7 @@ title: "Halodoc: Staying Ahead of the Curve with Visual Perf Monitoring with
   WebPageTest API"
 guest: true
 date: 2022-03-16T20:27:51.197Z
+featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1647903565/Frame_1_nlxpjy.png
 tags: []
 category: Use Cases
 author: Bivesh Kumar
