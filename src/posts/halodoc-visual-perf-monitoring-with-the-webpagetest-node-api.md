@@ -2,7 +2,7 @@
 title: "Halodoc: Staying Ahead of the Curve with Visual Perf Monitoring with
   WebPageTest API"
 guest: true
-date: 2022-03-22T17:00:00.000Z
+date: 2022-03-22T16:44:52.724Z
 featured_image: https://res.cloudinary.com/webpagetest/image/upload/v1647903963/Frame_1_1_dqtcfv.png
 tags: []
 category: Use Cases
@@ -39,7 +39,7 @@ Depending on the requirements, one may opt for manual testing, or automate the p
 
 So, we went ahead and automated the whole process using:
 
-* **WebPageTest node API** for triggering tests and fetching JSON-formatted The APIs are pretty straightforward to consume. 
+* **WebPageTest node API** for triggering tests and fetching JSON-formatted results. The APIs are pretty straightforward to consume. 
 * **InfluxDB** for storing the test results
 * **Grafana** for visualizing  the performance metrics data by creating dashboards
 * **Jenkins** for triggering the API at regular intervals
