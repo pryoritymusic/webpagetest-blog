@@ -18,7 +18,6 @@ pagination:
   data: collections.authorsPaged
 permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}" #}
 {%- from "post-item.njk" import postItem  %}
-{%- from "social-share.njk" import socialShare -%}
 
 {%- set currentUrl = config.url + page.url -%}
 <div class="page container container--lg">
@@ -36,7 +35,6 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
       {% endif %}
       <h1 class="author-header__title">{{ paged.author.data.name }}</h1>
       <div class="author-header__bio">{{ paged.author.data.bio | markdown | safe }}</div>
-      {{ socialShare(currentUrl, title, 'author-header__social') }}
     </div>
   </div>
   {% if paged.posts.length > 0 %}
