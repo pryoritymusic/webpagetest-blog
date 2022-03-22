@@ -13,7 +13,7 @@ related_post:
 ---
 WebPageTest would not be unfamiliar to you if you have ever tried exploring web performance. It’s an incredible open-source tool to measure web page performance. It is loaded with a growing list of configurable options and is available via multiple interfaces for its users including manual testing via the [website](https://www.webpagetest.org/), [CLI](https://github.com/WebPageTest/webpagetest-api#command-line-1), and the [WebPageTest API](https://github.com/WebPageTest/webpagetest-api) with a NodeJS wrapper. 
 
-[Halodoc](www.halodoc.com) is a health-tech startup that simplifies healthcare access by connecting millions of patients with licensed doctors, insurance providers, labs, and pharmacies all on one platform. 
+[Halodoc](https://www.halodoc.com) is a health-tech startup that simplifies healthcare access by connecting millions of patients with licensed doctors, insurance providers, labs, and pharmacies all on one platform. 
 
 In this article, I will be mainly talking about how we at Halodoc have been using the WebPageTest API to build great user experiences that is powered by our culture of measuring and monitoring web performance. 
 
