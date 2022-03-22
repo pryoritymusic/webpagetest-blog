@@ -31,7 +31,7 @@ permalink: "/authors/{{ paged.author.data.name | slug }}/{% if paged.number > 1 
       {% if paged.author.data.guest %}
       <p class="author-header__accent text--accent">Guest Author</p>
       {% else %}
-      <p class="author-header__accent text--accent">Guest Author</p>
+      <p class="author-header__accent text--accent">WebPageTest Staff</p>
       {% endif %}
       <h1 class="author-header__title">{{ paged.author.data.name }}</h1>
       <div class="author-header__bio">{{ paged.author.data.bio | markdown | safe }}</div>
